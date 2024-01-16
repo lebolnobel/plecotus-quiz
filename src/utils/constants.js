@@ -1,59 +1,95 @@
-import { randomizeArrayElements, getRandomElement } from "./helpers";
+import { randomizeArrayElements, getRandomElement, sliceArray } from "./helpers";
 
 export const quiz = {
   "plecotus-hiver": {
     title: "Recensement hivernaux",
     description: "Trouver l'espèce qui se cache derrière cette photo !",
-    questions: randomizeArrayElements([
-      {
-        imageId: getRandomElement([1]),
-        rightAnswer: 10,
-      },
-      {
-        imageId: getRandomElement([2]),
-        rightAnswer: 11,
-      },
+    questions: sliceArray(randomizeArrayElements([
       {
         imageId: getRandomElement([3]),
+        rightAnswer: 1, // Rh
         imageAnswer: 10003, // Si absent, l'image de la question est utilisée
-        rightAnswer: 1,
       },
       {
-        imageId: getRandomElement([4]),
-        rightAnswer: 12,
+        imageId: getRandomElement([]),
+        rightAnswer: 2, // Rf
+      },
+      {
+        imageId: getRandomElement([]),
+        rightAnswer: 3, // Pleaur
       },
       {
         imageId: getRandomElement([5]),
-        rightAnswer: 4,
+        rightAnswer: 4, // Pleaus
       },
-    ]),
+      {
+        imageId: getRandomElement([]),
+        rightAnswer: 5, // Mmba
+      },
+      {
+        imageId: getRandomElement([]),
+        rightAnswer: 6, // Mq
+      },
+      {
+        imageId: getRandomElement([]),
+        rightAnswer: 7, // MD
+      },
+      {
+        imageId: getRandomElement([]),
+        rightAnswer: 8, // ME
+      },
+      {
+        imageId: getRandomElement([]),
+        rightAnswer: 9, // Mn
+      },
+      {
+        imageId: getRandomElement([1]),
+        rightAnswer: 10, // MB
+      },
+      {
+        imageId: getRandomElement([2, 6, 7, 8, 9]),
+        rightAnswer: 11, // MM
+      },
+      {
+        imageId: getRandomElement([]),
+        rightAnswer: 12, // Barbar
+      },
+      {
+        imageId: getRandomElement([]),
+        rightAnswer: 13, // Pipsp
+      },
+      {
+        imageId: getRandomElement([]),
+        rightAnswer: 14, // Eptser
+      },
+    ])),
   },
 };
 
 export const images = [
   {
     id: 1,
-    title: "Un beau Murin de Bechstein",
-    url: "https://plecotus.natagora.be/fileadmin/_processed_/d/4/csm_MyotisBechsteini_TrouDeLaLouve_Nettine_07022007_NicolasTiteux_3__f7de6a64fe.jpg",
-    authorId: undefined, // already known author or one shot author
-    place: undefined,
+    title: "Murin de Bechstein",
+    url: "./static/img/MB/P1020489.JPG",
+    authorId: 2, // already known author or one shot author
+    place: "Rochefort",
     description: undefined,
   },
   {
     id: 2,
     title: "Grand Murin",
-    url: "https://plecotus.natagora.be/fileadmin/_processed_/b/e/csm_MyotisMyotis_JeanLouisGathoye__19__d64285c806.jpg",
-    authorId: undefined, // already known author or one shot author
-    place: undefined,
+    url: "./static/img/MM/P1040842.JPG",
+    authorId: 2, // already known author or one shot author
+    place: "Otré",
     description: undefined,
   },
   {
     id: 3,
-    title: "Un rhino <3",
-    url: "https://plecotus.natagora.be/fileadmin/_processed_/c/0/csm_RinolophusHipposideros_Jorquenay_LucMalchair_b77187bc5c.jpg",
-    authorId: undefined, // already known author or one shot author
-    place: undefined,
-    description: "Le rhino <3",
+    title: "Petit rhinolophe",
+    url: "./static/img/Rh/DSC04546.JPG",
+    authorId: 2, // already known author or one shot author
+    place: "Rochefort",
+    description: undefined,
   },
   {
     id: 4,
@@ -65,10 +101,42 @@ export const images = [
   },
   {
     id: 5,
-    title: "Oreillard",
-    url: "https://plecotus.natagora.be/fileadmin/_processed_/1/3/csm_PlecotusAustriacus_MarcPaquay_fa4330070c.jpg",
-    authorId: undefined,
+    title: "Oreillard gris",
+    url: "./static/img/Pleaus/DSC_9374.JPG",
+    authorId: 2,
     place: undefined,
+    description: undefined,
+  },
+  {
+    id: 6,
+    title: "Grand Murin",
+    url: "./static/img/MM/110302 006.JPG",
+    authorId: 2, // already known author or one shot author
+    place: "Rochefort",
+    description: undefined,
+  },
+  {
+    id: 7,
+    title: "Grand Murin",
+    url: "./static/img/MM/20110424 002.JPG",
+    authorId: 2, // already known author or one shot author
+    place: "Rochefort",
+    description: undefined,
+  },
+  {
+    id: 8,
+    title: "Grand Murin",
+    url: "./static/img/MM/DSC07137.JPG",
+    authorId: 2, // already known author or one shot author
+    place: "Hastière",
+    description: undefined,
+  },
+  {
+    id: 9,
+    title: "Grand Murin",
+    url: "./static/img/MM/DSC07167.JPG",
+    authorId: 2, // already known author or one shot author
+    place: "Han-sur-Lesse",
     description: undefined,
   },
   {
@@ -84,10 +152,17 @@ export const images = [
 export const authors = [
   {
     id: 1,
-    name: "Lebol",
-    firstname: "lebol",
+    name: "Lebon",
+    firstname: "Lionel",
     mail: undefined,
     url: "https://www.instagram.com/lebolnobel/",
+  },
+  {
+    id: 2,
+    name: "Smits",
+    firstname: "Quentin",
+    mail: undefined,
+    url: "https://photos.google.com/share/AF1QipNJ-gMv6hbSQcTJHKhY-Xx8DEtVAA6Ir95CF412tZEUmWz6J-JjYqm4xc2Vnp8Nyg?key=QW53X0dFbkpQLWZSdjVGcDRZb0RjQ3ZPSTFoV2xR",
   },
 ];
 

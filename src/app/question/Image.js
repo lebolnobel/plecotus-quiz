@@ -14,9 +14,9 @@ const Image = (props) => {
           </>
         )}
 
-        {image?.place || "Lieu inconnu"}
+        ⯆ {image?.place || "Lieu inconnu"}
         <br />
-        {!author ? "Anonyme" : `${author.firstname} ${author.name}`}
+        ◪ {!author ? "Anonyme" : `${author.firstname} ${author.name}`}
       </span>
     </div>
   );
