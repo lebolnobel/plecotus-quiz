@@ -5,7 +5,7 @@ const Image = (props) => {
 
   return (
     <div className="image">
-      <img src={image?.url || "https://via.placeholder.com/400x250"} />
+      <img src={image?.url || "https://via.placeholder.com/400x250"} alt={image?.title || "Chiro"} title={image?.title || "Chiro"} />
       <span className="flex-right">
         {image?.description && (
           <>

@@ -27,7 +27,7 @@ const Answer = (props) => {
         </p>
       )}
 
-      {res?.description}
+      <div class="answer">{res?.description}</div>
     </>
   );
 };

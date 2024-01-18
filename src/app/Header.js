@@ -39,16 +39,17 @@ const Header = () => {
             <h1>Info</h1>
 
             <p>
-              Cette application a été créée dans le travail de fin d'étude de la
-              formation Plecotus, dispensée par Natagora.
+              Cette application a été créée dans le cadre du travail de fin
+              d'étude de la formation Plecotus, dispensée par Natagora.
             </p>
 
             <p>
               Son objectif est de permettre à quiconque de travailler
-              l'identification des espèces de chauve-souris en hivers.
+              l'identification des espèces de chauve-souris en hivers. Le
+              contenu est inspiré du Mémo de détermination.
             </p>
 
-            <div style={{ padding: "15px 0px" }}>
+            <div style={{ padding: "15px 0px", textAlign: "center" }}>
               <a
                 href="https://plecotus.natagora.be/fileadmin/Pole_Plecotus/biblio/Memo_5_20191106_PNy_RCo_1_.pdf"
                 className="download"
@@ -62,7 +63,10 @@ const Header = () => {
               des chauve-souris en hivers.
             </p>
 
-            <p>Bonne révision !</p>
+            <p>
+              Bonne révision, <br />
+              Lionel Lebon
+            </p>
           </div>
         </div>
       )}

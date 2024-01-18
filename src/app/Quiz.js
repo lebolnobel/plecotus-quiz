@@ -1,6 +1,7 @@
 import "../styles/styles.css";
 
 import * as React from "react";
+import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
 import QuestionBreadcrumb from "./question/QuestionBreadcrumb";
 import Answer from "./question/Answer";
@@ -9,27 +10,58 @@ import Choices from "./question/Choices";
 import StartOver from "./question/StartOver";
 import ResultPage from "./score/ScorePage";
 import Footer from "./Footer";
+import {
+  randomizeArrayElements,
+  getRandomElement,
+  sliceArray,
+} from "../utils/helpers";
 import { QuizProvider } from "../context/QuizContext";
 import { quiz, genera, species, images, authors } from "../utils/constants";
 
+const QUIZ_IDENTIFIER = "plecotus-hiver";
+
 const Quiz = () => {
+  const [quizId, setQuizId] = React.useState(uuidv4());
+  const [currentQuiz, setCurrentQuiz] = React.useState(null);
   const [index, setIndex] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [selectedGenus, setSelectedGenus] = React.useState(null);
   const [selectedAnswer, setSelectedAnswer] = React.useState(null);
   const [screen, setScreen] = React.useState(null); // result/score
 
-  const currentQuiz = quiz["plecotus-hiver"];
+  React.useEffect(() => {
+    // Generate unique quiz
+    setCurrentQuiz({
+      ...quiz[QUIZ_IDENTIFIER],
+      questions: sliceArray(
+        randomizeArrayElements(
+          quiz[QUIZ_IDENTIFIER].questions.map((question) => ({
+            ...question,
+            imageId: getRandomElement(question.imageId),
+          }))
+        )
+      ),
+    });
+  }, [quizId]);
+
+  if (!currentQuiz) {
+    return "Chargement...";
+  }
+
   const currentQuestion = currentQuiz.questions[index];
   const totalQuestions = currentQuiz.questions.length;
   const res = species.find((sp) => sp.id === currentQuestion.rightAnswer);
   const img = images.find((img) => img.id === currentQuestion.imageId);
+  const author = authors.find((author) => author.id === img?.authorId);
   const imgAnswer = images.find(
     (img) => img.id === currentQuestion?.imageAnswer
   );
-  const author = authors.find((author) => author.id === img?.authorId);
+  const authorAnswer = authors.find(
+    (author) => author.id === imgAnswer?.authorId
+  );
 
   const onReset = () => {
+    setQuizId(uuidv4());
     setIndex(0);
     setScore(0);
     setSelectedGenus(null);
@@ -64,15 +96,15 @@ const Quiz = () => {
   };
 
   const onSpecies = (value) => {
-    setSelectedAnswer(value);
-
     const answer = !!value ? { ...value } : {};
     const isRightAnswer = answer?.id === currentQuestion.rightAnswer;
+
+    setSelectedAnswer(value);
 
     setTimeout(() => {
       applyScore(isRightAnswer);
       setScreen("result");
-    }, 500);
+    }, 300);
   };
 
   return (
@@ -97,7 +129,10 @@ const Quiz = () => {
                   onNext={onNext}
                 />
 
-                <Image author={author} image={imgAnswer || img} />
+                <Image
+                  author={authorAnswer || author}
+                  image={imgAnswer || img}
+                />
               </>
             )}
 

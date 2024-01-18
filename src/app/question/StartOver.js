@@ -4,7 +4,7 @@ const StartOver = (props) => {
   const { onReset } = props;
   return (
     <div className="flex-center reset">
-      <a onClick={onReset}>Je veux recommencer</a>
+      <a id="reset" href="#" onClick={onReset}>Je veux recommencer</a>
     </div>
   );
 };
