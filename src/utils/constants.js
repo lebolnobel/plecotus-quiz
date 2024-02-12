@@ -378,7 +378,7 @@ export const species = [
           <li>
             Oreilles repliées vers l’arrière, sous les ailes durant
             l’hibernation, seuls les tragus dépassent (pouvant laisser
-            l’impression qu’il s’agit des oreilles)
+            l’impression qu’il s’agit des oreilles).
           </li>
           <li>
             Présence de deux grosses "verrues" bien marquées entre les yeux,
@@ -410,7 +410,7 @@ export const species = [
           <li>
             Oreilles repliées vers l’arrière, sous les ailes durant
             l’hibernation, seuls les tragus dépassent (pouvant laisser
-            l’impression qu’il s’agit des oreilles)
+            l’impression qu’il s’agit des oreilles).
           </li>
           <li>
             Présence de deux petites « verrues » peu marquées entre les yeux,
@@ -431,7 +431,7 @@ export const species = [
         <p>
           <em>
             La distinction entre ces trois espèces est extrêmement difficile en
-            hibernation, on les notera quasi toujours comme un seul taxon
+            hibernation, on les notera quasi toujours comme un seul taxon.
           </em>
         </p>
         <p>
@@ -441,7 +441,7 @@ export const species = [
             <li>
               Museau petit, peu proéminent et foncé (rose foncé à noirâtre).
             </li>
-            <li>L'angle entre les oreilles est d'environ 90°</li>
+            <li>L'angle entre les oreilles est d'environ 90°.</li>
             <li>
               ventre plus clair que le dos, plutôt beige (pas blanc). Il est
               moins "propre" que les autres Myotis.
@@ -497,7 +497,7 @@ export const species = [
           <li>Tragus court et arrondi.</li>
           <li>
             Grands pieds très caractéristiques : ils permettent d’attraper des
-            insectes à la surface de l’eau
+            insectes à la surface de l’eau.
           </li>
         </ul>
       </p>
@@ -533,7 +533,7 @@ export const species = [
             Pelage laineux et dense, parfois un pelage de chien mouille (aspect
             strié).
           </li>
-          <li>5% des individus sont mélaniques</li>
+          <li>5% des individus sont mélaniques.</li>
         </ul>
       </p>
     ),
@@ -596,7 +596,7 @@ export const species = [
             Long pelage ventral gris clair-blanc, contrastant assez bien avec le
             dos.
           </li>
-          <li>C'est la plus grande de nos chauve-souris, près de 8cm</li>
+          <li>C'est la plus grande de nos chauve-souris, près de 8cm.</li>
         </ul>
       </p>
     ),
@@ -634,7 +634,7 @@ export const species = [
     description: (
       <>
         <p>
-          <em>Il s'agit d'une espèce évidente</em>
+          <em>Il s'agit d'une espèce évidente.</em>
         </p>
         <p>
           Quelques critères :
