@@ -1,20 +1,38 @@
 # Plecotus-quiz
 
-https://github.com/dec0dOS/amazing-github-template#readme
-https://github.com/othneildrew/Best-README-Template
-https://github.com/matiassingers/awesome-readme?tab=readme-ov-file
+> Quiz, détermination des espèces de chauve-souris en hiver, pour Plecotus/Natagora.
 
-Visitez https://plecotus.netlify.app/
+[Demo](https://plecotus.netlify.app/)
 
-Quiz, détermination des espèces de chauve-souris en hiver, pour Plecotus/Natagora.
 
 ## Natagora
+
+Natagora a pour but de protéger la nature, plus particulièrement en Wallonie et à Bruxelles. Avec un grand objectif : enrayer la dégradation de la biodiversité et reconstituer un bon état général de la nature, en équilibre avec les activités humaines.
+
+Plus d'infos sur [natagora.be](https://natagora.be)
 
 ## Getting Started, dev note
 
 ### Prerequisites
 
+Things you need to use the project.
+
+* npm
+
+```
+npm install npm@latest -g
+```
+
 ### Usage
+
+How to use the project locally.
+
+1. Clone the repo  
+```git clone https://github.com/lebolnobel/plecotus-quiz.git```
+2. Install NPM packages  
+```npm install```
+3. Run  
+```npm run dev```
 
 ## Contributing
 
