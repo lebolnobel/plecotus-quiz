@@ -52,7 +52,10 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
                 handleNext();
               }
         }
-        onReset={handleReset}
+        onReset={() => {
+          setIsExplanation(false);
+          handleReset();
+        }}
       />
     </div>
   );
