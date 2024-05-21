@@ -4,7 +4,7 @@
 
 [Demo](https://plecotus.netlify.app/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e480aa65-4fef-44eb-bbd1-82c2747de4ef/deploy-status)](https://app.netlify.com/sites/plecotus/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e480aa65-4fef-44eb-bbd1-82c2747de4ef/deploy-status)](https://plecotus.netlify.app/)
 
 ## Natagora
 
