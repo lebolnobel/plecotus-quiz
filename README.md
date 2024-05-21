@@ -43,7 +43,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 * Fork the Project
 * Create your Feature Branch (git checkout -b feature/AmazingFeature)
-* Commit your Changes (git commit -m 'Add some AmazingFeature')
+* Commit your Changes (git commit -m 'feat: Add some AmazingFeature'), see [Conventional Commits](https://conventionalcommits.org/]
 * Push to the Branch (git push origin feature/AmazingFeature)
 * Open a Pull Request
 
@@ -53,7 +53,6 @@ In case of bug, here are steps to create bug reports that are:
 * Specific. Include as much detail as possible: which version, what environment, etc.
 * Unique. Do not duplicate existing opened issues.
 * Scoped to a Single Bug. One bug per report.
-* Please adhere to this project's code of conduct.
 
 ## Support
 Reach out to the maintainer at one of the following places:
