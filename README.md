@@ -3,6 +3,7 @@
 > Quiz, détermination des espèces de chauve-souris en hiver, pour Plecotus/Natagora.
 
 [Demo](https://plecotus.netlify.app/)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e480aa65-4fef-44eb-bbd1-82c2747de4ef/deploy-status)](https://app.netlify.com/sites/plecotus/deploys)
 
 ## Natagora
@@ -57,8 +58,8 @@ In case of bug, here are steps to create bug reports that are:
 ## Support
 Reach out to the maintainer at one of the following places:
 
-GitHub discussions
-The email which is located in GitHub profile
+* GitHub discussions
+* The email which is located in GitHub profile
 
 ## License
 
