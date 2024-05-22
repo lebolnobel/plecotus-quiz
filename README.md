@@ -37,6 +37,8 @@ Things you need to use the project: `npm`
 npm install npm@latest -g
 ```
 
+Make sure you have Node.js version `18.x` (or later).
+
 ### Usage
 
 How to use the project locally.
@@ -67,10 +69,13 @@ In case of bug, here are steps to create bug reports that are:
 * Unique. Do not duplicate existing opened issues.
 * Scoped to a Single Bug. One bug per report.
 
+See [Contributing guide](CONTRIBUTING.md) for more
+
 ## Support
+
 Reach out to the maintainer at one of the following places:
 
-* GitHub discussions
+* [GitHub discussions](https://github.com/lebolnobel/plecotus-quiz/discussions)
 * The email which is located in GitHub profile
 
 ## License
