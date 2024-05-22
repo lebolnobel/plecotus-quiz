@@ -21,12 +21,12 @@ type GenusType = {
 export const species: { [key: string]: SpeciesType } = {
   Rh: {
     name: 'Rhinolophus hipposideros',
-    displayName: 'Petit rhinolophe',
+    displayName: 'Petit Rhinolophe',
     description: (
       <>
         <p>
           <em>
-            On le compare au Grand rhinolophe (Rf) avec qui il se ressemble
+            On le compare au Grand Rhinolophe (Rf) avec qui il se ressemble
             beaucoup.
           </em>
         </p>
@@ -57,12 +57,12 @@ export const species: { [key: string]: SpeciesType } = {
   },
   Rf: {
     name: 'Rhinolophus ferrumequinum',
-    displayName: 'Grand rhinolophe',
+    displayName: 'Grand Rhinolophe',
     description: (
       <>
         <p>
           <em>
-            On le compare au Petit rhinolophe (Rh) avec qui il se ressemble
+            On le compare au Petit Rhinolophe (Rh) avec qui il se ressemble
             beaucoup.
           </em>
         </p>
@@ -70,7 +70,7 @@ export const species: { [key: string]: SpeciesType } = {
           Quelques critères :
           <ul className="list-disc ml-4">
             <li>
-              Le grand rhinolophe a la taille d’une poire, d’un paquet de
+              Le Grand Rhinolophe a la taille d’une poire, d’un paquet de
               cigarettes.
             </li>
             <li>
@@ -158,8 +158,8 @@ export const species: { [key: string]: SpeciesType } = {
         <p>
           <em>
             La distinction entre ces trois espèces (Murin à moustaches, de
-            Brandt, d’Alcatho) est extrêmement difficile en hibernation, on les
-            notera quasi toujours comme un seul taxon.
+            Brandt, d’Alcathoé) est extrêmement difficile en hibernation, on les
+            notera quasi toujours comme un seul taxon : Mmba.
           </em>
         </p>
         <p>
@@ -171,7 +171,7 @@ export const species: { [key: string]: SpeciesType } = {
             </li>
             <li>L'angle entre les oreilles est d'environ 90°.</li>
             <li>
-              ventre plus clair que le dos, plutôt beige (pas blanc). Il est
+              Ventre plus clair que le dos, plutôt beige (pas blanc). Il est
               moins "propre" que les autres Myotis.
             </li>
           </ul>
@@ -375,7 +375,7 @@ export const species: { [key: string]: SpeciesType } = {
       <>
         <p>
           <em>
-            Lles pipistrelles s’observent rarement en cavité souterraine. Quand
+            Les pipistrelles s’observent rarement en cavité souterraine. Quand
             on les trouve, c'est souvent dans des fissures, en groupe compact.
           </em>
         </p>
@@ -389,7 +389,7 @@ export const species: { [key: string]: SpeciesType } = {
             <li>Pelage globalement foncé, contraste dos-ventre peu marqué.</li>
             <li>Peau très foncée.</li>
             <li>
-              A ne pas confondre avec Mmba, il faut regarder le contraste
+              À ne pas confondre avec Mmba, il faut regarder le contraste
               dos/ventre et les oreilles et tragus qui sont plus arrondis chez
               les pipistrelles).
             </li>

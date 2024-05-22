@@ -39,7 +39,7 @@ const Question = (props: QuestionType): React.ReactNode => {
           alt={"Trouvez l'espèce qui se cache derrière cette image"}
           title={"Trouvez l'espèce qui se cache derrière cette image"}
           width="350"
-          className={`mx-auto hover:scale-150 ${enlarged ? 'scale-150' : ''} ease-in duration-150 rounded-lg `}
+          className={`mx-auto hover:scale-200 ${enlarged ? 'scale-200' : ''} ease-in duration-150 rounded-lg `}
           onClick={toggleEnlarged}
         />
       </picture>

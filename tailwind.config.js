@@ -13,6 +13,9 @@ module.exports = {
         natagora: '#a2b21c',
         'natagora-100': '#4F530E',
       },
+      scale: {
+        200: '2',
+      },
     },
   },
   plugins: [],

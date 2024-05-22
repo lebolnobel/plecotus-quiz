@@ -15,17 +15,6 @@ const Footer = (): React.ReactNode => {
       </p>
 
       <p>
-        Contribuez au projet sur{' '}
-        <a
-          href="https://github.com/lebolnobel/plecotus-quiz"
-          title="Github, plecotus-quiz"
-          className="hover:underline text-natagora-100 font-medium"
-        >
-          Github
-        </a>
-      </p>
-
-      <p>
         Réalisé dans le cadre de{' '}
         <a
           href="https://plecotus.natagora.be/"
@@ -41,6 +30,17 @@ const Footer = (): React.ReactNode => {
           className="hover:underline text-natagora-100 font-medium"
         >
           Natagora
+        </a>
+      </p>
+
+      <p>
+        Une erreur ? Une idée ? Contribuez au projet sur{' '}
+        <a
+          href="https://github.com/lebolnobel/plecotus-quiz"
+          title="Github, plecotus-quiz"
+          className="hover:underline text-natagora-100 font-medium"
+        >
+          Github
         </a>
       </p>
     </div>
