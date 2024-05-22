@@ -312,7 +312,7 @@ export const images: Array<ImageType> = [
     description: undefined,
   },
   {
-    speciesId: SP.Pleaus,
+    speciesId: SP.Pleaur,
     title: 'Oreillard roux',
     url: './assets/img/species/DSC09257.JPG',
     authorId: 2,
