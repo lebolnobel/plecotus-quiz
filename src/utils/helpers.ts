@@ -23,7 +23,5 @@ export const TOTAL = 10;
 export function sliceArray(
   array: Array<QuizQuestionType>,
 ): Array<QuizQuestionType> {
-  return array
-    .filter((elt) => elt.imageIds !== undefined && elt.imageIds.length !== 0)
-    .slice(0, TOTAL);
+  return array.slice(0, TOTAL);
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { getRandomElement } from '../../../utils/helpers.ts';
-import { authors, images } from '../../../utils/images.ts';
+import { authors, images, answerImages } from '../../../utils/images.ts';
+import type { ImageType } from '../../../utils/images.ts';
 import type { QuizQuestionType } from '../../../utils/quiz.ts';
 
 type QuestionType = {
@@ -11,7 +12,7 @@ type QuestionType = {
 const Question = (props: QuestionType): React.ReactNode => {
   const { currentQuestion, isAnwser } = props;
 
-  const [imageId, setImageId] = React.useState<null | number>(null);
+  const [image, setImage] = React.useState<null | ImageType>(null);
   const [enlarged, setEnlarged] = React.useState<boolean>(false);
 
   const toggleEnlarged = () => {
@@ -19,23 +20,29 @@ const Question = (props: QuestionType): React.ReactNode => {
   };
 
   React.useEffect(() => {
-    const id =
-      (isAnwser && currentQuestion?.imageAnswer
-        ? currentQuestion.imageAnswer
-        : getRandomElement<number>(currentQuestion.imageIds)) || null;
-    setImageId(id);
-  }, [isAnwser, currentQuestion]);
+    const img = getRandomElement<ImageType>(
+      images.filter((img) => img.speciesId === currentQuestion.rightAnswer),
+    );
+    setImage(img || null);
+  }, [currentQuestion]);
 
-  if (!imageId) return null;
+  if (!image) return null;
 
-  const image = images[imageId];
-  const author = image?.authorId !== undefined ? authors[image.authorId] : null;
+  const answerImage =
+    isAnwser && currentQuestion?.imageAnswer
+      ? answerImages[currentQuestion.imageAnswer]
+      : null;
+  const currentImage = answerImage || image;
+  const author =
+    currentImage?.authorId !== undefined
+      ? authors[currentImage.authorId]
+      : null;
 
   return (
     <>
       <picture className="overflow-hidden block drop-shadow">
         <img
-          src={image.url}
+          src={currentImage.url}
           alt={"Trouvez l'espèce qui se cache derrière cette image"}
           title={"Trouvez l'espèce qui se cache derrière cette image"}
           width="350"

@@ -1,84 +1,70 @@
-export type QuizQuestionType = {
-  // Array of images, a random one will be used
-  imageIds: Array<number>;
+import { SP } from './species.tsx';
 
+export type QuizQuestionType = {
   // Unique name of the answer, see species.tsx
   rightAnswer: string;
 
-  // If exist, use this image in the answer screen, otherwise the selected imageId will be used
+  // If exist, use this image in the answer screen, otherwise the selected answer images will be used
   imageAnswer?: number;
 };
 
 // One question by species, see species.tsx
+// Adding a new entry will add another question (before select 10 random questions)
 export const quizzes: Array<QuizQuestionType> = [
   {
-    imageIds: [3],
-    rightAnswer: 'Rh',
+    rightAnswer: SP.Rh, // Petit rhino
     imageAnswer: undefined,
   },
   {
-    imageIds: [11],
-    rightAnswer: 'Rf',
+    rightAnswer: SP.Rf, // Grand rhino
     imageAnswer: undefined,
   },
   {
-    imageIds: [17],
-    rightAnswer: 'Pleaur',
+    rightAnswer: SP.Pleaur, // Oreillard roux
     imageAnswer: undefined,
   },
   {
-    imageIds: [5],
-    rightAnswer: 'Pleaus',
+    rightAnswer: SP.Pleaus, // Oreillard gris
     imageAnswer: undefined,
   },
   {
-    imageIds: [10],
-    rightAnswer: 'Mmba',
+    rightAnswer: SP.Mmba, // Murin mystacinus & cie
     imageAnswer: undefined,
   },
   {
-    imageIds: [12],
-    rightAnswer: 'Md',
+    rightAnswer: SP.Md, // Murin de Daubenton
     imageAnswer: undefined,
   },
   {
-    imageIds: [14, 15],
-    rightAnswer: 'MD',
+    rightAnswer: SP.MD, // Murin des marais
     imageAnswer: undefined,
   },
   {
-    imageIds: [18],
-    rightAnswer: 'ME',
+    rightAnswer: SP.ME, // Murin à oreilles échancrées
     imageAnswer: undefined,
   },
   {
-    imageIds: [13],
-    rightAnswer: 'Mn',
+    rightAnswer: SP.Mn, // Murin de Naterrer
     imageAnswer: undefined,
   },
   {
-    imageIds: [1, 16],
-    rightAnswer: 'MB',
+    rightAnswer: SP.MB, // Murin de Bechstein
     imageAnswer: undefined,
   },
   {
-    imageIds: [2, 6, 7, 8, 9],
-    rightAnswer: 'MM',
+    rightAnswer: SP.MM, // Grand Murin
     imageAnswer: undefined,
   },
   {
-    imageIds: [],
-    rightAnswer: 'Barbar',
+    rightAnswer: SP.Barbar, // Barbastelle d'Europe
     imageAnswer: undefined,
   },
   {
-    imageIds: [],
-    rightAnswer: 'Pipsp',
+    rightAnswer: SP.Pipsp, // Pipistrell sp.
     imageAnswer: undefined,
   },
   {
-    imageIds: [19],
-    rightAnswer: 'Eptser',
+    rightAnswer: SP.Eptser, // Sérotine commune
     imageAnswer: undefined,
   },
 ];

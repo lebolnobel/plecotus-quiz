@@ -23,6 +23,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/no-unescaped-entities': 0,
+    'react-refresh/only-export-components': 0,
   },
   // other rules...
   parserOptions: {

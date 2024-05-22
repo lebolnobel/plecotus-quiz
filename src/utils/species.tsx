@@ -1,5 +1,22 @@
 import * as React from 'react';
 
+export const SP = Object.freeze({
+  Rh: 'Rh', // Petit rhino
+  Rf: 'Rf', // Grand rhino
+  Pleaur: 'Pleaur', // Oreillard roux
+  Pleaus: 'Pleaus', // Oreillard gris
+  Mmba: 'Mmba', // Murin mystacinus & cie
+  Md: 'Md', // Murin de Daubenton
+  MD: 'MD', // Murin des marais
+  ME: 'ME', // Murin à oreilles échancrées
+  Mn: 'Mn', // Murin de Naterrer
+  MB: 'MB', // Murin de Bechstein
+  MM: 'MM', // Grand Murin
+  Barbar: 'Barbar', // Barbastelle d'Europe
+  Pipsp: 'Pipsp', // Pipistrell sp.
+  Eptser: 'Eptser', // Sérotine commune
+});
+
 export type SpeciesType = {
   // scientific name
   name: string;
@@ -19,7 +36,7 @@ type GenusType = {
 };
 
 export const species: { [key: string]: SpeciesType } = {
-  Rh: {
+  [SP.Rh]: {
     name: 'Rhinolophus hipposideros',
     displayName: 'Petit Rhinolophe',
     description: (
@@ -55,7 +72,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 2,
   },
-  Rf: {
+  [SP.Rf]: {
     name: 'Rhinolophus ferrumequinum',
     displayName: 'Grand Rhinolophe',
     description: (
@@ -90,7 +107,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 2,
   },
-  Pleaur: {
+  [SP.Pleaur]: {
     name: 'Plecotus auritus',
     displayName: 'Oreillard roux',
     description: (
@@ -120,7 +137,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 3,
   },
-  Pleaus: {
+  [SP.Pleaus]: {
     name: 'Plecotus austriacus',
     displayName: 'Oreillard gris',
     description: (
@@ -150,7 +167,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 3,
   },
-  Mmba: {
+  [SP.Mmba]: {
     name: 'Myotis mystacinus & cie',
     displayName: 'Murin à moustaches & cie',
     description: (
@@ -180,7 +197,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 1,
   },
-  Md: {
+  [SP.Md]: {
     name: 'Myotis daubentonii',
     displayName: 'Murin de Daubenton',
     description: (
@@ -203,7 +220,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 1,
   },
-  MD: {
+  [SP.MD]: {
     name: 'Myotis dasycneme',
     displayName: 'Murin des marais',
     description: (
@@ -228,7 +245,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 1,
   },
-  ME: {
+  [SP.ME]: {
     name: 'Myotis emarginatus',
     displayName: 'Murin à oreilles échancrées',
     description: (
@@ -261,7 +278,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 1,
   },
-  Mn: {
+  [SP.Mn]: {
     name: 'Myotis nattereri',
     displayName: 'Murin de Natterer',
     description: (
@@ -294,7 +311,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 1,
   },
-  MB: {
+  [SP.MB]: {
     name: 'Myotis bechsteinii',
     displayName: 'Murin de Bechstein',
     description: (
@@ -320,9 +337,9 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 1,
   },
-  MM: {
+  [SP.MM]: {
     name: 'Myotis myotis',
-    displayName: 'Grand murin',
+    displayName: 'Grand Murin',
     description: (
       <p>
         Quelques critères :
@@ -342,9 +359,9 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 1,
   },
-  Barbar: {
+  [SP.Barbar]: {
     name: 'Barbastella barbastellus',
-    displayName: 'Barbastelle',
+    displayName: "Barbastelle d'Europe",
     description: (
       <>
         <p>
@@ -368,7 +385,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 4,
   },
-  Pipsp: {
+  [SP.Pipsp]: {
     name: 'Pipistrellus sp.',
     displayName: 'Pipistrelles - 3 espèces',
     description: (
@@ -399,7 +416,7 @@ export const species: { [key: string]: SpeciesType } = {
     ),
     genus: 5,
   },
-  Eptser: {
+  [SP.Eptser]: {
     name: 'Eptesicus serotinus',
     displayName: 'Sérotine commune',
     description: (

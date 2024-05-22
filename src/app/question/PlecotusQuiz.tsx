@@ -35,7 +35,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
         <CurrentScore index={index} />
       </div>
 
-      <Question currentQuestion={currentQuestion} isAnwser />
+      <Question currentQuestion={currentQuestion} isAnwser={isExplanation} />
 
       {isExplanation ? (
         <Explanation rightAnswer={currentQuestion.rightAnswer} value={value} />
