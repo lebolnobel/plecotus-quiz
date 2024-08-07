@@ -18,7 +18,8 @@ const Start = (props: StartType): React.ReactNode => {
         <div className="flex-none md:w-36 relative">
           <img
             src="/assets/img/plecotus/logo.svg"
-            alt="Plecotus"
+            alt="Plecotus, Natagora"
+            title="Plecotus, Natagora"
             className="absolute inset-0 w-full object-cover"
             loading="lazy"
           />
