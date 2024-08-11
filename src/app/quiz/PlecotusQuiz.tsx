@@ -6,6 +6,7 @@ import Explanation from './components/Explanation.tsx';
 import Heading from './components/Heading.tsx';
 import CurrentScore from './components/CurrentNavigation.tsx';
 import type { QuizQuestionType } from '../../utils/quiz.ts';
+import { useQuizContext } from '../../hooks/useQuizContext.ts';
 
 type PlecotusQuizType = {
   index: number;
@@ -20,6 +21,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
   const { index, quiz, value, handleSelectAnswer, handleNext, handleReset } =
     props;
 
+  const { selectToAnswerMode } = useQuizContext();
   const [isExplanation, setIsExplanation] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -40,7 +42,14 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
       {isExplanation ? (
         <Explanation rightAnswer={currentQuestion.rightAnswer} value={value} />
       ) : (
-        <AnswerList value={value} onSelectAnswer={handleSelectAnswer} />
+        <AnswerList
+          value={value}
+          onSelectAnswer={(answer) => {
+            handleSelectAnswer(answer);
+            console.log(selectToAnswerMode);
+            selectToAnswerMode && setIsExplanation(true);
+          }}
+        />
       )}
 
       <QuizNavigation

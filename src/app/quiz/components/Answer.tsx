@@ -18,6 +18,8 @@ const Answer = (props: AnswerType): React.ReactNode => {
     onSelectAnswer(id);
   };
 
+  console.log(display);
+
   return (
     <div>
       <label

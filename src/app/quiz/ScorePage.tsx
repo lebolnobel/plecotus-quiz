@@ -8,14 +8,17 @@ type ScorePageType = {
 
 const ScorePage = (props: ScorePageType): React.ReactNode => {
   const { score, onReset } = props;
+
   return (
     <div className="mx-auto block">
-      <h2 className="text-slate-500">
-        QUIZ DES RECENSEMENTS HIVERNAUX, DU PÔLE PLECOTUS DE NATAGORA
+      <h2 className="text-slate-500 uppercase hidden sm:block">
+        Plecotus quiz : recensements hivernaux des Chauves-souris
       </h2>
 
       <div className="pt-10">
-        <h3 className="text-lg font-semibold text-slate-900">RÉSULTAT</h3>
+        <h3 className="text-lg font-semibold text-slate-900 uppercase">
+          Résultat
+        </h3>
 
         <div className="group w-full flex flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-6 mt-4">
           <div className="w-full flex-none text-base font-medium mt-2 text-center">

@@ -11,13 +11,14 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview --host --port 8080",
     "prepare": "husky",
-    "start": "vite",
+    "start": "vite --host",
     "tsc": "npx tsc",
     "watch-css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/styles.css --watch"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

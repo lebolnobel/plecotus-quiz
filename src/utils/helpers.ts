@@ -18,7 +18,7 @@ export function getRandomElement<T>(array: Array<T>): void | T {
   return array[randIndex];
 }
 
-export const TOTAL = 10;
+export const TOTAL = 1; // TODO
 
 export function sliceArray(
   array: Array<QuizQuestionType>,

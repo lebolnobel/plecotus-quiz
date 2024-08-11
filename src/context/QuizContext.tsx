@@ -1,8 +1,10 @@
 import * as React from 'react';
 
 export type QuizContextType = {
-  display?: string;
+  display?: 'normal' | 'abbr';
   toggleDisplay?: () => void;
+  selectToAnswerMode?: boolean;
+  toggleSelectToAnswer?: () => void;
 };
 
 export const QuizContext = React.createContext({});
@@ -12,21 +14,30 @@ type QuizProviderType = {
   children: React.ReactNode;
 };
 
-export const QuizProvider = (props: QuizProviderType): React.ReactNode => {
+const QuizProvider = (props: QuizProviderType): React.ReactNode => {
   const { children } = props;
 
-  const [display, setDisplay] = React.useState('normal'); // normal/abbr
+  const [display, setDisplay] = React.useState('abbr'); // normal/abbr
+  const [selectToAnswerMode, setSelectToAnswerMode] = React.useState(true); // true = select to answer ; false = select then next
 
   const toggleDisplay = () => {
     setDisplay((prev) => (prev === 'normal' ? 'abbr' : 'normal'));
   };
 
+  const toggleSelectToAnswer = () => {
+    setSelectToAnswerMode((prev) => !prev);
+  };
+
   const context = {
-    name: display,
-    toggleName: toggleDisplay,
+    display,
+    toggleDisplay,
+    selectToAnswerMode,
+    toggleSelectToAnswer,
   };
 
   return (
     <QuizContext.Provider value={context}>{children}</QuizContext.Provider>
   );
 };
+
+export default QuizProvider;

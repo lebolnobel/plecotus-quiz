@@ -43,8 +43,8 @@ const Question = (props: QuestionType): React.ReactNode => {
       <picture className="overflow-hidden block drop-shadow">
         <img
           src={currentImage.url}
-          alt={"Trouvez l'espèce qui se cache derrière cette image"}
-          title={"Trouvez l'espèce qui se cache derrière cette image"}
+          alt={"Trouver l'espèce qui se cache derrière cette image"}
+          title={"Trouver l'espèce qui se cache derrière cette image"}
           width="350"
           className={`mx-auto hover:scale-200 ${enlarged ? 'scale-200' : ''} ease-in duration-150 rounded-lg `}
           onClick={toggleEnlarged}
