@@ -14,7 +14,13 @@ const Nav = (): React.ReactNode => {
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="/assets/favicon.ico" className="h-8" alt="Plecotus quiz" />
+          <img
+            src="/assets/favicon.ico"
+            className="h-8"
+            alt="Plecotus quiz"
+            width="32"
+            height="32"
+          />
           <h1 className="self-center text-2xl font-medium whitespace-nowrap uppercase">
             Plecotus - Natagora
           </h1>
