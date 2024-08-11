@@ -14,14 +14,17 @@ type QuizProviderType = {
   children: React.ReactNode;
 };
 
+const NORMAL = 'normal';
+const ABBR = 'abbr';
+
 const QuizProvider = (props: QuizProviderType): React.ReactNode => {
   const { children } = props;
 
-  const [display, setDisplay] = React.useState('abbr'); // normal/abbr
+  const [display, setDisplay] = React.useState(NORMAL); // normal/abbr
   const [selectToAnswerMode, setSelectToAnswerMode] = React.useState(true); // true = select to answer ; false = select then next
 
   const toggleDisplay = () => {
-    setDisplay((prev) => (prev === 'normal' ? 'abbr' : 'normal'));
+    setDisplay((prev) => (prev === NORMAL ? ABBR : NORMAL));
   };
 
   const toggleSelectToAnswer = () => {
