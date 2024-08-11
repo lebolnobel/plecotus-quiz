@@ -16,6 +16,7 @@
     "watch-css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/styles.css --watch"
   },
   "dependencies": {
+    "braces": ">=3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.26.0",
