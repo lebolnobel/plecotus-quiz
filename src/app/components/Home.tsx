@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const Home = (): React.ReactNode => {
   return (
-    <div className="mx-auto block">
+    <div className="mx-auto block" role="main">
       <h2 className="text-slate-500 uppercase">
         Plecotus quiz : recensements hivernaux des Chauves-souris
       </h2>

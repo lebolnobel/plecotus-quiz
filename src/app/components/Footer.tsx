@@ -3,7 +3,10 @@ import { GoHeart } from 'react-icons/go';
 
 const Footer = (): React.ReactNode => {
   return (
-    <footer className="pt-6 pb-6 text-center text-xs text-gray-900">
+    <footer
+      className="pt-6 pb-6 text-center text-xs text-gray-600"
+      role="contentinfo"
+    >
       <p>
         <span className="inline-flex">
           Fait avec{' '}
@@ -15,7 +18,7 @@ const Footer = (): React.ReactNode => {
         <a
           href="https://lionellebon.be"
           title="En savoir plus"
-          className="hover:underline text-natagora font-medium"
+          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
         >
           Lionel Lebon
         </a>{' '}
@@ -26,7 +29,7 @@ const Footer = (): React.ReactNode => {
         <a
           href="https://plecotus.natagora.be/"
           title="Plecotus"
-          className="hover:underline text-natagora font-medium"
+          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
         >
           Plecotus
         </a>
@@ -34,7 +37,7 @@ const Footer = (): React.ReactNode => {
         <a
           href="http://natagora.be/"
           title="Natagora"
-          className="hover:underline text-natagora font-medium"
+          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
         >
           Natagora
         </a>
@@ -45,7 +48,7 @@ const Footer = (): React.ReactNode => {
         <a
           href="https://github.com/lebolnobel/plecotus-quiz"
           title="Github, plecotus-quiz"
-          className="hover:underline text-natagora font-medium"
+          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
         >
           Github
         </a>

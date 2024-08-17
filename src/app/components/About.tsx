@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const About = (): React.ReactNode => {
   return (
-    <div className="mx-auto block">
+    <div className="mx-auto block" role="about">
       <h2 className="text-slate-500 uppercase">À propos de Plecotus Quiz</h2>
 
       <div className="flex pt-10">
@@ -23,36 +23,33 @@ const About = (): React.ReactNode => {
             </div>
           </div>
 
-          <div className="mt-6 mb-6">
-            <div className="flex items-center">
-              <div className="flex-auto">
-                <h3 className="flex-auto text-2xl font-medium text-slate-900 mb-2 uppercase">
-                  Kesako ?
-                </h3>
-                <p>
-                  Ce quiz va générer 10 questions aléatoires. Identifiez les
-                  espèces afin d'engranger des points. La base de données
-                  contient de nombreuses images pour garantir une expérience
-                  variée à chaque session. N'hésitez pas à rejouer à plusieurs
-                  reprises pour afiner votre œil en vue des recensements
-                  hivernaux.
-                </p>
-                <p className="pt-2">
-                  L'application peut être installée sur votre téléphone ou votre
-                  ordinateur.
-                </p>
-                <p className="pt-2">
-                  Vous pouvez contribuer à votre manière en remontant vos{' '}
-                  <a
-                    href="https://forms.gle/1cRnvvpNi1CD9hLm9"
-                    title="Feedbacks"
-                    className="hover:underline text-natagora"
-                  >
-                    feedbacks
-                  </a>{' '}
-                  d'utilisation.
-                </p>
-              </div>
+          <div className="flex-auto mt-6 mb-6">
+            <div className="flex flex-wrap">
+              <h3 className="flex-auto text-2xl font-medium text-slate-900 mb-2 uppercase">
+                Kesako ?
+              </h3>
+              <p>
+                Ce quiz va générer 10 questions aléatoires. Identifiez les
+                espèces afin d'engranger des points. La base de données contient
+                de nombreuses images pour garantir une expérience variée à
+                chaque session. N'hésitez pas à rejouer à plusieurs reprises
+                pour afiner votre œil en vue des recensements hivernaux.
+              </p>
+              <p className="pt-2">
+                L'application peut être installée sur votre téléphone ou votre
+                ordinateur.
+              </p>
+              <p className="pt-2">
+                Vous pouvez contribuer à votre manière en remontant vos{' '}
+                <a
+                  href="https://forms.gle/1cRnvvpNi1CD9hLm9"
+                  title="Feedbacks"
+                  className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
+                >
+                  feedbacks
+                </a>{' '}
+                d'utilisation.
+              </p>
             </div>
           </div>
 
@@ -64,7 +61,7 @@ const About = (): React.ReactNode => {
                   <a
                     href="https://lionellebon.be"
                     title="Lionel Lebon"
-                    className="hover:underline text-natagora"
+                    className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
                   >
                     Lionel Lebon
                   </a>{' '}
@@ -72,7 +69,7 @@ const About = (): React.ReactNode => {
                   <a
                     href="https://plecotus.natagora.be/"
                     title="Plecotus"
-                    className="hover:underline text-natagora"
+                    className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
                   >
                     Plecotus
                   </a>{' '}
@@ -80,7 +77,7 @@ const About = (): React.ReactNode => {
                   <a
                     href="http://natagora.be/"
                     title="Natagora"
-                    className="hover:underline text-natagora"
+                    className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
                   >
                     Natagora
                   </a>
@@ -99,7 +96,7 @@ const About = (): React.ReactNode => {
                   Ce doument, que vous pouvez télécharger dans la rubrique{' '}
                   <NavLink
                     to="/ressources"
-                    className="hover:underline text-natagora"
+                    className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
                   >
                     ressources
                   </NavLink>

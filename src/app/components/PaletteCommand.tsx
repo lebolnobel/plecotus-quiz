@@ -148,6 +148,7 @@ const PaletteCommand = (): React.ReactNode => {
     <div
       className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
       aria-hidden="true"
+      role="search"
       onClick={handleBackdropClick}
     >
       <div className="fixed inset-0 flex items-center justify-center z-50">
