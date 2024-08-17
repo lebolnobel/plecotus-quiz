@@ -6,8 +6,8 @@ type UseShortcutsReturnType = {
 };
 
 function useShortcuts(
-  onNext?: () => void,
-  onReset?: () => void,
+  onAction?: () => void,
+  keyCode?: string,
 ): UseShortcutsReturnType {
   const [showOverlays, setShowOverlays] = React.useState(false);
 
@@ -19,9 +19,9 @@ function useShortcuts(
         setShowOverlays(true);
 
         switch (event.code) {
-          case 'KeyH':
+          case 'KeyH': // Home
             event.preventDefault();
-            navigate('/'); // Home
+            navigate('/');
             break;
           case 'Digit1':
             event.preventDefault();
@@ -31,17 +31,14 @@ function useShortcuts(
             event.preventDefault();
             navigate('/about');
             break;
-          case 'KeyN':
+          case 'KeyS': // Start, quiz
             event.preventDefault();
-            !!onNext && onNext(); // Next, quiz
+            navigate('/quiz');
             break;
-          case 'KeyR':
+
+          case keyCode: // Next, quiz
             event.preventDefault();
-            (!!onReset && onReset()) || navigate('/quiz'); // reset, quiz
-            break;
-          case 'KeyS':
-            event.preventDefault();
-            (!!onReset && onReset()) || navigate('/quiz'); // start, quiz
+            !!onAction && onAction();
             break;
         }
       }
@@ -60,7 +57,7 @@ function useShortcuts(
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
     };
-  }, [navigate, onNext, onReset]);
+  }, [navigate, keyCode, onAction]);
 
   return {
     showOverlays,

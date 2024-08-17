@@ -20,7 +20,7 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
           onClick={onReset}
         >
           Je veux recommencer
-          <Overlay onNext={onNext} onReset={onReset}>
+          <Overlay onAction={onReset} keyCode="KeyR">
             <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
               R
             </div>
@@ -37,7 +37,7 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
           onClick={onNext}
         >
           Suivant
-          <Overlay onNext={onNext} onReset={onReset}>
+          <Overlay onAction={onNext} keyCode="KeyN">
             <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
               N
             </div>

@@ -13,12 +13,12 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
 
   return (
     <div className="mx-auto block" role="main">
-      <h2 className="text-slate-500 uppercase sr-only sm:block">
+      <h2 className="text-slate-500 uppercase sm:block">
         Plecotus quiz : recensements hivernaux des Chauves-souris
       </h2>
 
       <div className="pt-10">
-        <h3 className="text-lg font-semibold text-slate-900 uppercase sr-only">
+        <h3 className="text-lg mb-8 font-semibold text-slate-900 uppercase">
           Résultat
         </h3>
 

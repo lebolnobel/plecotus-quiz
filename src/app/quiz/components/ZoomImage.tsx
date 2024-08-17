@@ -47,7 +47,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
         aria-hidden="true"
         className="fixed inset-0 flex items-center justify-center z-50"
       >
-        <div className="relative px-2 py-2 md:px-12 md:py-0 max-h-[100svh] w-full max-w-screen-lg overflow-auto">
+        <div className="relative px-2 py-2 md:px-12 md:py-0 max-h-[90svh] w-full max-w-screen-lg overflow-auto">
           <div className="relative bg-white rounded-lg shadow">
             <button
               type="button"

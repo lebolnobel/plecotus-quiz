@@ -21,6 +21,7 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
       <div className="min-w-0 relative flex-auto">
         <div
           className={`rounded-lg h-32  bg-gray-100 ${isCorrect ? 'text-natagora' : 'text-red-400'} mb-10 cursor-pointer`}
+          title="Cliquer pour aller à la question suivante"
           onClick={onNext}
         >
           <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left">
@@ -34,20 +35,22 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
             <div>
               {isCorrect ? (
                 <>
-                  <div className="text-lg sm:text-2xl">Bonne réponse !</div>
-                  <div className="text-sm sm:text-lg text-natagora-100">
+                  <div className="text-lg sm:text-xl">Bonne réponse !</div>
+                  <div className="text-sm sm:text-base text-natagora-100">
                     Bravo, il s'agit bien d'un.e{' '}
-                    <strong>{correctAnswer.displayName}</strong> ! Au besoin, le
-                    récapitulatif est ci-dessous
+                    <strong>{correctAnswer.displayName}</strong> !
+                    <br />
+                    Au besoin, le récapitulatif est ci-dessous
                   </div>
                 </>
               ) : (
                 <>
-                  <div className="text-lg sm:text-2xl">Mauvaise réponse !</div>
-                  <div className="text-sm sm:text-lg text-red-300">
-                    Manqué,{' '}
-                    <em>{userAnswer?.displayName || 'aucune réponse'}</em> n'est
-                    pas la bonne réponse, il s'agit d'un.e{' '}
+                  <div className="text-lg sm:text-xl">Mauvaise réponse !</div>
+                  <div className="text-sm sm:text-base text-red-300">
+                    Manqué, {userAnswer?.displayName || 'aucune réponse'} n'est
+                    pas la bonne réponse
+                    <br />
+                    Il s'agit d'un.e{' '}
                     <strong>{correctAnswer.displayName}</strong> !
                   </div>
                 </>
@@ -64,13 +67,13 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
           </div>
           <div>
             <dt className="sr-only">Nom scientifique</dt>
-            <dd className="flex items-center">
+            <dd className="flex items-center italic">
               <GoDotFill role="presentation" size="8px" className="mx-2" />
               {correctAnswer.name}
             </dd>
           </div>
           <div>
-            <dt className="sr-only">Abbréviation</dt>
+            <dt className="sr-only">Notation hivernale</dt>
             <dd className="flex items-center">
               <GoDotFill role="presentation" size="8px" className="mx-2" />
               {abbr}

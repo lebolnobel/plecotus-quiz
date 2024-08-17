@@ -3,14 +3,14 @@ import useShortcuts from '../../hooks/useShortcuts.ts';
 
 type OverlayType = {
   children: React.ReactNode;
-  onReset?: () => void;
-  onNext?: () => void;
+  keyCode?: string;
+  onAction?: () => void;
 };
 
 const Overlay = (props: OverlayType): React.ReactNode => {
-  const { children, onNext, onReset } = props;
+  const { children, keyCode, onAction } = props;
 
-  const { showOverlays } = useShortcuts(onNext, onReset);
+  const { showOverlays } = useShortcuts(onAction, keyCode);
 
   return (showOverlays && children) || null;
 };

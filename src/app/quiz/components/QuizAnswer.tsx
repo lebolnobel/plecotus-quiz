@@ -42,9 +42,9 @@ const QuizAnswer = (props: QuizAnswerType): React.ReactNode => {
             id
           ) : (
             <>
-              {species.name}
+              <span className="italic">{species.name}</span>
               <br />
-              <span className="inline-flex text-slate-400 text-sm italic">
+              <span className="inline-flex text-slate-400 text-sm">
                 {species.displayName}
                 <GoDotFill
                   role="presentation"

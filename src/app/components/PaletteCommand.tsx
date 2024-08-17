@@ -45,7 +45,7 @@ const PaletteCommand = (): React.ReactNode => {
       },
       {
         name: 'advanced-name',
-        displayName: 'Mode avancé: abbréviations/nom vernaculaire',
+        displayName: 'Mode avancé: notation hivernale/nom vernaculaire',
         icon: <GoBeaker role="presentation" />,
         shortcut: [],
         onClick: () => !!toggleDisplay && toggleDisplay(),
@@ -63,8 +63,10 @@ const PaletteCommand = (): React.ReactNode => {
         icon: <GoBug role="presentation" />,
         shortcut: [],
         onClick: () =>
-          (window.location.href =
-            'https://github.com/lebolnobel/plecotus-quiz/issues'),
+          window.open(
+            'https://github.com/lebolnobel/plecotus-quiz/issues',
+            '_blank',
+          ),
       },
       {
         name: 'feedback',
@@ -72,7 +74,7 @@ const PaletteCommand = (): React.ReactNode => {
         icon: <GoQuestion role="presentation" />,
         shortcut: [],
         onClick: () =>
-          (window.location.href = 'https://forms.gle/1cRnvvpNi1CD9hLm9'),
+          window.open('https://forms.gle/1cRnvvpNi1CD9hLm9', '_blank'),
       },
       {
         name: 'code',
@@ -80,8 +82,7 @@ const PaletteCommand = (): React.ReactNode => {
         icon: <GoCommandPalette role="presentation" />,
         shortcut: [],
         onClick: () =>
-          (window.location.href =
-            'https://github.com/lebolnobel/plecotus-quiz'),
+          window.open('https://github.com/lebolnobel/plecotus-quiz', '_blank'),
       },
     ],
     [isMac, toggleDisplay, toggleSelectToAnswer, navigate],
@@ -173,7 +174,7 @@ const PaletteCommand = (): React.ReactNode => {
               />
             </div>
             <ul
-              className="p-3 space-y-3 overflow-y-auto max-h-96 scroll-py-3"
+              className="p-3 space-y-2 overflow-y-auto max-h-96 scroll-py-3"
               id="options"
               role="listbox"
             >
@@ -199,7 +200,7 @@ const PaletteCommand = (): React.ReactNode => {
                         onClick={option.onClick}
                         className="flex cursor-pointer"
                       >
-                        {option.icon}
+                        <span className="pt-0.5">{option.icon}</span>
 
                         <span className="flex-auto ml-4 text-sm">
                           {option.displayName}

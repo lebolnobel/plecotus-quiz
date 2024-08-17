@@ -1,11 +1,20 @@
 import React from 'react';
 import { getRandomElement } from '../../../utils/helpers.ts';
 import { authors, images, answerImages } from '../../../utils/images.ts';
-import { GoLocation, GoPerson, GoDotFill, GoNote } from 'react-icons/go';
+import {
+  GoLocation,
+  GoPerson,
+  GoDotFill,
+  GoNote,
+  GoScreenFull,
+  GoStop,
+} from 'react-icons/go';
 import type { ImageType } from '../../../utils/images.ts';
 import type { QuizQuestionType } from '../../../utils/quiz.ts';
 import useLoadedImage from '../../../hooks/useLoadedImage.ts';
 import ZoomImage from './ZoomImage.tsx';
+import Overlay from '../../accessibility/Overlay.tsx';
+import { useQuizContext } from '../../../hooks/useQuizContext.ts';
 
 type QuestionType = {
   currentQuestion: QuizQuestionType;
@@ -19,9 +28,17 @@ const Question = (props: QuestionType): React.ReactNode => {
   const [enlarged, setEnlarged] = React.useState<boolean>(false);
 
   const { imgEl, loaded } = useLoadedImage();
+  const { toggleDisplay } = useQuizContext();
 
   const toggleEnlarged = () => {
     setEnlarged((prev) => !prev);
+  };
+
+  const createBugTicket = () => {
+    window.open(
+      `https://docs.google.com/forms/d/e/1FAIpQLScnhzqa9nENyfEuNJMXwPKBHWpT0pxEZAWp4m-6HVB5YGw40Q/viewform?usp=pp_url&entry.1296158009=${currentImage.url}`,
+      '_blank',
+    );
   };
 
   React.useEffect(() => {
@@ -45,7 +62,7 @@ const Question = (props: QuestionType): React.ReactNode => {
 
   return (
     <>
-      <figure className="overflow-hidden block drop-shadow" role="none">
+      <figure className="overflow-hidden block" role="none">
         <img
           src={currentImage.url}
           ref={imgEl}
@@ -55,6 +72,11 @@ const Question = (props: QuestionType): React.ReactNode => {
           onClick={toggleEnlarged}
           loading="lazy"
         />
+        <Overlay onAction={toggleEnlarged} keyCode="KeyF">
+          <div className="overlay absolute bottom-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mb-6 mt-1 rounded">
+            F
+          </div>
+        </Overlay>
       </figure>
 
       <ZoomImage
@@ -75,7 +97,11 @@ const Question = (props: QuestionType): React.ReactNode => {
 
           <dt className="sr-only">Lieu</dt>
           <dd className="flex items-center">
-            <GoDotFill role="presentation" size="8px" className="mx-2" />
+            <GoDotFill
+              role="presentation"
+              size="6px"
+              className="mx-3 text-gray-400"
+            />
 
             <GoLocation role="presentation" size="18px" className="mr-2" />
             {image?.place || 'Lieu inconnu'}
@@ -85,13 +111,76 @@ const Question = (props: QuestionType): React.ReactNode => {
             <>
               <dt className="sr-only">Description</dt>
               <dd className="flex items-center">
-                <GoDotFill role="presentation" size="8px" className="mx-2" />
+                <GoDotFill
+                  role="presentation"
+                  size="6px"
+                  className="mx-3 text-gray-400"
+                />
 
                 <GoNote role="presentation" size="18px" className="mr-2" />
                 {image?.description}
               </dd>
             </>
           )}
+
+          <div className="w-10">&nbsp;</div>
+
+          <dt className="sr-only">Signaler une erreur</dt>
+          <dd className="flex items-center">
+            <button
+              type="button"
+              title="Signaler une erreur"
+              role="fullscreen"
+              aria-label="fullscreen"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              onClick={createBugTicket}
+            >
+              <GoStop
+                role="presentation"
+                size="18px"
+                className="cursor-pointer"
+                title="Signaler une erreur"
+              />
+            </button>
+          </dd>
+
+          <dt className="sr-only">Nom vernaculaire vs Abbréviation</dt>
+          <dd className="flex items-center">
+            <button
+              type="button"
+              title="Switch vers le mode 'abbréviation' ou 'nom vernaculaire"
+              role="displayName"
+              aria-label="displayName"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              onClick={toggleDisplay}
+            >
+              <GoNote
+                role="presentation"
+                size="18px"
+                className="cursor-pointer"
+                title="Switch vers le mode 'abbréviation' ou 'nom vernaculaire'"
+              />
+            </button>
+          </dd>
+
+          <dt className="sr-only">Plein écran</dt>
+          <dd className="flex items-center">
+            <button
+              type="button"
+              title="Plein écran"
+              role="fullscreen"
+              aria-label="fullscreen"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              onClick={toggleEnlarged}
+            >
+              <GoScreenFull
+                role="presentation"
+                size="18px"
+                className="cursor-pointer"
+                title="Passer l'image en plein écran"
+              />
+            </button>
+          </dd>
         </dl>
       </div>
     </>
