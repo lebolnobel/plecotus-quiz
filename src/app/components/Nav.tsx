@@ -1,8 +1,16 @@
 import * as React from 'react';
-import { NavLink } from 'react-router-dom';
+import Overlay from '../accessibility/Overlay.tsx';
+import { NavLink, useLocation } from 'react-router-dom';
+import { GoHome } from 'react-icons/go';
 
 const Nav = (): React.ReactNode => {
   const [open, setOpen] = React.useState(false);
+
+  const location = useLocation();
+
+  React.useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   const className: (isActive: boolean) => string = (isActive) =>
     `block py-2 px-3 rounded text-natagora ${isActive ? 'text-white bg-natagora' : 'md:hover:bg-gray-100 md:hover:text-natagora'}`;
@@ -12,7 +20,7 @@ const Nav = (): React.ReactNode => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           to="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+          className="flex items-center space-x-3 rtl:space-x-reverse relative"
         >
           <img
             src="/assets/favicon.ico"
@@ -53,43 +61,63 @@ const Nav = (): React.ReactNode => {
         </button>
         <div
           id="navbar-default"
-          className={`${!open ? 'hidden' : ''} w-full md:block md:w-auto`}
+          className={`w-full md:block md:w-auto ${!open ? 'hidden' : ''}`}
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-            <li>
+            <li className="relative">
               <NavLink
                 to="/"
                 className={({ isActive }) => className(isActive)}
                 title="Accueil"
               >
-                ⌂
+                <GoHome size="24" />
+                <Overlay>
+                  <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
+                    H
+                  </div>
+                </Overlay>
               </NavLink>
             </li>
-            <li>
+            <li className="relative">
               <NavLink
                 to="/quiz"
                 className={({ isActive }) => className(isActive)}
                 title="Quiz"
               >
                 Quiz
+                <Overlay>
+                  <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
+                    S
+                  </div>
+                </Overlay>
               </NavLink>
             </li>
-            <li>
+            <li className="relative">
               <NavLink
                 to="/ressources"
                 className={({ isActive }) => className(isActive)}
                 title="Ressources"
               >
                 Ressources
+                <Overlay>
+                  <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
+                    1
+                  </div>
+                </Overlay>
               </NavLink>
             </li>
-            <li>
+            <li className="relative">
               <NavLink
                 to="/about"
                 className={({ isActive }) => className(isActive)}
                 title="À propos"
               >
                 À propos
+                <Overlay>
+                  <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
+                    2
+                  </div>
+                </Overlay>
               </NavLink>
             </li>
           </ul>

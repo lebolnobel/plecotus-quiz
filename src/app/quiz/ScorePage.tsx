@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { TOTAL } from '../../utils/helpers.ts';
+import { TOTAL } from '../../utils/constants.ts';
+import { GoTrophy } from 'react-icons/go';
+import Overlay from '../accessibility/Overlay.tsx';
 
 type ScorePageType = {
   score: number;
@@ -11,36 +13,55 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
 
   return (
     <div className="mx-auto block">
-      <h2 className="text-slate-500 uppercase hidden sm:block">
+      <h2 className="text-slate-500 uppercase sr-only sm:block">
         Plecotus quiz : recensements hivernaux des Chauves-souris
       </h2>
 
       <div className="pt-10">
-        <h3 className="text-lg font-semibold text-slate-900 uppercase">
+        <h3 className="text-lg font-semibold text-slate-900 uppercase sr-only">
           Résultat
         </h3>
 
-        <div className="group w-full flex flex-col items-center justify-center rounded-md border-2 border-dashed border-slate-300 text-sm leading-6 text-slate-900 font-medium py-6 mt-4">
-          <div className="w-full flex-none text-base font-medium mt-2 text-center">
-            <span className="text-4xl font-medium text-natagora">{score}</span>
-            <span className="text-base text-slate-400">/{TOTAL}</span>
+        <div className={`rounded-lg h-32  bg-gray-100 mb-10`}>
+          <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left">
+            <div className="my-auto text-2xl">
+              <GoTrophy size="56px" />
+            </div>
+            <div>
+              <>
+                <div className="text-lg sm:text-2xl">
+                  {' '}
+                  <span className="text-4xl font-medium text-natagora">
+                    {score}
+                  </span>
+                  <span className="text-base sm:text-base text-slate-500">
+                    /{TOTAL}
+                  </span>
+                </div>
+                <div className="text-sm sm:text-base">
+                  Ce qui fait un total de {TOTAL - score} mauvaise
+                  {TOTAL - score > 1 ? 's' : ''} réponse
+                  {TOTAL - score > 1 ? 's' : ''} sur {TOTAL} question
+                  {TOTAL > 1 ? 's' : ''} !
+                </div>
+              </>
+            </div>
           </div>
-
-          <p className="py-2 text-center text-slate-400 text-sm">
-            Ce qui fait un total de {TOTAL - score} mauvaise
-            {TOTAL - score > 1 ? 's' : ''} réponse
-            {TOTAL - score > 1 ? 's' : ''} sur {TOTAL} questions !
-          </p>
         </div>
 
         <div className="mt-4 mb-6">
           <p className="py-2 text-center">
             <button
-              className="py-2 px-6 font-semibold rounded-md border border-slate-200 text-slate-800 hover:bg-slate-100 hover:shadow"
+              className="py-2 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow relative"
               type="button"
               onClick={onReset}
             >
               Je veux recommencer
+              <Overlay>
+                <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
+                  R
+                </div>
+              </Overlay>
             </button>
           </p>
         </div>

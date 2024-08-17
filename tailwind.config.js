@@ -11,7 +11,7 @@ module.exports = {
       },
       colors: {
         natagora: '#a2b21c',
-        'natagora-100': '#4F530E',
+        'natagora-100': 'rgba(162, 178, 28, 0.6)',
       },
       scale: {
         200: '2',

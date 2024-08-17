@@ -1,9 +1,8 @@
 import * as React from 'react';
 import * as uuid from 'uuid';
-import PlecotusQuiz from '../quiz/PlecotusQuiz.tsx';
-import ScorePage from '../quiz/ScorePage.tsx';
-import Loading from './Loading.tsx';
-import QuizContext from '../../context/QuizContext.tsx';
+import PlecotusQuiz from './PlecotusQuiz.tsx';
+import ScorePage from './ScorePage.tsx';
+import Loading from '../components/Loading.tsx';
 import { randomizeQuizElements, sliceArray } from '../../utils/helpers.ts';
 import { quizzes } from '../../utils/quiz.ts';
 import { useQuizContext } from '../../hooks/useQuizContext.ts';
@@ -13,8 +12,6 @@ const Plecotus = (): React.ReactNode => {
   const [quizId, setQuizId] = React.useState(uuid.v4());
   const [currentQuiz, setCurrentQuiz] = React.useState<QuizQuestionType[]>([]);
   const { selectToAnswerMode } = useQuizContext();
-
-  console.log(selectToAnswerMode);
 
   // Quiz
   const [index, setIndex] = React.useState<number>(0);
@@ -57,7 +54,7 @@ const Plecotus = (): React.ReactNode => {
   };
 
   return (
-    <QuizContext>
+    <>
       {isEnd ? (
         <ScorePage score={score} onReset={handleReset} />
       ) : (
@@ -70,7 +67,7 @@ const Plecotus = (): React.ReactNode => {
           handleReset={handleReset}
         />
       )}
-    </QuizContext>
+    </>
   );
 };
 

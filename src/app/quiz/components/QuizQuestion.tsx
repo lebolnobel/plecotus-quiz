@@ -1,8 +1,11 @@
 import React from 'react';
 import { getRandomElement } from '../../../utils/helpers.ts';
 import { authors, images, answerImages } from '../../../utils/images.ts';
+import { GoLocation, GoPerson, GoDotFill, GoNote } from 'react-icons/go';
 import type { ImageType } from '../../../utils/images.ts';
 import type { QuizQuestionType } from '../../../utils/quiz.ts';
+import useLoadedImage from '../../../hooks/useLoadedImage.ts';
+import ZoomImage from './ZoomImage.tsx';
 
 type QuestionType = {
   currentQuestion: QuizQuestionType;
@@ -15,8 +18,10 @@ const Question = (props: QuestionType): React.ReactNode => {
   const [image, setImage] = React.useState<null | ImageType>(null);
   const [enlarged, setEnlarged] = React.useState<boolean>(false);
 
+  const { imgEl, loaded } = useLoadedImage();
+
   const toggleEnlarged = () => {
-    setEnlarged(!enlarged);
+    setEnlarged((prev) => !prev);
   };
 
   React.useEffect(() => {
@@ -40,35 +45,29 @@ const Question = (props: QuestionType): React.ReactNode => {
 
   return (
     <>
-      <picture className="overflow-hidden block drop-shadow">
+      <figure className="overflow-hidden block drop-shadow">
         <img
           src={currentImage.url}
+          ref={imgEl}
           alt={"Trouver l'espèce qui se cache derrière cette image"}
           title={"Trouver l'espèce qui se cache derrière cette image"}
-          width="350"
-          className={`mx-auto hover:scale-200 ${enlarged ? 'scale-200' : ''} ease-in duration-150 rounded-lg `}
+          className={`mx-auto hover:scale-125 ease-in duration-150 rounded-lg ${loaded ? '' : 'blurred-img'} h-auto max-h-80 size-fit sm:max-w-lg rounded-lg transition-all cursor-pointer`}
           onClick={toggleEnlarged}
+          loading="lazy"
         />
-      </picture>
+      </figure>
+
+      <ZoomImage
+        isOpen={enlarged}
+        url={currentImage.url}
+        onClose={toggleEnlarged}
+      />
 
       <div className="text-base text-center block">
         <dl className="mt-4 text-xs font-base flex justify-center items-center row-start-2">
           <dt className="sr-only">Auteur</dt>
           <dd className="text-natagora flex items-center">
-            <svg
-              width="24"
-              height="24"
-              fill="none"
-              aria-hidden="true"
-              className="mr-1 stroke-current"
-            >
-              <path
-                d="m12 5 2 5h5l-4 4 2.103 5L12 16l-5.103 3L9 14l-4-4h5l2-5Z"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <GoPerson size="18px" className="mr-2" />
             <span>
               {!author ? 'Anonyme' : `${author.firstname} ${author.name}`}
             </span>
@@ -76,29 +75,9 @@ const Question = (props: QuestionType): React.ReactNode => {
 
           <dt className="sr-only">Lieu</dt>
           <dd className="flex items-center">
-            <svg
-              width="2"
-              height="2"
-              aria-hidden="true"
-              fill="currentColor"
-              className="mx-3 text-slate-300"
-            >
-              <circle cx="1" cy="1" r="1" />
-            </svg>
-            <svg
-              width="24"
-              height="24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mr-1 text-slate-400"
-              aria-hidden="true"
-            >
-              <path d="M18 11.034C18 14.897 12 19 12 19s-6-4.103-6-7.966C6 7.655 8.819 5 12 5s6 2.655 6 6.034Z" />
-              <path d="M14 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
-            </svg>
+            <GoDotFill size="8px" className="mx-2" />
+
+            <GoLocation size="18px" className="mr-2" />
             {image?.place || 'Lieu inconnu'}
           </dd>
 
@@ -106,15 +85,9 @@ const Question = (props: QuestionType): React.ReactNode => {
             <>
               <dt className="sr-only">Description</dt>
               <dd className="flex items-center">
-                <svg
-                  width="2"
-                  height="2"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  className="mx-3 text-slate-300"
-                >
-                  <circle cx="1" cy="1" r="1" />
-                </svg>
+                <GoDotFill size="8px" className="mx-2" />
+
+                <GoNote size="18px" className="mr-2" />
                 {image?.description}
               </dd>
             </>

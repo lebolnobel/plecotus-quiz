@@ -21,10 +21,8 @@ export default function ErrorPage(): React.ReactNode {
     <section>
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm text-center">
-          <h1 className="mb-4 text-7xl font-extrabold text-primary-600">
-            Oups!
-          </h1>
-          <p className="mb-4 text-3xl font-bold text-gray-900">
+          <h1 className="mb-4 text-7xl font-extrabold">Oups!</h1>
+          <p className="mb-4 text-2xl font-semibold text-gray-900">
             Une erreur est survenue
           </p>
           <p className="mb-4 text-lg font-light text-gray-500">

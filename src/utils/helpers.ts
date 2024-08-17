@@ -1,3 +1,4 @@
+import { TOTAL } from './constants.ts';
 import type { QuizQuestionType } from './quiz';
 
 export function randomizeQuizElements(
@@ -17,8 +18,6 @@ export function getRandomElement<T>(array: Array<T>): void | T {
   const randIndex = Math.floor(Math.random() * array.length);
   return array[randIndex];
 }
-
-export const TOTAL = 10;
 
 export function sliceArray(
   array: Array<QuizQuestionType>,

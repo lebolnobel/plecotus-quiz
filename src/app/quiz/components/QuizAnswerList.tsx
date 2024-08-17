@@ -1,20 +1,20 @@
 import React from 'react';
-import Answer from './Answer.tsx';
+import QuizAnswer from './QuizAnswer.tsx';
 import { species } from '../../../utils/species.tsx';
 
-type AnswerListType = {
+type QuizAnswerListType = {
   value: string;
   onSelectAnswer: (answer: string) => void;
 };
 
-const AnswerList = (props: AnswerListType): React.ReactNode => {
+const QuizAnswerList = (props: QuizAnswerListType): React.ReactNode => {
   const { value, onSelectAnswer } = props;
 
   return (
     <div className="my-8">
       <div className="grid justify-items-stretch lg:grid-cols-2 lg:gap-2 md:grid-cols-2 md:gap-2 sm:grid-cols-2 sm:gap-2">
         {Object.keys(species).map((sp) => (
-          <Answer
+          <QuizAnswer
             key={sp}
             id={sp}
             value={value}
@@ -27,4 +27,4 @@ const AnswerList = (props: AnswerListType): React.ReactNode => {
   );
 };
 
-export default AnswerList;
+export default QuizAnswerList;

@@ -10,3 +10,16 @@ body {
   background: #f0f0f0;
   font-family: 'Anek Malayalam', sans-serif;
 }
+
+.blurred-img {
+  background-image: url(./assets/img/ressources/placeholder.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: fit-content;
+  height: fit-content;
+  min-width: 5rem;
+  min-height: 5rem;
+  text-indent: -9999px;
+  opacity: 0.9;
+}

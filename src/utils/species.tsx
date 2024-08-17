@@ -47,7 +47,7 @@ export const species: { [key: string]: SpeciesType } = {
             beaucoup.
           </em>
         </p>
-        <p>
+        <div>
           Quelques critères :
           <ul className="list-disc ml-4">
             <li>
@@ -67,7 +67,7 @@ export const species: { [key: string]: SpeciesType } = {
               un en forme de fer à cheval.
             </li>
           </ul>
-        </p>
+        </div>
       </>
     ),
     genus: 2,
@@ -83,7 +83,7 @@ export const species: { [key: string]: SpeciesType } = {
             beaucoup.
           </em>
         </p>
-        <p>
+        <div>
           Quelques critères :
           <ul className="list-disc ml-4">
             <li>
@@ -102,7 +102,7 @@ export const species: { [key: string]: SpeciesType } = {
               un en forme de fer à cheval.
             </li>
           </ul>
-        </p>
+        </div>
       </>
     ),
     genus: 2,
@@ -111,7 +111,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Plecotus auritus',
     displayName: 'Oreillard roux',
     description: (
-      <p>
+      <div>
         Quelques critères :
         <ul className="list-disc ml-4">
           <li>Corps assez ramassé, s’inscrivant dans un ovale.</li>
@@ -133,7 +133,7 @@ export const species: { [key: string]: SpeciesType } = {
             dont le diamètre est égal à celui de l’œil.
           </li>
         </ul>
-      </p>
+      </div>
     ),
     genus: 3,
   },
@@ -141,7 +141,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Plecotus austriacus',
     displayName: 'Oreillard gris',
     description: (
-      <p>
+      <div>
         Quelques critères :
         <ul className="list-disc ml-4">
           <li>Corps assez ramassé, s’inscrivant dans un ovale.</li>
@@ -163,7 +163,7 @@ export const species: { [key: string]: SpeciesType } = {
             dont le diamètre est inférieur à celui de l’œil.
           </li>
         </ul>
-      </p>
+      </div>
     ),
     genus: 3,
   },
@@ -179,7 +179,7 @@ export const species: { [key: string]: SpeciesType } = {
             notera quasi toujours comme un seul taxon : Mmba.
           </em>
         </p>
-        <p>
+        <div>
           Quelques critères :
           <ul className="list-disc ml-4">
             <li>Vu de face, un masque noir ou V noir caractéristique.</li>
@@ -192,7 +192,7 @@ export const species: { [key: string]: SpeciesType } = {
               moins "propre" que les autres Myotis.
             </li>
           </ul>
-        </p>
+        </div>
       </>
     ),
     genus: 1,
@@ -201,7 +201,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Myotis daubentonii',
     displayName: 'Murin de Daubenton',
     description: (
-      <p>
+      <div>
         Quelques critères :
         <ul className="list-disc ml-4">
           <li>
@@ -216,7 +216,7 @@ export const species: { [key: string]: SpeciesType } = {
           </li>
           <li>La zone entre l’oreille et le museau peu poilue.</li>
         </ul>
-      </p>
+      </div>
     ),
     genus: 1,
   },
@@ -224,7 +224,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Myotis dasycneme',
     displayName: 'Murin des marais',
     description: (
-      <p>
+      <div>
         Quelques critères :
         <ul className="list-disc ml-4">
           <li>La forme générale est très allongée, rectangulaire.</li>
@@ -241,7 +241,7 @@ export const species: { [key: string]: SpeciesType } = {
             insectes à la surface de l’eau.
           </li>
         </ul>
-      </p>
+      </div>
     ),
     genus: 1,
   },
@@ -249,7 +249,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Myotis emarginatus',
     displayName: 'Murin à oreilles échancrées',
     description: (
-      <p>
+      <div>
         Quelques critères :
         <ul className="list-disc ml-4">
           <li>
@@ -274,7 +274,7 @@ export const species: { [key: string]: SpeciesType } = {
           </li>
           <li>5% des individus sont mélaniques.</li>
         </ul>
-      </p>
+      </div>
     ),
     genus: 1,
   },
@@ -282,7 +282,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Myotis nattereri',
     displayName: 'Murin de Natterer',
     description: (
-      <p>
+      <div>
         Quelques critères :
         <ul className="list-disc ml-4">
           <li>Corps trapu, avec une forme générale ovale.</li>
@@ -307,7 +307,7 @@ export const species: { [key: string]: SpeciesType } = {
             contrasté avec le dos, gris-brun.
           </li>
         </ul>
-      </p>
+      </div>
     ),
     genus: 1,
   },
@@ -315,7 +315,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Myotis bechsteinii',
     displayName: 'Murin de Bechstein',
     description: (
-      <p>
+      <div>
         Quelques critères :
         <ul className="list-disc ml-4">
           <li>face rose peu poilue, semblable à celle de MM.</li>
@@ -333,7 +333,7 @@ export const species: { [key: string]: SpeciesType } = {
           </li>
           <li>C'est la plus grande de nos chauve-souris, près de 8cm.</li>
         </ul>
-      </p>
+      </div>
     ),
     genus: 1,
   },
@@ -341,7 +341,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Myotis myotis',
     displayName: 'Grand Murin',
     description: (
-      <p>
+      <div>
         Quelques critères :
         <ul className="list-disc ml-4">
           <li>
@@ -355,7 +355,7 @@ export const species: { [key: string]: SpeciesType } = {
           <li>Oreilles grandes, luisantes, dépassant du museau.</li>
           <li>Ventre très blanc, très contrasté avec le dos.</li>
         </ul>
-      </p>
+      </div>
     ),
     genus: 1,
   },
@@ -367,7 +367,7 @@ export const species: { [key: string]: SpeciesType } = {
         <p>
           <em>Il s'agit d'une espèce évidente.</em>
         </p>
-        <p>
+        <div>
           Quelques critères :
           <ul className="list-disc ml-4">
             <li>Face noire très reconnaissable.</li>
@@ -380,7 +380,7 @@ export const species: { [key: string]: SpeciesType } = {
               poils grisâtres et le ventre gris foncé.
             </li>
           </ul>
-        </p>
+        </div>
       </>
     ),
     genus: 4,
@@ -396,7 +396,7 @@ export const species: { [key: string]: SpeciesType } = {
             on les trouve, c'est souvent dans des fissures, en groupe compact.
           </em>
         </p>
-        <p>
+        <div>
           Quelques critères :
           <ul className="list-disc ml-4">
             <li>
@@ -411,7 +411,7 @@ export const species: { [key: string]: SpeciesType } = {
               les pipistrelles).
             </li>
           </ul>
-        </p>
+        </div>
       </>
     ),
     genus: 5,
@@ -420,7 +420,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Eptesicus serotinus',
     displayName: 'Sérotine commune',
     description: (
-      <p>
+      <div>
         Quelques critères :
         <ul className="list-disc ml-4">
           <li>
@@ -437,7 +437,7 @@ export const species: { [key: string]: SpeciesType } = {
           <li>Peau entièrement sombre, face très foncé.</li>
           <li>Espèce de grande taille.</li>
         </ul>
-      </p>
+      </div>
     ),
     genus: 6,
   },

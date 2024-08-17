@@ -1,27 +1,32 @@
 import * as React from 'react';
+import { NORMAL, ABBR } from '../utils/constants.ts';
 
 export type QuizContextType = {
   display?: 'normal' | 'abbr';
   toggleDisplay?: () => void;
-  selectToAnswerMode?: boolean;
+  selectToAnswerMode?: boolean; // true = select to answer ; false = select then next
   toggleSelectToAnswer?: () => void;
+  isMac?: boolean;
 };
 
 export const QuizContext = React.createContext({});
 QuizContext.displayName = 'QuizContext';
 
 type QuizProviderType = {
+  display: 'normal' | 'abbr';
+  selectToAnswerMode: boolean;
   children: React.ReactNode;
 };
-
-const NORMAL = 'normal';
-const ABBR = 'abbr';
 
 const QuizProvider = (props: QuizProviderType): React.ReactNode => {
   const { children } = props;
 
-  const [display, setDisplay] = React.useState(NORMAL); // normal/abbr
-  const [selectToAnswerMode, setSelectToAnswerMode] = React.useState(true); // true = select to answer ; false = select then next
+  const [display, setDisplay] = React.useState(props.display);
+  const [selectToAnswerMode, setSelectToAnswerMode] = React.useState(
+    props.selectToAnswerMode,
+  );
+
+  const isMac = React.useMemo(() => navigator.userAgent.includes('Mac'), []);
 
   const toggleDisplay = () => {
     setDisplay((prev) => (prev === NORMAL ? ABBR : NORMAL));
@@ -36,6 +41,7 @@ const QuizProvider = (props: QuizProviderType): React.ReactNode => {
     toggleDisplay,
     selectToAnswerMode,
     toggleSelectToAnswer,
+    isMac,
   };
 
   return (

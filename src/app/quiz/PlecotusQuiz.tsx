@@ -1,9 +1,8 @@
 import * as React from 'react';
 import QuizNavigation from './components/QuizNavigation.tsx';
-import AnswerList from './components/AnswerList.tsx';
+import QuizAnswerList from './components/QuizAnswerList.tsx';
 import Question from './components/QuizQuestion.tsx';
 import Explanation from './components/Explanation.tsx';
-import Heading from './components/Heading.tsx';
 import CurrentScore from './components/CurrentNavigation.tsx';
 import type { QuizQuestionType } from '../../utils/quiz.ts';
 import { useQuizContext } from '../../hooks/useQuizContext.ts';
@@ -21,8 +20,9 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
   const { index, quiz, value, handleSelectAnswer, handleNext, handleReset } =
     props;
 
-  const { selectToAnswerMode } = useQuizContext();
   const [isExplanation, setIsExplanation] = React.useState<boolean>(false);
+
+  const { selectToAnswerMode } = useQuizContext();
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -30,42 +30,58 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
 
   const currentQuestion = quiz[index];
 
+  const onNext = !isExplanation
+    ? () => {
+        setIsExplanation(true);
+      }
+    : () => {
+        setIsExplanation(false);
+        handleNext();
+      };
+
+  const onReset = () => {
+    setIsExplanation(false);
+    handleReset();
+  };
+
   return (
     <div className="mx-auto block">
       <div className="flex text-base justify-between mb-3">
-        <Heading />
+        <div>
+          <h2 className="text-slate-500 uppercase hidden sm:block">
+            Plecotus quiz : recensements hivernaux des Chauves-souris
+          </h2>
+
+          <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase sm:pt-10">
+            Quiz
+          </h3>
+          <span className="text-slate-500 text-sm">
+            Trouver l'espèce qui se cache derrière cette photo !
+          </span>
+        </div>
+
         <CurrentScore index={index} />
       </div>
 
       <Question currentQuestion={currentQuestion} isAnwser={isExplanation} />
 
       {isExplanation ? (
-        <Explanation rightAnswer={currentQuestion.rightAnswer} value={value} />
+        <Explanation
+          rightAnswer={currentQuestion.rightAnswer}
+          value={value}
+          onNext={onNext}
+        />
       ) : (
-        <AnswerList
+        <QuizAnswerList
           value={value}
           onSelectAnswer={(answer) => {
             handleSelectAnswer(answer);
-            console.log(selectToAnswerMode);
             selectToAnswerMode && setIsExplanation(true);
           }}
         />
       )}
 
-      <QuizNavigation
-        onNext={
-          !isExplanation
-            ? () => setIsExplanation(true)
-            : () => {
-                setIsExplanation(false);
-                handleNext();
-              }
-        }
-        onReset={() => {
-          setIsExplanation(false);
-          handleReset();
-        }}
-      />
+      <QuizNavigation onNext={onNext} onReset={onReset} />
     </div>
   );
 };

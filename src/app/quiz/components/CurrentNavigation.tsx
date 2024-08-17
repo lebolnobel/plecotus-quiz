@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TOTAL } from '../../../utils/helpers.ts';
+import { TOTAL } from '../../../utils/constants.ts';
 
 type CurrentScoreType = {
   index: number;
