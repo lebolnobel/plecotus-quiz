@@ -126,7 +126,7 @@ const Question = (props: QuestionType): React.ReactNode => {
           <div className="w-10">&nbsp;</div>
 
           <dt className="sr-only">Signaler une erreur</dt>
-          <dd className="flex items-center">
+          <dd className="hidden sm:block flex items-center">
             <button
               type="button"
               title="Signaler une erreur"
@@ -145,7 +145,7 @@ const Question = (props: QuestionType): React.ReactNode => {
           </dd>
 
           <dt className="sr-only">Nom vernaculaire vs Abbréviation</dt>
-          <dd className="flex items-center">
+          <dd className="hidden sm:block lex items-center">
             <button
               type="button"
               title="Switch vers le mode 'abbréviation' ou 'nom vernaculaire"
@@ -164,7 +164,7 @@ const Question = (props: QuestionType): React.ReactNode => {
           </dd>
 
           <dt className="sr-only">Plein écran</dt>
-          <dd className="flex items-center">
+          <dd className="hidden sm:block flex items-center">
             <button
               type="button"
               title="Plein écran"

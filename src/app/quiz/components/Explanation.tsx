@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { species } from '../../../utils/species.tsx';
-import { GoCheckCircle, GoCircleSlash, GoDotFill } from 'react-icons/go';
+import {
+  GoArrowRight,
+  GoCheckCircle,
+  GoCircleSlash,
+  GoDotFill,
+} from 'react-icons/go';
 
 type ExplanationType = {
   rightAnswer: string;
@@ -20,11 +25,17 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
     <div className="flex items-start lg:space-x-6 lg:px-6 py-6">
       <div className="min-w-0 relative flex-auto">
         <div
-          className={`rounded-lg h-32  bg-gray-100 ${isCorrect ? 'text-natagora' : 'text-red-400'} mb-10 cursor-pointer`}
+          className={`rounded-lg h-32  bg-gray-100 ${isCorrect ? 'text-natagora' : 'text-red-400'} mb-10 cursor-pointer relative overflow-hidden`}
           title="Cliquer pour aller à la question suivante"
           onClick={onNext}
         >
-          <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left">
+          <GoArrowRight
+            className="absolute bg-transparent -end-4 inset-y-0 h-full text-gray-400 opacity-5 z-0"
+            role="presentation"
+            size="128px"
+          />
+
+          <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left z-1">
             <div className="my-auto text-2xl">
               {isCorrect ? (
                 <GoCheckCircle role="presentation" size="56px" />
@@ -38,9 +49,9 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                   <div className="text-lg sm:text-xl">Bonne réponse !</div>
                   <div className="text-sm sm:text-base text-natagora-100">
                     Bravo, il s'agit bien d'un.e{' '}
-                    <strong>{correctAnswer.displayName}</strong> !
+                    <strong>{correctAnswer.displayName}</strong>.
                     <br />
-                    Au besoin, le récapitulatif est ci-dessous
+                    Au besoin, le récapitulatif est ci-dessous.
                   </div>
                 </>
               ) : (
@@ -48,10 +59,10 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                   <div className="text-lg sm:text-xl">Mauvaise réponse !</div>
                   <div className="text-sm sm:text-base text-red-300">
                     Manqué, {userAnswer?.displayName || 'aucune réponse'} n'est
-                    pas la bonne réponse
+                    pas la bonne réponse.
                     <br />
                     Il s'agit d'un.e{' '}
-                    <strong>{correctAnswer.displayName}</strong> !
+                    <strong>{correctAnswer.displayName}</strong>.
                   </div>
                 </>
               )}

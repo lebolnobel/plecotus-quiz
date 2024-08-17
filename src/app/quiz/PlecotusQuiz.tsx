@@ -55,7 +55,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
           <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase sm:pt-10">
             Quiz
           </h3>
-          <span className="text-slate-500 text-sm">
+          <span className="text-slate-500 text-sm hidden sm:block">
             Trouver l'espèce qui se cache derrière cette photo !
           </span>
         </div>
