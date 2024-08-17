@@ -31,7 +31,8 @@ const QuizAnswer = (props: QuizAnswerType): React.ReactNode => {
           name="answer"
           checked={value === id}
           onChange={onChange}
-          className="accent-primary -mt-1 align-middle  "
+          className="accent-primary -mt-1 align-middle"
+          tabIndex={0}
         />
         <span className="ps-3 font-normal text-base">
           {display === ABBR ? (

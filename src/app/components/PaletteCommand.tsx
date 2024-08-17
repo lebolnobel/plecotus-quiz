@@ -169,6 +169,7 @@ const PaletteCommand = (): React.ReactNode => {
                 aria-expanded="false"
                 aria-controls="options"
                 autoFocus
+                tabIndex={0}
               />
             </div>
             <ul

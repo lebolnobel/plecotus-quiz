@@ -45,7 +45,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
   };
 
   return (
-    <div className="mx-auto block">
+    <div className="mx-auto block" role="main">
       <div className="flex text-base justify-between mb-3">
         <div>
           <h2 className="text-slate-500 uppercase hidden sm:block">

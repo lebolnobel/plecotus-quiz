@@ -12,7 +12,7 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
   const { score, onReset } = props;
 
   return (
-    <div className="mx-auto block">
+    <div className="mx-auto block" role="main">
       <h2 className="text-slate-500 uppercase sr-only sm:block">
         Plecotus quiz : recensements hivernaux des Chauves-souris
       </h2>

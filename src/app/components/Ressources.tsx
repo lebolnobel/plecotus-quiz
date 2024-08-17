@@ -8,7 +8,7 @@ const Ressources = (): React.ReactNode => {
   };
 
   return (
-    <div className="mx-auto block" role="ressources">
+    <div className="mx-auto block" role="main">
       <h2 className="text-slate-500 uppercase">
         Ressources utiles pour les recensements hivernaux
       </h2>

@@ -18,7 +18,7 @@ export default function ErrorPage(): React.ReactNode {
   }
 
   return (
-    <section role="error">
+    <section role="main">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm text-center">
           <h1 className="mb-4 text-7xl font-extrabold">Oups!</h1>

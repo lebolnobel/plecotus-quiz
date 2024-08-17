@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const About = (): React.ReactNode => {
   return (
-    <div className="mx-auto block" role="about">
+    <div className="mx-auto block" role="main">
       <h2 className="text-slate-500 uppercase">À propos de Plecotus Quiz</h2>
 
       <div className="flex pt-10">
