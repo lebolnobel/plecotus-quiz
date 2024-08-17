@@ -45,7 +45,7 @@ const Question = (props: QuestionType): React.ReactNode => {
 
   return (
     <>
-      <figure className="overflow-hidden block drop-shadow">
+      <figure className="overflow-hidden block drop-shadow" role="none">
         <img
           src={currentImage.url}
           ref={imgEl}
@@ -54,7 +54,6 @@ const Question = (props: QuestionType): React.ReactNode => {
           className={`mx-auto hover:scale-125 ease-in duration-150 rounded-lg ${loaded ? '' : 'blurred-img'} h-auto max-h-80 size-fit sm:max-w-lg rounded-lg transition-all cursor-pointer`}
           onClick={toggleEnlarged}
           loading="lazy"
-          role="none"
         />
       </figure>
 

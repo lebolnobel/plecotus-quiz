@@ -11,14 +11,13 @@ const Home = (): React.ReactNode => {
       </h2>
 
       <div className="flex pt-10">
-        <figure className="flex-none md:w-36 relative">
+        <figure className="flex-none md:w-36 relative" role="none">
           <img
             src="/assets/img/plecotus/logo.svg"
             alt="Plecotus, Natagora"
             title="Plecotus, Natagora"
             className="absolute inset-0 w-full object-cover"
             loading="lazy"
-            role="none"
           />
         </figure>
         <div className="flex-auto px-6">

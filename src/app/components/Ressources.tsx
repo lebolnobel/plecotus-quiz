@@ -52,13 +52,15 @@ const Ressources = (): React.ReactNode => {
                     </div>
                   </div>
                 </div>
-                <figure className="hidden sm:block sm:col-span-3 flex text-center mx-auto w-full">
+                <figure
+                  className="hidden sm:block sm:col-span-3 flex text-center mx-auto w-full"
+                  role="none"
+                >
                   <img
                     src="./assets/img/ressources/memo.png"
                     alt="Mémo de détermination"
                     title="Mémo de détermination"
                     loading="lazy"
-                    role="none"
                   />
                 </figure>
               </div>
