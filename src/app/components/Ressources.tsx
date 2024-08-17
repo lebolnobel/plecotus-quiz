@@ -38,10 +38,16 @@ const Ressources = (): React.ReactNode => {
                       <button
                         type="button"
                         onClick={downloadMemo}
+                        role="download"
+                        aria-label="download"
                         className="px-6 py-2 inline-flex font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow"
                       >
                         Mémo de détermination
-                        <GoArrowRight size="24" className="ml-2" />
+                        <GoArrowRight
+                          role="presentation"
+                          size="24"
+                          className="ml-2"
+                        />
                       </button>
                     </div>
                   </div>
@@ -52,6 +58,7 @@ const Ressources = (): React.ReactNode => {
                     alt="Mémo de détermination"
                     title="Mémo de détermination"
                     loading="lazy"
+                    role="none"
                   />
                 </figure>
               </div>

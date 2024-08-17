@@ -120,7 +120,7 @@ const About = (): React.ReactNode => {
                 to={'/quiz'}
               >
                 Lancer le quiz !
-                <GoArrowRight size="24" className="ml-2" />
+                <GoArrowRight role="presentation" size="24" className="ml-2" />
                 <Overlay>
                   <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
                     S

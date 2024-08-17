@@ -15,6 +15,8 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
         <button
           className="py-2 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow relative"
           type="button"
+          role="reset"
+          aria-label="reset"
           onClick={onReset}
         >
           Je veux recommencer
@@ -30,6 +32,8 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
         <button
           className="py-2 px-6 font-semibold rounded-md bg-natagora text-base hover:bg-natagora/90 hover:shadow relative"
           type="submit"
+          role="next"
+          aria-label="reset"
           onClick={onNext}
         >
           Suivant

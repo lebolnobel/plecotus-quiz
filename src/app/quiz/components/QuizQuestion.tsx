@@ -54,6 +54,7 @@ const Question = (props: QuestionType): React.ReactNode => {
           className={`mx-auto hover:scale-125 ease-in duration-150 rounded-lg ${loaded ? '' : 'blurred-img'} h-auto max-h-80 size-fit sm:max-w-lg rounded-lg transition-all cursor-pointer`}
           onClick={toggleEnlarged}
           loading="lazy"
+          role="none"
         />
       </figure>
 
@@ -67,7 +68,7 @@ const Question = (props: QuestionType): React.ReactNode => {
         <dl className="mt-4 text-xs font-base flex justify-center items-center row-start-2">
           <dt className="sr-only">Auteur</dt>
           <dd className="text-natagora flex items-center">
-            <GoPerson size="18px" className="mr-2" />
+            <GoPerson role="presentation" size="18px" className="mr-2" />
             <span>
               {!author ? 'Anonyme' : `${author.firstname} ${author.name}`}
             </span>
@@ -75,9 +76,9 @@ const Question = (props: QuestionType): React.ReactNode => {
 
           <dt className="sr-only">Lieu</dt>
           <dd className="flex items-center">
-            <GoDotFill size="8px" className="mx-2" />
+            <GoDotFill role="presentation" size="8px" className="mx-2" />
 
-            <GoLocation size="18px" className="mr-2" />
+            <GoLocation role="presentation" size="18px" className="mr-2" />
             {image?.place || 'Lieu inconnu'}
           </dd>
 
@@ -85,9 +86,9 @@ const Question = (props: QuestionType): React.ReactNode => {
             <>
               <dt className="sr-only">Description</dt>
               <dd className="flex items-center">
-                <GoDotFill size="8px" className="mx-2" />
+                <GoDotFill role="presentation" size="8px" className="mx-2" />
 
-                <GoNote size="18px" className="mr-2" />
+                <GoNote role="presentation" size="18px" className="mr-2" />
                 {image?.description}
               </dd>
             </>

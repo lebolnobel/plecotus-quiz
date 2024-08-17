@@ -39,28 +39,28 @@ const PaletteCommand = (): React.ReactNode => {
       {
         name: 'quiz',
         displayName: 'Lancer le quiz !',
-        icon: <GoMortarBoard />,
+        icon: <GoMortarBoard role="presentation" />,
         shortcut: [isMac ? <MdKeyboardOptionKey /> : 'alt', 'S'],
         onClick: () => navigate('/quiz'),
       },
       {
         name: 'advanced-name',
         displayName: 'Mode avancé: abbréviations/nom vernaculaire',
-        icon: <GoBeaker />,
+        icon: <GoBeaker role="presentation" />,
         shortcut: [],
         onClick: () => !!toggleDisplay && toggleDisplay(),
       },
       {
         name: 'advanced-select',
         displayName: 'Mode avancé: sélectionner/bouton pour répondre',
-        icon: <GoBeaker />,
+        icon: <GoBeaker role="presentation" />,
         shortcut: [],
         onClick: () => !!toggleSelectToAnswer && toggleSelectToAnswer(),
       },
       {
         name: 'bug',
         displayName: 'Remonter un bug',
-        icon: <GoBug />,
+        icon: <GoBug role="presentation" />,
         shortcut: [],
         onClick: () =>
           (window.location.href =
@@ -69,7 +69,7 @@ const PaletteCommand = (): React.ReactNode => {
       {
         name: 'feedback',
         displayName: 'Créer un feedback',
-        icon: <GoQuestion />,
+        icon: <GoQuestion role="presentation" />,
         shortcut: [],
         onClick: () =>
           (window.location.href = 'https://forms.gle/1cRnvvpNi1CD9hLm9'),
@@ -77,7 +77,7 @@ const PaletteCommand = (): React.ReactNode => {
       {
         name: 'code',
         displayName: 'Contribuer au projet, sur Github',
-        icon: <GoCommandPalette />,
+        icon: <GoCommandPalette role="presentation" />,
         shortcut: [],
         onClick: () =>
           (window.location.href =
@@ -155,7 +155,10 @@ const PaletteCommand = (): React.ReactNode => {
         <div className="items-center justify-center shadow-lg max-w-lg w-full">
           <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
             <div className="relative bg-gray-50">
-              <GoSearch className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400 md" />
+              <GoSearch
+                role="presentation"
+                className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400 md"
+              />
               <input
                 type="text"
                 className="w-full h-12 pr-4 text-gray-800 placeholder-gray-400 bg-transparent border-0 pl-11 outline-none"
@@ -228,10 +231,10 @@ const PaletteCommand = (): React.ReactNode => {
               </kbd>
               <span>pour sélectionner</span>
               <kbd className="flex items-center justify-center px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
-                <GoArrowDown />
+                <GoArrowDown role="presentation" />
               </kbd>
               <kbd className="flex items-center justify-center px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
-                <GoArrowUp />
+                <GoArrowUp role="presentation" />
               </kbd>
               <span>pour naviguer</span>
               <kbd className="flex items-center justify-center px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">

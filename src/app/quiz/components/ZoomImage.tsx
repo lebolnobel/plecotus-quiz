@@ -51,15 +51,17 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
           <div className="relative bg-white rounded-lg shadow">
             <button
               type="button"
+              role="close"
+              aria-label="close"
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
             >
-              <GoX size="24px" />
+              <GoX role="presentation" size="24px" />
               <span className="sr-only">Close modal</span>
             </button>
             <div className="p-4">
               <div className="flex flex-row items-center text-left">
                 <div className="text-2xl pr-4">
-                  <GoImage size="64px" />
+                  <GoImage role="presentation" size="64px" />
                 </div>
                 <div>
                   <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase">
@@ -80,6 +82,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
                   title={"Trouver l'espèce qui se cache derrière cette image"}
                   className={`mx-auto rounded-lg ${loaded ? '' : 'blurred-img'} w-full h-auto object-contain rounded-lg transition-all`}
                   loading="lazy"
+                  role="none"
                 />
               </div>
             </div>

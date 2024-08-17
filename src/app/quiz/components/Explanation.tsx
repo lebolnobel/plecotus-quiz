@@ -26,9 +26,9 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
           <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left">
             <div className="my-auto text-2xl">
               {isCorrect ? (
-                <GoCheckCircle size="56px" />
+                <GoCheckCircle role="presentation" size="56px" />
               ) : (
-                <GoCircleSlash size="56px" />
+                <GoCircleSlash role="presentation" size="56px" />
               )}
             </div>
             <div>
@@ -65,14 +65,14 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
           <div>
             <dt className="sr-only">Nom scientifique</dt>
             <dd className="flex items-center">
-              <GoDotFill size="8px" className="mx-2" />
+              <GoDotFill role="presentation" size="8px" className="mx-2" />
               {correctAnswer.name}
             </dd>
           </div>
           <div>
             <dt className="sr-only">Abbréviation</dt>
             <dd className="flex items-center">
-              <GoDotFill size="8px" className="mx-2" />
+              <GoDotFill role="presentation" size="8px" className="mx-2" />
               {abbr}
             </dd>
           </div>

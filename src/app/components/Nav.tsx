@@ -28,6 +28,7 @@ const Nav = (): React.ReactNode => {
             alt="Plecotus quiz"
             width="32"
             height="32"
+            role="none"
           />
           <h1 className="self-center text-2xl font-medium whitespace-nowrap uppercase">
             Plecotus - Natagora
@@ -35,11 +36,12 @@ const Nav = (): React.ReactNode => {
         </NavLink>
 
         <button
-          data-collapse-toggle="navbar-default"
           type="button"
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="navbar-default"
           aria-expanded="false"
+          aria-label="navigation"
+          role="navigation"
           onClick={() => setOpen(!open)}
         >
           <span className="sr-only">Ouvrir le menu</span>
@@ -70,7 +72,7 @@ const Nav = (): React.ReactNode => {
                 className={({ isActive }) => className(isActive)}
                 title="Accueil"
               >
-                <GoHome size="24" />
+                <GoHome role="presentation" size="24" />
                 <Overlay>
                   <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
                     H
