@@ -13,10 +13,11 @@ const QuizAnswerList = (props: QuizAnswerListType): React.ReactNode => {
   return (
     <div className="my-8">
       <div className="grid justify-items-stretch lg:grid-cols-2 lg:gap-2 md:grid-cols-2 md:gap-2 sm:grid-cols-2 sm:gap-2">
-        {Object.keys(species).map((sp) => (
+        {Object.keys(species).map((sp, index) => (
           <QuizAnswer
             key={sp}
             id={sp}
+            index={index}
             value={value}
             species={species[sp]}
             onSelectAnswer={onSelectAnswer}

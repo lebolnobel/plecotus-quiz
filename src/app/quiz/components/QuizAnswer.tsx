@@ -2,16 +2,18 @@ import * as React from 'react';
 import { useQuizContext } from '../../../hooks/useQuizContext.ts';
 import { ABBR } from '../../../utils/constants.ts';
 import type { SpeciesType } from '../../../utils/species.tsx';
+import { GoDotFill } from 'react-icons/go';
 
 type QuizAnswerType = {
   id: string;
+  index: number;
   value: string;
   species: SpeciesType;
   onSelectAnswer: (value: string) => void;
 };
 
 const QuizAnswer = (props: QuizAnswerType): React.ReactNode => {
-  const { id, value, species, onSelectAnswer } = props;
+  const { id, index, value, species, onSelectAnswer } = props;
 
   const { display } = useQuizContext();
 
@@ -32,7 +34,8 @@ const QuizAnswer = (props: QuizAnswerType): React.ReactNode => {
           checked={value === id}
           onChange={onChange}
           className="accent-primary -mt-1 align-middle"
-          tabIndex={0}
+          value={id}
+          tabIndex={index}
         />
         <span className="ps-3 font-normal text-base">
           {display === ABBR ? (
@@ -41,8 +44,14 @@ const QuizAnswer = (props: QuizAnswerType): React.ReactNode => {
             <>
               {species.name}
               <br />
-              <span className="text-slate-400 text-sm italic">
-                {species.displayName} ({id})
+              <span className="inline-flex text-slate-400 text-sm italic">
+                {species.displayName}
+                <GoDotFill
+                  role="presentation"
+                  size="4px"
+                  className="mx-2 mt-2"
+                />
+                {id}
               </span>
             </>
           )}
