@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useQuizContext } from '../../../hooks/useQuizContext.ts';
 import { ABBR } from '../../../utils/constants.ts';
-import type { SpeciesType } from '../../../utils/species.tsx';
 import { GoDotFill } from 'react-icons/go';
+import type { SpeciesType } from '../../../utils/species.tsx';
 
 type QuizAnswerType = {
   id: string;

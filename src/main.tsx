@@ -8,9 +8,10 @@ import Home from './app/components/Home.tsx';
 import Quiz from './app/quiz/MainQuiz.tsx';
 import Ressources from './app/components/Ressources.tsx';
 import About from './app/components/About.tsx';
-import QuizProvider from './context/QuizContext.tsx';
+import PlecotusProvider from './context/PlecotusAppContext.tsx';
+import QuizAppContext from './context/QuizAppContext.tsx';
 
-import { NORMAL } from './utils/constants.ts';
+import { NORMAL, DEFAULT_TOTAL } from './utils/constants.ts';
 
 import './styles/styles.css';
 
@@ -42,8 +43,14 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <QuizProvider selectToAnswerMode={true} display={NORMAL}>
-      <RouterProvider router={router} />
-    </QuizProvider>
+    <PlecotusProvider>
+      <QuizAppContext
+        selectToAnswerMode={true}
+        display={NORMAL}
+        totalQuestions={DEFAULT_TOTAL}
+      >
+        <RouterProvider router={router} />
+      </QuizAppContext>
+    </PlecotusProvider>
   </React.StrictMode>,
 );

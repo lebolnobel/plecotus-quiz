@@ -11,7 +11,7 @@ export type ImageType = {
 
 // Used this to display a specific image as anwser!
 // Update quiz.ts to add the corresponding imageId
-export const answerImages: { [key: number]: ImageType } = {};
+export const answerImages: { [key: string]: ImageType } = {};
 
 // Images used for question
 export const images: Array<ImageType> = [

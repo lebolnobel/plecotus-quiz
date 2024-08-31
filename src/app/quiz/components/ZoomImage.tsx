@@ -15,11 +15,9 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
 
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (isOpen) {
-        if (event.key === 'Escape') {
-          event.preventDefault();
-          onClose();
-        }
+      if (isOpen && event.key === 'Escape') {
+        event.preventDefault();
+        onClose();
       }
     };
 
@@ -41,6 +39,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
     <div
       className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
       onClick={handleBackdropClick}
+      aria-hidden="true"
     >
       <div
         id="progress-modal"
@@ -56,7 +55,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
             >
               <GoX role="presentation" size="24px" />
-              <span className="sr-only">Close modal</span>
+              <span className="sr-only">Fermer la popup</span>
             </button>
             <div className="p-4">
               <div className="flex flex-row items-center text-left">

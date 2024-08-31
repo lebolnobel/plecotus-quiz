@@ -3,15 +3,14 @@ import * as uuid from 'uuid';
 import PlecotusQuiz from './PlecotusQuiz.tsx';
 import ScorePage from './ScorePage.tsx';
 import Loading from '../components/Loading.tsx';
-import { randomizeQuizElements, sliceArray } from '../../utils/helpers.ts';
-import { quizzes } from '../../utils/quiz.ts';
+import { generateRandomQuestions } from '../../utils/helpers.ts';
 import { useQuizContext } from '../../hooks/useQuizContext.ts';
 import type { QuizQuestionType } from '../../utils/quiz.ts';
 
 const Plecotus = (): React.ReactNode => {
   const [quizId, setQuizId] = React.useState(uuid.v4());
   const [currentQuiz, setCurrentQuiz] = React.useState<QuizQuestionType[]>([]);
-  const { selectToAnswerMode } = useQuizContext();
+  const { totalQuestions, selectToAnswerMode } = useQuizContext();
 
   // Quiz
   const [index, setIndex] = React.useState<number>(0);
@@ -20,9 +19,11 @@ const Plecotus = (): React.ReactNode => {
 
   React.useEffect(() => {
     // Generate unique quiz for the user session
-    const quiz = sliceArray(randomizeQuizElements(quizzes));
+    const quiz = generateRandomQuestions(totalQuestions);
     setCurrentQuiz(quiz);
-  }, [quizId]);
+    // console.log(quizId, totalQuestions);
+    // console.log(quiz);
+  }, [quizId, totalQuestions]);
 
   const handleSelectAnswer = (answer: string) => {
     setChoice(answer);

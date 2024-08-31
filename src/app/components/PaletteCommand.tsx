@@ -5,16 +5,18 @@ import {
   GoArrowDown,
   GoArrowUp,
   GoMortarBoard,
-  GoBeaker,
   GoBug,
+  GoFileCode,
   GoQuestion,
   GoCommandPalette,
+  GoMegaphone,
+  GoGear,
 } from 'react-icons/go';
 import { IoReturnDownBack } from 'react-icons/io5';
 import { MdKeyboardOptionKey } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-import { useQuizContext } from '../../hooks/useQuizContext.ts';
-import { FUZE_OPTS } from '../../utils/constants.ts';
+import { usePlecotusContext } from '../../hooks/usePlecotusContext.ts';
+import { FUZE_OPTS, K_K, K_P } from '../../utils/constants.ts';
 import type { FuseResult } from 'fuse.js';
 
 type OptionsType = {
@@ -32,7 +34,8 @@ const PaletteCommand = (): React.ReactNode => {
 
   const navigate = useNavigate();
 
-  const { isMac, toggleDisplay, toggleSelectToAnswer } = useQuizContext();
+  const { isMac, toggleDebugMode, toggleShortcutsMode, toggleSettingsMode } =
+    usePlecotusContext();
 
   const options: Array<OptionsType> = React.useMemo(
     () => [
@@ -44,18 +47,26 @@ const PaletteCommand = (): React.ReactNode => {
         onClick: () => navigate('/quiz'),
       },
       {
-        name: 'advanced-name',
-        displayName: 'Mode avancé: notation hivernale/nom vernaculaire',
-        icon: <GoBeaker role="presentation" />,
-        shortcut: [],
-        onClick: () => !!toggleDisplay && toggleDisplay(),
+        name: 'quiz-settings',
+        displayName: 'Paramètres du quiz',
+        icon: <GoGear role="presentation" />,
+        shortcut: [isMac ? <MdKeyboardOptionKey /> : 'alt', 'Q'],
+        onClick: () => !!toggleSettingsMode && toggleSettingsMode(),
       },
       {
-        name: 'advanced-select',
-        displayName: 'Mode avancé: sélectionner/bouton pour répondre',
-        icon: <GoBeaker role="presentation" />,
+        name: 'shortcuts',
+        displayName: 'Voir les raccourcis',
+        icon: <GoQuestion role="presentation" />,
+        shortcut: ['?'],
+        onClick: () => !!toggleShortcutsMode && toggleShortcutsMode(),
+      },
+      {
+        name: 'feedback',
+        displayName: 'Créer un feedback',
+        icon: <GoMegaphone role="presentation" />,
         shortcut: [],
-        onClick: () => !!toggleSelectToAnswer && toggleSelectToAnswer(),
+        onClick: () =>
+          window.open('https://forms.gle/1cRnvvpNi1CD9hLm9', '_blank'),
       },
       {
         name: 'bug',
@@ -69,12 +80,11 @@ const PaletteCommand = (): React.ReactNode => {
           ),
       },
       {
-        name: 'feedback',
-        displayName: 'Créer un feedback',
-        icon: <GoQuestion role="presentation" />,
+        name: 'debug',
+        displayName: 'Debug mode',
+        icon: <GoFileCode role="presentation" />,
         shortcut: [],
-        onClick: () =>
-          window.open('https://forms.gle/1cRnvvpNi1CD9hLm9', '_blank'),
+        onClick: () => !!toggleDebugMode && toggleDebugMode(),
       },
       {
         name: 'code',
@@ -85,7 +95,7 @@ const PaletteCommand = (): React.ReactNode => {
           window.open('https://github.com/lebolnobel/plecotus-quiz', '_blank'),
       },
     ],
-    [isMac, toggleDisplay, toggleSelectToAnswer, navigate],
+    [isMac, toggleDebugMode, toggleShortcutsMode, toggleSettingsMode, navigate],
   );
 
   // eslint-disable-next-line
@@ -103,7 +113,7 @@ const PaletteCommand = (): React.ReactNode => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (
         (event.ctrlKey || event.metaKey) &&
-        (event.key === 'k' || event.key === 'p')
+        (event.key.toUpperCase() === K_K || event.key.toUpperCase() === K_P)
       ) {
         event.preventDefault();
         setIsOpen(true);
@@ -116,16 +126,16 @@ const PaletteCommand = (): React.ReactNode => {
         } else if (event.key === 'ArrowUp') {
           event.preventDefault();
           setIndex((prevIndex) =>
-            prevIndex > 0 ? prevIndex - 1 : options.length - 1,
+            prevIndex > 0 ? prevIndex - 1 : commands.length - 1,
           );
         } else if (event.key === 'ArrowDown') {
           event.preventDefault();
           setIndex((prevIndex) =>
-            prevIndex < options.length - 1 ? prevIndex + 1 : 0,
+            prevIndex < commands.length - 1 ? prevIndex + 1 : 0,
           );
         } else if (event.key === 'Enter') {
           event.preventDefault();
-          options[index].onClick();
+          commands[index].onClick();
           setIsOpen(false);
         }
       }
@@ -136,7 +146,7 @@ const PaletteCommand = (): React.ReactNode => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [index, options, isOpen]);
+  }, [index, commands, isOpen]);
 
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
@@ -148,7 +158,6 @@ const PaletteCommand = (): React.ReactNode => {
   return (
     <div
       className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
-      aria-hidden="true"
       role="search"
       onClick={handleBackdropClick}
     >
@@ -191,36 +200,32 @@ const PaletteCommand = (): React.ReactNode => {
                 commands.map((option, optIndex) => {
                   return (
                     <li
-                      className={`p-3 text-gray-500 duration-200 select-none group rounded-xl hover:text-natagora hover:bg-gray-50 ${index === optIndex ? 'text-natagora bg-gray-50' : ''}`}
+                      className={`p-3 text-gray-500 duration-200 select-none group rounded-xl hover:text-natagora hover:bg-gray-50 ${index === optIndex ? 'text-natagora bg-gray-50' : ''} cursor-pointer flex`}
                       id={`option-${optIndex}`}
                       key={`option-${option.name}`}
                       role="option"
+                      onClick={option.onClick}
                     >
-                      <a
-                        onClick={option.onClick}
-                        className="flex cursor-pointer"
-                      >
-                        <span className="pt-0.5">{option.icon}</span>
+                      <span className="pt-0.5">{option.icon}</span>
 
-                        <span className="flex-auto ml-4 text-sm">
-                          {option.displayName}
-                        </span>
+                      <span className="flex-auto ml-4 text-sm">
+                        {option.displayName}
+                      </span>
 
-                        {!!option.shortcut && option.shortcut.length !== 0 && (
-                          <span className="flex-none ml-3 text-xs font-semibold text-gray-400">
-                            <span className="flex items-center">
-                              {option.shortcut.map((s, index) => (
-                                <kbd
-                                  key={index}
-                                  className="flex-inline font-sans pl-2"
-                                >
-                                  {s}
-                                </kbd>
-                              ))}
-                            </span>
+                      {!!option.shortcut && option.shortcut.length !== 0 && (
+                        <span className="flex-none ml-3 text-xs font-semibold text-gray-400">
+                          <span className="flex items-center">
+                            {option.shortcut.map((s, index) => (
+                              <kbd
+                                key={index}
+                                className="flex-inline font-sans pl-2"
+                              >
+                                {s}
+                              </kbd>
+                            ))}
                           </span>
-                        )}
-                      </a>
+                        </span>
+                      )}
                     </li>
                   );
                 })
@@ -228,21 +233,21 @@ const PaletteCommand = (): React.ReactNode => {
             </ul>
 
             <div className="flex flex-wrap items-center bg-gray-100 py-2.5 px-4 text-xs text-gray-400">
-              <kbd className="flex items-center justify-center px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
+              <kbd className="px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 <IoReturnDownBack />
               </kbd>
               <span>pour sélectionner</span>
-              <kbd className="flex items-center justify-center px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
+              <kbd className="px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 <GoArrowDown role="presentation" />
               </kbd>
-              <kbd className="flex items-center justify-center px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
+              <kbd className="px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 <GoArrowUp role="presentation" />
               </kbd>
               <span>pour naviguer</span>
-              <kbd className="flex items-center justify-center px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
+              <kbd className="px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 esc
               </kbd>
-              pour fermer
+              pour fermer.
             </div>
           </div>
         </div>

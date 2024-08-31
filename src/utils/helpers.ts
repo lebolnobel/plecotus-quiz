@@ -1,15 +1,23 @@
-import { TOTAL } from './constants.ts';
-import type { QuizQuestionType } from './quiz';
+import { answerImages } from './images.ts';
+import { SP } from './species.tsx';
+import type { QuizQuestionType } from './quiz.ts';
 
-export function randomizeQuizElements(
-  array: Array<QuizQuestionType>,
+export function generateRandomQuestions(
+  total: number,
 ): Array<QuizQuestionType> {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
+  const values = Object.keys(SP);
 
-  return array;
+  if (total < 14) {
+    return sliceArray(randomizeQuizElements(values), total).map((value) =>
+      getElement(value),
+    );
+  } else {
+    return Array(total)
+      .fill(null)
+      .map(() => getRandomElement(values))
+      .filter((value) => value != undefined)
+      .map((value) => getElement(value));
+  }
 }
 
 export function getRandomElement<T>(array: Array<T>): void | T {
@@ -19,8 +27,22 @@ export function getRandomElement<T>(array: Array<T>): void | T {
   return array[randIndex];
 }
 
-export function sliceArray(
-  array: Array<QuizQuestionType>,
-): Array<QuizQuestionType> {
-  return array.slice(0, TOTAL);
+function getElement(value: string): QuizQuestionType {
+  return {
+    rightAnswer: value,
+    imageAnswer: answerImages[value],
+  };
+}
+
+function randomizeQuizElements<T>(array: Array<T>): Array<T> {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+
+  return array;
+}
+
+function sliceArray<T>(array: Array<T>, total: number): Array<T> {
+  return array.slice(0, total);
 }

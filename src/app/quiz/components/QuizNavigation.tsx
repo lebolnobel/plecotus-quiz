@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Overlay from '../../accessibility/Overlay.tsx';
+import { K_N, K_R } from '../../../utils/constants.ts';
 
 type QuizNavigationType = {
   onReset: () => void;
@@ -20,7 +21,7 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
           onClick={onReset}
         >
           Je veux recommencer
-          <Overlay onAction={onReset} keyCode="KeyR">
+          <Overlay onAction={onReset} keyCode={K_R}>
             <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
               R
             </div>
@@ -37,7 +38,7 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
           onClick={onNext}
         >
           Suivant
-          <Overlay onAction={onNext} keyCode="KeyN">
+          <Overlay onAction={onNext} keyCode={K_N}>
             <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
               N
             </div>
@@ -47,4 +48,5 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
     </div>
   );
 };
+
 export default QuizNavigation;

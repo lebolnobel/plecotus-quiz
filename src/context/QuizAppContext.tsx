@@ -1,19 +1,27 @@
 import * as React from 'react';
-import { NORMAL, ABBR } from '../utils/constants.ts';
+import { DEFAULT_TOTAL, NORMAL, ABBR } from '../utils/constants.ts';
 
 export type QuizContextType = {
-  display?: 'normal' | 'abbr';
+  totalQuestions: number;
+  setQuestions?: (value: number) => void;
+
+  display: string;
   toggleDisplay?: () => void;
-  selectToAnswerMode?: boolean; // true = select to answer ; false = select then next
+
+  selectToAnswerMode: boolean; // true = select to answer ; false = select then next
   toggleSelectToAnswer?: () => void;
-  isMac?: boolean;
 };
 
-export const QuizContext = React.createContext({});
+export const QuizContext = React.createContext({
+  totalQuestions: DEFAULT_TOTAL,
+  display: NORMAL,
+  selectToAnswerMode: true,
+});
 QuizContext.displayName = 'QuizContext';
 
 type QuizProviderType = {
-  display: 'normal' | 'abbr';
+  totalQuestions: number;
+  display: string;
   selectToAnswerMode: boolean;
   children: React.ReactNode;
 };
@@ -21,12 +29,11 @@ type QuizProviderType = {
 const QuizProvider = (props: QuizProviderType): React.ReactNode => {
   const { children } = props;
 
+  const [totalQuestions, setQuestions] = React.useState(props.totalQuestions);
   const [display, setDisplay] = React.useState(props.display);
   const [selectToAnswerMode, setSelectToAnswerMode] = React.useState(
     props.selectToAnswerMode,
   );
-
-  const isMac = React.useMemo(() => navigator.userAgent.includes('Mac'), []);
 
   const toggleDisplay = () => {
     setDisplay((prev) => (prev === NORMAL ? ABBR : NORMAL));
@@ -37,11 +44,12 @@ const QuizProvider = (props: QuizProviderType): React.ReactNode => {
   };
 
   const context = {
+    totalQuestions,
+    setQuestions,
     display,
     toggleDisplay,
     selectToAnswerMode,
     toggleSelectToAnswer,
-    isMac,
   };
 
   return (

@@ -2,6 +2,9 @@ import * as React from 'react';
 import Nav from './components/Nav.tsx';
 import Footer from './components/Footer.tsx';
 import PaletteCommand from './components/PaletteCommand.tsx';
+import DebugMode from './components/DebugMode.tsx';
+import Shortcuts from './components/Shortcuts.tsx';
+import QuizSettings from './components/QuizSettings.tsx';
 import { Outlet } from 'react-router-dom';
 
 const Plecotus = (): React.ReactNode => {
@@ -22,6 +25,9 @@ const Plecotus = (): React.ReactNode => {
       </section>
 
       <PaletteCommand />
+      <Shortcuts />
+      <QuizSettings />
+      <DebugMode />
     </>
   );
 };

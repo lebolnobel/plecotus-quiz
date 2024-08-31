@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { TOTAL } from '../../utils/constants.ts';
 import { GoTrophy } from 'react-icons/go';
 import Overlay from '../accessibility/Overlay.tsx';
+import { useQuizContext } from '../../hooks/useQuizContext.ts';
+import { K_R } from '../../utils/constants.ts';
 
 type ScorePageType = {
   score: number;
@@ -10,6 +11,8 @@ type ScorePageType = {
 
 const ScorePage = (props: ScorePageType): React.ReactNode => {
   const { score, onReset } = props;
+
+  const { totalQuestions } = useQuizContext();
 
   return (
     <div className="mx-auto block" role="main">
@@ -35,14 +38,15 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
                     {score}
                   </span>
                   <span className="text-base sm:text-base text-slate-500">
-                    /{TOTAL}
+                    /{totalQuestions}
                   </span>
                 </div>
                 <div className="text-sm sm:text-base">
-                  Ce qui fait un total de {TOTAL - score} mauvaise
-                  {TOTAL - score > 1 ? 's' : ''} réponse
-                  {TOTAL - score > 1 ? 's' : ''} sur {TOTAL} question
-                  {TOTAL > 1 ? 's' : ''} !
+                  Ce qui fait un total de {totalQuestions - score} mauvaise
+                  {totalQuestions - score > 1 ? 's' : ''} réponse
+                  {totalQuestions - score > 1 ? 's' : ''} sur {totalQuestions}{' '}
+                  question
+                  {totalQuestions > 1 ? 's' : ''} !
                 </div>
               </>
             </div>
@@ -59,7 +63,7 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
               onClick={onReset}
             >
               Je veux recommencer
-              <Overlay>
+              <Overlay onAction={onReset} keyCode={K_R}>
                 <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
                   R
                 </div>

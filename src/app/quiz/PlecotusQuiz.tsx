@@ -4,8 +4,8 @@ import QuizAnswerList from './components/QuizAnswerList.tsx';
 import Question from './components/QuizQuestion.tsx';
 import Explanation from './components/Explanation.tsx';
 import CurrentScore from './components/CurrentNavigation.tsx';
-import type { QuizQuestionType } from '../../utils/quiz.ts';
 import { useQuizContext } from '../../hooks/useQuizContext.ts';
+import type { QuizQuestionType } from '../../utils/quiz.ts';
 
 type PlecotusQuizType = {
   index: number;

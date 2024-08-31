@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { QuizContext } from '../context/QuizContext.tsx';
-import type { QuizContextType } from '../context/QuizContext.tsx';
+import { QuizContext } from '../context/QuizAppContext.tsx';
+import type { QuizContextType } from '../context/QuizAppContext.tsx';
 
 export const useQuizContext = (): QuizContextType => {
   const context: QuizContextType = React.useContext(QuizContext);

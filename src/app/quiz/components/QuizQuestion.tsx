@@ -1,6 +1,6 @@
 import React from 'react';
 import { getRandomElement } from '../../../utils/helpers.ts';
-import { authors, images, answerImages } from '../../../utils/images.ts';
+import { authors, images } from '../../../utils/images.ts';
 import {
   GoLocation,
   GoPerson,
@@ -8,13 +8,15 @@ import {
   GoNote,
   GoScreenFull,
   GoStop,
+  GoGear,
 } from 'react-icons/go';
-import type { ImageType } from '../../../utils/images.ts';
-import type { QuizQuestionType } from '../../../utils/quiz.ts';
 import useLoadedImage from '../../../hooks/useLoadedImage.ts';
 import ZoomImage from './ZoomImage.tsx';
 import Overlay from '../../accessibility/Overlay.tsx';
-import { useQuizContext } from '../../../hooks/useQuizContext.ts';
+import { usePlecotusContext } from '../../../hooks/usePlecotusContext.ts';
+import { K_F } from '../../../utils/constants.ts';
+import type { ImageType } from '../../../utils/images.ts';
+import type { QuizQuestionType } from '../../../utils/quiz.ts';
 
 type QuestionType = {
   currentQuestion: QuizQuestionType;
@@ -28,7 +30,7 @@ const Question = (props: QuestionType): React.ReactNode => {
   const [enlarged, setEnlarged] = React.useState<boolean>(false);
 
   const { imgEl, loaded } = useLoadedImage();
-  const { toggleDisplay } = useQuizContext();
+  const { toggleSettingsMode } = usePlecotusContext();
 
   const toggleEnlarged = () => {
     setEnlarged((prev) => !prev);
@@ -50,10 +52,7 @@ const Question = (props: QuestionType): React.ReactNode => {
 
   if (!image) return null;
 
-  const answerImage =
-    isAnwser && currentQuestion?.imageAnswer
-      ? answerImages[currentQuestion.imageAnswer]
-      : null;
+  const answerImage = (isAnwser && currentQuestion?.imageAnswer) || null;
   const currentImage = answerImage || image;
   const author =
     currentImage?.authorId !== undefined
@@ -72,11 +71,6 @@ const Question = (props: QuestionType): React.ReactNode => {
           onClick={toggleEnlarged}
           loading="lazy"
         />
-        <Overlay onAction={toggleEnlarged} keyCode="KeyF">
-          <div className="overlay absolute bottom-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mb-6 mt-1 rounded">
-            F
-          </div>
-        </Overlay>
       </figure>
 
       <ZoomImage
@@ -144,27 +138,32 @@ const Question = (props: QuestionType): React.ReactNode => {
             </button>
           </dd>
 
-          <dt className="sr-only">Nom vernaculaire vs Abbréviation</dt>
-          <dd className="hidden sm:block lex items-center">
+          <dt className="sr-only">Paramètres du quiz</dt>
+          <dd className="hidden sm:block flex items-center relative">
             <button
               type="button"
-              title="Switch vers le mode 'abbréviation' ou 'nom vernaculaire"
-              role="displayName"
-              aria-label="displayName"
+              title="Signaler une erreur"
+              role="fullscreen"
+              aria-label="fullscreen"
               className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
-              onClick={toggleDisplay}
+              onClick={toggleSettingsMode}
             >
-              <GoNote
+              <GoGear
                 role="presentation"
                 size="18px"
                 className="cursor-pointer"
-                title="Switch vers le mode 'abbréviation' ou 'nom vernaculaire'"
+                title="Paramètres du quiz"
               />
             </button>
+            <Overlay>
+              <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-6 text-center text-natagora py-1 px-2 -ml-3 mt-1 rounded">
+                Q
+              </div>
+            </Overlay>
           </dd>
 
           <dt className="sr-only">Plein écran</dt>
-          <dd className="hidden sm:block flex items-center">
+          <dd className="hidden sm:block flex items-center relative">
             <button
               type="button"
               title="Plein écran"
@@ -180,10 +179,16 @@ const Question = (props: QuestionType): React.ReactNode => {
                 title="Passer l'image en plein écran"
               />
             </button>
+            <Overlay onAction={toggleEnlarged} keyCode={K_F}>
+              <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-6 text-center text-natagora py-1 px-2 -ml-3 mt-1 rounded">
+                F
+              </div>
+            </Overlay>
           </dd>
         </dl>
       </div>
     </>
   );
 };
+
 export default Question;

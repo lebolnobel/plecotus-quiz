@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TOTAL } from '../../../utils/constants.ts';
+import { useQuizContext } from '../../../hooks/useQuizContext.ts';
 
 type CurrentScoreType = {
   index: number;
@@ -7,6 +7,8 @@ type CurrentScoreType = {
 
 const CurrentScore = (props: CurrentScoreType): React.ReactNode => {
   const { index } = props;
+
+  const { totalQuestions } = useQuizContext();
 
   const addLeadingZero = (number: number): string =>
     number > 9 ? `${number}` : `0${number}`;
@@ -16,7 +18,7 @@ const CurrentScore = (props: CurrentScoreType): React.ReactNode => {
       <span className="text-4xl font-medium text-natagora">
         {addLeadingZero(index + 1)}
       </span>
-      <span className="text-base text-slate-400">/{TOTAL}</span>
+      <span className="text-base text-slate-400">/{totalQuestions}</span>
     </div>
   );
 };
