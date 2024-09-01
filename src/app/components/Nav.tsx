@@ -23,7 +23,7 @@ const Nav = (): React.ReactNode => {
           className="flex items-center space-x-3 rtl:space-x-reverse relative"
         >
           <img
-            src="/assets/favicon.ico"
+            src="/favicon.ico"
             className="h-8"
             alt="Plecotus quiz"
             width="32"
