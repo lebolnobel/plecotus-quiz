@@ -636,19 +636,13 @@ export const authors: { [key: number]: AuthorType } = {
   1: {
     name: 'Lebon',
     firstname: 'Lionel',
-    mail: undefined,
-    url: 'https://www.instagram.com/lebolnobel/',
   },
   2: {
     name: 'Smits',
     firstname: 'Quentin',
-    mail: undefined,
-    url: 'https://photos.google.com/share/AF1QipNJ-gMv6hbSQcTJHKhY-Xx8DEtVAA6Ir95CF412tZEUmWz6J-JjYqm4xc2Vnp8Nyg?key=QW53X0dFbkpQLWZSdjVGcDRZb0RjQ3ZPSTFoV2xR',
   },
   3: {
     name: 'Gathoye',
     firstname: 'Jean-louis',
-    mail: undefined,
-    url: undefined,
   },
 };

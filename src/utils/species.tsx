@@ -42,6 +42,15 @@ export const species: { [key: string]: SpeciesType } = {
     displayName: 'Petit Rhinolophe',
     description: (
       <SpeciesCard
+        fiche={
+          <ul className="list-decimal ml-4">
+            <li>Taille (tête + corps) : 37-45 mm - petit</li>
+            <li>Rareté : RR - rarissime</li>
+            <li>Gîtes d’hiver : cavités souterraines</li>
+            <li>Position dans la cavité : pend librement</li>
+            <li>Température : thermophile - 7 à 11°C</li>
+          </ul>
+        }
         generalities={
           <ul className="list-decimal ml-4">
             <li>
@@ -51,6 +60,9 @@ export const species: { [key: string]: SpeciesType } = {
             <li>
               Son corps n’est pas plus grand qu’un pouce ou qu’une boîte
               d’allumettes.
+            </li>
+            <li>
+              Ils pendent toujours librement et sont enroulés dans leurs ailes.
             </li>
           </ul>
         }

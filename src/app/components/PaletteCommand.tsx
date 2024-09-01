@@ -161,7 +161,7 @@ const PaletteCommand = (): React.ReactNode => {
       role="search"
       onClick={handleBackdropClick}
     >
-      <div className="fixed inset-0 flex items-center justify-center z-50">
+      <div className="fixed inset-0 flex items-center justify-center z-50 mx-6">
         <div className="items-center justify-center shadow-lg max-w-lg w-full">
           <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
             <div className="relative bg-gray-50">

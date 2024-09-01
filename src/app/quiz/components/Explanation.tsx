@@ -89,11 +89,13 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                   <GoRepo role="presentation" size="56px" />
                 </div>
                 <div>
-                  <div className="text-lg sm:text-xl">{correctAnswer.name}</div>
+                  <div className="text-lg sm:text-xl italic">
+                    {correctAnswer.name}
+                  </div>
                   <dl className="mt-2 flex flex-wrap text-sm">
                     <div>
-                      <dt className="sr-only">Nom scientifique</dt>
-                      <dd className="flex items-center italic">
+                      <dt className="sr-only">Nom Vernaculaire</dt>
+                      <dd className="flex items-center">
                         {correctAnswer.displayName || '-'}
                       </dd>
                     </div>

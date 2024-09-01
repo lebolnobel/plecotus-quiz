@@ -80,9 +80,9 @@ const Question = (props: QuestionType): React.ReactNode => {
       />
 
       <div className="text-base text-center block">
-        <dl className="mt-4 text-xs font-base flex justify-center items-center row-start-2">
+        <dl className="mt-4 text-xs font-base flex justify-center items-center flex-wrap">
           <dt className="sr-only">Auteur</dt>
-          <dd className="text-natagora flex items-center">
+          <dd className="flex items-center text-natagora">
             <GoPerson role="presentation" size="18px" className="mr-2" />
             <span>
               {!author ? 'Anonyme' : `${author.firstname} ${author.name}`}
@@ -117,10 +117,10 @@ const Question = (props: QuestionType): React.ReactNode => {
             </>
           )}
 
-          <div className="w-10">&nbsp;</div>
+          <div className="w-full sm:w-10">&nbsp;</div>
 
           <dt className="sr-only">Signaler une erreur</dt>
-          <dd className="hidden sm:block flex items-center">
+          <dd className="flex items-center">
             <button
               type="button"
               title="Signaler une erreur"
@@ -139,7 +139,7 @@ const Question = (props: QuestionType): React.ReactNode => {
           </dd>
 
           <dt className="sr-only">Paramètres du quiz</dt>
-          <dd className="hidden sm:block flex items-center relative">
+          <dd className="flex items-center relative">
             <button
               type="button"
               title="Signaler une erreur"
@@ -163,7 +163,7 @@ const Question = (props: QuestionType): React.ReactNode => {
           </dd>
 
           <dt className="sr-only">Plein écran</dt>
-          <dd className="hidden sm:block flex items-center relative">
+          <dd className="flex items-center relative">
             <button
               type="button"
               title="Plein écran"
