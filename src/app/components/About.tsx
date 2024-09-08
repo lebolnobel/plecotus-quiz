@@ -86,7 +86,7 @@ const About = (): React.ReactNode => {
 
                 <p className="py-2">
                   Son objectif est de permettre à quiconque de travailler
-                  l'identification des espèces de chauves-souris en hivers. Les
+                  l'identification des espèces de chauves-souris en hiver. Les
                   réponses sont basées sur le Mémo de détermination.
                 </p>
               </div>

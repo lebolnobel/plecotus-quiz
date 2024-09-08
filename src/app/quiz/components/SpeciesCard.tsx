@@ -12,11 +12,11 @@ type SpeciesCardType = {
 };
 
 const SpeciesCard = (props: SpeciesCardType): React.ReactNode => {
-  const { generalities, position, bras, nez, oreilles, pelage, divers } = props;
+  const { fiche, generalities, position, bras, nez, oreilles, pelage, divers } =
+    props;
 
   return (
     <div>
-      <div>{/* Fiche */}</div>
       <div className="w-full max-w-6xl mx-auto text-left">
         <div className="flex flex-col justify-center divide-y divide-slate-200 py-10">
           <div className="w-full max-w-3xl mx-auto">
@@ -99,6 +99,15 @@ const SpeciesCard = (props: SpeciesCardType): React.ReactNode => {
           </div>
         </div>
       </div>
+
+      {!!fiche && (
+        <div className="relative py-6">
+          <div className="flex flex-col">
+            <div className="text-xl">Fiche d'identification</div>
+          </div>
+          <div className="text-slate-500 text-sm">{fiche}</div>
+        </div>
+      )}
     </div>
   );
 };

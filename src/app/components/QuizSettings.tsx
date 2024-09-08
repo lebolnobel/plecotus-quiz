@@ -167,7 +167,7 @@ const QuizSettings = (): React.ReactNode => {
               })}
             </ul>
 
-            <div className="hidden sm:block flex flex-wrap items-center bg-gray-100 py-2.5 px-4 text-xs text-gray-400">
+            <div className="hidden sm:flex flex-wrap items-center bg-gray-100 py-2.5 px-4 text-xs text-gray-400">
               <kbd className="px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 <IoReturnDownBack />
               </kbd>
