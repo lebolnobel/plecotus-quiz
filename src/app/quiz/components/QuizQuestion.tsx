@@ -9,22 +9,26 @@ import {
   GoScreenFull,
   GoStop,
   GoGear,
+  GoArrowRight,
+  GoMoveToStart,
 } from 'react-icons/go';
 import useLoadedImage from '../../../hooks/useLoadedImage.ts';
 import ZoomImage from './ZoomImage.tsx';
 import Overlay from '../../accessibility/Overlay.tsx';
 import { usePlecotusContext } from '../../../hooks/usePlecotusContext.ts';
-import { K_F } from '../../../utils/constants.ts';
+import { K_F, K_N, K_R } from '../../../utils/constants.ts';
 import type { ImageType } from '../../../utils/images.ts';
 import type { QuizQuestionType } from '../../../utils/quiz.ts';
 
 type QuestionType = {
   currentQuestion: QuizQuestionType;
   isAnwser?: boolean;
+  onReset: () => void;
+  onNext: () => void;
 };
 
 const Question = (props: QuestionType): React.ReactNode => {
-  const { currentQuestion, isAnwser } = props;
+  const { currentQuestion, isAnwser, onNext, onReset } = props;
 
   const [image, setImage] = React.useState<null | ImageType>(null);
   const [enlarged, setEnlarged] = React.useState<boolean>(false);
@@ -48,6 +52,8 @@ const Question = (props: QuestionType): React.ReactNode => {
       images.filter((img) => img.speciesId === currentQuestion.rightAnswer),
     );
     setImage(img || null);
+
+    return () => setImage(null);
   }, [currentQuestion]);
 
   if (!image) return null;
@@ -67,7 +73,7 @@ const Question = (props: QuestionType): React.ReactNode => {
           ref={imgEl}
           alt={"Trouver l'espèce qui se cache derrière cette image"}
           title={"Trouver l'espèce qui se cache derrière cette image"}
-          className={`mx-auto hover:scale-125 ease-in duration-150 rounded-lg ${loaded ? '' : 'blurred-img'} h-auto max-h-80 size-fit sm:max-w-lg rounded-lg transition-all cursor-pointer`}
+          className={`mx-auto hover:scale-125 ease-in duration-150 rounded-lg ${loaded ? '' : 'blurred-img'} h-auto max-h-80 rounded-lg transition-all cursor-pointer`}
           onClick={toggleEnlarged}
           loading="lazy"
         />
@@ -182,6 +188,56 @@ const Question = (props: QuestionType): React.ReactNode => {
             <Overlay onAction={toggleEnlarged} keyCode={K_F}>
               <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-6 text-center text-natagora py-1 px-2 -ml-3 mt-1 rounded">
                 F
+              </div>
+            </Overlay>
+          </dd>
+
+          <div className="w-10">&nbsp;</div>
+
+          <dt className="sr-only">Recommencer</dt>
+          <dd className="flex items-center relative">
+            <button
+              type="button"
+              title="Plein écran"
+              role="fullscreen"
+              aria-label="fullscreen"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              onClick={onReset}
+            >
+              <GoMoveToStart
+                role="presentation"
+                size="18px"
+                className="cursor-pointer"
+                title="Recommencer"
+              />
+            </button>
+            <Overlay onAction={onReset} keyCode={K_R}>
+              <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-6 text-center text-natagora py-1 px-2 -ml-3 mt-1 rounded">
+                R
+              </div>
+            </Overlay>
+          </dd>
+
+          <dt className="sr-only">Question suivante</dt>
+          <dd className="flex items-center relative">
+            <button
+              type="button"
+              title="Plein écran"
+              role="fullscreen"
+              aria-label="fullscreen"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              onClick={onNext}
+            >
+              <GoArrowRight
+                role="presentation"
+                size="18px"
+                className="cursor-pointer"
+                title="Suivant"
+              />
+            </button>
+            <Overlay onAction={onNext} keyCode={K_N}>
+              <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-6 text-center text-natagora py-1 px-2 -ml-3 mt-1 rounded">
+                N
               </div>
             </Overlay>
           </dd>

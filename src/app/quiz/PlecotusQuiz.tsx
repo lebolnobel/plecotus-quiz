@@ -4,6 +4,7 @@ import QuizAnswerList from './components/QuizAnswerList.tsx';
 import Question from './components/QuizQuestion.tsx';
 import Explanation from './components/Explanation.tsx';
 import CurrentScore from './components/CurrentNavigation.tsx';
+import ProgressBar from './components/ProgressBar.tsx';
 import { useQuizContext } from '../../hooks/useQuizContext.ts';
 import type { QuizQuestionType } from '../../utils/quiz.ts';
 
@@ -20,9 +21,11 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
   const { index, quiz, value, handleSelectAnswer, handleNext, handleReset } =
     props;
 
-  const [isExplanation, setIsExplanation] = React.useState<boolean>(false);
+  const { selectToAnswerMode, totalQuestions } = useQuizContext();
 
-  const { selectToAnswerMode } = useQuizContext();
+  // Start with 0 to avoid displaying the progress bar if player doesn't start to play
+  const [width, setWidth] = React.useState<number>(0);
+  const [isExplanation, setIsExplanation] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -36,6 +39,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
       }
     : () => {
         setIsExplanation(false);
+        setWidth(((index + 2) / totalQuestions) * 100); // +2 = compute next index
         handleNext();
       };
 
@@ -63,7 +67,12 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
         <CurrentScore index={index} />
       </div>
 
-      <Question currentQuestion={currentQuestion} isAnwser={isExplanation} />
+      <Question
+        currentQuestion={currentQuestion}
+        isAnwser={isExplanation}
+        onNext={onNext}
+        onReset={onReset}
+      />
 
       {isExplanation ? (
         <Explanation
@@ -82,6 +91,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
       )}
 
       <QuizNavigation onNext={onNext} onReset={onReset} />
+      <ProgressBar width={width} />
     </div>
   );
 };
