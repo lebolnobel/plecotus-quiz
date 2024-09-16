@@ -1,4 +1,6 @@
 import React from 'react';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { getRandomElement } from '../../../utils/helpers.ts';
 import { authors, images } from '../../../utils/images.ts';
 import {
@@ -12,7 +14,6 @@ import {
   GoArrowRight,
   GoMoveToStart,
 } from 'react-icons/go';
-import useLoadedImage from '../../../hooks/useLoadedImage.ts';
 import ZoomImage from './ZoomImage.tsx';
 import Overlay from '../../accessibility/Overlay.tsx';
 import { usePlecotusContext } from '../../../hooks/usePlecotusContext.ts';
@@ -33,7 +34,6 @@ const Question = (props: QuestionType): React.ReactNode => {
   const [image, setImage] = React.useState<null | ImageType>(null);
   const [enlarged, setEnlarged] = React.useState<boolean>(false);
 
-  const { imgEl, loaded } = useLoadedImage();
   const { toggleSettingsMode } = usePlecotusContext();
 
   const toggleEnlarged = () => {
@@ -68,14 +68,18 @@ const Question = (props: QuestionType): React.ReactNode => {
   return (
     <>
       <figure className="overflow-hidden block" role="none">
-        <img
+        <LazyLoadImage
+          key={currentImage.url}
           src={currentImage.url}
-          ref={imgEl}
           alt={"Trouver l'espèce qui se cache derrière cette image"}
           title={"Trouver l'espèce qui se cache derrière cette image"}
-          className={`mx-auto hover:scale-125 ease-in duration-150 rounded-lg ${loaded ? '' : 'blurred-img'} h-auto max-h-80 rounded-lg transition-all cursor-pointer`}
+          className={`mx-auto hover:scale-125 ease-in duration-150 rounded-lg h-auto max-h-80 rounded-lg transition-all cursor-pointer`}
+          effect="blur"
+          visibleByDefault
+          wrapperProps={{
+            style: {},
+          }}
           onClick={toggleEnlarged}
-          loading="lazy"
         />
       </figure>
 

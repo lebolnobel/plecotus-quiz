@@ -1,5 +1,4 @@
 import * as React from 'react';
-import useLoadedImage from '../../../hooks/useLoadedImage.ts';
 import { GoImage, GoX } from 'react-icons/go';
 
 type ZoomImageType = {
@@ -10,8 +9,6 @@ type ZoomImageType = {
 
 const ZoomImage = (props: ZoomImageType): React.ReactNode => {
   const { url, isOpen, onClose } = props;
-
-  const { imgEl, loaded } = useLoadedImage();
 
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -76,11 +73,9 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
               <div className="pt-6">
                 <img
                   src={url}
-                  ref={imgEl}
                   alt={"Trouver l'espèce qui se cache derrière cette image"}
                   title={"Trouver l'espèce qui se cache derrière cette image"}
-                  className={`mx-auto rounded-lg ${loaded ? '' : 'blurred-img'} w-full h-auto object-contain rounded-lg transition-all`}
-                  loading="lazy"
+                  className={`mx-auto rounded-lg w-full h-auto object-contain rounded-lg transition-all`}
                   role="none"
                 />
               </div>

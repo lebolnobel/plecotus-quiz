@@ -680,14 +680,6 @@ export const images: Array<ImageType> = [
     description: undefined,
   },
   {
-    speciesId: SP.Barbar,
-    title: 'Barbar',
-    url: './assets/img/species/1f04f24a-109d-4357-a19b-51105c769419.jpg',
-    authorId: 3,
-    place: undefined,
-    description: undefined,
-  },
-  {
     speciesId: SP.MB,
     title: 'MB',
     url: './assets/img/species/79da6b32-628e-491d-b2fd-2e4107494a5d.jpg',
