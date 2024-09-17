@@ -37,10 +37,10 @@ const Ressources = (): React.ReactNode => {
                     <div className="flex-auto flex space-x-4">
                       <button
                         type="button"
+                        role="button"
                         onClick={downloadMemo}
-                        role="download"
                         aria-label="download"
-                        className="px-6 py-2 inline-flex font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow"
+                        className="px-6 py-2 inline-flex font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora-100"
                       >
                         Mémo de détermination
                         <GoArrowRight

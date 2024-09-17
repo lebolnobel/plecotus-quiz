@@ -59,12 +59,20 @@ function useShortcuts(
       }
     };
 
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        setShowOverlays(false);
+      }
+    };
+
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('keyup', handleKeyUp);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, [navigate, keyCode, toggleSettingsMode, onAction]);
 

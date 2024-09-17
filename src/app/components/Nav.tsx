@@ -13,14 +13,14 @@ const Nav = (): React.ReactNode => {
   }, [location]);
 
   const className: (isActive: boolean) => string = (isActive) =>
-    `block py-2 px-3 rounded text-natagora ${isActive ? 'text-white bg-natagora' : 'md:hover:bg-gray-100 md:hover:text-natagora'}`;
+    `block py-2 px-3 rounded text-natagora ${isActive ? 'text-white bg-natagora' : 'md:hover:bg-gray-100 md:hover:text-natagora'}  focus:outline-none focus:ring-2 focus:ring-natagora-100`;
 
   return (
-    <nav className="bg-gray-50 border-gray-200" role="navigation">
+    <nav className="bg-gray-50 border-gray-200" role="banner">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           to="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse relative"
+          className="flex items-center space-x-3 relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
         >
           <img
             src="/favicon.ico"
@@ -37,11 +37,11 @@ const Nav = (): React.ReactNode => {
 
         <button
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-natagora-100"
           aria-controls="navbar-default"
           aria-expanded="false"
           aria-label="navigation"
-          role="navigation"
+          role="button"
           onClick={() => setOpen(!open)}
         >
           <span className="sr-only">Ouvrir le menu</span>
@@ -64,6 +64,7 @@ const Nav = (): React.ReactNode => {
         <div
           id="navbar-default"
           className={`w-full md:block md:w-auto ${!open ? 'hidden' : ''}`}
+          role="navigation"
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li className="relative">

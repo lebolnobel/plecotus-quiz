@@ -104,6 +104,10 @@ const QuizSettings = (): React.ReactNode => {
     };
   }, [options, index, showSettings, toggleSettingsMode]);
 
+  React.useEffect(() => {
+    return () => setIndex(0);
+  }, [showSettings]);
+
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
     !!toggleSettingsMode && toggleSettingsMode();
@@ -123,9 +127,9 @@ const QuizSettings = (): React.ReactNode => {
           <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
             <button
               type="button"
-              role="close"
+              role="button"
               aria-label="close"
-              className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+              className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
             >
               <GoX role="presentation" size="24px" />
               <span className="sr-only">Fermer la popup</span>
@@ -154,7 +158,7 @@ const QuizSettings = (): React.ReactNode => {
                     className={`p-3 text-gray-500 duration-200 select-none group rounded-xl hover:text-natagora hover:bg-gray-50 ${index === optIndex ? 'text-natagora bg-gray-50' : ''} cursor-pointer flex`}
                     id={`option-${optIndex}`}
                     key={`option-${option.name}`}
-                    role="option"
+                    role="listitem"
                     onClick={option.onClick}
                   >
                     <span className="pt-0.5">{option.icon}</span>

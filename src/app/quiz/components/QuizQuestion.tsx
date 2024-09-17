@@ -67,20 +67,22 @@ const Question = (props: QuestionType): React.ReactNode => {
 
   return (
     <>
-      <figure className="overflow-hidden block" role="none">
-        <LazyLoadImage
-          key={currentImage.url}
-          src={currentImage.url}
-          alt={"Trouver l'espèce qui se cache derrière cette image"}
-          title={"Trouver l'espèce qui se cache derrière cette image"}
-          className={`mx-auto hover:scale-125 ease-in duration-150 rounded-lg h-auto max-h-80 rounded-lg transition-all cursor-pointer`}
-          effect="blur"
-          visibleByDefault
-          wrapperProps={{
-            style: {},
-          }}
-          onClick={toggleEnlarged}
-        />
+      <figure className="overflow-hidden block" role="img">
+        <div className="transition-all ease-in duration-150 rounded-lg cursor-pointer hover:scale-125">
+          <LazyLoadImage
+            key={currentImage.url}
+            src={currentImage.url}
+            alt={"Trouver l'espèce qui se cache derrière cette image"}
+            title={"Trouver l'espèce qui se cache derrière cette image"}
+            className="mx-auto rounded-lg h-auto max-h-80"
+            effect="blur"
+            visibleByDefault
+            wrapperProps={{
+              style: {},
+            }}
+            onClick={toggleEnlarged}
+          />
+        </div>
       </figure>
 
       <ZoomImage
@@ -133,10 +135,10 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center">
             <button
               type="button"
+              role="button"
               title="Signaler une erreur"
-              role="fullscreen"
               aria-label="fullscreen"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
               onClick={createBugTicket}
             >
               <GoStop
@@ -152,10 +154,10 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center relative">
             <button
               type="button"
+              role="button"
               title="Signaler une erreur"
-              role="fullscreen"
               aria-label="fullscreen"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
               onClick={toggleSettingsMode}
             >
               <GoGear
@@ -176,10 +178,10 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center relative">
             <button
               type="button"
+              role="button"
               title="Plein écran"
-              role="fullscreen"
               aria-label="fullscreen"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
               onClick={toggleEnlarged}
             >
               <GoScreenFull
@@ -202,10 +204,10 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center relative">
             <button
               type="button"
+              role="button"
               title="Plein écran"
-              role="fullscreen"
               aria-label="fullscreen"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
               onClick={onReset}
             >
               <GoMoveToStart
@@ -226,10 +228,10 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center relative">
             <button
               type="button"
+              role="button"
               title="Plein écran"
-              role="fullscreen"
               aria-label="fullscreen"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
               onClick={onNext}
             >
               <GoArrowRight

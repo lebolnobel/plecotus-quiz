@@ -19,9 +19,10 @@ const DebugMode = (): React.ReactNode => {
       <div className="flex flex-row w-full gap-5 items-center py-5 pl-8">
         <button
           type="button"
-          role="close"
+          role="button"
           aria-label="close"
-          className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+          className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
+          ref={(input) => input && input.focus()}
           onClick={toggleDebugMode}
         >
           <GoX role="presentation" size="24px" />

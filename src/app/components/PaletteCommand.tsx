@@ -148,6 +148,10 @@ const PaletteCommand = (): React.ReactNode => {
     };
   }, [index, commands, isOpen]);
 
+  React.useEffect(() => {
+    return () => setIndex(0);
+  }, [isOpen]);
+
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
     setIsOpen(false);
@@ -179,7 +183,6 @@ const PaletteCommand = (): React.ReactNode => {
                 aria-expanded="false"
                 aria-controls="options"
                 autoFocus
-                tabIndex={0}
               />
             </div>
             <ul
@@ -192,7 +195,7 @@ const PaletteCommand = (): React.ReactNode => {
                   className="p-3 text-gray-500 duration-200 select-none group rounded-xl"
                   id="option-0"
                   key="option-0"
-                  role="option"
+                  role="listitem"
                 >
                   Aucune entrée pour cette commande
                 </li>
@@ -203,7 +206,7 @@ const PaletteCommand = (): React.ReactNode => {
                       className={`p-3 text-gray-500 duration-200 select-none group rounded-xl hover:text-natagora hover:bg-gray-50 ${index === optIndex ? 'text-natagora bg-gray-50' : ''} cursor-pointer flex`}
                       id={`option-${optIndex}`}
                       key={`option-${option.name}`}
-                      role="option"
+                      role="listitem"
                       onClick={option.onClick}
                     >
                       <span className="pt-0.5">{option.icon}</span>

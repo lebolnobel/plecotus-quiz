@@ -57,7 +57,7 @@ const Home = (): React.ReactNode => {
           <div className="flex space-x-4 mb-6 text-base font-medium">
             <div className="flex-auto flex space-x-4">
               <NavLink
-                className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex relative"
+                className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
                 to={'/quiz'}
               >
                 Lancer le quiz !

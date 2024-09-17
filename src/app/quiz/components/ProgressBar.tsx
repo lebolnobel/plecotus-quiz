@@ -10,6 +10,7 @@ const ProgressBar = (props: ProgressBarType): React.ReactNode => {
     <div
       className="h-1 w-[0%] bg-natagora transition-all duration-200 fixed z-40 top-0 left-0"
       style={{ width: `${width}%` }}
+      role="progressbar"
     ></div>
   );
 };

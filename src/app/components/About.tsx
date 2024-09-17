@@ -81,6 +81,14 @@ const About = (): React.ReactNode => {
                   >
                     Natagora
                   </a>
+                  . Son code source est disponible sur{' '}
+                  <a
+                    href="https://github.com/lebolnobel/plecotus-quiz"
+                    title="Github, plecotus-quiz"
+                    className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
+                  >
+                    Github
+                  </a>
                   .
                 </p>
 
@@ -96,7 +104,7 @@ const About = (): React.ReactNode => {
                   Ce doument, que vous pouvez télécharger dans la rubrique{' '}
                   <NavLink
                     to="/ressources"
-                    className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
+                    className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit  focus:outline-none focus:ring-2 focus:ring-natagora-100"
                   >
                     ressources
                   </NavLink>
@@ -116,7 +124,7 @@ const About = (): React.ReactNode => {
           <div className="flex space-x-4 mb-6 text-base font-medium">
             <div className="flex-auto flex space-x-4">
               <NavLink
-                className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex relative"
+                className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
                 to={'/quiz'}
               >
                 Lancer le quiz !

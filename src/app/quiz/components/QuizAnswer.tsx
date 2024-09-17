@@ -13,7 +13,7 @@ type QuizAnswerType = {
 };
 
 const QuizAnswer = (props: QuizAnswerType): React.ReactNode => {
-  const { id, index, value, species, onSelectAnswer } = props;
+  const { id, value, species, onSelectAnswer } = props;
 
   const { display } = useQuizContext();
 
@@ -35,7 +35,6 @@ const QuizAnswer = (props: QuizAnswerType): React.ReactNode => {
           onChange={onChange}
           className="accent-primary -mt-1 align-middle"
           value={id}
-          tabIndex={index}
         />
         <span className="ps-3 font-normal text-base">
           {display === ABBR ? (

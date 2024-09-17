@@ -47,9 +47,10 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
           <div className="relative bg-white rounded-lg shadow">
             <button
               type="button"
-              role="close"
+              role="button"
               aria-label="close"
-              className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+              ref={(input) => input && input.focus()}
+              className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
             >
               <GoX role="presentation" size="24px" />
               <span className="sr-only">Fermer la popup</span>
@@ -76,7 +77,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
                   alt={"Trouver l'espèce qui se cache derrière cette image"}
                   title={"Trouver l'espèce qui se cache derrière cette image"}
                   className={`mx-auto rounded-lg w-full h-auto object-contain rounded-lg transition-all`}
-                  role="none"
+                  role="img"
                 />
               </div>
             </div>

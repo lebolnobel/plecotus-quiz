@@ -56,9 +56,9 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
         <div className="mt-4 mb-6">
           <p className="py-2 text-center">
             <button
-              className="py-2 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow relative"
+              className="py-2 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
               type="button"
-              role="reset"
+              role="button"
               aria-label="reset"
               onClick={onReset}
             >

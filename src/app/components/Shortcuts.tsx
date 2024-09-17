@@ -107,7 +107,8 @@ const Shortcuts = (): React.ReactNode => {
               type="button"
               role="close"
               aria-label="close"
-              className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+              ref={(input) => input && input.focus()}
+              className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
             >
               <GoX role="presentation" size="24px" />
               <span className="sr-only">Fermer la popup</span>
@@ -136,7 +137,7 @@ const Shortcuts = (): React.ReactNode => {
                     className="p-3 text-gray-500 duration-200 select-none group rounded-xl flex"
                     id={`option-${optIndex}`}
                     key={`option-${option.name}`}
-                    role="option"
+                    role="listitem"
                   >
                     <span className="pt-0.5">{option.icon}</span>
 
