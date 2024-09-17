@@ -10,11 +10,13 @@ import {
 import { IoReturnDownBack } from 'react-icons/io5';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext.ts';
 import { useQuizContext } from '../../hooks/useQuizContext.ts';
+import { ABBR } from '../../utils/constants.ts';
 
 type OptionsType = {
   name: string;
   displayName: string | React.ReactNode;
   icon: React.ReactNode;
+  switch?: React.ReactNode;
   onClick: () => void;
 };
 
@@ -22,21 +24,48 @@ const QuizSettings = (): React.ReactNode => {
   const [index, setIndex] = React.useState(0);
 
   const { showSettings, toggleSettingsMode } = usePlecotusContext();
-  const { toggleDisplay, toggleSelectToAnswer, setQuestions } =
-    useQuizContext();
+  const {
+    display,
+    selectToAnswerMode,
+    toggleDisplay,
+    toggleSelectToAnswer,
+    setQuestions,
+  } = useQuizContext();
 
   const options: Array<OptionsType> = React.useMemo(
     () => [
       {
         name: 'advanced-name',
-        displayName: 'Mode avancé: notation hivernale/nom vernaculaire',
+        displayName: 'Mode avancé: notation hivernale',
         icon: <GoBeaker role="presentation" />,
+        switch: (
+          <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              value=""
+              className="sr-only peer"
+              checked={display === ABBR}
+            />
+            <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-natagora-100 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-natagora"></div>
+          </label>
+        ),
         onClick: () => !!toggleDisplay && toggleDisplay(),
       },
       {
         name: 'advanced-answer',
-        displayName: 'Mode avancé: sélectionner/bouton pour répondre',
+        displayName: 'Mode avancé: sélectionner pour répondre',
         icon: <GoBeaker role="presentation" />,
+        switch: (
+          <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              value=""
+              className="sr-only peer"
+              checked={selectToAnswerMode}
+            />
+            <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-natagora-100 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-natagora"></div>
+          </label>
+        ),
         onClick: () => !!toggleSelectToAnswer && toggleSelectToAnswer(),
       },
       {
@@ -70,7 +99,13 @@ const QuizSettings = (): React.ReactNode => {
         onClick: () => !!setQuestions && setQuestions(50),
       },
     ],
-    [toggleDisplay, toggleSelectToAnswer, setQuestions],
+    [
+      display,
+      selectToAnswerMode,
+      toggleDisplay,
+      toggleSelectToAnswer,
+      setQuestions,
+    ],
   );
 
   React.useEffect(() => {
@@ -166,6 +201,8 @@ const QuizSettings = (): React.ReactNode => {
                     <span className="flex-auto ml-4 text-sm">
                       {option.displayName}
                     </span>
+
+                    {option.switch}
                   </li>
                 );
               })}
@@ -184,7 +221,7 @@ const QuizSettings = (): React.ReactNode => {
               </kbd>
               <span>pour naviguer</span>
               <kbd className="px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
-                esc
+                Esc
               </kbd>
               pour fermer.
             </div>

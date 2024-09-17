@@ -248,7 +248,7 @@ const PaletteCommand = (): React.ReactNode => {
               </kbd>
               <span>pour naviguer</span>
               <kbd className="px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
-                esc
+                Esc
               </kbd>
               pour fermer.
             </div>

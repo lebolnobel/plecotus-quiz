@@ -29,11 +29,12 @@ const About = (): React.ReactNode => {
                 Kesako ?
               </h3>
               <p>
-                Ce quiz va générer 10 questions aléatoires. Identifiez les
-                espèces afin d'engranger des points. La base de données contient
-                de nombreuses images pour garantir une expérience variée à
-                chaque session. N'hésitez pas à rejouer à plusieurs reprises
-                pour afiner votre œil en vue des recensements hivernaux.
+                Ce quiz va générer 10 questions aléatoires (ou plus en changeant
+                les paramètres). Identifiez les espèces afin d'engranger des
+                points. La base de données contient de nombreuses images pour
+                garantir une expérience variée à chaque session. N'hésitez pas à
+                rejouer à plusieurs reprises pour afiner votre œil en vue des
+                recensements hivernaux.
               </p>
               <p className="pt-2">
                 L'application peut être installée sur votre téléphone ou votre

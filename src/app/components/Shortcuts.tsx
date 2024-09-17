@@ -163,17 +163,16 @@ const Shortcuts = (): React.ReactNode => {
             </ul>
 
             <div className="flex flex-wrap items-center bg-gray-100 py-2.5 px-4 text-xs text-gray-400">
-              <span>Appuyer sur</span>
               <kbd className="px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 ?
               </kbd>
-              <span>pour afficher cette aide. Appuyez sur</span>
+              <span>pour afficher cette aide.</span>
               <kbd className="px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 alt
               </kbd>
               <span>pour afficher les overlays.</span>
               <kbd className="px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
-                esc
+                Esc
               </kbd>
               pour fermer.
             </div>
