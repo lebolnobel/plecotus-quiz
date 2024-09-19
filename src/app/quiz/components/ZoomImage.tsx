@@ -36,11 +36,9 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
     <div
       className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
       onClick={handleBackdropClick}
-      aria-hidden="true"
     >
       <div
         id="progress-modal"
-        aria-hidden="true"
         className="fixed inset-0 flex items-center justify-center z-50"
       >
         <div className="relative mx-2 my-2 md:mx-12 md:py-0 max-h-[90svh] w-full max-w-screen-lg overflow-auto">

@@ -15,8 +15,8 @@ import {
 import { IoReturnDownBack } from 'react-icons/io5';
 import { MdKeyboardOptionKey } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-import { usePlecotusContext } from '../../hooks/usePlecotusContext.ts';
-import { FUZE_OPTS, K_K, K_P } from '../../utils/constants.ts';
+import { usePlecotusContext } from '../../hooks/usePlecotusContext';
+import { FUZE_OPTS, K_K, K_P } from '../../utils/constants';
 import type { FuseResult } from 'fuse.js';
 
 type OptionsType = {

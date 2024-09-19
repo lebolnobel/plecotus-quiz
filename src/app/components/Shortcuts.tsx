@@ -9,8 +9,8 @@ import {
   GoMoveToStart,
 } from 'react-icons/go';
 import { MdKeyboardOptionKey } from 'react-icons/md';
-import { usePlecotusContext } from '../../hooks/usePlecotusContext.ts';
-import { K_question } from '../../utils/constants.ts';
+import { usePlecotusContext } from '../../hooks/usePlecotusContext';
+import { K_question } from '../../utils/constants';
 
 type OptionsType = {
   name: string;
@@ -96,7 +96,6 @@ const Shortcuts = (): React.ReactNode => {
   return (
     <div
       className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
-      aria-hidden="true"
       role="search"
       onClick={handleBackdropClick}
     >

@@ -1,6 +1,6 @@
 import React from 'react';
-import QuizAnswer from './QuizAnswer.tsx';
-import { species } from '../../../utils/species.tsx';
+import QuizAnswer from './QuizAnswer';
+import { species } from '../../../utils/species';
 
 type QuizAnswerListType = {
   value: string;

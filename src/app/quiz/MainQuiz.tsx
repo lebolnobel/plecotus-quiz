@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as uuid from 'uuid';
-import PlecotusQuiz from './PlecotusQuiz.tsx';
-import ScorePage from './ScorePage.tsx';
-import Loading from '../components/Loading.tsx';
-import { generateRandomQuestions } from '../../utils/helpers.ts';
-import { useQuizContext } from '../../hooks/useQuizContext.ts';
-import type { QuizQuestionType } from '../../utils/quiz.ts';
+import PlecotusQuiz from './PlecotusQuiz';
+import ScorePage from './ScorePage';
+import Loading from '../components/Loading';
+import { generateRandomQuestions } from '../../utils/helpers';
+import { useQuizContext } from '../../hooks/useQuizContext';
+import type { QuizQuestionType } from '../../utils/quiz';
 
 const Plecotus = (): React.ReactNode => {
   const [quizId, setQuizId] = React.useState(uuid.v4());

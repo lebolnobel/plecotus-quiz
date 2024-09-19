@@ -1,8 +1,8 @@
 import React from 'react';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { getRandomElement } from '../../../utils/helpers.ts';
-import { authors, images } from '../../../utils/images.ts';
+import { getRandomElement } from '../../../utils/helpers';
+import { authors, images } from '../../../utils/images';
 import {
   GoLocation,
   GoPerson,
@@ -14,12 +14,12 @@ import {
   GoArrowRight,
   GoMoveToStart,
 } from 'react-icons/go';
-import ZoomImage from './ZoomImage.tsx';
-import Overlay from '../../accessibility/Overlay.tsx';
-import { usePlecotusContext } from '../../../hooks/usePlecotusContext.ts';
-import { K_F, K_N, K_R } from '../../../utils/constants.ts';
-import type { ImageType } from '../../../utils/images.ts';
-import type { QuizQuestionType } from '../../../utils/quiz.ts';
+import ZoomImage from './ZoomImage';
+import Overlay from '../../accessibility/Overlay';
+import { usePlecotusContext } from '../../../hooks/usePlecotusContext';
+import { K_F, K_N, K_R } from '../../../utils/constants';
+import type { ImageType } from '../../../utils/images';
+import type { QuizQuestionType } from '../../../utils/quiz';
 
 type QuestionType = {
   currentQuestion: QuizQuestionType;
@@ -68,18 +68,20 @@ const Question = (props: QuestionType): React.ReactNode => {
   return (
     <>
       <figure className="overflow-hidden block" role="img">
-        <div className="transition-all ease-in duration-150 rounded-lg cursor-pointer hover:scale-125">
+        <div className="text-center transition-all ease-in duration-150 rounded-lg cursor-pointer hover:scale-125 min-h-32">
           <LazyLoadImage
             key={currentImage.url}
             src={currentImage.url}
             alt={"Trouver l'espèce qui se cache derrière cette image"}
             title={"Trouver l'espèce qui se cache derrière cette image"}
+            placeholderSrc="/assets/img/ressources/placeholder.jpg"
+            // placeholderSrc="https://placehold.co/600x400"
             className="mx-auto rounded-lg h-auto max-h-80"
             effect="blur"
-            visibleByDefault
-            wrapperProps={{
-              style: {},
-            }}
+            // visibleByDefault
+            // wrapperProps={{
+            // style: {},
+            // }}
             onClick={toggleEnlarged}
           />
         </div>

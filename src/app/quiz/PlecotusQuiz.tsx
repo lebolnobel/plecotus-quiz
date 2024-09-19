@@ -1,12 +1,12 @@
 import * as React from 'react';
-import QuizNavigation from './components/QuizNavigation.tsx';
-import QuizAnswerList from './components/QuizAnswerList.tsx';
-import Question from './components/QuizQuestion.tsx';
-import Explanation from './components/Explanation.tsx';
-import CurrentScore from './components/CurrentNavigation.tsx';
-import ProgressBar from './components/ProgressBar.tsx';
-import { useQuizContext } from '../../hooks/useQuizContext.ts';
-import type { QuizQuestionType } from '../../utils/quiz.ts';
+import QuizNavigation from './components/QuizNavigation';
+import QuizAnswerList from './components/QuizAnswerList';
+import Question from './components/QuizQuestion';
+import Explanation from './components/Explanation';
+import CurrentScore from './components/CurrentNavigation';
+import ProgressBar from './components/ProgressBar';
+import { useQuizContext } from '../../hooks/useQuizContext';
+import type { QuizQuestionType } from '../../utils/quiz';
 
 type PlecotusQuizType = {
   index: number;

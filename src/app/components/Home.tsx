@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Overlay from '../accessibility/Overlay.tsx';
-import { GoArrowRight } from 'react-icons/go';
+import Overlay from '../accessibility/Overlay';
 import { NavLink } from 'react-router-dom';
 
 const Home = (): React.ReactNode => {
@@ -61,13 +60,24 @@ const Home = (): React.ReactNode => {
                 to={'/quiz'}
               >
                 Lancer le quiz !
-                <GoArrowRight role="presentation" size="24" className="ml-2" />
                 <Overlay>
                   <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
                     S
                   </div>
                 </Overlay>
               </NavLink>
+
+              {/* <NavLink
+                className="px-6 py-2 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                to={'/quiz'}
+              >
+                Lancer avec paramètres
+                <Overlay>
+                  <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
+                    S
+                  </div>
+                </Overlay>
+              </NavLink> */}
             </div>
           </div>
         </div>

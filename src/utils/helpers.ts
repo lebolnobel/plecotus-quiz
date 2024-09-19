@@ -1,6 +1,6 @@
-import { answerImages } from './images.ts';
-import { SP } from './species.tsx';
-import type { QuizQuestionType } from './quiz.ts';
+import { answerImages } from './images';
+import { SP } from './species';
+import type { QuizQuestionType } from './quiz';
 
 export function generateRandomQuestions(
   total: number,

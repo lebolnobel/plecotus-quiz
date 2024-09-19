@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GoArrowRight } from 'react-icons/go';
-import { MEMO } from '../../utils/constants.ts';
+import { MEMO } from '../../utils/constants';
 
 const Ressources = (): React.ReactNode => {
   const downloadMemo = () => {

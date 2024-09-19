@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GoHeart } from 'react-icons/go';
-import { usePlecotusContext } from '../../hooks/usePlecotusContext.ts';
+import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 
 const Footer = (): React.ReactNode => {
   const { isMac } = usePlecotusContext();
@@ -21,7 +21,7 @@ const Footer = (): React.ReactNode => {
         <a
           href="https://plecotus.natagora.be/"
           title="Plecotus"
-          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
+          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
         >
           Plecotus
         </a>
@@ -29,7 +29,7 @@ const Footer = (): React.ReactNode => {
         <a
           href="http://natagora.be/"
           title="Natagora"
-          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
+          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
         >
           Natagora
         </a>
@@ -40,7 +40,7 @@ const Footer = (): React.ReactNode => {
         <a
           href="https://github.com/lebolnobel/plecotus-quiz"
           title="Github, plecotus-quiz"
-          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit"
+          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
         >
           Github
         </a>

@@ -8,9 +8,9 @@ import {
   GoX,
 } from 'react-icons/go';
 import { IoReturnDownBack } from 'react-icons/io5';
-import { usePlecotusContext } from '../../hooks/usePlecotusContext.ts';
-import { useQuizContext } from '../../hooks/useQuizContext.ts';
-import { ABBR } from '../../utils/constants.ts';
+import { usePlecotusContext } from '../../hooks/usePlecotusContext';
+import { useQuizContext } from '../../hooks/useQuizContext';
+import { ABBR } from '../../utils/constants';
 
 type OptionsType = {
   name: string;
@@ -153,7 +153,6 @@ const QuizSettings = (): React.ReactNode => {
   return (
     <div
       className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
-      aria-hidden="true"
       role="search"
       onClick={handleBackdropClick}
     >

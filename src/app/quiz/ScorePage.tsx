@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { GoTrophy } from 'react-icons/go';
-import Overlay from '../accessibility/Overlay.tsx';
-import { useQuizContext } from '../../hooks/useQuizContext.ts';
-import { K_R } from '../../utils/constants.ts';
+import { GoMoveToStart, GoTrophy } from 'react-icons/go';
+import Overlay from '../accessibility/Overlay';
+import { useQuizContext } from '../../hooks/useQuizContext';
+import { K_R } from '../../utils/constants';
 
 type ScorePageType = {
   score: number;
@@ -56,12 +56,13 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
         <div className="mt-4 mb-6">
           <p className="py-2 text-center">
             <button
-              className="py-2 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              className="py-2 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow relative inline-flex focus:outline-none focus:ring-2 focus:ring-natagora-100"
               type="button"
               role="button"
               aria-label="reset"
               onClick={onReset}
             >
+              <GoMoveToStart role="presentation" size="24" className="mr-2" />
               Je veux recommencer
               <Overlay onAction={onReset} keyCode={K_R}>
                 <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">

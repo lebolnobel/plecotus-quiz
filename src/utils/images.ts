@@ -1,4 +1,4 @@
-import { SP } from './species.tsx';
+import { SP } from './species';
 
 export type ImageType = {
   speciesId: string;
@@ -10,7 +10,7 @@ export type ImageType = {
 };
 
 // Used this to display a specific image as anwser!
-// Update quiz.ts to add the corresponding imageId
+// Update quiz to add the corresponding imageId
 export const answerImages: { [key: string]: ImageType } = {};
 
 // Images used for question

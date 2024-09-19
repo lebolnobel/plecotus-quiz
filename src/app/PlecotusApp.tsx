@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Nav from './components/Nav.tsx';
-import Footer from './components/Footer.tsx';
-import PaletteCommand from './components/PaletteCommand.tsx';
-import DebugMode from './components/DebugMode.tsx';
-import Shortcuts from './components/Shortcuts.tsx';
-import QuizSettings from './components/QuizSettings.tsx';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import PaletteCommand from './components/PaletteCommand';
+import DebugMode from './components/DebugMode';
+import Shortcuts from './components/Shortcuts';
+import QuizSettings from './components/QuizSettings';
 import { Outlet } from 'react-router-dom';
 
 const Plecotus = (): React.ReactNode => {

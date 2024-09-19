@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DEFAULT_TOTAL, NORMAL, ABBR } from '../utils/constants.ts';
+import { DEFAULT_TOTAL, NORMAL, ABBR } from '../utils/constants';
 
 export type QuizContextType = {
   totalQuestions: number;

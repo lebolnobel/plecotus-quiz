@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useQuizContext } from '../../../hooks/useQuizContext.ts';
+import { useQuizContext } from '../../../hooks/useQuizContext';
 
 type CurrentScoreType = {
   index: number;

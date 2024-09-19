@@ -1,5 +1,5 @@
 import * as React from 'react';
-import useShortcuts from '../../hooks/useShortcuts.ts';
+import useShortcuts from '../../hooks/useShortcuts';
 
 type OverlayType = {
   children: React.ReactNode;

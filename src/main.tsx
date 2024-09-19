@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Plecotus from './app/PlecotusApp.tsx';
-import ErrorPage from './app/components/ErrorPage.tsx';
-import Home from './app/components/Home.tsx';
-import Quiz from './app/quiz/MainQuiz.tsx';
-import Ressources from './app/components/Ressources.tsx';
-import About from './app/components/About.tsx';
-import PlecotusProvider from './context/PlecotusAppContext.tsx';
-import QuizAppContext from './context/QuizAppContext.tsx';
+import Plecotus from './app/PlecotusApp';
+import ErrorPage from './app/components/ErrorPage';
+import Home from './app/components/Home';
+import Quiz from './app/quiz/MainQuiz';
+import Ressources from './app/components/Ressources';
+import About from './app/components/About';
+import PlecotusProvider from './context/PlecotusAppContext';
+import QuizAppContext from './context/QuizAppContext';
 
-import { NORMAL, DEFAULT_TOTAL } from './utils/constants.ts';
+import { NORMAL, DEFAULT_TOTAL } from './utils/constants';
 
 import './styles/styles.css';
 

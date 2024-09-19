@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { K_1, K_2, K_H, K_Q, K_S } from '../utils/constants.ts';
-import { usePlecotusContext } from './usePlecotusContext.ts';
+import { K_1, K_2, K_H, K_Q, K_S } from '../utils/constants';
+import { usePlecotusContext } from './usePlecotusContext';
 
 type UseShortcutsReturnType = {
   showOverlays: boolean;
