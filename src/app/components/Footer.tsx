@@ -13,7 +13,7 @@ const Footer = (): React.ReactNode => {
       <p>
         <span className="inline-flex">
           Fait avec{' '}
-          <span className="px-1">
+          <span className="pl-1">
             <GoHeart role="presentation" />
           </span>
         </span>

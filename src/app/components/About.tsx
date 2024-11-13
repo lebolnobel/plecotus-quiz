@@ -90,6 +90,14 @@ const About = (): React.ReactNode => {
                   >
                     Github
                   </a>
+                  . Vous pouvez également lire mon{' '}
+                  <a
+                    href="https://lebol.notion.site/Plecotus-FCH-2023-2024-Rapport-d-activit-9c76378b950d4287bd112ecbe8a6733b?pvs=74"
+                    title="Rapport d'activité"
+                    className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                  >
+                    rapport d'activité
+                  </a>
                   .
                 </p>
 
