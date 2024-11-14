@@ -21,8 +21,6 @@ const Plecotus = (): React.ReactNode => {
     // Generate unique quiz for the user session
     const quiz = generateRandomQuestions(totalQuestions);
     setCurrentQuiz(quiz);
-    // console.log(quizId, totalQuestions);
-    // console.log(quiz);
   }, [quizId, totalQuestions]);
 
   const handleSelectAnswer = (answer: string) => {

@@ -15,31 +15,41 @@ import { NORMAL, DEFAULT_TOTAL } from './utils/constants';
 
 import './styles/styles.css';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Plecotus />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+        },
+        {
+          path: 'quiz',
+          element: <Quiz />,
+        },
+        {
+          path: 'ressources',
+          element: <Ressources />,
+        },
+        {
+          path: 'about',
+          element: <About />,
+        },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <Plecotus />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: 'quiz',
-        element: <Quiz />,
-      },
-      {
-        path: 'ressources',
-        element: <Ressources />,
-      },
-      {
-        path: 'about',
-        element: <About />,
-      },
-    ],
+    future: {
+      v7_relativeSplatPath: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_fetcherPersist: true,
+    },
   },
-]);
+);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -49,7 +59,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         display={NORMAL}
         totalQuestions={DEFAULT_TOTAL}
       >
-        <RouterProvider router={router} />
+        <RouterProvider
+          router={router}
+          future={{
+            v7_startTransition: true,
+          }}
+        />
       </QuizAppContext>
     </PlecotusProvider>
   </React.StrictMode>,

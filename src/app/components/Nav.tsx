@@ -19,7 +19,7 @@ const Nav = (): React.ReactNode => {
     <nav className="bg-gray-50 border-gray-200" role="banner">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
-          to="/"
+          to="../"
           className="flex items-center space-x-3 relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
         >
           <img
@@ -69,7 +69,7 @@ const Nav = (): React.ReactNode => {
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li className="relative">
               <NavLink
-                to="/"
+                to="../"
                 className={({ isActive }) => className(isActive)}
                 title="Accueil"
               >
@@ -83,7 +83,7 @@ const Nav = (): React.ReactNode => {
             </li>
             <li className="relative">
               <NavLink
-                to="/quiz"
+                to="../quiz"
                 className={({ isActive }) => className(isActive)}
                 title="Quiz"
               >
@@ -97,7 +97,7 @@ const Nav = (): React.ReactNode => {
             </li>
             <li className="relative">
               <NavLink
-                to="/ressources"
+                to="../ressources"
                 className={({ isActive }) => className(isActive)}
                 title="Ressources"
               >
@@ -111,7 +111,7 @@ const Nav = (): React.ReactNode => {
             </li>
             <li className="relative">
               <NavLink
-                to="/about"
+                to="../about"
                 className={({ isActive }) => className(isActive)}
                 title="À propos"
               >

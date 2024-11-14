@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRouteError, Link, isRouteErrorResponse } from 'react-router-dom';
+import { useRouteError, isRouteErrorResponse, NavLink } from 'react-router-dom';
 
 const ErrorPage = (): React.ReactNode => {
   const error = useRouteError();
@@ -28,12 +28,12 @@ const ErrorPage = (): React.ReactNode => {
           <p className="mb-4 text-lg font-light text-gray-500">
             {errorMessage}
           </p>
-          <Link
-            to="/"
+          <NavLink
+            to="../"
             className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora-100"
           >
             Retour
-          </Link>
+          </NavLink>
         </div>
       </div>
     </section>

@@ -112,7 +112,7 @@ const About = (): React.ReactNode => {
                 <p className="py-2">
                   Ce doument, que vous pouvez télécharger dans la rubrique{' '}
                   <NavLink
-                    to="/ressources"
+                    to="../ressources"
                     className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
                   >
                     ressources

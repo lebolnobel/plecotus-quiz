@@ -993,6 +993,10 @@ video {
   flex: none;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .basis-1\/2 {
   flex-basis: 50%;
 }
@@ -1482,6 +1486,10 @@ video {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
 }
 
 .italic {
