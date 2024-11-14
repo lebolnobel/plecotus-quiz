@@ -1,5 +1,10 @@
 export const MEMO =
   'https://plecotus.natagora.be/fileadmin/Pole_Plecotus/biblio/Memo_5_20191106_PNy_RCo_1_.pdf';
+export const BUG =
+  'https://docs.google.com/forms/d/e/1FAIpQLScnhzqa9nENyfEuNJMXwPKBHWpT0pxEZAWp4m-6HVB5YGw40Q/viewform?usp=pp_url&entry.1296158009=';
+export const FEEDBACK = 'https://forms.gle/1cRnvvpNi1CD9hLm9';
+export const GITHUB = 'https://github.com/lebolnobel/plecotus-quiz';
+
 export const DEFAULT_TOTAL = 10;
 
 export const NORMAL = 'normal';

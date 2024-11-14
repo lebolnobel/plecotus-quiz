@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Overlay from '../../accessibility/Overlay';
-import { K_N, K_R } from '../../../utils/constants';
+import Overlay from '../../../accessibility/Overlay';
+import { K_N, K_R } from '../../../../utils/constants';
 import { GoArrowRight, GoMoveToStart } from 'react-icons/go';
 
 type QuizNavigationType = {

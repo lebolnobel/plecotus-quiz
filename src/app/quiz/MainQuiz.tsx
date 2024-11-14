@@ -5,9 +5,10 @@ import ScorePage from './ScorePage';
 import Loading from '../components/Loading';
 import { generateRandomQuestions } from '../../utils/helpers';
 import { useQuizContext } from '../../hooks/useQuizContext';
+import { writeData } from '../../db/database';
 import type { QuizQuestionType } from '../../utils/quiz';
 
-const Plecotus = (): React.ReactNode => {
+const Quiz = (): React.ReactNode => {
   const [quizId, setQuizId] = React.useState(uuid.v4());
   const [currentQuiz, setCurrentQuiz] = React.useState<QuizQuestionType[]>([]);
   const { totalQuestions, selectToAnswerMode } = useQuizContext();
@@ -22,6 +23,11 @@ const Plecotus = (): React.ReactNode => {
     const quiz = generateRandomQuestions(totalQuestions);
     setCurrentQuiz(quiz);
   }, [quizId, totalQuestions]);
+
+  if (currentQuiz.length === 0) return <Loading />;
+
+  const currentQuestion = currentQuiz[index];
+  const isEnd = index >= currentQuiz.length;
 
   const handleSelectAnswer = (answer: string) => {
     setChoice(answer);
@@ -41,15 +47,30 @@ const Plecotus = (): React.ReactNode => {
     setIndex(0);
   };
 
-  if (currentQuiz.length === 0) return <Loading />;
-
-  const currentQuestion = currentQuiz[index];
-  const isEnd = index >= currentQuiz.length;
-
   const checkAnswer = (value: string) => {
-    const rightAnswer = currentQuestion?.rightAnswer;
+    const rightAnswer = currentQuestion?.image.speciesId;
     const isCorrect = rightAnswer === value;
-    isCorrect && setScore(score + 1);
+    const newScore = score + 1;
+    isCorrect && setScore(newScore);
+
+    try {
+      // Answer
+      void writeData('ANSWER', {
+        isCorrect,
+        userAnswer: value,
+        question: currentQuestion.image,
+      });
+
+      // Score page
+      if (index === currentQuiz.length - 1) {
+        void writeData('SCORE', {
+          score: newScore,
+          totalQuestions: currentQuiz.length,
+        });
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -70,4 +91,4 @@ const Plecotus = (): React.ReactNode => {
   );
 };
 
-export default Plecotus;
+export default Quiz;

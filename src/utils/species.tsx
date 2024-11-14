@@ -1,5 +1,5 @@
 import * as React from 'react';
-import SpeciesCard from '../app/quiz/components/SpeciesCard';
+import SpeciesCard from '../app/quiz/components/explanation/SpeciesCard';
 
 export const SP = Object.freeze({
   Barbar: 'Barbar', // Barbastelle d'Europe

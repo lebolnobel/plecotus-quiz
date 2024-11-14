@@ -1,24 +1,21 @@
 import React from 'react';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { getRandomElement } from '../../../utils/helpers';
-import { authors, images } from '../../../utils/images';
+import { authors } from '../../../utils/images';
 import {
   GoLocation,
   GoPerson,
   GoDotFill,
-  GoNote,
   GoScreenFull,
   GoStop,
   GoGear,
   GoArrowRight,
   GoMoveToStart,
 } from 'react-icons/go';
-import ZoomImage from './ZoomImage';
+import ZoomImage from './question/ZoomImage';
 import Overlay from '../../accessibility/Overlay';
 import { usePlecotusContext } from '../../../hooks/usePlecotusContext';
-import { K_F, K_N, K_R } from '../../../utils/constants';
-import type { ImageType } from '../../../utils/images';
+import { BUG, K_F, K_N, K_R } from '../../../utils/constants';
 import type { QuizQuestionType } from '../../../utils/quiz';
 
 type QuestionType = {
@@ -31,7 +28,6 @@ type QuestionType = {
 const Question = (props: QuestionType): React.ReactNode => {
   const { currentQuestion, isAnwser, onNext, onReset } = props;
 
-  const [image, setImage] = React.useState<null | ImageType>(null);
   const [enlarged, setEnlarged] = React.useState<boolean>(false);
 
   const { toggleSettingsMode } = usePlecotusContext();
@@ -40,26 +36,10 @@ const Question = (props: QuestionType): React.ReactNode => {
     setEnlarged((prev) => !prev);
   };
 
-  const createBugTicket = () => {
-    window.open(
-      `https://docs.google.com/forms/d/e/1FAIpQLScnhzqa9nENyfEuNJMXwPKBHWpT0pxEZAWp4m-6HVB5YGw40Q/viewform?usp=pp_url&entry.1296158009=${currentImage.url}`,
-      '_blank',
-    );
-  };
-
-  React.useEffect(() => {
-    const img = getRandomElement<ImageType>(
-      images.filter((img) => img.speciesId === currentQuestion.rightAnswer),
-    );
-    setImage(img || null);
-
-    return () => setImage(null);
-  }, [currentQuestion]);
-
-  if (!image) return null;
+  if (!currentQuestion.image) return null;
 
   const answerImage = (isAnwser && currentQuestion?.imageAnswer) || null;
-  const currentImage = answerImage || image;
+  const currentImage = answerImage || currentQuestion.image;
   const author =
     currentImage?.authorId !== undefined
       ? authors[currentImage.authorId]
@@ -75,13 +55,8 @@ const Question = (props: QuestionType): React.ReactNode => {
             alt={"Trouver l'espèce qui se cache derrière cette image"}
             title={"Trouver l'espèce qui se cache derrière cette image"}
             placeholderSrc="/assets/img/ressources/placeholder.jpg"
-            // placeholderSrc="https://placehold.co/600x400"
             className="mx-auto rounded-lg h-auto max-h-80"
             effect="blur"
-            // visibleByDefault
-            // wrapperProps={{
-            // style: {},
-            // }}
             onClick={toggleEnlarged}
           />
         </div>
@@ -112,24 +87,8 @@ const Question = (props: QuestionType): React.ReactNode => {
             />
 
             <GoLocation role="presentation" size="18px" className="mr-2" />
-            {image?.place || 'Lieu inconnu'}
+            {currentImage?.place || 'Lieu inconnu'}
           </dd>
-
-          {image?.description && (
-            <>
-              <dt className="sr-only">Description</dt>
-              <dd className="flex items-center">
-                <GoDotFill
-                  role="presentation"
-                  size="6px"
-                  className="mx-3 text-gray-400"
-                />
-
-                <GoNote role="presentation" size="18px" className="mr-2" />
-                {image?.description}
-              </dd>
-            </>
-          )}
 
           <div className="w-full sm:w-10">&nbsp;</div>
 
@@ -141,7 +100,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               title="Signaler une erreur"
               aria-label="fullscreen"
               className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
-              onClick={createBugTicket}
+              onClick={() => window.open(`${BUG}${currentImage.url}`, '_blank')}
             >
               <GoStop
                 role="presentation"

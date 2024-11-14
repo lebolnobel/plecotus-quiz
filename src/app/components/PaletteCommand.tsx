@@ -16,7 +16,7 @@ import { IoReturnDownBack } from 'react-icons/io5';
 import { MdKeyboardOptionKey } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
-import { FUZE_OPTS, K_K, K_P } from '../../utils/constants';
+import { FEEDBACK, FUZE_OPTS, GITHUB, K_K, K_P } from '../../utils/constants';
 import type { FuseResult } from 'fuse.js';
 
 type OptionsType = {
@@ -65,19 +65,14 @@ const PaletteCommand = (): React.ReactNode => {
         displayName: 'Créer un feedback',
         icon: <GoMegaphone role="presentation" />,
         shortcut: [],
-        onClick: () =>
-          window.open('https://forms.gle/1cRnvvpNi1CD9hLm9', '_blank'),
+        onClick: () => window.open(FEEDBACK, '_blank'),
       },
       {
         name: 'bug',
         displayName: 'Remonter un bug',
         icon: <GoBug role="presentation" />,
         shortcut: [],
-        onClick: () =>
-          window.open(
-            'https://github.com/lebolnobel/plecotus-quiz/issues',
-            '_blank',
-          ),
+        onClick: () => window.open(`${GITHUB}/issues`, '_blank'),
       },
       {
         name: 'debug',
@@ -91,23 +86,18 @@ const PaletteCommand = (): React.ReactNode => {
         displayName: 'Contribuer au projet, sur Github',
         icon: <GoCommandPalette role="presentation" />,
         shortcut: [],
-        onClick: () =>
-          window.open('https://github.com/lebolnobel/plecotus-quiz', '_blank'),
+        onClick: () => window.open(GITHUB, '_blank'),
       },
     ],
     [isMac, toggleDebugMode, toggleShortcutsMode, toggleSettingsMode, navigate],
   );
 
-  // eslint-disable-next-line
   const fuse = new Fuse(options, FUZE_OPTS);
-  // eslint-disable-next-line
   const result: Array<FuseResult<OptionsType>> = fuse.search(query);
-  // eslint-disable-next-line
   const commands: Array<OptionsType> =
     result.length === 0
       ? options
-      : // eslint-disable-next-line
-        result.map((r) => r?.item);
+      : result.map((r: FuseResult<OptionsType>) => r?.item);
 
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { useQuizContext } from '../../../hooks/useQuizContext';
+import { useQuizContext } from '../../../../hooks/useQuizContext';
+import { addLeadingZero } from '../../../../utils/helpers';
 
 type CurrentScoreType = {
   index: number;
@@ -9,9 +10,6 @@ const CurrentScore = (props: CurrentScoreType): React.ReactNode => {
   const { index } = props;
 
   const { totalQuestions } = useQuizContext();
-
-  const addLeadingZero = (number: number): string =>
-    number > 9 ? `${number}` : `0${number}`;
 
   return (
     <div>

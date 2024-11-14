@@ -1,10 +1,10 @@
 import * as React from 'react';
-import QuizNavigation from './components/QuizNavigation';
-import QuizAnswerList from './components/QuizAnswerList';
-import Question from './components/QuizQuestion';
-import Explanation from './components/Explanation';
-import CurrentScore from './components/CurrentNavigation';
-import ProgressBar from './components/ProgressBar';
+import QuizNavigation from './components/question/Navigation';
+import QuizAnswerList from './components/choice/QuizChoiceList';
+import Question from './components/Question';
+import Explanation from './components/explanation/Explanation';
+import CurrentScore from './components/question/CurrentScore';
+import ProgressBar from './components/question/ProgressBar';
 import { useQuizContext } from '../../hooks/useQuizContext';
 import type { QuizQuestionType } from '../../utils/quiz';
 
@@ -76,7 +76,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
 
       {isExplanation ? (
         <Explanation
-          rightAnswer={currentQuestion.rightAnswer}
+          rightAnswer={currentQuestion.image.speciesId}
           value={value}
           onNext={onNext}
         />

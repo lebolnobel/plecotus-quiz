@@ -20,10 +20,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "types": [
-      "./node_modules/network-information-types"
-  ]
+    "types": ["./node_modules/network-information-types"]
   },
-  "include": ["src"],
+  "include": ["src", "netlify"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

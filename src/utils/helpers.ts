@@ -1,6 +1,11 @@
-import { answerImages } from './images';
+import { answerImages, images } from './images';
 import { SP } from './species';
 import type { QuizQuestionType } from './quiz';
+import type { ImageType } from './images';
+
+export function addLeadingZero(number: number): string {
+  return number > 9 ? `${number}` : `0${number}`;
+}
 
 export function generateRandomQuestions(
   total: number,
@@ -14,23 +19,30 @@ export function generateRandomQuestions(
   } else {
     return Array(total)
       .fill(null)
-      .map(() => getRandomElement(values))
+      .map(() => getRandomElementOrVoid(values))
       .filter((value) => value != undefined)
       .map((value) => getElement(value));
   }
 }
 
-export function getRandomElement<T>(array: Array<T>): void | T {
+export function getRandomElementOrVoid<T>(array: Array<T>): void | T {
   if (array.length === 0) return undefined;
 
+  return getRandomElement(array);
+}
+
+export function getRandomElement<T>(array: Array<T>): T {
   const randIndex = Math.floor(Math.random() * array.length);
   return array[randIndex];
 }
 
 function getElement(value: string): QuizQuestionType {
   return {
-    rightAnswer: value,
     imageAnswer: answerImages[value],
+    image:
+      getRandomElement<ImageType>(
+        images.filter((img) => img.speciesId === value),
+      ) || undefined,
   };
 }
 

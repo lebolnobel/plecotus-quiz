@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { useQuizContext } from '../../../hooks/useQuizContext';
-import { ABBR } from '../../../utils/constants';
+import { useQuizContext } from '../../../../hooks/useQuizContext';
+import { ABBR } from '../../../../utils/constants';
 import { GoDotFill } from 'react-icons/go';
-import type { SpeciesType } from '../../../utils/species';
+import type { SpeciesType } from '../../../../utils/species';
 
 type QuizAnswerType = {
   id: string;
@@ -12,7 +12,7 @@ type QuizAnswerType = {
   onSelectAnswer: (value: string) => void;
 };
 
-const QuizAnswer = (props: QuizAnswerType): React.ReactNode => {
+const QuizChoiceItem = (props: QuizAnswerType): React.ReactNode => {
   const { id, value, species, onSelectAnswer } = props;
 
   const { display } = useQuizContext();
@@ -60,4 +60,4 @@ const QuizAnswer = (props: QuizAnswerType): React.ReactNode => {
   );
 };
 
-export default QuizAnswer;
+export default QuizChoiceItem;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { species } from '../../../utils/species';
+import { species } from '../../../../utils/species';
 import {
   GoArrowRight,
   GoCheckCircle,
