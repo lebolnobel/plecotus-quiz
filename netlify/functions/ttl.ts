@@ -1,9 +1,14 @@
 import type { Config } from '@netlify/functions';
-import supabase from '../../src/db/database';
+import { createClient } from '@supabase/supabase-js';
 
 export default async (req: Request) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { next_run } = await req.json();
+
+  const host = (process.env.VITE_HOST as string) || '';
+  const key = (process.env.VITE_API_KEY as string) || '';
+
+  const supabase = createClient(host, key);
 
   await supabase.from('ttl').insert({});
 
