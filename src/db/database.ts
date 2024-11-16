@@ -4,11 +4,13 @@ import { generateFingerprint } from './fingerprint';
 const host = (import.meta.env.VITE_HOST as string) || '';
 const key = (import.meta.env.VITE_API_KEY as string) || '';
 
-const supabase = createClient(host, key);
+const supabase = (!!host && createClient(host, key)) || undefined;
 
 export default supabase;
 
 export async function writeData(type: 'SCORE' | 'ANSWER', data: object) {
+  if (!supabase) return;
+
   try {
     const fingerprint = generateFingerprint();
     const { error } = await supabase.from('usage').insert({

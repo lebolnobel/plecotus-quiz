@@ -5,8 +5,13 @@ export default async (req: Request) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { next_run } = await req.json();
 
-  const host = (process.env.HOST as string) || '';
-  const key = (process.env.API_KEY as string) || '';
+  const host = Netlify.env.get('HOST') || '';
+  const key = Netlify.env.get('API_KEY') || '';
+
+  if (!host) {
+    console.log('Error, supabase is not initialized', next_run);
+    return;
+  }
 
   const supabase = createClient(host, key);
 

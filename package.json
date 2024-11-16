@@ -7,12 +7,12 @@
   "scripts": {
     "build": "npm run check && vite build",
     "check": "npm run lint && npm run tsc",
-    "dev": "vite",
+    "dev": "vite --host",
     "lint": "eslint . --ext ts,tsx --max-warnings 0",
     "preview": "vite preview --host --port 8080",
     "prepare": "husky",
     "reset": "rm -rf node_modules/ && rm package-lock.json && npm i && npm audit fix",
-    "start": "vite --host",
+    "start": "vite",
     "tsc": "npx tsc",
     "watch-css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/styles.css --watch"
   },
