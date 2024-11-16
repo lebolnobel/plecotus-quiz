@@ -5,8 +5,8 @@ export default async (req: Request) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { next_run } = await req.json();
 
-  const host = (process.env.VITE_HOST as string) || '';
-  const key = (process.env.VITE_API_KEY as string) || '';
+  const host = (process.env.HOST as string) || '';
+  const key = (process.env.API_KEY as string) || '';
 
   const supabase = createClient(host, key);
 
