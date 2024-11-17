@@ -1,6 +1,6 @@
 # Plecotus-quiz
 
-> Quiz, détermination des espèces de chauve-souris en hiver, pour Plecotus/Natagora. Une erreur ? Une idée ? Contribuez au projet ou [contactez-moi](https://github.com/lebolnobel)
+> Quiz, détermination des espèces de chauve-souris en hiver, pour Plecotus/Natagora. Une erreur ? Une idée ? Contribuez au projet ou [contactez-moi](https://github.com/lebolnobel).
 
 [Demo](https://plecotus.netlify.app/)
 
@@ -9,7 +9,7 @@
 ## Quiz
 ### Recensements hivernaux
 
-Ce quiz va générer 10 questions aléatoires. Identifiez les espèces afin d'engranger des points. La base de données contient de nombreuses images pour garantir une expérience variée à chaque session. N'hésitez pas à rejouer à plusieurs reprises pour afiner votre œil en vue des recensements hivernaux.
+Ce quiz va générer quelques questions aléatoires (paramétrable) pour vous faire réviser vos critères. Identifiez les espèces afin d'engranger des points. La base de données contient de nombreuses images pour garantir une expérience variée à chaque session. N'hésitez pas à rejouer à plusieurs reprises pour afiner votre œil en vue des recensements hivernaux.
 
 L'application peut être également installée sur votre téléphone.
 
@@ -19,15 +19,15 @@ Les photos ne sont pas libres de droit. Elles restent la propriété de leur aut
 
 ### Feedbacks
 
-Vos retours sont les bienvenus, répondez au [formulaire](https://docs.google.com/forms/d/e/1FAIpQLSeeT9cB-hASoaxLCC7lc1GDIbUTsKxidsflA-kuom5o37vEWw/viewform?usp=sf_link) d'enquête d'amélioration continue de l'application
+Vos retours sont les bienvenus, répondez au [formulaire](https://docs.google.com/forms/d/e/1FAIpQLSeeT9cB-hASoaxLCC7lc1GDIbUTsKxidsflA-kuom5o37vEWw/viewform?usp=sf_link) d'enquête d'amélioration continue de l'application. Si vous rencontrez un problème avec l'une des question, utilisez le "!" présent en dessous de l'image pour reporter le soucis.
 
 ## Natagora
 
 Natagora a pour but de protéger la nature, plus particulièrement en Wallonie et à Bruxelles. Son objectif ? Enrayer la dégradation de la biodiversité et reconstituer un bon état général de la nature, en équilibre avec les activités humaines.
 
-Plus d'infos sur [natagora.be](https://natagora.be)
+Plus d'infos sur [Natagora](https://natagora.be) et sur [Plecotus](https://plecotus.natagora.be/).
 
-## Getting Started, dev note
+## Getting Started
 
 ### Prerequisites
 
@@ -41,7 +41,7 @@ Make sure you have Node.js version `18.x` (or later).
 
 ### Usage
 
-How to use the project locally.
+How to use the project locally:
 
 1. Clone the repo  
 ```git clone https://github.com/lebolnobel/plecotus-quiz.git```
@@ -69,14 +69,14 @@ In case of bug, here are steps to create bug reports that are:
 * Unique. Do not duplicate existing opened issues.
 * Scoped to a Single Bug. One bug per report.
 
-See [Contributing guide](CONTRIBUTING.md) for more
+See [Contributing guide](CONTRIBUTING.md) for more.
 
 ## Support
 
 Reach out to the maintainer at one of the following places:
 
 * [GitHub discussions](https://github.com/lebolnobel/plecotus-quiz/discussions)
-* The email which is located in GitHub profile
+* The email which is located in my [GitHub profile](https://github.com/lebolnobel).
 
 ## License
 

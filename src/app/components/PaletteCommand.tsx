@@ -83,7 +83,7 @@ const PaletteCommand = (): React.ReactNode => {
       },
       {
         name: 'code',
-        displayName: 'Contribuer au projet, sur Github',
+        displayName: 'Contribuer au projet, sur GitHub',
         icon: <GoCommandPalette role="presentation" />,
         shortcut: [],
         onClick: () => window.open(GITHUB, '_blank'),

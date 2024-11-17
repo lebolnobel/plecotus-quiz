@@ -1,9 +1,27 @@
 import * as React from 'react';
 import { GoBug, GoFileCode, GoX } from 'react-icons/go';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
+import { generateFingerprint } from '../../db/fingerprint';
 
 const DebugMode = (): React.ReactNode => {
   const { isDebug, toggleDebugMode } = usePlecotusContext();
+
+  React.useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (isDebug) {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          toggleDebugMode && toggleDebugMode();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isDebug, toggleDebugMode]);
 
   if (!isDebug) return null;
 
@@ -15,13 +33,13 @@ const DebugMode = (): React.ReactNode => {
   if (navigator.userAgent.indexOf('like Mac') != -1) OSName = 'iOS';
 
   return (
-    <div className="rounded-lg bg-gray-700 text-white fixed bottom-0 left-0 m-5 opacity-50">
+    <div className="rounded-lg bg-gray-700 text-white fixed bottom-0 left-0 m-5 opacity-50 z-50">
       <div className="flex flex-row w-full gap-5 items-center py-5 pl-8">
         <button
           type="button"
           role="button"
           aria-label="close"
-          className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
+          className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-900 hover:text-gray-200 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-gray-400"
           ref={(input) => input && input.focus()}
           onClick={toggleDebugMode}
         >
@@ -51,6 +69,10 @@ const DebugMode = (): React.ReactNode => {
       <div className="px-5 pb-5 overflow-hidden rounded-lg">
         <table className="table-auto w-full text-left">
           <tbody>
+            <tr className="py-3">
+              <td className="py-3 p-4">Fingerprint</td>
+              <td className="py-3 p-4">{generateFingerprint()}</td>
+            </tr>
             <tr className="py-3">
               <td className="py-3 p-4">OS</td>
               <td className="py-3 p-4">{OSName}</td>

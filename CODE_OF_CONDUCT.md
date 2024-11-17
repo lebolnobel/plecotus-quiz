@@ -18,6 +18,6 @@ This Code of Conduct is [largely based on the p5.js Code of Conduct](https://git
 - **Be considerate.** Think about how your contribution will affect others in the community.
 - **Be open minded.** Embrace new people and new ideas. Our community is continually evolving and we welcome positive change.
 
-If you believe someone is violating the code of conduct, we ask that you report it by emailing [the author](https://github.com/lebolnobel) (The email which is located in GitHub profile). Please include your name and a description of the incident, and we will get back to you ASAP.
+If you believe someone is violating the code of conduct, we ask that you report it by emailing [the author](https://github.com/lebolnobel) (the email which is located in GitHub profile). Please include your name and a description of the incident, and we will get back to you ASAP.
 
 Sometimes, participants violating the Code of Conduct are unaware that their behavior is harmful, and an open conversation clears things up to move forward. However, if a participant continues with the behavior, we may take any action they deem appropriate, up to and including expulsion from all spaces.

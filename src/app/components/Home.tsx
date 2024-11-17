@@ -45,7 +45,7 @@ const Home = (): React.ReactNode => {
                   contient de nombreuses images pour garantir une expérience
                   variée à chaque session. N'hésitez pas à rejouer à plusieurs
                   reprises pour afiner votre œil en vue des recensements
-                  hivernaux.
+                  hivernaux, en Belgique.
                 </p>
               </div>
             </div>

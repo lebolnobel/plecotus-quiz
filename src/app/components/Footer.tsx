@@ -42,7 +42,7 @@ const Footer = (): React.ReactNode => {
           title="Github, plecotus-quiz"
           className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
         >
-          Github
+          GitHub
         </a>
       </p>
 

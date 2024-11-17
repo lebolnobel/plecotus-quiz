@@ -19,7 +19,8 @@ const About = (): React.ReactNode => {
               conditions. A l'approche des recensements hivernaux des
               chauves-souris, revoyez les critères essentiels pour une
               identification efficace. Contribuez activement à leur
-              préservation.
+              préservation. Cette application est dédiée exclusivement aux
+              espèces présentes en Belgique.
             </div>
           </div>
 
@@ -34,7 +35,7 @@ const About = (): React.ReactNode => {
                 points. La base de données contient de nombreuses images pour
                 garantir une expérience variée à chaque session. N'hésitez pas à
                 rejouer à plusieurs reprises pour afiner votre œil en vue des
-                recensements hivernaux.
+                recensements hivernaux, en Belgique.
               </p>
               <p className="pt-2">
                 L'application peut être installée sur votre téléphone ou votre
@@ -88,7 +89,7 @@ const About = (): React.ReactNode => {
                     title="Github, plecotus-quiz"
                     className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
                   >
-                    Github
+                    GitHub
                   </a>
                   . Vous pouvez également lire mon{' '}
                   <a
