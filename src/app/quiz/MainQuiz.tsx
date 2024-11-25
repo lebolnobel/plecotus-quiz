@@ -1,15 +1,15 @@
 import * as React from 'react';
-import * as uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import PlecotusQuiz from './PlecotusQuiz';
 import ScorePage from './ScorePage';
 import Loading from '../components/Loading';
 import { generateRandomQuestions } from '../../utils/helpers';
 import { useQuizContext } from '../../hooks/useQuizContext';
 import { writeData } from '../../db/database';
+import { hashString } from '../../db/fingerprint';
 import type { QuizQuestionType } from '../../utils/quiz';
 
 const Quiz = (): React.ReactNode => {
-  const [quizId, setQuizId] = React.useState(uuid.v4());
   const [currentQuiz, setCurrentQuiz] = React.useState<QuizQuestionType[]>([]);
   const { totalQuestions, selectToAnswerMode } = useQuizContext();
 
@@ -17,12 +17,13 @@ const Quiz = (): React.ReactNode => {
   const [index, setIndex] = React.useState<number>(0);
   const [value, setChoice] = React.useState<string>('');
   const [score, setScore] = React.useState<number>(0);
+  const [sessionId, setSessionId] = React.useState<string>(uuidv4());
 
   React.useEffect(() => {
     // Generate unique quiz for the user session
     const quiz = generateRandomQuestions(totalQuestions);
     setCurrentQuiz(quiz);
-  }, [quizId, totalQuestions]);
+  }, [sessionId, totalQuestions]);
 
   if (currentQuiz.length === 0) return <Loading />;
 
@@ -41,30 +42,36 @@ const Quiz = (): React.ReactNode => {
   };
 
   const handleReset = () => {
-    setQuizId(uuid.v4());
     setScore(0);
     setChoice('');
     setIndex(0);
+    setSessionId(uuidv4());
   };
 
   const checkAnswer = (value: string) => {
-    const rightAnswer = currentQuestion?.image.speciesId;
-    const isCorrect = rightAnswer === value;
-    const newScore = score + 1;
-    isCorrect && setScore(newScore);
+    const answer = currentQuestion?.image.speciesId;
+    const isCorrect = answer === value;
+    const total = isCorrect ? score + 1 : score;
+    isCorrect && setScore(total);
 
     try {
       // Answer
-      void writeData('ANSWER', {
+      const questionId = `${currentQuestion?.image.speciesId}_${currentQuestion?.image.url}`;
+      void writeData({
+        type: 'ANSWER',
+        sessionId,
+        questionId: hashString(questionId),
         isCorrect,
+        answer,
         userAnswer: value,
-        question: currentQuestion.image,
       });
 
       // Score page
       if (index === currentQuiz.length - 1) {
-        void writeData('SCORE', {
-          score: newScore,
+        void writeData({
+          type: 'SCORE',
+          sessionId,
+          score: total,
           totalQuestions: currentQuiz.length,
         });
       }

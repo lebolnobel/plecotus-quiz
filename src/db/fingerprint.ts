@@ -19,7 +19,7 @@ export function generateFingerprint() {
   return fingerprint;
 }
 
-function hashString(str: string) {
+export function hashString(str: string) {
   let hash = 0,
     i,
     chr;

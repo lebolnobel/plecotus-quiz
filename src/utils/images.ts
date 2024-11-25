@@ -798,7 +798,7 @@ export const authors: { [key: number]: AuthorType } = {
   },
   5: {
     name: 'Cors',
-    firstname: 'Rudy',
+    firstname: 'Ruddy',
   },
   6: {
     name: 'Herman',
