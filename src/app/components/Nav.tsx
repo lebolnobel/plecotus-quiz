@@ -2,17 +2,24 @@ import * as React from 'react';
 import Overlay from '../accessibility/Overlay';
 import { NavLink, useLocation } from 'react-router-dom';
 import { GoHome } from 'react-icons/go';
+import { usePlecotusContext } from '../../hooks/usePlecotusContext';
+import { FormattedMessage } from 'react-intl';
+import { LOCALE } from '../../locales';
 
 const Nav = (): React.ReactNode => {
   const [open, setOpen] = React.useState(false);
 
   const location = useLocation();
+  const { locale, setLocale } = usePlecotusContext();
+
+  const isLocaleActive = (key: string): boolean =>
+    locale.toUpperCase() === key.toUpperCase();
 
   React.useEffect(() => {
     setOpen(false);
   }, [location]);
 
-  const className: (isActive: boolean) => string = (isActive) =>
+  const className: (isActive?: boolean) => string = (isActive = false) =>
     `block py-2 px-3 rounded text-natagora ${isActive ? 'text-white bg-natagora' : 'md:hover:bg-gray-100 md:hover:text-natagora'}  focus:outline-none focus:ring-2 focus:ring-natagora-100`;
 
   return (
@@ -31,7 +38,7 @@ const Nav = (): React.ReactNode => {
             role="none"
           />
           <h1 className="self-center text-2xl font-medium whitespace-nowrap uppercase">
-            Plecotus - Natagora
+            <FormattedMessage id="title.default" />
           </h1>
         </NavLink>
 
@@ -66,7 +73,7 @@ const Nav = (): React.ReactNode => {
           className={`w-full md:block md:w-auto ${!open ? 'hidden' : ''}`}
           role="navigation"
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+          <ul className="font-medium flex flex-col p-4 mt-4 md:flex-row md:space-x-4 lg:space-x-8 rtl:space-x-reverse md:p-0 md:mt-0 md:border-0">
             <li className="relative">
               <NavLink
                 to="../"
@@ -122,6 +129,22 @@ const Nav = (): React.ReactNode => {
                   </div>
                 </Overlay>
               </NavLink>
+            </li>
+            <li className="relative pt-6 md:pt-0">
+              <div className="inline-flex">
+                <button
+                  onClick={() => setLocale && setLocale(LOCALE.FR)}
+                  className={`block py-2 px-3 rounded-l focus:outline-none focus:ring-2 focus:ring-natagora-100 ${isLocaleActive(LOCALE.FR) ? 'text-natagora bg-gray-100' : 'text-gray-400 hover:bg-gray-200 hover:text-natagora'}`}
+                >
+                  {LOCALE.FR.toUpperCase()}
+                </button>
+                <button
+                  onClick={() => setLocale && setLocale(LOCALE.NL)}
+                  className={`block py-2 px-3 rounded-r focus:outline-none focus:ring-2 focus:ring-natagora-100 ${isLocaleActive(LOCALE.NL) ? 'text-natagora bg-gray-100' : 'text-gray-400 hover:bg-gray-200 hover:text-natagora'}`}
+                >
+                  {LOCALE.NL.toUpperCase()}
+                </button>
+              </div>
             </li>
           </ul>
         </div>

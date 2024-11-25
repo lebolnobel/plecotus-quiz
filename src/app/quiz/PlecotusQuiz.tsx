@@ -6,6 +6,7 @@ import Explanation from './components/explanation/Explanation';
 import CurrentScore from './components/question/CurrentScore';
 import ProgressBar from './components/question/ProgressBar';
 import { useQuizContext } from '../../hooks/useQuizContext';
+import { FormattedMessage } from 'react-intl';
 import type { QuizQuestionType } from '../../utils/quiz';
 
 type PlecotusQuizType = {
@@ -53,7 +54,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
       <div className="flex text-base justify-between mb-3">
         <div>
           <h2 className="text-slate-500 uppercase hidden sm:block">
-            Plecotus quiz : recensements hivernaux des Chauves-souris
+            <FormattedMessage id="title.quiz" />
           </h2>
 
           <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase sm:pt-10">
