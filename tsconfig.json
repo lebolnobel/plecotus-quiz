@@ -22,6 +22,6 @@
 
     "types": ["./node_modules/network-information-types"]
   },
-  "include": ["src", "netlify"],
+  "include": ["src", "tools", "netlify"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

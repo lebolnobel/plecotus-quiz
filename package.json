@@ -5,13 +5,14 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "npm run check && vite build",
+    "build": "npm run check && npm run sitemap && vite build",
     "check": "npm run lint && npm run tsc",
     "dev": "vite --host",
     "lint": "eslint . --ext ts,tsx --max-warnings 0",
     "preview": "vite preview --host --port 8080",
     "prepare": "husky",
     "reset": "rm -rf node_modules/ && rm package-lock.json && npm i && npm audit fix",
+    "sitemap": "node tools/sitemap.js",
     "start": "vite",
     "tsc": "npx tsc",
     "watch-css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/styles.css --watch"
@@ -52,6 +53,7 @@
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "sharp": "^0.33.3",
+    "sitemap": "^8.0.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.4.6"
