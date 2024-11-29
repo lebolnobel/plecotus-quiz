@@ -29,7 +29,7 @@ function useShortcuts(
             break;
           case K_1:
             event.preventDefault();
-            navigate('/ressources');
+            navigate('/resources');
             break;
           case K_2:
             event.preventDefault();

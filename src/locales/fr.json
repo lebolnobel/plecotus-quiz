@@ -51,7 +51,9 @@
     "thanksParagraph1": "Cette application n'aurait pas pu voir le jour sans l'aide de nombreuses personnes.",
     "thanksParagraph2": "Tout d'abord Pierrette Nyssen et Ruddy Cors, auteur.es du mémo de détermination. Un tout grand merci également à l'ensemble des photographes qui ont bien voulu se prêter aux jeux et proposer leurs photos pour les questions :",
     "thanksParagraph3": "A Geoffroy Lebon et Ariane Meersschaert pour la traduction en néerlandais.",
-    "tfe": "Rapport d'activité"
+    "tfe": "Rapport d'activité",
+    "resources": "ressources",
+    "feedback": "feedbacks"
   },
   "footer": {
     "info": "Fait avec {hearth}, réalisé dans le cadre du TFE de {plecotus}, pour {natagora}",

@@ -56,7 +56,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             src={currentImage.url}
             alt={intl.formatMessage({ id: 'image.playDetail' })}
             title={intl.formatMessage({ id: 'image.playDetail' })}
-            placeholderSrc="/assets/img/ressources/placeholder.jpg"
+            placeholderSrc="/assets/img/resources/placeholder.jpg"
             className="mx-auto rounded-lg h-auto max-h-80"
             effect="blur"
             onClick={toggleEnlarged}

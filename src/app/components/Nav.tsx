@@ -107,7 +107,7 @@ const Nav = (): React.ReactNode => {
             </li>
             <li className="relative">
               <NavLink
-                to="../ressources"
+                to="../resources"
                 className={({ isActive }) => className(isActive)}
                 title={intl.formatMessage({ id: 'menu.resources' })}
               >

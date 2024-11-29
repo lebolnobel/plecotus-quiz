@@ -31,7 +31,7 @@ const About = (): React.ReactNode => {
               role="none"
             >
               <img
-                src="./assets/img/ressources/quiz-app.avif"
+                src="./assets/img/resources/quiz-app.avif"
                 alt={intl.formatMessage({ id: 'about.img.quizApp' })}
                 title={intl.formatMessage({ id: 'about.img.quizApp' })}
                 loading="lazy"
@@ -126,11 +126,11 @@ const About = (): React.ReactNode => {
                 values={{
                   resources: (
                     <NavLink
-                      to="../ressources"
+                      to="../resources"
                       title={intl.formatMessage({ id: 'action.resources' })}
                       className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
                     >
-                      ressources
+                      <FormattedMessage id="about.resources" />
                     </NavLink>
                   ),
                 }}
@@ -146,7 +146,7 @@ const About = (): React.ReactNode => {
                       title={intl.formatMessage({ id: 'links.feedback' })}
                       className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
                     >
-                      feedbacks
+                      <FormattedMessage id="about.feedback" />
                     </a>
                   ),
                 }}

@@ -6,7 +6,7 @@ import Plecotus from './app/PlecotusApp';
 import ErrorPage from './app/components/ErrorPage';
 import Home from './app/components/Home';
 import Quiz from './app/quiz/MainQuiz';
-import Ressources from './app/components/Ressources';
+import Resources from './app/components/Resources';
 import About from './app/components/About';
 import PlecotusProvider from './context/PlecotusAppContext';
 import QuizAppContext from './context/QuizAppContext';
@@ -31,8 +31,8 @@ const router = createBrowserRouter(
           element: <Quiz />,
         },
         {
-          path: 'ressources',
-          element: <Ressources />,
+          path: 'resources',
+          element: <Resources />,
         },
         {
           path: 'about',

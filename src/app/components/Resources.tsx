@@ -3,7 +3,7 @@ import { GoArrowRight } from 'react-icons/go';
 import { MEMO } from '../../utils/constants';
 import { FormattedMessage, useIntl } from 'react-intl';
 
-const Ressources = (): React.ReactNode => {
+const Resources = (): React.ReactNode => {
   const intl = useIntl();
 
   const downloadMemo = () => {
@@ -53,7 +53,7 @@ const Ressources = (): React.ReactNode => {
                   role="none"
                 >
                   <img
-                    src="./assets/img/ressources/memo.png"
+                    src="./assets/img/resources/memo.png"
                     alt={intl.formatMessage({ id: 'action.memo' })}
                     title={intl.formatMessage({ id: 'action.memo' })}
                     loading="lazy"
@@ -68,4 +68,4 @@ const Ressources = (): React.ReactNode => {
   );
 };
 
-export default Ressources;
+export default Resources;
