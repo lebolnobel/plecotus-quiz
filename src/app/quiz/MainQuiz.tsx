@@ -8,10 +8,12 @@ import { useQuizContext } from '../../hooks/useQuizContext';
 import { writeData } from '../../db/database';
 import { hashString } from '../../db/fingerprint';
 import type { QuizQuestionType } from '../../utils/quiz';
+import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 
 const Quiz = (): React.ReactNode => {
   const [currentQuiz, setCurrentQuiz] = React.useState<QuizQuestionType[]>([]);
   const { totalQuestions, selectToAnswerMode } = useQuizContext();
+  const { isDebug } = usePlecotusContext();
 
   // Quiz
   const [index, setIndex] = React.useState<number>(0);
@@ -64,6 +66,7 @@ const Quiz = (): React.ReactNode => {
         isCorrect,
         answer,
         userAnswer: value,
+        isDebug,
       });
 
       // Score page
