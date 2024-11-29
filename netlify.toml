@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, s-max-age=31536000, immutable"
