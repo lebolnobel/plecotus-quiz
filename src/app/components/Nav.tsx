@@ -2,18 +2,19 @@ import * as React from 'react';
 import Overlay from '../accessibility/Overlay';
 import { NavLink, useLocation } from 'react-router-dom';
 import { GoHome } from 'react-icons/go';
-import { usePlecotusContext } from '../../hooks/usePlecotusContext';
-import { FormattedMessage } from 'react-intl';
-import { LOCALE } from '../../locales';
+// import { usePlecotusContext } from '../../hooks/usePlecotusContext';
+import { FormattedMessage, useIntl } from 'react-intl';
+// import { LOCALE } from '../../locales';
 
 const Nav = (): React.ReactNode => {
   const [open, setOpen] = React.useState(false);
 
+  const intl = useIntl();
   const location = useLocation();
-  const { locale, setLocale } = usePlecotusContext();
+  // const { locale, setLocale } = usePlecotusContext();
 
-  const isLocaleActive = (key: string): boolean =>
-    locale.toUpperCase() === key.toUpperCase();
+  // const isLocaleActive = (key: string): boolean =>
+  //   locale.toUpperCase() === key.toUpperCase();
 
   React.useEffect(() => {
     setOpen(false);
@@ -32,13 +33,13 @@ const Nav = (): React.ReactNode => {
           <img
             src="/favicon.ico"
             className="h-8"
-            alt="Plecotus quiz"
+            alt={intl.formatMessage({ id: 'appName' })}
             width="32"
             height="32"
             role="none"
           />
           <h1 className="self-center text-2xl font-medium whitespace-nowrap uppercase">
-            <FormattedMessage id="title.default" />
+            <FormattedMessage id="appTitle" />
           </h1>
         </NavLink>
 
@@ -51,7 +52,9 @@ const Nav = (): React.ReactNode => {
           role="button"
           onClick={() => setOpen(!open)}
         >
-          <span className="sr-only">Ouvrir le menu</span>
+          <span className="sr-only">
+            <FormattedMessage id="action.openMenu" />
+          </span>
           <svg
             className="w-5 h-5"
             aria-hidden="true"
@@ -78,12 +81,12 @@ const Nav = (): React.ReactNode => {
               <NavLink
                 to="../"
                 className={({ isActive }) => className(isActive)}
-                title="Accueil"
+                title={intl.formatMessage({ id: 'menu.home' })}
               >
                 <GoHome role="presentation" size="24" />
                 <Overlay>
                   <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
-                    H
+                    <FormattedMessage id="shortcuts.H" />
                   </div>
                 </Overlay>
               </NavLink>
@@ -92,12 +95,12 @@ const Nav = (): React.ReactNode => {
               <NavLink
                 to="../quiz"
                 className={({ isActive }) => className(isActive)}
-                title="Quiz"
+                title={intl.formatMessage({ id: 'menu.quiz' })}
               >
-                Quiz
+                <FormattedMessage id="menu.quiz" />
                 <Overlay>
                   <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
-                    S
+                    <FormattedMessage id="shortcuts.S" />
                   </div>
                 </Overlay>
               </NavLink>
@@ -106,12 +109,13 @@ const Nav = (): React.ReactNode => {
               <NavLink
                 to="../ressources"
                 className={({ isActive }) => className(isActive)}
-                title="Ressources"
+                title={intl.formatMessage({ id: 'menu.resources' })}
               >
-                Ressources
+                <FormattedMessage id="menu.resources" />
+
                 <Overlay>
                   <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
-                    1
+                    <FormattedMessage id="shortcuts.1" />
                   </div>
                 </Overlay>
               </NavLink>
@@ -120,17 +124,18 @@ const Nav = (): React.ReactNode => {
               <NavLink
                 to="../about"
                 className={({ isActive }) => className(isActive)}
-                title="À propos"
+                title={intl.formatMessage({ id: 'menu.about' })}
               >
-                À propos
+                <FormattedMessage id="menu.about" />
+
                 <Overlay>
                   <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
-                    2
+                    <FormattedMessage id="shortcuts.2" />
                   </div>
                 </Overlay>
               </NavLink>
             </li>
-            <li className="relative pt-6 md:pt-0">
+            {/* <li className="relative pt-6 md:pt-0">
               <div className="inline-flex">
                 <button
                   onClick={() => setLocale && setLocale(LOCALE.FR)}
@@ -145,7 +150,7 @@ const Nav = (): React.ReactNode => {
                   {LOCALE.NL.toUpperCase()}
                 </button>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

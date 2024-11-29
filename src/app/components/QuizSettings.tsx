@@ -11,6 +11,7 @@ import { IoReturnDownBack } from 'react-icons/io5';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 import { useQuizContext } from '../../hooks/useQuizContext';
 import { ABBR } from '../../utils/constants';
+import { FormattedMessage } from 'react-intl';
 
 type OptionsType = {
   name: string;
@@ -36,7 +37,7 @@ const QuizSettings = (): React.ReactNode => {
     () => [
       {
         name: 'advanced-name',
-        displayName: 'Mode avancé: notation hivernale',
+        displayName: <FormattedMessage id="settings.advancedName" />,
         icon: <GoBeaker role="presentation" />,
         switch: (
           <label className="inline-flex items-center cursor-pointer">
@@ -53,7 +54,7 @@ const QuizSettings = (): React.ReactNode => {
       },
       {
         name: 'advanced-answer',
-        displayName: 'Mode avancé: sélectionner pour répondre',
+        displayName: <FormattedMessage id="settings.advancedAnswer" />,
         icon: <GoBeaker role="presentation" />,
         switch: (
           <label className="inline-flex items-center cursor-pointer">
@@ -71,9 +72,10 @@ const QuizSettings = (): React.ReactNode => {
       {
         name: 'question-10',
         displayName: (
-          <>
-            Mode <strong>10</strong> questions
-          </>
+          <FormattedMessage
+            id="settings.nb"
+            values={{ nb: <strong>10</strong> }}
+          />
         ),
         icon: <GoNumber role="presentation" />,
         onClick: () => !!setQuestions && setQuestions(10),
@@ -81,9 +83,10 @@ const QuizSettings = (): React.ReactNode => {
       {
         name: 'question-25',
         displayName: (
-          <>
-            Mode <strong>25</strong> questions
-          </>
+          <FormattedMessage
+            id="settings.nb"
+            values={{ nb: <strong>25</strong> }}
+          />
         ),
         icon: <GoNumber role="presentation" />,
         onClick: () => !!setQuestions && setQuestions(25),
@@ -91,9 +94,10 @@ const QuizSettings = (): React.ReactNode => {
       {
         name: 'question-50',
         displayName: (
-          <>
-            Mode <strong>50</strong> questions
-          </>
+          <FormattedMessage
+            id="settings.nb"
+            values={{ nb: <strong>50</strong> }}
+          />
         ),
         icon: <GoNumber role="presentation" />,
         onClick: () => !!setQuestions && setQuestions(50),
@@ -166,7 +170,9 @@ const QuizSettings = (): React.ReactNode => {
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
             >
               <GoX role="presentation" size="24px" />
-              <span className="sr-only">Fermer la popup</span>
+              <span className="sr-only">
+                <FormattedMessage id="action.closePopup" />
+              </span>
             </button>
             <div className="p-4">
               <div className="flex flex-row items-center text-left">
@@ -175,7 +181,7 @@ const QuizSettings = (): React.ReactNode => {
                 </div>
                 <div>
                   <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase">
-                    Paramètres
+                    <FormattedMessage id="action.settings" />
                   </h3>
                 </div>
               </div>
@@ -211,18 +217,22 @@ const QuizSettings = (): React.ReactNode => {
               <kbd className="px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 <IoReturnDownBack />
               </kbd>
-              <span>pour sélectionner</span>
+              <span>
+                <FormattedMessage id="settings.select" />
+              </span>
               <kbd className="px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 <GoArrowDown role="presentation" />
               </kbd>
               <kbd className="px-1 py-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
                 <GoArrowUp role="presentation" />
               </kbd>
-              <span>pour naviguer</span>
+              <span>
+                <FormattedMessage id="settings.navigate" />
+              </span>
               <kbd className="px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
-                Esc
+                <FormattedMessage id="shortcuts.esc" />
               </kbd>
-              pour fermer.
+              <FormattedMessage id="settings.close" />.
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import * as React from 'react';
 import Overlay from '../../../accessibility/Overlay';
 import { K_N, K_R } from '../../../../utils/constants';
 import { GoArrowRight, GoMoveToStart } from 'react-icons/go';
+import { FormattedMessage } from 'react-intl';
 
 type QuizNavigationType = {
   onReset: () => void;
@@ -22,10 +23,10 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
           onClick={onReset}
         >
           <GoMoveToStart role="presentation" size="24" className="mr-2" />
-          Je veux recommencer
+          <FormattedMessage id="action.reset" />
           <Overlay onAction={onReset} keyCode={K_R}>
             <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
-              R
+              <FormattedMessage id="shortcuts.R" />
             </div>
           </Overlay>
         </button>
@@ -39,11 +40,11 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
           aria-label="reset"
           onClick={onNext}
         >
-          Suivant
+          <FormattedMessage id="action.next" />
           <GoArrowRight role="presentation" size="24" className="ml-2" />
           <Overlay onAction={onNext} keyCode={K_N}>
             <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
-              N
+              <FormattedMessage id="shortcuts.N" />
             </div>
           </Overlay>
         </button>

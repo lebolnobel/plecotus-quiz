@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { species } from '../../../../utils/species';
 import {
   GoArrowRight,
@@ -17,6 +18,8 @@ type ExplanationType = {
 const Explanation = (props: ExplanationType): React.ReactNode => {
   const { rightAnswer, value, onNext } = props;
 
+  const intl = useIntl();
+
   const isCorrect = rightAnswer === value;
   const abbr = rightAnswer;
   const correctAnswer = species[rightAnswer];
@@ -28,7 +31,7 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
         <div className="w-full ml-1 mr-1 flex flex-col items-center">
           <div
             className={`w-full rounded-lg bg-gray-100 pb-0 ${!correctAnswer ? '' : 'sm:pb-24'} relative cursor-pointer`}
-            title="Cliquer pour aller à la question suivante"
+            title={intl.formatMessage({ id: 'action.nextFull' })}
             onClick={onNext}
           >
             <div className="min-w-0 relative flex-auto w-full justify-center items-center z-1">
@@ -53,26 +56,42 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                     {isCorrect ? (
                       <>
                         <div className="text-lg sm:text-xl">
-                          Bonne réponse !
+                          <FormattedMessage id="quiz.answer.true" />
                         </div>
-                        <div className="text-sm sm:text-base text-natagora-100">
-                          Bravo, il s'agit bien d'un.e{' '}
-                          <strong>{correctAnswer?.displayName || abbr}</strong>.
-                          <br />
-                          Au besoin, le récapitulatif est ci-dessous.
+                        <div className="text-sm sm:text-base text-natagora-100 whitespace-pre-line">
+                          <FormattedMessage
+                            id="quiz.answer.trueDetail"
+                            values={{
+                              value: (
+                                <strong>
+                                  {correctAnswer?.displayName || abbr}
+                                </strong>
+                              ),
+                            }}
+                          />
                         </div>
                       </>
                     ) : (
                       <>
                         <div className="text-lg sm:text-xl">
-                          Mauvaise réponse !
+                          <FormattedMessage id="quiz.answer.true" />
                         </div>
-                        <div className="text-sm sm:text-base text-red-300">
-                          Manqué, {userAnswer?.displayName || 'aucune réponse'}{' '}
-                          n'est pas la bonne réponse.
-                          <br />
-                          Il s'agit d'un.e{' '}
-                          <strong>{correctAnswer?.displayName || abbr}</strong>.
+                        <div className="text-sm sm:text-base text-red-300 whitespace-pre-line">
+                          <FormattedMessage
+                            id="quiz.answer.trueDetail"
+                            values={{
+                              badValue: userAnswer?.displayName || (
+                                <em>
+                                  <FormattedMessage id="quiz.answer.default" />
+                                </em>
+                              ),
+                              value: (
+                                <strong>
+                                  {correctAnswer?.displayName || abbr}
+                                </strong>
+                              ),
+                            }}
+                          />
                         </div>
                       </>
                     )}
@@ -94,13 +113,17 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                   </div>
                   <dl className="mt-2 flex flex-wrap text-sm">
                     <div>
-                      <dt className="sr-only">Nom Vernaculaire</dt>
+                      <dt className="sr-only">
+                        <FormattedMessage id="quiz.question.displayName" />
+                      </dt>
                       <dd className="flex items-center">
                         {correctAnswer.displayName || '-'}
                       </dd>
                     </div>
                     <div>
-                      <dt className="sr-only">Notation hivernale</dt>
+                      <dt className="sr-only">
+                        <FormattedMessage id="quiz.question.short" />
+                      </dt>
                       <dd className="flex items-center">
                         <GoDotFill
                           role="presentation"
@@ -114,7 +137,9 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                 </div>
               </div>
 
-              {correctAnswer.description || "Voir le mémo pour plus d'infos !"}
+              {correctAnswer.description || (
+                <FormattedMessage id="quiz.default" />
+              )}
             </div>
           )}
         </div>

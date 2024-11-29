@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 import { FEEDBACK, FUZE_OPTS, GITHUB, K_K, K_P } from '../../utils/constants';
 import type { FuseResult } from 'fuse.js';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 type OptionsType = {
   name: string;
@@ -32,6 +33,8 @@ const PaletteCommand = (): React.ReactNode => {
   const [query, setQuery] = React.useState('');
   const [index, setIndex] = React.useState(0);
 
+  const intl = useIntl();
+
   const navigate = useNavigate();
 
   const { isMac, toggleDebugMode, toggleShortcutsMode, toggleSettingsMode } =
@@ -41,55 +44,76 @@ const PaletteCommand = (): React.ReactNode => {
     () => [
       {
         name: 'quiz',
-        displayName: 'Lancer le quiz !',
+        displayName: intl.formatMessage({ id: 'commands.quiz' }),
         icon: <GoMortarBoard role="presentation" />,
-        shortcut: [isMac ? <MdKeyboardOptionKey /> : 'alt', 'S'],
+        shortcut: [
+          isMac ? (
+            <MdKeyboardOptionKey />
+          ) : (
+            intl.formatMessage({ id: 'shortcuts.alt' })
+          ),
+          intl.formatMessage({ id: 'shortcuts.S' }),
+        ],
         onClick: () => navigate('/quiz'),
       },
       {
         name: 'quiz-settings',
-        displayName: 'Paramètres du quiz',
+        displayName: intl.formatMessage({ id: 'commands.settings' }),
         icon: <GoGear role="presentation" />,
-        shortcut: [isMac ? <MdKeyboardOptionKey /> : 'alt', 'Q'],
+        shortcut: [
+          isMac ? (
+            <MdKeyboardOptionKey />
+          ) : (
+            intl.formatMessage({ id: 'shortcuts.alt' })
+          ),
+          intl.formatMessage({ id: 'shortcuts.Q' }),
+        ],
         onClick: () => !!toggleSettingsMode && toggleSettingsMode(),
       },
       {
         name: 'shortcuts',
-        displayName: 'Voir les raccourcis',
+        displayName: intl.formatMessage({ id: 'commands.shortcuts' }),
         icon: <GoQuestion role="presentation" />,
-        shortcut: ['?'],
+        shortcut: [intl.formatMessage({ id: 'shortcuts.?' })],
         onClick: () => !!toggleShortcutsMode && toggleShortcutsMode(),
       },
       {
         name: 'feedback',
-        displayName: 'Créer un feedback',
+        displayName: intl.formatMessage({ id: 'commands.feedback' }),
         icon: <GoMegaphone role="presentation" />,
         shortcut: [],
         onClick: () => window.open(FEEDBACK, '_blank'),
       },
       {
         name: 'bug',
-        displayName: 'Remonter un bug',
+        displayName: intl.formatMessage({ id: 'commands.bug' }),
         icon: <GoBug role="presentation" />,
         shortcut: [],
         onClick: () => window.open(`${GITHUB}/issues`, '_blank'),
       },
       {
         name: 'debug',
-        displayName: 'Debug mode',
+        displayName: intl.formatMessage({ id: 'commands.debug' }),
         icon: <GoFileCode role="presentation" />,
         shortcut: [],
         onClick: () => !!toggleDebugMode && toggleDebugMode(),
       },
       {
         name: 'code',
-        displayName: 'Contribuer au projet, sur GitHub',
+        displayName: intl.formatMessage({ id: 'commands.code' }),
         icon: <GoCommandPalette role="presentation" />,
         shortcut: [],
         onClick: () => window.open(GITHUB, '_blank'),
       },
     ],
-    [isMac, toggleDebugMode, toggleShortcutsMode, toggleSettingsMode, navigate],
+    [
+      intl,
+      isMac,
+      toggleDebugMode,
+      toggleShortcutsMode,
+      toggleSettingsMode,
+      navigate,
+    ],
   );
 
   const fuse = new Fuse(options, FUZE_OPTS);
@@ -166,7 +190,7 @@ const PaletteCommand = (): React.ReactNode => {
               <input
                 type="text"
                 className="w-full h-12 pr-4 text-gray-800 placeholder-gray-400 bg-transparent border-0 pl-11 outline-none"
-                placeholder="Que cherchez-vous ?"
+                placeholder={intl.formatMessage({ id: 'commands.info' })}
                 value={query}
                 onChange={(e) => setQuery(e.currentTarget.value)}
                 role="combobox"
@@ -187,7 +211,7 @@ const PaletteCommand = (): React.ReactNode => {
                   key="option-0"
                   role="listitem"
                 >
-                  Aucune entrée pour cette commande
+                  <FormattedMessage id="commands.noResult" />
                 </li>
               ) : (
                 commands.map((option, optIndex) => {

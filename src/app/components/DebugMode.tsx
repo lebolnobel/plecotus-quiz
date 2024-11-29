@@ -2,6 +2,7 @@ import * as React from 'react';
 import { GoBug, GoFileCode, GoX } from 'react-icons/go';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 import { generateFingerprint } from '../../db/fingerprint';
+import { FormattedMessage } from 'react-intl';
 
 const DebugMode = (): React.ReactNode => {
   const { isDebug, toggleDebugMode } = usePlecotusContext();
@@ -44,14 +45,18 @@ const DebugMode = (): React.ReactNode => {
           onClick={toggleDebugMode}
         >
           <GoX role="presentation" size="24px" />
-          <span className="sr-only">Fermer la popup</span>
+          <span className="sr-only">
+            <FormattedMessage id="action.closePopup" />
+          </span>
         </button>
 
         <div className="my-auto text-2xl">
           <GoFileCode role="presentation" />
         </div>
         <div>
-          <div className="text-xl">Debug mode</div>
+          <div className="text-xl">
+            <FormattedMessage id="debug.title" />
+          </div>
           <div className="text-base inline-flex">
             <a
               href="https://github.com/lebolnobel/plecotus-quiz/issues"
@@ -59,7 +64,7 @@ const DebugMode = (): React.ReactNode => {
               target="_blank"
               className="underline decoration-gray-400 hover:decoration-2 hover:text-gray-400 transition duration-400 ease-in-out hover:decoration-inherit inline-flex focus:outline-none focus:ring-2 focus:ring-natagora-100"
             >
-              Encoder un bug ?{' '}
+              <FormattedMessage id="action.createBug" />
               <GoBug role="presentation" className="ml-2 mt-1" size="18px" />
             </a>
           </div>
@@ -70,15 +75,21 @@ const DebugMode = (): React.ReactNode => {
         <table className="table-auto w-full text-left">
           <tbody>
             <tr className="py-3">
-              <td className="py-3 p-4">Fingerprint</td>
+              <td className="py-3 p-4">
+                <FormattedMessage id="debug.fingerprint" />
+              </td>
               <td className="py-3 p-4">{generateFingerprint()}</td>
             </tr>
             <tr className="py-3">
-              <td className="py-3 p-4">OS</td>
+              <td className="py-3 p-4">
+                <FormattedMessage id="debug.os" />
+              </td>
               <td className="py-3 p-4">{OSName}</td>
             </tr>
             <tr className="py-3">
-              <td className="py-3 p-4">Network</td>
+              <td className="py-3 p-4">
+                <FormattedMessage id="debug.network" />
+              </td>
               <td className="py-3 p-4">
                 {/* eslint-disable-next-line */}
                 {navigator?.connection?.effectiveType} (
@@ -87,7 +98,9 @@ const DebugMode = (): React.ReactNode => {
               </td>
             </tr>
             <tr className="py-3">
-              <td className="py-3 p-4">Locale</td>
+              <td className="py-3 p-4">
+                <FormattedMessage id="debug.locale" />
+              </td>
               <td className="py-3 p-4">
                 {navigator.languages && navigator.languages.length
                   ? navigator.languages.toString()
@@ -95,16 +108,22 @@ const DebugMode = (): React.ReactNode => {
               </td>
             </tr>
             <tr className="py-3">
-              <td className="py-3 p-4">Screen</td>
               <td className="py-3 p-4">
-                {window.innerWidth}x{window.innerHeight} (avail:{' '}
-                {window.screen.availWidth}x{window.screen.availHeight}, screen:{' '}
+                <FormattedMessage id="debug.utils.screen" />
+              </td>
+              <td className="py-3 p-4">
+                {window.innerWidth}x{window.innerHeight} (
+                <FormattedMessage id="debug.utils.avail" />:{' '}
+                {window.screen.availWidth}x{window.screen.availHeight},{' '}
+                <FormattedMessage id="debug.utils.screen" />:{' '}
                 {window.screen.width}x{window.screen.height},{' '}
                 {window.screen.orientation.type})
               </td>
             </tr>
             <tr className="py-3">
-              <td className="py-3 p-4">Date</td>
+              <td className="py-3 p-4">
+                <FormattedMessage id="debug.date" />
+              </td>
               <td className="py-3 p-4">{new Date().toString()}</td>
             </tr>
           </tbody>

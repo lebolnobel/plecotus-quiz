@@ -1,6 +1,168 @@
 {
-  "title": {
-    "default": "Plecotus - Natagora",
-    "quiz": "Plecotus quiz : recensements hivernaux des Chauves-souris"
+  "app": "Plecotus quiz : recensements hivernaux des Chauves-souris",
+  "appName": "Plecotus quiz",
+  "appTitle": "Plecotus - Natagora",
+  "home": {
+    "welcome": "Bienvenue",
+    "welcomeParagraph": "Entrainez-vous à identifier les Chauves-souris dans toutes les conditions. A l'approche des recensements hivernaux des chauves-souris, revoyez les critères essentiels pour une identification efficace. Contribuez activement à leur préservation.",
+    "kesako": "Kesako ?",
+    "kesakoParagraph": "Ce quiz va générer 10 questions aléatoires. Identifiez les espèces afin d'engranger des points. La base de données contient de nombreuses images pour garantir une expérience variée à chaque session. N'hésitez pas à rejouer à plusieurs reprises pour afiner votre œil en vue des recensements hivernaux, en Belgique."
+  },
+  "quiz": {
+    "title": "Plecotus quiz : recensements hivernaux des Chauves-souris",
+    "quiz": "Quiz",
+    "quizSubtitle": "Trouver l'espèce qui se cache derrière cette photo !",
+    "result": "Résultat",
+    "score": "Ce qui fait un total de {score, plural, one {{score, number} mauvaise réponse} other {{score, number} mauvaises réponses}} sur {total, plural, one {{total, number} question} other {{total, number} questions}} !",
+    "question": {
+      "displayName": "Nom Vernaculaire",
+      "short": "Notation hivernale"
+    },
+    "answer": {
+      "true": "Bonne réponse !",
+      "trueDetail": "Bravo, il s'agit bien d'un.e {value}.\nAu besoin, le récapitulatif est ci-dessous.",
+      "false": "Mauvaise réponse !",
+      "falseDetail": "Manqué, {badValue} n'est pas la bonne réponse.\nIl s'agit d'un.e {value}.",
+      "default": "aucune réponse"
+    },
+    "species": {
+      "general": "Généralités",
+      "position": "Position",
+      "arm": "Avant-bras",
+      "nose": "Nez",
+      "ear": "Oreilles",
+      "skin": "Pelage",
+      "misc": "Autres",
+      "id": "Fiche d'identification"
+    },
+    "default": "Voir le mémo pour plus d'infos !"
+  },
+  "about": {
+    "title": "À propos de Plecotus Quiz",
+    "about": "À propos",
+    "aboutParagraph": "Entrainez-vous à identifier les Chauves-souris dans toutes les conditions. A l'approche des recensements hivernaux des chauves-souris, revoyez les critères essentiels pour une identification efficace. Contribuez activement à leur préservation. Cette application est dédiée exclusivement aux espèces présentes en Belgique.",
+    "kesako": "Kesako ?",
+    "kesakoParagraph1": "Ce quiz va générer 10 questions aléatoires (ou plus en changeant les paramètres). Identifiez les espèces afin d'engranger des points. La base de données contient de nombreuses images pour garantir une expérience variée à chaque session. N'hésitez pas à rejouer à plusieurs reprises pour afiner votre œil en vue des recensements hivernaux, en Belgique.",
+    "kesakoParagraph2": "L'application peut être installée sur votre téléphone ou votre ordinateur.",
+    "kesakoParagraph3": "Cette application a été créée par {author} dans le cadre du travail de fin d'étude de la formation {plecotus} 2024, dispensée par {natagora}. Son code source est disponible sur {github}. Vous pouvez également lire mon {rapport}.",
+    "kesakoParagraph4": "Son objectif est de permettre à quiconque de travailler l'identification des espèces de chauves-souris en hiver. Les réponses sont basées sur le Mémo de détermination. Ce doument, que vous pouvez télécharger dans la rubrique {resources}, vous permettra de revoir l'ensemble des critères nécessaires à l'identification. N'hésitez pas à le garder sous la main, surtout si vous débutez.",
+    "kesakoParagraph5": "Vous pouvez contribuer à cette application en remontant vos {feedback} d'utilisation.",
+    "thanks": "Remerciements",
+    "thanksParagraph1": "Cette application n'aurait pas pu voir le jour sans l'aide de nombreuses personnes.",
+    "thanksParagraph2": "Tout d'abord Pierrette Nyssen et Ruddy Cors, auteur.es du mémo de détermination. Un tout grand merci également à l'ensemble des photographes qui ont bien voulu se prêter aux jeux et proposer leurs photos pour les questions :",
+    "thanksParagraph3": "A Geoffroy Lebon et Ariane Meersschaert pour la traduction en néerlandais.",
+    "tfe": "Rapport d'activité"
+  },
+  "footer": {
+    "info": "Fait avec {hearth}, réalisé dans le cadre du TFE de {plecotus}, pour {natagora}",
+    "raiseError": "Une erreur ? Une idée ? Contribuez au projet sur {link}",
+    "commandPalette": "pour ouvrir la palette de commande"
+  },
+  "resources": {
+    "title": "Ressources utiles pour les recensements hivernaux",
+    "memo": "Mémo de détermination",
+    "memoParagraph": "Mémo pour la détermination des chauves-souris en hiver (version novembre 2019) : ce document reprend l'ensemble des critères connus pour identifier en hiver les différentes espèces de chauves-souris présentes en Belgique. Il ne s'agit pas d'une bibliographie complète, mais bien de fiches espèces reprenant sur photo l'ensemble des critères visibles sur les individus en hibernation permettant d'aboutir à une identification."
+  },
+  "menu": {
+    "home": "Accueil",
+    "quiz": "Quiz",
+    "resources": "Ressources",
+    "about": "À propos"
+  },
+  "image": {
+    "play": "A vous de jouer !",
+    "playDetail": "Trouver l'espèce qui se cache derrière cette image",
+    "author": "Auteur",
+    "unkownAuthor": "Anonyme",
+    "location": "Lieu",
+    "unknownLocation": "Lieu inconnu"
+  },
+  "action": {
+    "launch": "Lancer le quiz !",
+    "reset": "Je veux recommencer",
+    "next": "Suivant",
+    "nextFull": "Cliquer pour aller à la question suivante",
+    "createBug": "Encoder un bug ?",
+    "back": "Retour",
+    "memo": "Mémo de détermination",
+    "openMenu": "Ouvrir le menu",
+    "closePopup": "Fermer la popup",
+    "settings": "Paramètres du quiz",
+    "raiseError": "Signaler une erreur",
+    "fullScreen": "Plein écran",
+    "resources": "Voir les ressources",
+    "shortcuts": "Raccourcis"
+  },
+  "commands": {
+    "info": "Que cherchez-vous ?",
+    "quiz": "Lancer le quiz !",
+    "settings": "Paramètres du quiz",
+    "shortcuts": "Voir les raccourcis",
+    "feedback": "Créer un feedback",
+    "bug": "Remonter un bug",
+    "debug": "Debug mode",
+    "code": "Contribuer au projet, sur GitHub",
+    "noResult": "Aucune entrée pour cette commande"
+  },
+  "settings": {
+    "advancedName": "Mode avancé: notation hivernale",
+    "advancedAnswer": "Mode avancé: sélectionner pour répondre",
+    "nb": "Mode {nb} questions",
+    "select": "pour sélectionner",
+    "navigate": "pour naviguer",
+    "close": "pour fermer",
+    "help": "pour afficher cette aide",
+    "overlay": "pour afficher les overlays"
+  },
+  "debug": {
+    "title": "Debug mode",
+    "fingerprint": "Fingerprint",
+    "os": "OS",
+    "network": "Network",
+    "locale": "Locale",
+    "screen": "Screen",
+    "date": "Date",
+    "utils": {
+      "avail": "avail",
+      "screen": "screen"
+    }
+  },
+  "error": {
+    "title": "Oups!",
+    "subtitle": "Une erreur est survenue"
+  },
+  "shortcuts": {
+    "quiz": "Lancer le quiz !",
+    "next": "Question suivante",
+    "reset": "Recommencer le quiz",
+    "fullScreen": "Voir l'image de l'espère en grand",
+    "settings": "Paramètres du quiz",
+    "shortcuts": "Voir les raccourcis",
+    "1": "1",
+    "2": "2",
+    "F": "F",
+    "H": "H",
+    "K": "K",
+    "N": "N",
+    "R": "R",
+    "S": "S",
+    "Q": "Q",
+    "?": "?",
+    "esc": "Esc",
+    "CTRL": "CTRL",
+    "ALT": "ALT"
+  },
+  "img": {
+    "quizApp": "Plecotus quiz"
+  },
+  "links": {
+    "github": "Github, plecotus-quiz",
+    "feedback": "Feedbacks"
+  },
+  "natagora": {
+    "natagora": "Natagora",
+    "natagoraLong": "Natagora, ASBL",
+    "plecotus": "Plecotus, Natagora",
+    "plecotusLong": "Plecotus, Pôle Chauve-Souris"
   }
 }

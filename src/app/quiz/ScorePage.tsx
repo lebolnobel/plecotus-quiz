@@ -3,6 +3,7 @@ import { GoMoveToStart, GoTrophy } from 'react-icons/go';
 import Overlay from '../accessibility/Overlay';
 import { useQuizContext } from '../../hooks/useQuizContext';
 import { K_R } from '../../utils/constants';
+import { FormattedMessage } from 'react-intl';
 
 type ScorePageType = {
   score: number;
@@ -17,12 +18,12 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
   return (
     <div className="mx-auto block" role="main">
       <h2 className="text-slate-500 uppercase sm:block">
-        Plecotus quiz : recensements hivernaux des Chauves-souris
+        <FormattedMessage id="quiz.title" />
       </h2>
 
       <div className="pt-10">
         <h3 className="text-lg mb-8 font-semibold text-slate-900 uppercase">
-          Résultat
+          <FormattedMessage id="quiz.result" />
         </h3>
 
         <div className={`rounded-lg h-32  bg-gray-100 mb-10`}>
@@ -33,7 +34,6 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
             <div>
               <>
                 <div className="text-lg sm:text-2xl">
-                  {' '}
                   <span className="text-4xl font-medium text-natagora">
                     {score}
                   </span>
@@ -42,11 +42,13 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
                   </span>
                 </div>
                 <div className="text-sm sm:text-base">
-                  Ce qui fait un total de {totalQuestions - score} mauvaise
-                  {totalQuestions - score > 1 ? 's' : ''} réponse
-                  {totalQuestions - score > 1 ? 's' : ''} sur {totalQuestions}{' '}
-                  question
-                  {totalQuestions > 1 ? 's' : ''} !
+                  <FormattedMessage
+                    id="quiz.score"
+                    values={{
+                      total: totalQuestions,
+                      score: totalQuestions - score,
+                    }}
+                  />
                 </div>
               </>
             </div>
@@ -63,10 +65,10 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
               onClick={onReset}
             >
               <GoMoveToStart role="presentation" size="24" className="mr-2" />
-              Je veux recommencer
+              <FormattedMessage id="action.reset" />
               <Overlay onAction={onReset} keyCode={K_R}>
                 <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
-                  R
+                  <FormattedMessage id="shortcuts.R" />
                 </div>
               </Overlay>
             </button>

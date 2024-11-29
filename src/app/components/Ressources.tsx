@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { GoArrowRight } from 'react-icons/go';
 import { MEMO } from '../../utils/constants';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 const Ressources = (): React.ReactNode => {
+  const intl = useIntl();
+
   const downloadMemo = () => {
     window.open(MEMO);
   };
@@ -10,7 +13,7 @@ const Ressources = (): React.ReactNode => {
   return (
     <div className="mx-auto block" role="main">
       <h2 className="text-slate-500 uppercase">
-        Ressources utiles pour les recensements hivernaux
+        <FormattedMessage id="resources.title" />
       </h2>
 
       <div className="flex pt-10">
@@ -20,17 +23,10 @@ const Ressources = (): React.ReactNode => {
               <div className="grid max-w-screen-xl mx-auto sm:gap-8 sm:grid-cols-12 mb-6">
                 <div className="mr-auto sm:col-span-9">
                   <h3 className="flex-auto text-2xl font-medium text-slate-900 mb-2 uppercase">
-                    Mémo de détermination
+                    <FormattedMessage id="resources.memo" />
                   </h3>
                   <p className="font-light">
-                    Mémo pour la détermination des chauves-souris en hiver
-                    (version novembre 2019) : ce document reprend l'ensemble des
-                    critères connus pour identifier en hiver les différentes
-                    espèces de chauves-souris présentes en Belgique. Il ne
-                    s'agit pas d'une bibliographie complète, mais bien de fiches
-                    espèces reprenant sur photo l'ensemble des critères visibles
-                    sur les individus en hibernation permettant d'aboutir à une
-                    identification.
+                    <FormattedMessage id="resources.memoParagraph" />
                   </p>
 
                   <div className="space-x-4 mt-6 text-base font-medium">
@@ -42,7 +38,7 @@ const Ressources = (): React.ReactNode => {
                         aria-label="download"
                         className="px-6 py-2 inline-flex font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora-100"
                       >
-                        Mémo de détermination
+                        <FormattedMessage id="action.memo" />
                         <GoArrowRight
                           role="presentation"
                           size="24"
@@ -58,8 +54,8 @@ const Ressources = (): React.ReactNode => {
                 >
                   <img
                     src="./assets/img/ressources/memo.png"
-                    alt="Mémo de détermination"
-                    title="Mémo de détermination"
+                    alt={intl.formatMessage({ id: 'action.memo' })}
+                    title={intl.formatMessage({ id: 'action.memo' })}
                     loading="lazy"
                   />
                 </figure>

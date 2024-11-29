@@ -17,6 +17,7 @@ export const QuizContext = React.createContext({
   display: NORMAL,
   selectToAnswerMode: true,
 });
+
 QuizContext.displayName = 'QuizContext';
 
 type QuizProviderType = {

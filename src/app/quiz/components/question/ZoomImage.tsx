@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { GoImage, GoX } from 'react-icons/go';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 type ZoomImageType = {
   isOpen: boolean;
@@ -9,6 +10,8 @@ type ZoomImageType = {
 
 const ZoomImage = (props: ZoomImageType): React.ReactNode => {
   const { url, isOpen, onClose } = props;
+
+  const intl = useIntl();
 
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -51,7 +54,9 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
             >
               <GoX role="presentation" size="24px" />
-              <span className="sr-only">Fermer la popup</span>
+              <span className="sr-only">
+                <FormattedMessage id="action.closePopup" />
+              </span>
             </button>
             <div className="p-4">
               <div className="flex flex-row items-center text-left">
@@ -60,11 +65,11 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
                 </div>
                 <div>
                   <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase">
-                    A vous de jouer !
+                    <FormattedMessage id="image.play" />
                   </h3>
 
                   <p className="text-sm text-gray-400">
-                    Trouver l'espèce qui se cache derrière cette image
+                    <FormattedMessage id="image.playDetail" />
                   </p>
                 </div>
               </div>
@@ -72,8 +77,8 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
               <div className="pt-6">
                 <img
                   src={url}
-                  alt={"Trouver l'espèce qui se cache derrière cette image"}
-                  title={"Trouver l'espèce qui se cache derrière cette image"}
+                  alt={intl.formatMessage({ id: 'image.playDetail' })}
+                  title={intl.formatMessage({ id: 'image.playDetail' })}
                   className={`mx-auto rounded-lg w-full h-auto object-contain rounded-lg transition-all`}
                   role="img"
                 />

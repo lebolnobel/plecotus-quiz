@@ -1,9 +1,13 @@
 import * as React from 'react';
 import { GoHeart } from 'react-icons/go';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { MdKeyboardCommandKey } from 'react-icons/md';
 
 const Footer = (): React.ReactNode => {
   const { isMac } = usePlecotusContext();
+
+  const intl = useIntl();
 
   return (
     <footer
@@ -11,49 +15,65 @@ const Footer = (): React.ReactNode => {
       role="contentinfo"
     >
       <p>
-        <span className="inline-flex">
-          Fait avec{' '}
-          <span className="pl-1">
-            <GoHeart role="presentation" />
-          </span>
-        </span>
-        , réalisé dans le cadre du TFE de{' '}
-        <a
-          href="https://plecotus.natagora.be/"
-          title="Plecotus"
-          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
-        >
-          Plecotus
-        </a>
-        , pour{' '}
-        <a
-          href="http://natagora.be/"
-          title="Natagora"
-          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
-        >
-          Natagora
-        </a>
+        <FormattedMessage
+          id="footer.info"
+          values={{
+            hearth: (
+              <span className="inline-flex">
+                <GoHeart role="presentation" />
+              </span>
+            ),
+            plecotus: (
+              <a
+                href="https://plecotus.natagora.be/"
+                title={intl.formatMessage({ id: 'natagora.plecotus' })}
+                className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              >
+                Plecotus
+              </a>
+            ),
+            natagora: (
+              <a
+                href="http://natagora.be/"
+                title={intl.formatMessage({ id: 'natagora.natagora' })}
+                className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              >
+                Natagora
+              </a>
+            ),
+          }}
+        />
       </p>
 
       <p>
-        Une erreur ? Une idée ? Contribuez au projet sur{' '}
-        <a
-          href="https://github.com/lebolnobel/plecotus-quiz"
-          title="Github, plecotus-quiz"
-          className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
-        >
-          GitHub
-        </a>
+        <FormattedMessage
+          id="footer.raiseError"
+          values={{
+            link: (
+              <a
+                href="https://github.com/lebolnobel/plecotus-quiz"
+                title={intl.formatMessage({ id: 'links.github' })}
+                className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              >
+                GitHub
+              </a>
+            ),
+          }}
+        />
       </p>
 
       <div className="hidden sm:inline-flex">
-        <kbd className="flex items-center justify-center px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
-          {isMac ? '⌘' : 'ctrl'}
-        </kbd>{' '}
-        <kbd className="flex items-center justify-center px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
-          k
+        <kbd className="flex lowercase items-center justify-center px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
+          {isMac ? (
+            <MdKeyboardCommandKey />
+          ) : (
+            <FormattedMessage id="shortcuts.CTRL" />
+          )}
         </kbd>
-        pour ouvrir la palette de commande
+        <kbd className="flex items-center justify-center lowercase px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
+          <FormattedMessage id="shortcuts.K" />
+        </kbd>
+        <FormattedMessage id="footer.commandPalette" />
       </div>
     </footer>
   );

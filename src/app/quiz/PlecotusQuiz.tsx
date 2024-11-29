@@ -54,14 +54,14 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
       <div className="flex text-base justify-between mb-3">
         <div>
           <h2 className="text-slate-500 uppercase hidden sm:block">
-            <FormattedMessage id="title.quiz" />
+            <FormattedMessage id="quiz.title" />
           </h2>
 
           <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase sm:pt-10">
-            Quiz
+            <FormattedMessage id="quiz.quiz" />
           </h3>
           <span className="text-slate-500 text-sm hidden sm:block">
-            Trouver l'espèce qui se cache derrière cette photo !
+            <FormattedMessage id="quiz.quizSubtitle" />
           </span>
         </div>
 
