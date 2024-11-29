@@ -20,7 +20,7 @@ const Ressources = (): React.ReactNode => {
         <div className="flex-auto">
           <div className="flex items-center">
             <div className="flex-auto">
-              <div className="grid max-w-screen-xl mx-auto sm:gap-8 sm:grid-cols-12 mb-6">
+              <div className="grid max-w-screen-xl mx-auto sm:gap-8 sm:grid-cols-12">
                 <div className="mr-auto sm:col-span-9">
                   <h3 className="flex-auto text-2xl font-medium text-slate-900 mb-2 uppercase">
                     <FormattedMessage id="resources.memo" />
