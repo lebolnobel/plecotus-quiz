@@ -174,7 +174,7 @@ const About = (): React.ReactNode => {
                 <FormattedMessage id="about.thanksParagraph3" />
               </p> */}
 
-              <div className="flex mt-8">
+              <div className="flex flex-col sm:flex-row space-y-8 sm:space-y-0 mt-8">
                 <figure className="text-center mx-auto px-8 w-48" role="none">
                   <a
                     href="https://plecotus.natagora.be"
