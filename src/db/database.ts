@@ -15,7 +15,7 @@ export async function writeData(data: object) {
     const fingerprint = generateFingerprint();
     const { error } = await supabase
       .from('usage')
-      .insert({ fingerprint, ...data });
+      .insert({ userFingerprint: fingerprint, ...data });
 
     if (error) {
       console.error(error);

@@ -63,6 +63,7 @@ const Quiz = (): React.ReactNode => {
         type: 'ANSWER',
         sessionId,
         questionId: hashString(questionId),
+        imageId: currentQuestion?.image.url,
         isCorrect,
         answer,
         userAnswer: value,
