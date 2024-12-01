@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react';
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
 
 const manifestForPlugin: Partial<VitePWAOptions> = {
-  registerType: 'prompt',
+  registerType: 'autoUpdate',
+  includeAssets: ['**/*'],
   manifest: {
     name: 'Plecotus quiz',
     short_name: 'Plecotus quiz',
@@ -16,24 +17,54 @@ const manifestForPlugin: Partial<VitePWAOptions> = {
     start_url: '/',
     icons: [
       {
-        src: '/assets/img/plecotus/logo.svg',
-        sizes: '512x512',
+        src: '/logo.png',
+        sizes: '192x192',
+        type: 'image/png',
+        purpose: 'any',
       },
       {
-        src: '/assets/img/plecotus/logo.png',
-        sizes: '192x192',
+        src: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+      {
+        src: '/maskable-logo.png',
+        sizes: '512x512',
         type: 'image/png',
         purpose: 'maskable',
       },
+    ],
+  },
+  devOptions: {
+    enabled: true,
+  },
+  workbox: {
+    globPatterns: ['**/*'],
+    globIgnores: ['/logo.png', '/maskable-logo.png', '/apple-touch-icon.png'],
+    clientsClaim: true,
+    skipWaiting: true,
+    runtimeCaching: [
       {
-        src: '/assets/img/plecotus/logo.png',
-        sizes: '100x100',
-        type: 'image/png',
-        purpose: 'apple',
+        urlPattern: /^\/$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'pages',
+          expiration: {
+            maxEntries: 500,
+            maxAgeSeconds: 60 * 60 * 24 * 365,
+          },
+        },
       },
       {
-        src: '/assets/img/plecotus/logo.png',
-        sizes: '512x512',
+        urlPattern: /\.(?:js|css|png|jpg|jpeg|svg|avif|ico)$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'assets',
+          expiration: {
+            maxEntries: 500,
+            maxAgeSeconds: 60 * 60 * 24 * 365,
+          },
+        },
       },
     ],
   },

@@ -32,8 +32,8 @@ const About = (): React.ReactNode => {
             >
               <img
                 src="./assets/img/resources/quiz-app.avif"
-                alt={intl.formatMessage({ id: 'about.img.quizApp' })}
-                title={intl.formatMessage({ id: 'about.img.quizApp' })}
+                alt={intl.formatMessage({ id: 'img.quizApp' })}
+                title={intl.formatMessage({ id: 'img.quizApp' })}
                 loading="lazy"
               />
             </figure>
