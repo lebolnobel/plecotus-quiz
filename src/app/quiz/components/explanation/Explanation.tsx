@@ -74,11 +74,11 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                     ) : (
                       <>
                         <div className="text-lg sm:text-xl">
-                          <FormattedMessage id="quiz.answer.true" />
+                          <FormattedMessage id="quiz.answer.false" />
                         </div>
                         <div className="text-sm sm:text-base text-red-300 whitespace-pre-line">
                           <FormattedMessage
-                            id="quiz.answer.trueDetail"
+                            id="quiz.answer.falseDetail"
                             values={{
                               badValue: userAnswer?.displayName || (
                                 <em>
