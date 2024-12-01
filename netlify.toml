@@ -4,6 +4,6 @@
   status = 200
   force = false
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/img/*"
   [headers.values]
     Cache-Control = "public, s-max-age=31536000, immutable"
