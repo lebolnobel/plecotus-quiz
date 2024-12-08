@@ -58,7 +58,7 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                         <div className="text-lg sm:text-xl">
                           <FormattedMessage id="quiz.answer.true" />
                         </div>
-                        <div className="text-sm sm:text-base text-natagora-100 whitespace-pre-line">
+                        <div className="text-sm sm:text-base text-natagora/50 whitespace-pre-line">
                           <FormattedMessage
                             id="quiz.answer.trueDetail"
                             values={{

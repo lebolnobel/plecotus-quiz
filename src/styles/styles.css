@@ -1109,22 +1109,10 @@ video {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-1 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
-}
-
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
-.space-y-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .space-y-8 > :not([hidden]) ~ :not([hidden]) {
@@ -1562,10 +1550,6 @@ video {
   color: rgb(162 178 28 / var(--tw-text-opacity));
 }
 
-.text-natagora-100 {
-  color: rgba(162, 178, 28, 0.6);
-}
-
 .text-red-300 {
   --tw-text-opacity: 1;
   color: rgb(252 165 165 / var(--tw-text-opacity));
@@ -1596,6 +1580,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-natagora\/50 {
+  color: rgb(162 178 28 / 0.5);
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -1604,8 +1592,8 @@ video {
   text-decoration-color: #9ca3af;
 }
 
-.decoration-natagora-50 {
-  text-decoration-color: rgba(162, 178, 28, 0.4);
+.decoration-natagora\/50 {
+  text-decoration-color: rgb(162 178 28 / 0.5);
 }
 
 .placeholder-gray-400::-moz-placeholder {
@@ -1930,8 +1918,16 @@ body {
   color: rgb(162 178 28 / var(--tw-text-opacity));
 }
 
-.hover\:text-natagora-100:hover {
-  color: rgba(162, 178, 28, 0.6);
+.hover\:text-natagora\/50:hover {
+  color: rgb(162 178 28 / 0.5);
+}
+
+.hover\:text-natagora\/90:hover {
+  color: rgb(162 178 28 / 0.9);
+}
+
+.hover\:text-natagora\/80:hover {
+  color: rgb(162 178 28 / 0.8);
 }
 
 .hover\:decoration-inherit:hover {
@@ -1964,8 +1960,8 @@ body {
   --tw-ring-color: rgb(156 163 175 / var(--tw-ring-opacity));
 }
 
-.focus\:ring-natagora-100:focus {
-  --tw-ring-color: rgba(162, 178, 28, 0.6);
+.focus\:ring-natagora\/40:focus {
+  --tw-ring-color: rgb(162 178 28 / 0.4);
 }
 
 .group:last-child .group-last\:before\:hidden::before {
@@ -2001,8 +1997,8 @@ body {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
-.peer:focus ~ .peer-focus\:ring-natagora-100 {
-  --tw-ring-color: rgba(162, 178, 28, 0.6);
+.peer:focus ~ .peer-focus\:ring-natagora\/40 {
+  --tw-ring-color: rgb(162 178 28 / 0.4);
 }
 
 @media (min-width: 640px) {

@@ -62,7 +62,7 @@ const DebugMode = (): React.ReactNode => {
               href="https://github.com/lebolnobel/plecotus-quiz/issues"
               rel="noreferrer"
               target="_blank"
-              className="underline decoration-gray-400 hover:decoration-2 hover:text-gray-400 transition duration-400 ease-in-out hover:decoration-inherit inline-flex focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              className="underline decoration-gray-400 hover:decoration-2 hover:text-gray-400 transition duration-400 ease-in-out hover:decoration-inherit inline-flex focus:outline-none focus:ring-2 focus:ring-natagora/40"
             >
               <FormattedMessage id="action.createBug" />
               <GoBug role="presentation" className="ml-2 mt-1" size="18px" />

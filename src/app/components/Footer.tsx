@@ -18,25 +18,21 @@ const Footer = (): React.ReactNode => {
         <FormattedMessage
           id="footer.info"
           values={{
-            hearth: (
-              <span className="inline-flex">
-                <GoHeart role="presentation" />
-              </span>
-            ),
+            hearth: <GoHeart role="presentation" className="inline-flex" />,
             plecotus: (
               <a
                 href="https://plecotus.natagora.be/"
                 title={intl.formatMessage({ id: 'natagora.plecotus' })}
-                className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
               >
                 Plecotus
               </a>
             ),
             natagora: (
               <a
-                href="http://natagora.be/"
+                href="https://natagora.be/"
                 title={intl.formatMessage({ id: 'natagora.natagora' })}
-                className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
               >
                 Natagora
               </a>
@@ -53,7 +49,7 @@ const Footer = (): React.ReactNode => {
               <a
                 href="https://github.com/lebolnobel/plecotus-quiz"
                 title={intl.formatMessage({ id: 'links.github' })}
-                className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
               >
                 GitHub
               </a>

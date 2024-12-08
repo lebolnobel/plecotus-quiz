@@ -40,7 +40,7 @@ const About = (): React.ReactNode => {
 
             <div className="mt-6 font-medium">
               <NavLink
-                className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
                 title={intl.formatMessage({ id: 'action.launch' })}
                 to={'/quiz'}
               >
@@ -74,7 +74,7 @@ const About = (): React.ReactNode => {
                     <a
                       href="https://lionellebon.be"
                       title="Lionel Lebon"
-                      className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                      className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                     >
                       Lionel Lebon
                     </a>
@@ -85,7 +85,7 @@ const About = (): React.ReactNode => {
                       title={intl.formatMessage({
                         id: 'natagora.plecotusLong',
                       })}
-                      className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                      className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                     >
                       Plecotus
                     </a>
@@ -94,7 +94,7 @@ const About = (): React.ReactNode => {
                     <a
                       href="http://natagora.be/"
                       title={intl.formatMessage({ id: 'natagora.natagora' })}
-                      className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                      className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                     >
                       Natagora
                     </a>
@@ -103,7 +103,7 @@ const About = (): React.ReactNode => {
                     <a
                       href="https://github.com/lebolnobel/plecotus-quiz"
                       title={intl.formatMessage({ id: 'links.github' })}
-                      className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                      className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                     >
                       GitHub
                     </a>
@@ -112,7 +112,7 @@ const About = (): React.ReactNode => {
                     <a
                       href="https://lebol.notion.site/Plecotus-FCH-2023-2024-Rapport-d-activit-9c76378b950d4287bd112ecbe8a6733b?pvs=74"
                       title={intl.formatMessage({ id: 'about.tfe' })}
-                      className="underline italic text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                      className="underline italic text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                     >
                       rapport d'activité (fr)
                     </a>
@@ -128,7 +128,7 @@ const About = (): React.ReactNode => {
                     <NavLink
                       to="../resources"
                       title={intl.formatMessage({ id: 'action.resources' })}
-                      className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                      className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                     >
                       <FormattedMessage id="about.resources" />
                     </NavLink>
@@ -144,7 +144,7 @@ const About = (): React.ReactNode => {
                     <a
                       href="https://forms.gle/1cRnvvpNi1CD9hLm9"
                       title={intl.formatMessage({ id: 'links.feedback' })}
-                      className="underline text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                      className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                     >
                       <FormattedMessage id="about.feedback" />
                     </a>
@@ -179,7 +179,7 @@ const About = (): React.ReactNode => {
                   <a
                     href="https://plecotus.natagora.be"
                     title={intl.formatMessage({ id: 'natagora.plecotus' })}
-                    className="text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                    className="text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                   >
                     <img
                       src="./assets/img/plecotus/logo.svg"
@@ -197,7 +197,7 @@ const About = (): React.ReactNode => {
                   <a
                     href="https://www.natagora.be"
                     title={intl.formatMessage({ id: 'natagora.natagora' })}
-                    className="text-natagora font-medium decoration-natagora-50 hover:decoration-2 hover:text-natagora-100 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                    className="text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                   >
                     <img
                       src="./assets/img/natagora/logo.png"

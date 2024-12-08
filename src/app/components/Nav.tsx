@@ -14,21 +14,21 @@ const Nav = (): React.ReactNode => {
   // const { locale, setLocale } = usePlecotusContext();
 
   // const isLocaleActive = (key: string): boolean =>
-  //   locale.toUpperCase() === key.toUpperCase();
+  // locale.toUpperCase() === key.toUpperCase();
 
   React.useEffect(() => {
     setOpen(false);
   }, [location]);
 
   const className: (isActive?: boolean) => string = (isActive = false) =>
-    `block py-2 px-3 rounded text-natagora ${isActive ? 'text-white bg-natagora' : 'md:hover:bg-gray-100 md:hover:text-natagora'}  focus:outline-none focus:ring-2 focus:ring-natagora-100`;
+    `block py-2 px-3 rounded text-natagora ${isActive ? 'text-white bg-natagora' : 'md:hover:bg-gray-100 md:hover:text-natagora'}  focus:outline-none focus:ring-2 focus:ring-natagora/40`;
 
   return (
     <nav className="bg-gray-50 border-gray-200" role="banner">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           to="../"
-          className="flex items-center space-x-3 relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
+          className="flex items-center space-x-3 relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
         >
           <img
             src="/favicon.ico"
@@ -45,7 +45,7 @@ const Nav = (): React.ReactNode => {
 
         <button
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-natagora-100"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-natagora/40"
           aria-controls="navbar-default"
           aria-expanded="false"
           aria-label="navigation"
@@ -139,13 +139,13 @@ const Nav = (): React.ReactNode => {
               <div className="inline-flex">
                 <button
                   onClick={() => setLocale && setLocale(LOCALE.FR)}
-                  className={`block py-2 px-3 rounded-l focus:outline-none focus:ring-2 focus:ring-natagora-100 ${isLocaleActive(LOCALE.FR) ? 'text-natagora bg-gray-100' : 'text-gray-400 hover:bg-gray-200 hover:text-natagora'}`}
+                  className={`block py-2 px-3 rounded-l focus:outline-none focus:ring-2 focus:ring-natagora/40 ${isLocaleActive(LOCALE.FR) ? 'text-natagora bg-gray-100' : 'text-gray-400 hover:bg-gray-200 hover:text-natagora'}`}
                 >
                   {LOCALE.FR.toUpperCase()}
                 </button>
                 <button
                   onClick={() => setLocale && setLocale(LOCALE.NL)}
-                  className={`block py-2 px-3 rounded-r focus:outline-none focus:ring-2 focus:ring-natagora-100 ${isLocaleActive(LOCALE.NL) ? 'text-natagora bg-gray-100' : 'text-gray-400 hover:bg-gray-200 hover:text-natagora'}`}
+                  className={`block py-2 px-3 rounded-r focus:outline-none focus:ring-2 focus:ring-natagora/40 ${isLocaleActive(LOCALE.NL) ? 'text-natagora bg-gray-100' : 'text-gray-400 hover:bg-gray-200 hover:text-natagora'}`}
                 >
                   {LOCALE.NL.toUpperCase()}
                 </button>

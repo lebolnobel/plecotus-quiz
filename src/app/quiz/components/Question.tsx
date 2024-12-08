@@ -113,7 +113,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               role="button"
               title={intl.formatMessage({ id: 'action.raiseError' })}
               aria-label="raiseError"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={() => window.open(`${BUG}${currentImage.url}`, '_blank')}
             >
               <GoStop
@@ -134,7 +134,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               role="button"
               title={intl.formatMessage({ id: 'action.settings' })}
               aria-label="settings"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={toggleSettingsMode}
             >
               <GoGear
@@ -160,7 +160,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               role="button"
               title={intl.formatMessage({ id: 'action.fullScreen' })}
               aria-label="fullscreen"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={toggleEnlarged}
             >
               <GoScreenFull
@@ -188,7 +188,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               role="button"
               title={intl.formatMessage({ id: 'action.reset' })}
               aria-label="reset"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={onReset}
             >
               <GoMoveToStart
@@ -214,7 +214,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               role="button"
               title={intl.formatMessage({ id: 'action.next' })}
               aria-label="next"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora-100"
+              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={onNext}
             >
               <GoArrowRight

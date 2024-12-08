@@ -50,7 +50,7 @@ const PaletteCommand = (): React.ReactNode => {
           isMac ? (
             <MdKeyboardOptionKey />
           ) : (
-            intl.formatMessage({ id: 'shortcuts.alt' })
+            intl.formatMessage({ id: 'shortcuts.ALT' })
           ),
           intl.formatMessage({ id: 'shortcuts.S' }),
         ],
@@ -64,7 +64,7 @@ const PaletteCommand = (): React.ReactNode => {
           isMac ? (
             <MdKeyboardOptionKey />
           ) : (
-            intl.formatMessage({ id: 'shortcuts.alt' })
+            intl.formatMessage({ id: 'shortcuts.ALT' })
           ),
           intl.formatMessage({ id: 'shortcuts.Q' }),
         ],

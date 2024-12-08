@@ -16,7 +16,7 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
     <div className="flex flex-row">
       <div className="basis-1/2">
         <button
-          className="py-2 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
+          className="py-2 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
           type="button"
           role="button"
           aria-label="reset"
@@ -34,7 +34,7 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
 
       <div className="text-right basis-1/2">
         <button
-          className="py-2 px-6 font-semibold rounded-md bg-natagora text-base hover:bg-natagora/90 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora-100"
+          className="py-2 px-6 font-semibold rounded-md bg-natagora text-base hover:bg-natagora/90 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
           type="submit"
           role="button"
           aria-label="reset"

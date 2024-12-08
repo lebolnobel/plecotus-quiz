@@ -62,7 +62,7 @@
   },
   "resources": {
     "title": "Ressources utiles pour les recensements hivernaux",
-    "memo": "Mémo de détermination",
+    "memo": "Mémo de détermination (fr)",
     "memoParagraph": "Mémo pour la détermination des chauves-souris en hiver (version novembre 2019) : ce document reprend l'ensemble des critères connus pour identifier en hiver les différentes espèces de chauves-souris présentes en Belgique. Il ne s'agit pas d'une bibliographie complète, mais bien de fiches espèces reprenant sur photo l'ensemble des critères visibles sur les individus en hibernation permettant d'aboutir à une identification."
   },
   "menu": {
@@ -107,8 +107,9 @@
     "noResult": "Aucune entrée pour cette commande"
   },
   "settings": {
-    "advancedName": "Mode avancé: notation hivernale",
+    "advancedName": "Mode avancé: notation hivernale uniquement",
     "advancedAnswer": "Mode avancé: sélectionner pour répondre",
+    "modeFourQuestions": "Mode 4 questions",
     "nb": "Mode {nb} questions",
     "select": "pour sélectionner",
     "navigate": "pour naviguer",
@@ -137,7 +138,7 @@
     "quiz": "Lancer le quiz !",
     "next": "Question suivante",
     "reset": "Recommencer le quiz",
-    "fullScreen": "Voir l'image de l'espère en grand",
+    "fullScreen": "Voir l'image de l'espèce en grand",
     "settings": "Paramètres du quiz",
     "shortcuts": "Voir les raccourcis",
     "1": "1",

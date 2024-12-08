@@ -36,9 +36,9 @@ const Resources = (): React.ReactNode => {
                         role="button"
                         onClick={downloadMemo}
                         aria-label="download"
-                        className="px-6 py-2 inline-flex font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora-100"
+                        className="px-6 py-2 inline-flex font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora/40"
                       >
-                        <FormattedMessage id="action.memo" />
+                        <FormattedMessage id="resources.memo" />
                         <GoArrowRight
                           role="presentation"
                           size="24"
