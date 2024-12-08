@@ -11,7 +11,7 @@ import About from './app/components/About';
 import PlecotusProvider from './context/PlecotusAppContext';
 import QuizAppContext from './context/QuizAppContext';
 
-import { NORMAL, DEFAULT_TOTAL } from './utils/constants';
+import { NORMAL, DEFAULT_TOTAL, DEFAULT_CHOICES } from './utils/constants';
 
 import './styles/styles.css';
 
@@ -56,6 +56,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <PlecotusProvider>
       <QuizAppContext
         selectToAnswerMode={true}
+        nbChoices={DEFAULT_CHOICES}
         display={NORMAL}
         totalQuestions={DEFAULT_TOTAL}
       >

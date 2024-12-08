@@ -10,6 +10,7 @@
     "dev": "vite --host",
     "lint": "eslint . --ext ts,tsx --max-warnings 0",
     "preview": "vite preview --host --port 8080",
+    "preview-dev": "vite build --watch & vite preview --host --port 8080",
     "prepare": "husky",
     "reset": "rm -rf node_modules/ && rm package-lock.json && npm i && npm audit fix",
     "sitemap": "node tools/sitemap.js",

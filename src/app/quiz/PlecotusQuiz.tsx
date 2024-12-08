@@ -84,6 +84,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
       ) : (
         <QuizAnswerList
           value={value}
+          rightAnswer={currentQuestion.image.speciesId}
           onSelectAnswer={(answer) => {
             handleSelectAnswer(answer);
             selectToAnswerMode && setIsExplanation(true);

@@ -1550,6 +1550,10 @@ video {
   color: rgb(162 178 28 / var(--tw-text-opacity));
 }
 
+.text-natagora\/50 {
+  color: rgb(162 178 28 / 0.5);
+}
+
 .text-red-300 {
   --tw-text-opacity: 1;
   color: rgb(252 165 165 / var(--tw-text-opacity));
@@ -1578,10 +1582,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-natagora\/50 {
-  color: rgb(162 178 28 / 0.5);
 }
 
 .underline {
@@ -1916,14 +1916,6 @@ body {
 .hover\:text-natagora:hover {
   --tw-text-opacity: 1;
   color: rgb(162 178 28 / var(--tw-text-opacity));
-}
-
-.hover\:text-natagora\/50:hover {
-  color: rgb(162 178 28 / 0.5);
-}
-
-.hover\:text-natagora\/90:hover {
-  color: rgb(162 178 28 / 0.9);
 }
 
 .hover\:text-natagora\/80:hover {

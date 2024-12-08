@@ -4,13 +4,14 @@ import {
   GoArrowUp,
   GoBeaker,
   GoGear,
+  GoHash,
   GoNumber,
   GoX,
 } from 'react-icons/go';
 import { IoReturnDownBack } from 'react-icons/io5';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 import { useQuizContext } from '../../hooks/useQuizContext';
-import { ABBR } from '../../utils/constants';
+import { ABBR, FOUR_CHOICES } from '../../utils/constants';
 import { FormattedMessage } from 'react-intl';
 
 type OptionsType = {
@@ -31,6 +32,8 @@ const QuizSettings = (): React.ReactNode => {
     toggleDisplay,
     toggleSelectToAnswer,
     setQuestions,
+    nbChoices,
+    toggleNbChoices,
   } = useQuizContext();
 
   const options: Array<OptionsType> = React.useMemo(
@@ -70,6 +73,23 @@ const QuizSettings = (): React.ReactNode => {
         onClick: () => !!toggleSelectToAnswer && toggleSelectToAnswer(),
       },
       {
+        name: 'nb-questions',
+        displayName: <FormattedMessage id="settings.modeFourQuestions" />,
+        icon: <GoHash role="presentation" />,
+        switch: (
+          <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              value=""
+              className="sr-only peer"
+              checked={nbChoices === FOUR_CHOICES}
+            />
+            <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-natagora/40 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-natagora"></div>
+          </label>
+        ),
+        onClick: () => !!toggleNbChoices && toggleNbChoices(),
+      },
+      {
         name: 'question-10',
         displayName: (
           <FormattedMessage
@@ -105,9 +125,11 @@ const QuizSettings = (): React.ReactNode => {
     ],
     [
       display,
+      nbChoices,
       selectToAnswerMode,
       toggleDisplay,
       toggleSelectToAnswer,
+      toggleNbChoices,
       setQuestions,
     ],
   );

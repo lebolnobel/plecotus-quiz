@@ -7,6 +7,9 @@ export const GITHUB = 'https://github.com/lebolnobel/plecotus-quiz';
 
 export const DEFAULT_TOTAL = 10;
 
+export const DEFAULT_CHOICES = 0;
+export const FOUR_CHOICES = 4;
+
 export const NORMAL = 'normal';
 export const ABBR = 'abbr';
 
