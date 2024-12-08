@@ -1,1 +1,171 @@
-{}
+{
+  "app": "Plecotus quiz: wintertellingen van vleermuizen",
+  "appName": "Plecotus quiz",
+  "appTitle": "Plecotus - Natagora",
+  "home": {
+    "welcome": "Welkom",
+    "welcomeParagraph": "Oefen het herkennen van vleermuizen onder alle omstandigheden. Ter voorbereiding van de wintertellingen, herzie de essentiële criteria voor een efficiënte identificatie. Draag actief bij aan hun behoud.",
+    "kesako": "Wat is dit?",
+    "kesakoParagraph": "Deze quiz genereert 10 willekeurige vragen. Identificeer de soorten om punten te scoren. De database bevat talrijke afbeeldingen om bij elke sessie een gevarieerde ervaring te garanderen. Speel gerust meerdere keren om uw oog te verfijnen in aanloop naar de wintertellingen in België."
+  },
+  "quiz": {
+    "title": "Plecotus quiz: wintertellingen van vleermuizen",
+    "quiz": "Quiz",
+    "quizSubtitle": "Vind de soort achter deze foto!",
+    "result": "Resultaat",
+    "score": "Dat maakt een totaal van {score, plural, one {{score, number} fout antwoord} other {{score, number} foute antwoorden}} op {total, plural, one {{total, number} vraag} other {{total, number} vragen}}!",
+    "question": {
+      "displayName": "Nederlandse naam",
+      "short": "Wintertelling notatie"
+    },
+    "answer": {
+      "true": "Juist antwoord!",
+      "trueDetail": "Goed gedaan, het is inderdaad een {value}.\nHieronder vindt u een samenvatting indien nodig.",
+      "false": "Fout antwoord!",
+      "falseDetail": "Helaas, {badValue} is niet het juiste antwoord.\nHet is een {value}.",
+      "default": "geen antwoord"
+    },
+    "species": {
+      "general": "Algemeen",
+      "position": "Positie",
+      "arm": "Onderarm",
+      "nose": "Neus",
+      "ear": "Oren",
+      "skin": "Vacht",
+      "misc": "Overig",
+      "id": "Identificatiekaart"
+    },
+    "default": "Bekijk de memo voor meer informatie!"
+  },
+  "about": {
+    "title": "Over Plecotus Quiz",
+    "about": "Over de app",
+    "aboutParagraph": "Oefen het herkennen van vleermuizen onder alle omstandigheden. Ter voorbereiding van de wintertellingen, herzie de essentiële criteria voor een efficiënte identificatie. Draag actief bij aan hun behoud. Deze applicatie is exclusief gericht op de soorten die in België voorkomen.",
+    "kesako": "Wat is dit?",
+    "kesakoParagraph1": "Deze quiz genereert 10 willekeurige vragen (of meer door de instellingen te wijzigen). Identificeer de soorten om punten te scoren. De database bevat talrijke afbeeldingen om bij elke sessie een gevarieerde ervaring te garanderen. Speel gerust meerdere keren om uw oog te verfijnen in aanloop naar de wintertellingen in België.",
+    "kesakoParagraph2": "De applicatie kan worden geïnstalleerd op uw telefoon of computer.",
+    "kesakoParagraph3": "Deze applicatie is gemaakt door {author} als onderdeel van het afstudeerproject van de opleiding {plecotus} 2024, aangeboden door {natagora}. De broncode is beschikbaar op {github}. U kunt ook mijn {rapport} lezen.",
+    "kesakoParagraph4": "Het doel is om iedereen in staat te stellen om in de winter vleermuissoorten te identificeren. De antwoorden zijn gebaseerd op de Identificatiememo. Dit document, dat u kunt downloaden in de sectie {resources}, stelt u in staat om alle noodzakelijke criteria voor identificatie te herzien. Houd het gerust bij de hand, vooral als u een beginner bent.",
+    "kesakoParagraph5": "U kunt bijdragen aan deze applicatie door uw gebruiks {feedback} te delen.",
+    "thanks": "Dankwoord",
+    "thanksParagraph1": "Deze applicatie zou niet mogelijk zijn geweest zonder de hulp van veel mensen.",
+    "thanksParagraph2": "Allereerst Pierrette Nyssen en Ruddy Cors, auteurs van de identificatiememo. Ook een grote dank aan alle fotografen die hun foto's beschikbaar hebben gesteld voor de vragen:",
+    "thanksParagraph3": "Aan Geoffroy Lebon en Ariane Meersschaert voor de vertaling naar het Nederlands.",
+    "tfe": "Activiteitenrapport",
+    "resources": "bronnen",
+    "feedback": "feedback"
+  },
+  "footer": {
+    "info": "Gemaakt met {hearth}, gerealiseerd als onderdeel van het afstudeerproject van {plecotus}, voor {natagora}",
+    "raiseError": "Een fout? Een idee? Draag bij aan het project op {link}",
+    "commandPalette": "om het opdrachtpalet te openen"
+  },
+  "resources": {
+    "title": "Handige bronnen voor wintertellingen",
+    "memo": "Identificatiememo (fr)",
+    "memoParagraph": "Memo voor de identificatie van vleermuizen in de winter (versie november 2019): dit document bevat alle bekende criteria om in de winter de verschillende vleermuissoorten in België te identificeren. Het is geen complete bibliografie, maar eerder identificatiekaarten met foto's van alle zichtbare criteria op overwinterende individuen om een identificatie mogelijk te maken."
+  },
+  "menu": {
+    "home": "Start",
+    "quiz": "Quiz",
+    "resources": "Bronnen",
+    "about": "Over de app"
+  },
+  "image": {
+    "play": "Uw beurt!",
+    "playDetail": "Vind de soort achter deze afbeelding",
+    "author": "Auteur",
+    "unkownAuthor": "Anoniem",
+    "location": "Locatie",
+    "unknownLocation": "Onbekende locatie"
+  },
+  "action": {
+    "launch": "Start de quiz!",
+    "reset": "Ik wil opnieuw beginnen",
+    "next": "Volgende",
+    "nextFull": "Klik om naar de volgende vraag te gaan",
+    "createBug": "Een bug rapporteren?",
+    "back": "Terug",
+    "memo": "Identificatiememo",
+    "openMenu": "Menu openen",
+    "closePopup": "Popup sluiten",
+    "settings": "Quizinstellingen",
+    "raiseError": "Een fout melden",
+    "fullScreen": "Volledig scherm",
+    "resources": "Bekijk de bronnen",
+    "shortcuts": "Sneltoetsen"
+  },
+  "commands": {
+    "info": "Wat zoekt u?",
+    "quiz": "Start de quiz!",
+    "settings": "Quizinstellingen",
+    "shortcuts": "Bekijk sneltoetsen",
+    "feedback": "Vul een feedback in",
+    "bug": "Meld een bug",
+    "debug": "Debug-modus",
+    "code": "Draag bij aan het project op GitHub",
+    "noResult": "Geen invoer voor deze opdracht"
+  },
+  "settings": {
+    "advancedName": "Geavanceerde modus: winterse notatie",
+    "advancedAnswer": "Geavanceerde modus: selecteren om te antwoorden",
+    "modeFourQuestions": "Modus 4 vragent",
+    "nb": "Modus {nb} vragen",
+    "select": "om te selecteren",
+    "navigate": "om te navigeren",
+    "close": "om te sluiten",
+    "help": "om deze hulp te tonen",
+    "overlay": "om overlays te tonen"
+  },
+  "debug": {
+    "title": "Debug-modus",
+    "fingerprint": "Vingerafdruk",
+    "os": "Besturingssysteem",
+    "network": "Netwerk",
+    "locale": "Taalinstelling",
+    "screen": "Scherm",
+    "date": "Datum",
+    "utils": {
+      "avail": "avail",
+      "screen": "screen"
+    }
+  },
+  "error": {
+    "title": "Oeps!",
+    "subtitle": "Er is een fout opgetreden"
+  },
+  "shortcuts": {
+    "quiz": "Start de quiz!",
+    "next": "Volgende vraag",
+    "reset": "Herstart de quiz",
+    "fullScreen": "Bekijk de afbeelding van de soort op volledig scherm",
+    "settings": "Quizinstellingen",
+    "shortcuts": "Bekijk sneltoetsen",
+    "1": "1",
+    "2": "2",
+    "F": "F",
+    "H": "H",
+    "K": "K",
+    "N": "N",
+    "R": "R",
+    "S": "S",
+    "Q": "Q",
+    "?": "?",
+    "esc": "Esc",
+    "CTRL": "CTRL",
+    "ALT": "ALT"
+  },
+  "img": {
+    "quizApp": "Plecotus quiz"
+  },
+  "links": {
+    "github": "Github, plecotus-quiz",
+    "feedback": "Feedbacks"
+  },
+  "natagora": {
+    "natagora": "Natagora",
+    "natagoraLong": "Natagora, VZW",
+    "plecotus": "Plecotus, Natagora",
+    "plecotusLong": "Plecotus, Vleermuizenpol Natagora"
+  }
+}
