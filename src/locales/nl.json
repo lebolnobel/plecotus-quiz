@@ -26,6 +26,7 @@
       "default": "geen antwoord"
     },
     "species": {
+      "info": "Deze bestanden zijn nog niet vertaald",
       "general": "Algemeen",
       "position": "Positie",
       "arm": "Onderarm",
@@ -167,5 +168,21 @@
     "natagoraLong": "Natagora, VZW",
     "plecotus": "Plecotus, Natagora",
     "plecotusLong": "Plecotus, Vleermuizenpol Natagora"
+  },
+  "species": {
+    "Barbar": "Mopsvleermuis",
+    "MB": "Bechsteins vleermuis",
+    "Md": "Watervleermuis",
+    "MD": "Meervleermuis",
+    "ME": "Ingekorven vleermuis",
+    "MM": "Vale vleermuis",
+    "Mn": "Franjestaart vleermuis",
+    "Mmba": "Baardvleermuis & co",
+    "Pleaur": "Grootoorvleermuis",
+    "Pleaus": "Grijze grootoorvleermuis",
+    "Pipsp": "Gewone dwergvleermuis - 3 soorten",
+    "Eptser": "Laatvlieger",
+    "Rh": "Kleine hoefijzerneus",
+    "Rf": "Grote hoefijzerneus"
   }
 }

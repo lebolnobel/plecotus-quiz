@@ -26,6 +26,7 @@
       "default": "aucune réponse"
     },
     "species": {
+      "info": "",
       "general": "Généralités",
       "position": "Position",
       "arm": "Avant-bras",
@@ -167,5 +168,21 @@
     "natagoraLong": "Natagora, ASBL",
     "plecotus": "Plecotus, Natagora",
     "plecotusLong": "Plecotus, Pôle Chauve-Souris"
+  },
+  "species": {
+    "Barbar": "Barbastelle d'Europe",
+    "MB": "Murin de Bechstein",
+    "Md": "Murin de Daubenton",
+    "MD": "Murin des marais",
+    "ME": "Murin à oreilles échancrées",
+    "MM": "Grand Murin",
+    "Mn": "Murin de Natterer",
+    "Mmba": "Murin à moustaches & cie",
+    "Pleaur": "Oreillard roux",
+    "Pleaus": "Oreillard gris",
+    "Pipsp": "Pipistrelles - 3 espèces",
+    "Eptser": "Sérotine commune",
+    "Rh": "Petit Rhinolophe",
+    "Rf": "Grand Rhinolophe"
   }
 }

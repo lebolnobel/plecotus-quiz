@@ -1,5 +1,6 @@
 import * as React from 'react';
 import SpeciesCard from '../app/quiz/components/explanation/SpeciesCard';
+import { FormattedMessage } from 'react-intl';
 
 export const SP = Object.freeze({
   Barbar: 'Barbar', // Barbastelle d'Europe
@@ -8,21 +9,21 @@ export const SP = Object.freeze({
   MD: 'MD', // Murin des marais
   ME: 'ME', // Murin à oreilles échancrées
   MM: 'MM', // Grand Murin
-  Mn: 'Mn', // Murin de Naterrer
-  Mmba: 'Mmba', // Murin mystacinus & cie
+  Mn: 'Mn', // Murin de Natterer
+  Mmba: 'Mmba', // Murin à moustaches & cie
   Pleaur: 'Pleaur', // Oreillard roux
   Pleaus: 'Pleaus', // Oreillard gris
-  Pipsp: 'Pipsp', // Pipistrell sp.
+  Pipsp: 'Pipsp', // Pipistrelles - 3 espèces
   Eptser: 'Eptser', // Sérotine commune
-  Rh: 'Rh', // Petit rhino
-  Rf: 'Rf', // Grand rhino
+  Rh: 'Rh', // Petit Rhinolophe
+  Rf: 'Rf', // Grand Rhinolophe
 });
 
 export type SpeciesType = {
   // scientific name
   name: string;
   // vernacular name
-  displayName: string;
+  displayName: React.ReactNode;
 
   // Full description of the species
   description: React.ReactNode;
@@ -31,15 +32,10 @@ export type SpeciesType = {
   genus: number;
 };
 
-type GenusType = {
-  name: string;
-  displayName: string;
-};
-
 export const species: { [key: string]: SpeciesType } = {
   [SP.Barbar]: {
     name: 'Barbastella barbastellus',
-    displayName: "Barbastelle d'Europe",
+    displayName: <FormattedMessage id="species.Barbar" />,
     description: (
       <SpeciesCard
         fiche={
@@ -86,7 +82,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.Eptser]: {
     name: 'Eptesicus serotinus',
-    displayName: 'Sérotine commune',
+    displayName: <FormattedMessage id="species.Eptser" />,
     description: (
       <SpeciesCard
         fiche={
@@ -138,7 +134,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.MB]: {
     name: 'Myotis bechsteinii',
-    displayName: 'Murin de Bechstein',
+    displayName: <FormattedMessage id="species.MB" />,
     description: (
       <SpeciesCard
         fiche={
@@ -183,7 +179,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.MD]: {
     name: 'Myotis dasycneme',
-    displayName: 'Murin des marais',
+    displayName: <FormattedMessage id="species.MD" />,
     description: (
       <SpeciesCard
         fiche={
@@ -238,7 +234,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.Md]: {
     name: 'Myotis daubentonii',
-    displayName: 'Murin de Daubenton',
+    displayName: <FormattedMessage id="species.Md" />,
     description: (
       <SpeciesCard
         fiche={
@@ -303,7 +299,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.ME]: {
     name: 'Myotis emarginatus',
-    displayName: 'Murin à oreilles échancrées',
+    displayName: <FormattedMessage id="species.ME" />,
     description: (
       <SpeciesCard
         fiche={
@@ -371,7 +367,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.MM]: {
     name: 'Myotis myotis',
-    displayName: 'Grand Murin',
+    displayName: <FormattedMessage id="species.MM" />,
     description: (
       <SpeciesCard
         fiche={
@@ -422,7 +418,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.Mmba]: {
     name: 'Myotis mystacinus & cie',
-    displayName: 'Murin à moustaches & cie',
+    displayName: <FormattedMessage id="species.Mmba" />,
     description: (
       <SpeciesCard
         fiche={
@@ -491,7 +487,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.Mn]: {
     name: 'Myotis nattereri',
-    displayName: 'Murin de Natterer',
+    displayName: <FormattedMessage id="species.Mn" />,
     description: (
       <SpeciesCard
         fiche={
@@ -556,7 +552,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.Pleaur]: {
     name: 'Plecotus auritus',
-    displayName: 'Oreillard roux',
+    displayName: <FormattedMessage id="species.Pleaur" />,
     description: (
       <SpeciesCard
         fiche={
@@ -619,7 +615,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.Pleaus]: {
     name: 'Plecotus austriacus',
-    displayName: 'Oreillard gris',
+    displayName: <FormattedMessage id="species.Pleaus" />,
     description: (
       <SpeciesCard
         fiche={
@@ -679,7 +675,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.Pipsp]: {
     name: 'Pipistrellus sp.',
-    displayName: 'Pipistrelles - 3 espèces',
+    displayName: <FormattedMessage id="species.Pipsp" />,
     description: (
       <SpeciesCard
         fiche={
@@ -728,7 +724,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.Rf]: {
     name: 'Rhinolophus ferrumequinum',
-    displayName: 'Grand Rhinolophe',
+    displayName: <FormattedMessage id="species.Rf" />,
     description: (
       <SpeciesCard
         fiche={
@@ -791,7 +787,7 @@ export const species: { [key: string]: SpeciesType } = {
   },
   [SP.Rh]: {
     name: 'Rhinolophus hipposideros',
-    displayName: 'Petit Rhinolophe',
+    displayName: <FormattedMessage id="species.Rh" />,
     description: (
       <SpeciesCard
         fiche={
@@ -854,32 +850,5 @@ export const species: { [key: string]: SpeciesType } = {
       />
     ),
     genus: 2,
-  },
-};
-
-export const genera: { [key: number]: GenusType } = {
-  1: {
-    name: 'Myotis',
-    displayName: 'Murin',
-  },
-  2: {
-    name: 'Rhinolophus',
-    displayName: 'Rhinolophe',
-  },
-  3: {
-    name: 'Plecotus',
-    displayName: 'Oreillard',
-  },
-  4: {
-    name: 'Barbastella',
-    displayName: 'Barbastelle',
-  },
-  5: {
-    name: 'Pipistrellus',
-    displayName: 'Pipistrelle',
-  },
-  6: {
-    name: 'Eptesicus',
-    displayName: 'Sérotine',
   },
 };

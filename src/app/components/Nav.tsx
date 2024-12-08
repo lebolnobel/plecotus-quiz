@@ -2,19 +2,19 @@ import * as React from 'react';
 import Overlay from '../accessibility/Overlay';
 import { NavLink, useLocation } from 'react-router-dom';
 import { GoHome } from 'react-icons/go';
-// import { usePlecotusContext } from '../../hooks/usePlecotusContext';
+import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 import { FormattedMessage, useIntl } from 'react-intl';
-// import { LOCALE } from '../../locales';
+import { LOCALE } from '../../locales';
 
 const Nav = (): React.ReactNode => {
   const [open, setOpen] = React.useState(false);
 
   const intl = useIntl();
   const location = useLocation();
-  // const { locale, setLocale } = usePlecotusContext();
+  const { locale, setLocale } = usePlecotusContext();
 
-  // const isLocaleActive = (key: string): boolean =>
-  // locale.toUpperCase() === key.toUpperCase();
+  const isLocaleActive = (key: string): boolean =>
+    locale.toUpperCase() === key.toUpperCase();
 
   React.useEffect(() => {
     setOpen(false);
@@ -135,7 +135,7 @@ const Nav = (): React.ReactNode => {
                 </Overlay>
               </NavLink>
             </li>
-            {/* <li className="relative pt-6 md:pt-0">
+            <li className="relative pt-6 md:pt-0">
               <div className="inline-flex">
                 <button
                   onClick={() => setLocale && setLocale(LOCALE.FR)}
@@ -150,7 +150,7 @@ const Nav = (): React.ReactNode => {
                   {LOCALE.NL.toUpperCase()}
                 </button>
               </div>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>

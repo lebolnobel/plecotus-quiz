@@ -8,6 +8,8 @@ import {
   GoDotFill,
   GoRepo,
 } from 'react-icons/go';
+import { usePlecotusContext } from '../../../../hooks/usePlecotusContext';
+import { LOCALE } from '../../../../locales';
 
 type ExplanationType = {
   rightAnswer: string;
@@ -19,6 +21,8 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
   const { rightAnswer, value, onNext } = props;
 
   const intl = useIntl();
+
+  const { locale } = usePlecotusContext(); // To add a intl note
 
   const isCorrect = rightAnswer === value;
   const abbr = rightAnswer;
@@ -134,6 +138,11 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                       </dd>
                     </div>
                   </dl>
+                  {locale === LOCALE.NL && (
+                    <div className="text-sm text-slate-500 mt-5">
+                      <FormattedMessage id="quiz.species.info" />
+                    </div>
+                  )}
                 </div>
               </div>
 
