@@ -65,6 +65,12 @@
     "memo": "Mémo de détermination (fr)",
     "memoParagraph": "Mémo pour la détermination des chauves-souris en hiver (version novembre 2019) : ce document reprend l'ensemble des critères connus pour identifier en hiver les différentes espèces de chauves-souris présentes en Belgique. Il ne s'agit pas d'une bibliographie complète, mais bien de fiches espèces reprenant sur photo l'ensemble des critères visibles sur les individus en hibernation permettant d'aboutir à une identification."
   },
+  "learn": {
+    "title": "En apprendre plus sur les espèces de chauves-souris",
+    "learnMore": "En apprendre plus",
+    "learnParagraph": "Entrainez-vous à identifier les Chauves-souris dans toutes les conditions. Grâce à cette liste, vous pourrez revoir les critères pour chaque espèce.",
+    "back": "Revenir à la liste"
+  },
   "menu": {
     "home": "Accueil",
     "quiz": "Quiz",
@@ -94,6 +100,7 @@
     "settings": "Paramètres du quiz",
     "raiseError": "Signaler une erreur",
     "fullScreen": "Plein écran",
+    "learn": "Apprendre",
     "resources": "Voir les ressources",
     "shortcuts": "Raccourcis"
   },
@@ -188,7 +195,7 @@
     "Rf": "Grand Rhinolophe",
     "description": {
       "Barbar": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Chauve-souris discrète avec des oreilles larges et un pelage sombre tacheté.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 45-58 mm - moyen</li><li>Rareté : RR - rarissime</li><li>Gîtes d’hiver : arbres, rarement cavités</li><li>Position dans la cavité : souvent suspendu à la paroi ou dans des fissures</li><li>Température : aime les températures assez basses (près des entrées, sites très ventilés)</li></ul>",
         "generalities": "<em>Rien de particulier à noter</em>",
         "position": "<p>Elle fréquente les fissures, décollements, bâches ou encore despanneaux accolés aux parois.</p>",
@@ -199,7 +206,7 @@
         "divers": "<em>Rien de particulier à noter</em>"
       },
       "MB": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Espèce forestière aux grandes oreilles, spécialisée dans les habitats boisés et cavités naturelles.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 45-55 mm - moyen</li><li>Rareté : R - rare</li><li>Gîtes d’hiver : arbres, cavités et bâtiments</li><li>Position dans la cavité : rarement observé en cavité car en général situé au fond de crevasses, parfois pend librement ou contre la paroi</li><li>Température : variable</li></ul>",
         "generalities": "<em>Rien de particulier à noter</em>",
         "position": "<p>Il hiberne au plus profond des crevasses et autres fissures.</p>",
@@ -210,7 +217,7 @@
         "divers": "<em>Rien de particulier à noter</em>"
       },
       "Md": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Chauve-souris des milieux aquatiques, chasse au-dessus des plans d'eau avec agilité.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 40-60 mm - petit/moyen</li><li>Rareté : C - commun</li><li>Gîtes d’hiver : cavités, fissures dans les ponts</li><li>Position dans la cavité : le plus souvent accroché à la paroi, mais aussi dans les fissures, ou rarement, pend librement</li><li>Température : variable</li></ul>",
         "generalities": "<em>Rien de particulier à noter</em>",
         "position": "<em>Rien de particulier à noter</em>",
@@ -221,7 +228,7 @@
         "divers": "<ul class=\"list-decimal ml-4\"><li>La couleur de la peau (oreilles et ailes) contraste peu avec la couleur brun/gris du pelage dorsal, ce qui lui donne un aspect bicolore.</li><li>Les pieds sont grands, caractéristiques, c’est un bon critère de différentiation avec Mmba.</li><li>Présence de grands poils sur les orteils.</li></ul>"
       },
       "MD": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Espèce rare et liée aux zones humides, souvent difficile à distinguer des autres murins.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 57-68 mm - grand</li><li>Rareté : AR - assez rare</li><li>Gîtes d’hiver : cavités, bâtiments</li><li>Position dans la cavité : pend librement, mais aussi parfois dans des fissures ou des trous</li><li>Température : variable</li></ul>",
         "generalities": "<em>Rien de particulier à noter</em>",
         "position": "<ul class=\"list-decimal ml-4\"><li>La forme générale est très allongée, rectangulaire.</li><li>Malgré la ressemblance, il est plus grand que Md.</li></ul>",
@@ -232,7 +239,7 @@
         "divers": "<p>Grands pieds très caractéristiques : ils permettent d’attraper des insectes à la surface de l’eau.</p>"
       },
       "ME": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Possède des oreilles caractéristiques avec un bord échancré.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 41-53 mm - moyen</li><li>Rareté : AR - assez rare</li><li>Gîtes d’hiver : cavités souterraines</li><li>Position dans la cavité : pend souvent librement, aime se coller aux autres</li><li>Température : assez thermophile, jusqu'à 9°c</li></ul>",
         "generalities": "<em>Rien de particulier à noter</em>",
         "position": "<ul class=\"list-decimal ml-4\"><li>Corps en forme de losange (coudes bien écartés du corps), vu de face, les poignets cachent souvent les oreilles.</li><li>Ils pendent le plus souvent librement dans les secteurs chauds des cavités.</li><li>Ils se regroupent régulièrement en grappe dense (de deux à plusieurs dizaines d’individus).</li></ul>",
@@ -243,7 +250,7 @@
         "divers": "<em>Rien de particulier à noter</em>"
       },
       "MM": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Une des plus grandes chauves-souris d'Europe.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 67-80 mm - grand</li><li>Rareté : AR - assez rare</li><li>Gîtes d’hiver : cavités souterraines</li><li>Position dans la cavité : pend souvent librement, parfois accroché à la paroi</li><li>Température : variable</li></ul>",
         "generalities": "<em>Rien de particulier à noter</em>",
         "position": "<ul class=\"list-decimal ml-4\"><li>Le corps a une forme générale de sac à patates (en raison des nombreuses bosses) parfois plutôt de losange.</li><li>Il pend généralement librement, souvent en haut, mais on peut le retrouver accroché à la paroi.</li></ul>",
@@ -254,7 +261,7 @@
         "divers": "<em>Rien de particulier à noter</em>"
       },
       "Mn": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Espèce forestière et de bocages, connue pour sa précision dans la chasse en vol près des obstacles.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 41-55 mm - moyen</li><li>Rareté : AC - assez commun</li><li>Gîtes d’hiver : cavités souterraines</li><li>Position dans la cavité : souvent au fond de fissures, parfois accroché à la paroi</li><li>Température : variable, supporte souvent des conditions très fraiches</li></ul>",
         "generalities": "<em>Rien de particulier à noter</em>",
         "position": "<ul class=\"list-decimal ml-4\"><li>Corps trapu, avec une forme générale ovale.</li><li>Il se coince souvent au fond de fissures ou de trous. Il peutpendre avec le ventre contre la paroi.</li></ul>",
@@ -265,7 +272,7 @@
         "divers": "<em>Rien de particulier à noter</em>"
       },
       "Mmba": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Groupe d'espèces difficiles à différencier, souvent présentes dans les bois et prairies.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 35-51 mm - petit</li><li>Rareté : C - commun</li><li>Gîtes d’hiver : cavités, bâtiments</li><li>Position dans la cavité : souvent accroché à la paroi, mais aussi dans les fissures, ou plus rarement, pend librement</li><li>Température : peut se rencontrer dans les zones assez froides (5°C et moins)</li></ul>",
         "generalities": "<p>La distinction entre ces trois espèces (Murin à moustaches, de Brandt, d’Alcathoé) est extrêmement difficile en hibernation, on les notera quasi toujours comme un seul taxon : Mmba.</p>",
         "position": "<em>Rien de particulier à noter</em>",
@@ -276,7 +283,7 @@
         "divers": "<ul class=\"list-decimal ml-4\"><li>Couleur de peau contraste fortement tant avec le dos qu'avec le ventre : ça lui donne un aspect tricolore.</li><li>Par rapport à Md, les pieds sont petits (moins de la moitié du tibia) et sans poils longs sur les orteils.</li></ul>"
       },
       "Pleaur": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Chauve-souris aux grandes oreilles, typique des zones ouvertes et prairies.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 41-58 mm - moyen</li><li>Rareté : AC - assez commun</li><li>Gîtes d’hiver : bâtiments, cavités</li><li>Position dans la cavité : suspendu au plafond ou à la paroi, souvent blotti dans une fissure près de l'entrée</li><li>Température : supporte des températures assez basses, mais peut être en des endroits plus chauds</li></ul>",
         "generalities": "<p>Corps assez ramassé, s’inscrivant dans un ovale.</p>",
         "position": "<em>Rien de particulier à noter</em>",
@@ -287,7 +294,7 @@
         "divers": "<ul class=\"list-decimal ml-4\"><li>Présence de deux grosses \"verrues\" bien marquées entre les yeux, dont le diamètre est égal à celui de l’œil.</li><li>Présence de très longs poils sur les orteils.</li></ul>"
       },
       "Pleaus": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Chauve-souris aux grandes oreilles, préférant les habitats plus boisés et humides.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 41-58 mm - moyen</li><li>Rareté : R - rare</li><li>Gîtes d’hiver : bâtiments, cavités</li><li>Position dans la cavité : suspendu au plafond ou à la paroi, souvent blotti dans une fissure près de l'entrée</li><li>Température : supporte des températures assez basses, mais peut être en des endroits plus chauds</li></ul>",
         "generalities": "<p>Corps assez ramassé, s’inscrivant dans un ovale.</p>",
         "position": "<em>Rien de particulier à noter</em>",
@@ -298,7 +305,7 @@
         "divers": "<ul class=\"list-decimal ml-4\"><li>Présence de deux grosses \"verrues\" peu marquées entre les yeux, dont le diamètre est inférieur à celui de l’œil.</li><li>Présence de poils courts sur les orteils.</li></ul>"
       },
       "Pipsp": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Trois espèces communes, petites et urbaines, connues pour leur capacité à cohabiter avec l'homme.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 32-55 mm - petit</li><li>Rareté : CC - très commun</li><li>Gîtes d’hiver : bâtiments, rarement cavités</li><li>Position dans la cavité : le plus souvent groupés dans des fissures profondes et étroites à proximité des entrées</li><li>Température : supporte des températures assez basses – souvent dans des sites très secs</li></ul>",
         "generalities": "<em>Rien de particulier à noter</em>",
         "position": "<p>Les pipistrelles s’observent rarement en cavité souterraine. Quand on les trouve, c'est souvent dans des fissures, en groupe compact.</p>",
@@ -309,7 +316,7 @@
         "divers": "<ul class=\"list-decimal ml-4\"><li>Peau très foncée.</li><li>À ne pas confondre avec Mmba, il faut regarder le contraste dos/ventre et les oreilles et tragus qui sont plus arrondis chez les pipistrelles.</li></ul>"
       },
       "Eptser": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Grande chauve-souris, chasse en vol haut et souvent près des zones urbaines.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 62-80 mm - grand</li><li>Rareté : C - commun</li><li>Gîtes d’hiver : bâtiments, rarement cavités</li><li>Position dans la cavité : dans des fissures profondes ou des crevasses à proximité des entrées</li><li>Température : supporte des températures assez basses</li></ul>",
         "generalities": "<em>Rien de particulier à noter</em>",
         "position": "<p>Rarement dans les cavités, quand on les trouve, c'est généralement cachées dans des anfractuosités ou des crevasses, dans des zones peu tamponnées et souvent bien ventilées.</p>",
@@ -320,7 +327,7 @@
         "divers": "<ul class=\"list-decimal ml-4\"><li>Peau entièrement sombre, face très foncée.</li><li>Espèce de grande taille.</li></ul>"
       },
       "Rh": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Espèce cavernicole qui utilise l'écholocalisation nasale.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 37-45 mm - petit</li><li>Rareté : RR - rarissime</li><li>Gîtes d’hiver : cavités souterraines</li><li>Position dans la cavité : pend librement</li><li>Température : thermophile - 7 à 11°C</li></ul>",
         "generalities": "<ul class=\"list-decimal ml-4\"><li>On le compare au Grand Rhinolophe (Rf) avec qui il se ressemble beaucoup.</li><li>Son corps n’est pas plus grand qu’un pouce ou qu’une boîte d’allumettes.</li><li>Ils pendent toujours librement et sont enroulés dans leurs ailes.</li><li>Très sensibles au dérangement !</li></ul>",
         "position": "<p>Souvent (presque) complètement enroulé dans ses ailes, il n'y a pas grand-chose qui dépasse.</p>",
@@ -331,7 +338,7 @@
         "divers": "<p>Les yeux sont plus rapprochés que chez Rf.</p>"
       },
       "Rf": {
-        "short": "<em>Rien de particulier à noter</em>",
+        "short": "Plus grand que le petit Rhinolophe, vit aussi dans des grottes et des bâtiments anciens.",
         "fiche": "<ul class=\"list-decimal ml-4\"><li>Taille (tête + corps) : 57-71 mm - grand</li><li>Rareté : RR - rarissime</li><li>Gîtes d’hiver : cavités souterraines</li><li>Position dans la cavité : pend librement</li><li>Température : thermophile - 7 à 11°C</li></ul>",
         "generalities": "<ul class=\"list-decimal ml-4\"><li>On le compare au Petit Rhinolophe (Rh) avec qui il se ressemble beaucoup.</li><li>Le Grand Rhinolophe a la taille d’une poire, d’un paquet de cigarettes.</li><li>Très sensibles au dérangement !</li></ul>",
         "position": "<p>Il n'est pas complètement enroulé dans ses ailes, on voit toujours son museau.</p>",

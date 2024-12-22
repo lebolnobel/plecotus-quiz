@@ -40,9 +40,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Barbar]: {
     name: 'Barbastella barbastellus',
     displayName: <FormattedMessage id="species.Barbar" />,
-    short: <FormattedMessage id="species.Barbar" />,
+    short: <FormattedMessage id="species.description.Barbar.short" />,
     image:
-      './assets/img/species/sp/csm_BarbastellaBarbastellus_JeanLouisGathoye__10__162fa6628a.jpg',
+      '/assets/img/species/sp/csm_BarbastellaBarbastellus_JeanLouisGathoye__10__162fa6628a.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -90,9 +90,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Eptser]: {
     name: 'Eptesicus serotinus',
     displayName: <FormattedMessage id="species.Eptser" />,
-    short: <FormattedMessage id="species.Eptser" />,
+    short: <FormattedMessage id="species.description.Eptser.short" />,
     image:
-      './assets/img/species/sp/csm_EptesicusSerotinus_Hollogne_LucMalchair_2__1fb04eae17.jpg',
+      '/assets/img/species/sp/csm_EptesicusSerotinus_Hollogne_LucMalchair_2__1fb04eae17.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -145,9 +145,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.MB]: {
     name: 'Myotis bechsteinii',
     displayName: <FormattedMessage id="species.MB" />,
-    short: <FormattedMessage id="species.MB" />,
+    short: <FormattedMessage id="species.description.MB.short" />,
     image:
-      './assets/img/species/sp/csm_MyotisBechsteini_TrouDeLaLouve_Nettine_07022007_NicolasTiteux_3__f7de6a64fe.jpg',
+      '/assets/img/species/sp/csm_MyotisBechsteini_TrouDeLaLouve_Nettine_07022007_NicolasTiteux_3__f7de6a64fe.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -193,9 +193,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.MD]: {
     name: 'Myotis dasycneme',
     displayName: <FormattedMessage id="species.MD" />,
-    short: <FormattedMessage id="species.MD" />,
+    short: <FormattedMessage id="species.description.MD.short" />,
     image:
-      './assets/img/species/sp/csm_MyotisDasycneme_JeanLouisGathoye__4__2b633ca0eb.jpg',
+      '/assets/img/species/sp/csm_MyotisDasycneme_JeanLouisGathoye__4__2b633ca0eb.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -251,9 +251,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Md]: {
     name: 'Myotis daubentonii',
     displayName: <FormattedMessage id="species.Md" />,
-    short: <FormattedMessage id="species.Md" />,
+    short: <FormattedMessage id="species.description.Md.short" />,
     image:
-      './assets/img/species/sp/csm_MyotisDaubentoni_JeanLouisGathoye__8__4008c0ca94.jpg',
+      '/assets/img/species/sp/csm_MyotisDaubentoni_JeanLouisGathoye__8__4008c0ca94.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -319,9 +319,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.ME]: {
     name: 'Myotis emarginatus',
     displayName: <FormattedMessage id="species.ME" />,
-    short: <FormattedMessage id="species.ME" />,
+    short: <FormattedMessage id="species.description.ME.short" />,
     image:
-      './assets/img/species/sp/csm_MyotisEmarginatus_JeanLouisGathoye__10__b53c6c4b17.jpg',
+      '/assets/img/species/sp/csm_MyotisEmarginatus_JeanLouisGathoye__10__b53c6c4b17.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -390,9 +390,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.MM]: {
     name: 'Myotis myotis',
     displayName: <FormattedMessage id="species.MM" />,
-    short: <FormattedMessage id="species.MM" />,
+    short: <FormattedMessage id="species.description.MM.short" />,
     image:
-      './assets/img/species/sp/csm_MyotisMyotis_JeanLouisGathoye__19__d64285c806.jpg',
+      '/assets/img/species/sp/csm_MyotisMyotis_JeanLouisGathoye__19__d64285c806.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -444,9 +444,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Mmba]: {
     name: 'Myotis mystacinus & cie',
     displayName: <FormattedMessage id="species.Mmba" />,
-    short: <FormattedMessage id="species.Mmba" />,
+    short: <FormattedMessage id="species.description.Mmba.short" />,
     image:
-      './assets/img/species/sp/csm_MyotisMystacinusBrandtii_JeanLouisGathoye__17__9988b4d2fd.jpg',
+      '/assets/img/species/sp/csm_MyotisMystacinusBrandtii_JeanLouisGathoye__17__9988b4d2fd.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -516,9 +516,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Mn]: {
     name: 'Myotis nattereri',
     displayName: <FormattedMessage id="species.Mn" />,
-    short: <FormattedMessage id="species.Mn" />,
+    short: <FormattedMessage id="species.description.Mn.short" />,
     image:
-      './assets/img/species/sp/csm_MyotisNattereri_JeanLouisGathoye_c2d3ecfe36.jpg',
+      '/assets/img/species/sp/csm_MyotisNattereri_JeanLouisGathoye_c2d3ecfe36.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -584,9 +584,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Pleaur]: {
     name: 'Plecotus auritus',
     displayName: <FormattedMessage id="species.Pleaur" />,
-    short: <FormattedMessage id="species.Pleaur" />,
+    short: <FormattedMessage id="species.description.Pleaur.short" />,
     image:
-      './assets/img/species/sp/csm_PlecotusAuritus_Jean-LouisGathoye_3__fdabb410b3.jpg',
+      '/assets/img/species/sp/csm_PlecotusAuritus_Jean-LouisGathoye_3__fdabb410b3.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -650,9 +650,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Pleaus]: {
     name: 'Plecotus austriacus',
     displayName: <FormattedMessage id="species.Pleaus" />,
-    short: <FormattedMessage id="species.Pleaus" />,
+    short: <FormattedMessage id="species.description.Pleaus.short" />,
     image:
-      './assets/img/species/sp/csm_PlecotusAustriacus_MarcPaquay_fa4330070c.jpg',
+      '/assets/img/species/sp/csm_PlecotusAustriacus_MarcPaquay_fa4330070c.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -713,9 +713,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Pipsp]: {
     name: 'Pipistrellus sp.',
     displayName: <FormattedMessage id="species.Pipsp" />,
-    short: <FormattedMessage id="species.Pipsp" />,
+    short: <FormattedMessage id="species.description.Pipsp.short" />,
     image:
-      './assets/img/species/sp/csm_PipistrellusPipistrellus_GillesSanMartin__2__e6dc29f588.jpg',
+      '/assets/img/species/sp/csm_PipistrellusPipistrellus_GillesSanMartin__2__e6dc29f588.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -765,9 +765,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Rf]: {
     name: 'Rhinolophus ferrumequinum',
     displayName: <FormattedMessage id="species.Rf" />,
-    short: <FormattedMessage id="species.Rf" />,
+    short: <FormattedMessage id="species.description.Rf.short" />,
     image:
-      './assets/img/species/sp/csm_RhinolophusFerrumequinum_JeanLouisGathoye__14__ab7aadace2.jpg',
+      '/assets/img/species/sp/csm_RhinolophusFerrumequinum_JeanLouisGathoye__14__ab7aadace2.jpg',
     description: (
       <SpeciesCard
         fiche={
@@ -831,9 +831,9 @@ export const species: { [key: string]: SpeciesType } = {
   [SP.Rh]: {
     name: 'Rhinolophus hipposideros',
     displayName: <FormattedMessage id="species.Rh" />,
-    short: <FormattedMessage id="species.Rh" />,
+    short: <FormattedMessage id="species.description.Rh.short" />,
     image:
-      './assets/img/species/sp/csm_RinolophusHipposideros_Jorquenay_LucMalchair_b77187bc5c.jpg',
+      '/assets/img/species/sp/csm_RinolophusHipposideros_Jorquenay_LucMalchair_b77187bc5c.jpg',
     description: (
       <SpeciesCard
         fiche={

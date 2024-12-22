@@ -686,6 +686,14 @@ video {
   inset-inline-start: -0.5rem;
 }
 
+.-start-3 {
+  inset-inline-start: -0.75rem;
+}
+
+.-start-2\.5 {
+  inset-inline-start: -0.625rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -952,6 +960,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-64 {
+  height: 16rem;
 }
 
 .max-h-80 {
@@ -2045,6 +2057,11 @@ body {
   color: rgb(162 178 28 / 0.8);
 }
 
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .hover\:decoration-inherit:hover {
   text-decoration-color: inherit;
 }
@@ -2300,6 +2317,10 @@ body {
 
   .md\:h-36 {
     height: 9rem;
+  }
+
+  .md\:h-48 {
+    height: 12rem;
   }
 
   .md\:w-3\/4 {

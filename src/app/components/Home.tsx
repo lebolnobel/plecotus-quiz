@@ -52,12 +52,25 @@ const Home = (): React.ReactNode => {
               <NavLink
                 className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
                 title={intl.formatMessage({ id: 'action.launch' })}
-                to="/quiz"
+                to="../quiz"
               >
                 <FormattedMessage id="action.launch" />
                 <Overlay>
                   <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
                     <FormattedMessage id="shortcuts.S" />
+                  </div>
+                </Overlay>
+              </NavLink>
+
+              <NavLink
+                className="px-6 py-2 inline-flex font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora/40"
+                title={intl.formatMessage({ id: 'action.learn' })}
+                to="../learn"
+              >
+                <FormattedMessage id="action.learn" />
+                <Overlay>
+                  <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
+                    <FormattedMessage id="shortcuts.1" />
                   </div>
                 </Overlay>
               </NavLink>

@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { GoArrowRight } from 'react-icons/go';
-import { MEMO } from '../../utils/constants';
 import { FormattedMessage, useIntl } from 'react-intl';
+import { useNavigate } from 'react-router-dom';
 import { species } from '../../utils/species';
+import { MEMO } from '../../utils/constants';
 
 const Learn = (): React.ReactNode => {
   const intl = useIntl();
+  const navigate = useNavigate();
 
   const downloadMemo = () => {
     window.open(MEMO);
@@ -14,33 +16,36 @@ const Learn = (): React.ReactNode => {
   return (
     <div className="mx-auto block" role="main">
       <h2 className="text-slate-500 uppercase">
-        En apprendre plus sur les espèces de chauves-souris
+        <FormattedMessage id="learn.title" />
       </h2>
 
-      <div className="flex pt-10 hidden">
+      <div className="flex pt-10">
         <div className="flex-auto">
           <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase">
-            Apprendre
+            <FormattedMessage id="learn.learnMore" />
           </h3>
 
           <div className="w-full flex-none">
             <p className="py-2">
-              <FormattedMessage id="about.aboutParagraph" />
+              <FormattedMessage id="learn.learnParagraph" />
             </p>
           </div>
 
-          <div className="w-full mt-4 mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 space-y-4 sm:space-y-0">
-            {Object.values(species).map((sp, index) => (
+          <div className="w-full mt-4 mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 space-y-4 sm:space-y-0">
+            {Object.keys(species).map((sp, index) => (
               <div
                 className="max-w-full border border-gray-200 rounded-lg hover:shadow hover:bg-slate-100 cursor-pointer"
-                onClick={() => alert('...')}
+                onClick={() => navigate(`../species/${sp}`)}
                 key={index}
               >
                 <div className="relative h-48 md:h-36 rounded-t-lg group overflow-hidden">
                   <img
-                    src={sp?.image || './assets/img/resources/placeholder.jpg'}
-                    alt={sp.name}
-                    title={sp.name}
+                    src={
+                      species[sp]?.image ||
+                      './assets/img/resources/placeholder.jpg'
+                    }
+                    alt={species[sp].name}
+                    title={species[sp].name}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-125"
                   />
@@ -49,15 +54,15 @@ const Learn = (): React.ReactNode => {
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <div className="flex items-center justify-between text-gray-200">
                         <div>
-                          <h5 className="text-lg italic">{sp.name}</h5>
+                          <h5 className="text-lg italic">{species[sp].name}</h5>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-5">
-                  <p className="mb-3 font-normal">{sp.short}</p>
+                <div className="p-4">
+                  <p className="font-normal text-sm">{species[sp].short}</p>
                 </div>
               </div>
             ))}

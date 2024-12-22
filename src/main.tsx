@@ -7,6 +7,7 @@ import ErrorPage from './app/components/ErrorPage';
 import Home from './app/components/Home';
 import Quiz from './app/quiz/MainQuiz';
 import Learn from './app/components/Learn';
+import Species from './app/components/Species';
 import Resources from './app/components/Resources';
 import About from './app/components/About';
 import PlecotusProvider from './context/PlecotusAppContext';
@@ -34,6 +35,10 @@ const router = createBrowserRouter(
         {
           path: 'learn',
           element: <Learn />,
+        },
+        {
+          path: '/species/:species',
+          element: <Species />,
         },
         {
           path: 'resources',

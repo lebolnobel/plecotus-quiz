@@ -48,7 +48,7 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                 />
 
                 <GoMoveToStart
-                  className="absolute bg-transparent -start-2 inset-y-0 h-full opacity-10 z-0 cursor-pointer"
+                  className="absolute bg-transparent -start-2.5 inset-y-0 h-full opacity-10 z-0 cursor-pointer"
                   role="presentation"
                   size="128px"
                   title={intl.formatMessage({ id: 'action.reset' })}
