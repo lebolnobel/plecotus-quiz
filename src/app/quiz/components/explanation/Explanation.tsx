@@ -1,4 +1,5 @@
 import * as React from 'react';
+import SpeciesCard from './SpeciesCard';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { species } from '../../../../utils/species';
 import {
@@ -9,8 +10,6 @@ import {
   GoMoveToStart,
   GoRepo,
 } from 'react-icons/go';
-import { usePlecotusContext } from '../../../../hooks/usePlecotusContext';
-import { LOCALE } from '../../../../locales';
 
 type ExplanationType = {
   rightAnswer: string;
@@ -23,8 +22,6 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
   const { rightAnswer, value, onNext, onReset } = props;
 
   const intl = useIntl();
-
-  const { locale } = usePlecotusContext(); // To add a intl note
 
   const isCorrect = rightAnswer === value;
   const abbr = rightAnswer;
@@ -148,17 +145,83 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                       </dd>
                     </div>
                   </dl>
-                  {locale === LOCALE.NL && (
-                    <div className="text-sm text-slate-500 mt-5">
-                      <FormattedMessage id="quiz.species.info" />
-                    </div>
-                  )}
                 </div>
               </div>
 
-              {correctAnswer.description || (
-                <FormattedMessage id="quiz.default" />
-              )}
+              <SpeciesCard
+                fiche={
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `species.description.${rightAnswer}.fiche`,
+                      }),
+                    }}
+                  />
+                }
+                generalities={
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `species.description.${rightAnswer}.generalities`,
+                      }),
+                    }}
+                  />
+                }
+                position={
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `species.description.${rightAnswer}.position`,
+                      }),
+                    }}
+                  />
+                }
+                bras={
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `species.description.${rightAnswer}.bras`,
+                      }),
+                    }}
+                  />
+                }
+                nez={
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `species.description.${rightAnswer}.nez`,
+                      }),
+                    }}
+                  />
+                }
+                oreilles={
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `species.description.${rightAnswer}.oreilles`,
+                      }),
+                    }}
+                  />
+                }
+                pelage={
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `species.description.${rightAnswer}.pelage`,
+                      }),
+                    }}
+                  />
+                }
+                divers={
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `species.description.${rightAnswer}.divers`,
+                      }),
+                    }}
+                  />
+                }
+              />
             </div>
           )}
         </div>

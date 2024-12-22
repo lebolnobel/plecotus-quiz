@@ -26,7 +26,6 @@
       "default": "geen antwoord"
     },
     "species": {
-      "info": "Deze bestanden zijn nog niet vertaald",
       "general": "Algemeen",
       "position": "Positie",
       "arm": "Onderarm",
@@ -47,13 +46,13 @@
     "kesakoParagraph2": "De applicatie kan worden geïnstalleerd op uw telefoon of computer.",
     "kesakoParagraph3": "Deze applicatie is gemaakt door {author} als onderdeel van het afstudeerproject van de opleiding {plecotus} 2024, aangeboden door {natagora}. De broncode is beschikbaar op {github}. U kunt ook mijn {rapport} lezen.",
     "kesakoParagraph4": "Het doel is om iedereen in staat te stellen om in de winter vleermuissoorten te identificeren. De antwoorden zijn gebaseerd op de Identificatiememo. Dit document, dat u kunt downloaden in de sectie {resources}, stelt u in staat om alle noodzakelijke criteria voor identificatie te herzien. Houd het gerust bij de hand, vooral als u een beginner bent.",
-    "kesakoParagraph5": "U kunt bijdragen aan deze applicatie door uw gebruiks {feedback} te delen.",
+    "kesakoParagraph5": "U kunt bijdragen aan deze applicatie door uw gebruiks {feedback} te delen. Il est à noter que les images ont été vérifiées par des experts, le risque d’erreur d’identification est donc très faible, mais possible. Vous pouvez remonter les éventuels soucis grâce aux boutons sous les images de chaque question.",
     "thanks": "Dankwoord",
     "thanksParagraph1": "Deze applicatie zou niet mogelijk zijn geweest zonder de hulp van veel mensen.",
     "thanksParagraph2": "Allereerst Pierrette Nyssen en Ruddy Cors, auteurs van de identificatiememo. Ook een grote dank aan alle fotografen die hun foto's beschikbaar hebben gesteld voor de vragen:",
     "thanksParagraph3": "Aan Geoffroy Lebon en Ariane Meersschaert voor de vertaling naar het Nederlands.",
     "tfe": "Activiteitenrapport",
-    "resources": "bronnen",
+    "learn": "Leren",
     "feedback": "feedback"
   },
   "footer": {
@@ -69,6 +68,7 @@
   "menu": {
     "home": "Start",
     "quiz": "Quiz",
+    "learn": "Leren",
     "resources": "Bronnen",
     "about": "Over de app"
   },
@@ -83,6 +83,7 @@
   "action": {
     "launch": "Start de quiz!",
     "reset": "Ik wil opnieuw beginnen",
+    "resetShort": "Begin opnieuw",
     "next": "Volgende",
     "nextFull": "Klik om naar de volgende vraag te gaan",
     "createBug": "Een bug rapporteren?",
@@ -147,6 +148,7 @@
     "F": "F",
     "H": "H",
     "K": "K",
+    "L": "L",
     "N": "N",
     "R": "R",
     "S": "S",
@@ -183,6 +185,162 @@
     "Pipsp": "Gewone dwergvleermuis - 3 soorten",
     "Eptser": "Laatvlieger",
     "Rh": "Kleine hoefijzerneus",
-    "Rf": "Grote hoefijzerneus"
+    "Rf": "Grote hoefijzerneus",
+    "description": {
+      "Barbar": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 45-58 mm - gemiddeld</li><li>Zeldzaamheid: RR - uiterst zeldzaam</li><li>Winterverblijven: bomen, zelden holtes</li><li>Positie in de holte: vaak hangend aan de wand of in spleten</li><li>Temperatuur: houdt van vrij lage temperaturen (dicht bij ingangen, zeer goed geventileerde locaties)</li></ul>",
+        "generalities": "",
+        "position": "<p>Ze verblijft in spleten, loslatende oppervlakken, doeken of panelen die tegen wanden zijn bevestigd.</p>",
+        "bras": "",
+        "nez": "<ul class=\"list-decimal ml-4\"><li>Zeer herkenbaar zwart gezicht.</li><li>Platte snuit, neusgaten die omhoog openen.</li></ul>",
+        "oreilles": "<p>Zwarte, brede en driehoekige oren, die elkaar aan de basis raken.</p>",
+        "pelage": "<p>Zijdeachtige vacht, houtskoolzwarte rug, soms met grijzig gekleurde haarpunten en donkergrijze buik.</p>",
+        "divers": ""
+      },
+      "MB": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 45-55 mm - gemiddeld</li><li>Zeldzaamheid: R - zeldzaam</li><li>Winterverblijven: bomen, holtes en gebouwen</li><li>Positie in de holte: zelden waargenomen in holtes, meestal diep in scheuren, soms vrij hangend of tegen de wand</li><li>Temperatuur: variabel</li></ul>",
+        "generalities": "",
+        "position": "<p>Hij overwintert diep in scheuren en andere barsten.</p>",
+        "bras": "",
+        "nez": "<p>Roze, weinig behaard gezicht, vergelijkbaar met dat van MM.</p>",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>Zeer lange en brede oren, in U-vorm, die ver voorbij de snuit uitsteken, ongeveer 1/3 van de lichaamslengte.</li><li>In tegenstelling tot Plecotus zijn de oren niet verbonden aan de basis en nooit naar achteren gevouwen achter de vleugels.</li><li>De tragus is kleiner dan de helft van het oor.</li></ul>",
+        "pelage": "<p>Lange, lichtgrijs-witte buikvacht die behoorlijk contrasteert met de rug.</p>",
+        "divers": ""
+      },
+      "Md": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 40-60 mm - klein/gemiddeld</li><li>Zeldzaamheid: C - algemeen</li><li>Winterverblijven: holtes, scheuren in bruggen</li><li>Positie in de holte: meestal vastgeklampt aan de wand, maar ook in spleten, of zelden vrij hangend</li><li>Temperatuur: variabel</li></ul>",
+        "generalities": "",
+        "position": "<ul class=\"list-decimal ml-4\"><li>Gedrongen lichaam, met een algemene ovale vorm.</li><li>Kruipt vaak diep in spleten of gaten. Kan hangen met de buik tegen de wand.</li></ul>",
+        "bras": "<p>Dikkere/sterkere onderarmen en polsen dan bij Mmba.</p>",
+        "nez": "<ul class=\"list-decimal ml-4\"><li>Roze snuit, lichter dan bij Mmba.</li><li>Bij de lichtste exemplaren is vaak een duidelijk roze rechthoek zichtbaar.</li><li>Korter en steviger dan bij Mn.</li></ul>",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>Klein en weinig opvallend, steken (bijna) niet voorbij de snuit naar voren.</li><li>Tragus vrij kort, eindigend in een afgeronde punt.</li><li>De hoek tussen de oren is ongeveer 120°.</li></ul>",
+        "pelage": "<ul class=\"list-decimal ml-4\"><li>Lichtgekleurde buik, eerder grijzig (niet wit), wat een tweekleurig uiterlijk geeft.</li><li>De zone tussen oor en snuit is weinig behaard.</li></ul>",
+        "divers": "<ul class=\"list-decimal ml-4\"><li>De kleur van de huid (oren en vleugels) contrasteert weinig met de bruin/grijze kleur van de rugvacht, wat het een tweekleurig uiterlijk geeft.</li><li>Grote, karakteristieke voeten: dit is een goed criterium om hem te onderscheiden van Mmba.</li><li>Grote haren aanwezig op de tenen.</li></ul>"
+      },
+      "MD": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 57-68 mm - groot</li><li>Zeldzaamheid: AR - vrij zeldzaam</li><li>Winterverblijven: holtes, gebouwen</li><li>Positie in de holte: hangt vrij, maar ook soms in spleten of gaten</li><li>Temperatuur: variabel</li></ul>",
+        "generalities": "",
+        "position": "<ul class=\"list-decimal ml-4\"><li>De algemene vorm is zeer langgerekt, rechthoekig.</li><li>Ondanks de gelijkenis is hij groter dan Md.</li></ul>",
+        "bras": "<ul class=\"list-decimal ml-4\"><li>Dikke, sterke en roodbruine onderarmen.</li><li>De ellebogen staan soms ver van het lichaam af.</li></ul>",
+        "nez": "<p>Snuit verdeeld in 2 lobben, wat de indruk geeft van 2 kleine bolletjes naast elkaar.</p>",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>Relatief kleine oren die een beetje voorbij de snuit naar voren uitsteken.</li><li>Korte en afgeronde tragus.</li></ul>",
+        "pelage": "<p>De rug is cacaobruin, wat goed contrasteert met de witte buik.</p>",
+        "divers": "<p>Grote, zeer kenmerkende voeten: ze stellen hem in staat insecten te vangen aan het wateroppervlak.</p>"
+      },
+      "ME": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 41-53 mm - gemiddeld</li><li>Zeldzaamheid: AR - vrij zeldzaam</li><li>Winterverblijven: ondergrondse holtes</li><li>Positie in de holte: hangt vaak vrij, houdt ervan zich tegen anderen aan te drukken</li><li>Temperatuur: redelijk thermofiel, tot 9°C</li></ul>",
+        "generalities": "",
+        "position": "<ul class=\"list-decimal ml-4\"><li>Lichaam in de vorm van een ruit (ellebogen ver van het lichaam), gezien van voren verbergen de polsen vaak de oren.</li><li>Ze hangen meestal vrij in de warme delen van de holtes.</li><li>Ze groeperen zich vaak in dichte clusters (van twee tot tientallen individuen).</li></ul>",
+        "bras": "",
+        "nez": "",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>De oren zijn relatief lang, dun en puntig, gericht naar de grond in de as van het lichaam.</li><li>De inkeping in het oor is eigenlijk een lob (ook aanwezig bij de meeste andere Myotis, maar veel hoger bij Myotis emarginatus). Deze lob kan zichtbaar zijn in de winter. De tragus bereikt de inkeping niet.</li><li>Gezien van voren staan de oren min of meer parallel, of met een kleine hoek.</li></ul>",
+        "pelage": "<ul class=\"list-decimal ml-4\"><li>Wolachtige en dichte vacht, soms een vacht zoals die van een natte hond (gestreept uiterlijk).</li><li>De rug heeft een typische roestbruine kleur, en de buik, die weinig contrasteert met de rug, is lichtbruin, beige, ook kenmerkend.</li><li>5% van de individuen zijn melanisch.</li></ul>",
+        "divers": ""
+      },
+      "MM": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 67-80 mm - groot</li><li>Zeldzaamheid: AR - vrij zeldzaam</li><li>Winterverblijven: ondergrondse holtes</li><li>Positie in de holte: hangt vaak vrij, soms vastgeklampt aan de wand</li><li>Temperatuur: variabel</li></ul>",
+        "generalities": "",
+        "position": "<ul class=\"list-decimal ml-4\"><li>Het lichaam heeft een algemene zakvorm (vanwege de vele uitstulpingen), soms eerder ruitvormig.</li><li>Het hangt meestal vrij, vaak bovenaan, maar kan ook aan de wand vastgeklampt worden aangetroffen.</li></ul>",
+        "bras": "",
+        "nez": "<p>Zeer prominente snuit (\"Duitse herdersneus\"); weinig behaard.</p>",
+        "oreilles": "<p>Grote, glanzende oren die uitsteken voorbij de snuit. Ze bereiken slechts 1/4 tot 1/5 van de lichaamslengte.</p>",
+        "pelage": "<ul class=\"list-decimal ml-4\"><li>Zeer witte buik, sterk contrasterend met de rug.</li><li>Karakteristieke haarinplant op het voorhoofd: het lijkt op het begin van een voorhoufdkalendheid.</li></ul>",
+        "divers": ""
+      },
+      "Mn": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 41-55 mm - middelgroot</li><li>Zeldzaamheid: AC - vrij algemeen</li><li>Winterverblijven: ondergrondse holtes</li><li>Positie in de holte: vaak diep in spleten, soms vastgeklampt aan de wand</li><li>Temperatuur: variabel, kan vaak zeer koude omstandigheden verdragen</li></ul>",
+        "generalities": "",
+        "position": "<ul class=\"list-decimal ml-4\"><li>Gedrongen lichaam, met een algemene ovale vorm.</li><li>Kruipt vaak diep in spleten of gaten. Kan hangen met de buik tegen de wand.</li></ul>",
+        "bras": "",
+        "nez": "<p>Rosé snuit, zoals bij Md, maar fijner en langer.</p>",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>Oren redelijk lang, licht, doorschijnend en perkamentachtig (aderen zichtbaar door transparantie).</li><li>De tragus is zeer lang en dun, steekt meer dan de helft van het oor uit.</li><li>Gezien van voren zijn de oren meer of minder uitgelijnd in dezelfde as, 180°.</li><li>Oren omhoog als het uiteinde van een ski, met afgeronde punten.</li></ul>",
+        "pelage": "<ul class=\"list-decimal ml-4\"><li>Aanwezigheid van een halve maan van lichtere haren (crème) achter de oren.</li><li>Witte, smetteloze buik (de \"schoonste\" van de Myotis), sterk contrasterend met de rug, grijsbruin.</li></ul>",
+        "divers": ""
+      },
+      "Mmba": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 35-51 mm - klein</li><li>Zeldzaamheid: C - algemeen</li><li>Winterverblijven: holtes, gebouwen</li><li>Positie in de holte: vaak vastgeklampt aan de wand, maar ook in spleten, of zelden vrij hangend</li><li>Temperatuur: kan worden aangetroffen in redelijk koude zones (5°C of lager)</li></ul>",
+        "generalities": "<p>Het onderscheid tussen deze drie soorten (Baardvleermuis, Brandts vleermuis, Alcathoe-vleermuis) is uiterst moeilijk tijdens de winterslaap. Ze worden bijna altijd als één taxon genoteerd: Mmba.</p>",
+        "position": "",
+        "bras": "<p>Onderarmen en polsen zijn meestal dunner en kleiner dan bij Md.</p>",
+        "nez": "<ul class=\"list-decimal ml-4\"><li>Gezien van voren een zwart masker of kenmerkende zwarte V.</li><li>Kleine, weinig prominente en donkere snuit (donkerroze tot zwartachtig).</li></ul>",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>Tragus puntig, lang en dun; inkeping redelijk duidelijk.</li><li>De hoek tussen de oren is ongeveer 90°.</li></ul>",
+        "pelage": "<p>Buik lichter dan de rug, eerder beige (niet wit). Het is minder \"schoon\" dan bij andere Myotis.</p>",
+        "divers": "<ul class=\"list-decimal ml-4\"><li>De huidskleur contrasteert sterk met zowel de rug als de buik: dit geeft het een driekleurig uiterlijk.</li><li>Vergeleken met Md zijn de voeten klein (minder dan de helft van de lengte van het scheenbeen) en zonder lange haren op de tenen.</li></ul>"
+      },
+      "Pleaur": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 41-58 mm - middelgroot</li><li>Zeldzaamheid: AC - vrij algemeen</li><li>Winterverblijven: gebouwen, holtes</li><li>Positie in de holte: hangend aan het plafond of aan de wand, vaak verscholen in een spleet bij de ingang</li><li>Temperatuur: verdraagt redelijk lage temperaturen, maar kan ook op warmere plaatsen worden gevonden</li></ul>",
+        "generalities": "<p>Redelijk compact lichaam, in een ovaal passend.</p>",
+        "position": "",
+        "bras": "",
+        "nez": "<ul class=\"list-decimal ml-4\"><li>Kenmerkende snuit: licht (roze tot lichtbruin), opgezwollen, met uitsteeksels als twee aardappelen tegen elkaar geplakt.</li><li>Korte, halfronde snuit, die lijkt op het profiel van een Europese vrachtwagen.</li></ul>",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>Oren gevouwen naar achteren, onder de vleugels tijdens de winterslaap.</li><li>Alleen de tragus steekt uit (waardoor het lijkt alsof dit de oren zijn).</li><li>Tragus lang en dun, met een regelmatige punt, vaak volledig roze.</li></ul>",
+        "pelage": "<p>Losse en lange rugvacht, met neiging tot bruin-rood.</p>",
+        "divers": "<ul class=\"list-decimal ml-4\"><li>Aanwezigheid van twee grote, goed gedefinieerde \"wratten\" tussen de ogen, met een diameter gelijk aan die van het oog.</li><li>Aanwezigheid van zeer lange haren op de tenen.</li></ul>"
+      },
+      "Pleaus": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 41-58 mm - middelgroot</li><li>Zeldzaamheid: R - zeldzaam</li><li>Winterverblijven: gebouwen, holtes</li><li>Positie in de holte: hangend aan het plafond of aan de wand, vaak verscholen in een spleet bij de ingang</li><li>Temperatuur: verdraagt redelijk lage temperaturen, maar kan ook op warmere plaatsen worden gevonden</li></ul>",
+        "generalities": "<p>Redelijk compact lichaam, in een ovaal passend.</p>",
+        "position": "",
+        "bras": "",
+        "nez": "<ul class=\"list-decimal ml-4\"><li>Kenmerkende snuit: donker, met minder uitgesproken uitsteeksels dan bij Pleaur.</li><li>Uitgerekte, lange snuit die doet denken aan een hondensnuit of het profiel van een Amerikaanse vrachtwagen.</li></ul>",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>Oren gevouwen naar achteren, onder de vleugels tijdens de winterslaap.</li><li>Alleen de tragus steekt uit (waardoor het lijkt alsof dit de oren zijn).</li><li>Tragus lang en dun, met een regelmatige punt, vaak donker.</li></ul>",
+        "pelage": "<p>Losse en lange rugvacht, met een grijze tint.</p>",
+        "divers": "<ul class=\"list-decimal ml-4\"><li>Aanwezigheid van twee grote, licht zichtbare \"wratten\" tussen de ogen, met een diameter kleiner dan dat van het oog.</li><li>Aanwezigheid van korte haren op de tenen.</li></ul>"
+      },
+      "Pipsp": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 32-55 mm - klein</li><li>Zeldzaamheid: CC - zeer algemeen</li><li>Winterverblijven: gebouwen, zelden in holtes</li><li>Positie in de holte: meestal gegroepeerd in diepe, smalle spleten nabij ingangen</li><li>Temperatuur: verdraagt redelijk lage temperaturen – vaak op zeer droge plaatsen</li></ul>",
+        "generalities": "",
+        "position": "<p>Pipistrellen worden zelden in ondergrondse holtes gezien. Wanneer ze worden gevonden, bevinden ze zich vaak in spleten, in een compacte groep.</p>",
+        "bras": "",
+        "nez": "",
+        "oreilles": "<p>Kleine, zwarte en vaak afgeronde oren, met een afgeronde en vrij korte tragus.</p>",
+        "pelage": "<p>Over het algemeen donkere vacht, met weinig contrast tussen rug en buik.</p>",
+        "divers": "<ul class=\"list-decimal ml-4\"><li>Zeer donkere huid.</li><li>Niet te verwarren met Mmba, let op het contrast tussen rug/buik en de oren en tragus die ronder zijn bij pipistrellen.</li></ul>"
+      },
+      "Eptser": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 62-80 mm - groot</li><li>Zeldzaamheid: C - algemeen</li><li>Winterverblijven: gebouwen, zelden holtes</li><li>Positie in de holte: in diepe spleten of kieren dicht bij de ingang</li><li>Temperatuur: verdraagt vrij lage temperaturen</li></ul>",
+        "generalities": "",
+        "position": "<p>Zelden in holtes; wanneer ze worden gevonden, zijn ze meestal verborgen in scheuren of spleten, in gebieden met weinig buffering en vaak goed geventileerd.</p>",
+        "bras": "<p>De onderarmen en polsen zijn zeer sterk/dik en donker.</p>",
+        "nez": "<p>Vrij lange en prominente snuit, zoals een vossensnuit.</p>",
+        "oreilles": "<p>Brede, afgeronde, zeer donkere oren met een brede, korte en afgeronde tragus.</p>",
+        "pelage": "<p>Volledig donker! Bruine rug, iets lichtere buik, neigend naar crèmebruin, met weinig contrast met de rug.</p>",
+        "divers": "<ul class=\"list-decimal ml-4\"><li>Volledig donkere huid, zeer donker gezicht.</li><li>Groot formaat soort.</li></ul>"
+      },
+      "Rh": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 37-45 mm - klein</li><li>Zeldzaamheid: RR - uiterst zeldzaam</li><li>Winterverblijven: ondergrondse holtes</li><li>Positie in de holte: hangt vrij</li><li>Temperatuur: warmteminnend - 7 tot 11°C</li></ul>",
+        "generalities": "<ul class=\"list-decimal ml-4\"><li>Wordt vergeleken met de Grote Hoefijzerneus (Rf), waarmee hij veel overeenkomsten vertoont.</li><li>Zijn lichaam is niet groter dan een duim of een doosje lucifers.</li><li>Ze hangen altijd vrij en zijn ingepakt in hun vleugels.</li><li>Zeer gevoelig voor verstoring!</li></ul>",
+        "position": "<p>Vaak (bijna) volledig ingepakt in hun vleugels, er steekt niet veel uit.</p>",
+        "bras": "",
+        "nez": "<ul class=\"list-decimal ml-4\"><li>De lancetvormige structuur is relatief groter dan bij de Rf.</li><li>De snuit is kenmerkend: een membraan vormt plooien, waarvan één in de vorm van een hoefijzer.</li></ul>",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>Puntige oren, met de uiteinden naar buiten gebogen.</li><li>Ze hebben geen tragus.</li></ul>",
+        "pelage": "<p>Grijsbruine rug, buik grijs tot grijswit, weinig contrast met de rug. Zelden zichtbaar tijdens winterslaap.</p>",
+        "divers": "<p>Ogen staan dichter bij elkaar dan bij Rf.</p>"
+      },
+      "Rf": {
+        "short": "",
+        "fiche": "<ul class=\"list-decimal ml-4\"><li>Grootte (hoofd + lichaam): 57-71 mm - groot</li><li>Zeldzaamheid: RR - uiterst zeldzaam</li><li>Winterverblijven: ondergrondse holtes</li><li>Positie in de holte: hangt vrij</li><li>Temperatuur: warmteminnend - 7 tot 11°C</li></ul>",
+        "generalities": "<ul class=\"list-decimal ml-4\"><li>Wordt vergeleken met de Kleine Hoefijzerneus (Rh), waarmee hij veel overeenkomsten vertoont.</li><li>De Grote Hoefijzerneus heeft het formaat van een peer of een pakje sigaretten.</li><li>Zeer gevoelig voor verstoring!</li></ul>",
+        "position": "<p>Hij is niet volledig ingepakt in zijn vleugels; zijn snuit blijft zichtbaar.</p>",
+        "bras": "",
+        "nez": "<ul class=\"list-decimal ml-4\"><li>De lancetvormige structuur is relatief kleiner dan bij de Rh.</li><li>De snuit is kenmerkend: een membraan vormt plooien, waarvan één in de vorm van een hoefijzer.</li></ul>",
+        "oreilles": "<ul class=\"list-decimal ml-4\"><li>Puntige oren, met de uiteinden naar buiten gebogen.</li><li>Ze hebben geen tragus.</li></ul>",
+        "pelage": "<p>Roodachtige rug, vuilwitte buik, weinig contrast met de rug. Zelden zichtbaar tijdens winterslaap.</p>",
+        "divers": "<p>Staart opgevouwen over de rug</p>"
+      }
+    }
   }
 }
