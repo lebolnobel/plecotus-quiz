@@ -22,6 +22,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
   const { index, quiz, value, handleSelectAnswer, handleNext, handleReset } =
     props;
 
+  const mainRef = React.useRef<HTMLDivElement | null>(null);
   const { selectToAnswerMode, totalQuestions } = useQuizContext();
 
   // Start with 0 to avoid displaying the progress bar if player doesn't start to play
@@ -30,6 +31,12 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [index, isExplanation]);
+
+  React.useEffect(() => {
+    if (mainRef.current) {
+      mainRef.current.focus();
+    }
   }, [index, isExplanation]);
 
   const currentQuestion = quiz[index];
@@ -50,7 +57,12 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
   };
 
   return (
-    <div className="mx-auto block" role="main">
+    <div
+      className="mx-auto block outline-none"
+      role="main"
+      ref={mainRef}
+      tabIndex={-1}
+    >
       <div className="flex text-base justify-between mb-3">
         <div>
           <h2 className="text-slate-500 uppercase hidden sm:block">
@@ -80,6 +92,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
           rightAnswer={currentQuestion.image.speciesId}
           value={value}
           onNext={onNext}
+          onReset={onReset}
         />
       ) : (
         <QuizAnswerList

@@ -6,6 +6,7 @@ import {
   GoCheckCircle,
   GoCircleSlash,
   GoDotFill,
+  GoMoveToStart,
   GoRepo,
 } from 'react-icons/go';
 import { usePlecotusContext } from '../../../../hooks/usePlecotusContext';
@@ -15,10 +16,11 @@ type ExplanationType = {
   rightAnswer: string;
   value: string;
   onNext: () => void;
+  onReset: () => void;
 };
 
 const Explanation = (props: ExplanationType): React.ReactNode => {
-  const { rightAnswer, value, onNext } = props;
+  const { rightAnswer, value, onNext, onReset } = props;
 
   const intl = useIntl();
 
@@ -34,18 +36,26 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
       <div className="min-w-0 relative flex-auto">
         <div className="w-full ml-1 mr-1 flex flex-col items-center">
           <div
-            className={`w-full rounded-lg bg-gray-100 pb-0 ${!correctAnswer ? '' : 'sm:pb-24'} relative cursor-pointer`}
-            title={intl.formatMessage({ id: 'action.nextFull' })}
-            onClick={onNext}
+            className={`w-full rounded-lg bg-gray-100 pb-0 ${!correctAnswer ? '' : 'sm:pb-24'} relative`}
           >
             <div className="min-w-0 relative flex-auto w-full justify-center items-center z-1">
               <div
                 className={`rounded-lg h-32 bg-gray-100 ${isCorrect ? 'text-natagora' : 'text-red-400'} mb-0 ${!correctAnswer ? '' : 'sm:mb-4'} relative overflow-hidden`}
               >
                 <GoArrowRight
-                  className="absolute bg-transparent -end-4 inset-y-0 h-full text-gray-400 opacity-5 z-0"
+                  className="absolute bg-transparent -end-4 inset-y-0 h-full opacity-10 z-0 cursor-pointer"
                   role="presentation"
                   size="128px"
+                  title={intl.formatMessage({ id: 'action.nextFull' })}
+                  onClick={onNext}
+                />
+
+                <GoMoveToStart
+                  className="absolute bg-transparent -start-2 inset-y-0 h-full opacity-10 z-0 cursor-pointer"
+                  role="presentation"
+                  size="128px"
+                  title={intl.formatMessage({ id: 'action.reset' })}
+                  onClick={onReset}
                 />
 
                 <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left z-1">
