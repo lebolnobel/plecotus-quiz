@@ -65,6 +65,12 @@
     "memo": "Identificatiememo (fr)",
     "memoParagraph": "Memo voor de identificatie van vleermuizen in de winter (versie november 2019): dit document bevat alle bekende criteria om in de winter de verschillende vleermuissoorten in België te identificeren. Het is geen complete bibliografie, maar eerder identificatiekaarten met foto's van alle zichtbare criteria op overwinterende individuen om een identificatie mogelijk te maken."
   },
+  "learn": {
+    "title": "Lees meer over vleermuissoorten",
+    "learnMore": "Lees meer",
+    "learnParagraph": "Oefen met het identificeren van vleermuizen in alle omstandigheden. Deze lijst helpt je om de criteria voor elke soort te bekijken.",
+    "back": "Terug naar lijst"
+  },
   "menu": {
     "home": "Start",
     "quiz": "Quiz",
