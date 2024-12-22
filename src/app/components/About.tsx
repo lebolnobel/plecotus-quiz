@@ -163,7 +163,10 @@ const About = (): React.ReactNode => {
                 <FormattedMessage id="about.thanksParagraph1" />
               </p>
               <p className="py-2">
-                <FormattedMessage id="about.thanksParagraph2" />{' '}
+                <FormattedMessage id="about.thanksParagraph2" />
+              </p>
+              <p className="py-2">
+                <FormattedMessage id="about.thanksParagraph3" />{' '}
                 {Object.values(authors)
                   .sort((a, b) => a.name.localeCompare(b.name))
                   .map((person) => `${person.name} ${person.firstname}`)
@@ -171,7 +174,7 @@ const About = (): React.ReactNode => {
               </p>
 
               <p className="py-2">
-                <FormattedMessage id="about.thanksParagraph3" />
+                <FormattedMessage id="about.thanksParagraph4" />
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-8 sm:space-y-0 mt-8">
