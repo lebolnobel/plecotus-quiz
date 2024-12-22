@@ -828,4 +828,12 @@ export const authors: { [key: number]: AuthorType } = {
     name: 'Colart',
     firstname: 'Denis',
   },
+  13: {
+    name: 'Malchair',
+    firstname: 'Luc',
+  },
+  14: {
+    name: 'Paquay',
+    firstname: 'Marc',
+  },
 };
