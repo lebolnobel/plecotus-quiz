@@ -57,6 +57,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             alt={intl.formatMessage({ id: 'image.playDetail' })}
             title={intl.formatMessage({ id: 'image.playDetail' })}
             placeholderSrc="/assets/img/resources/placeholder.jpg"
+            // Transition issue with LazyLoadImage
             className="mx-auto rounded-lg h-auto max-h-80"
             effect="blur"
             onClick={toggleEnlarged}

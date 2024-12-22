@@ -17,7 +17,7 @@ const SpeciesCard = (props: SpeciesCardType): React.ReactNode => {
     props;
 
   return (
-    <div>
+    <div className="text-base">
       <div className="w-full max-w-6xl mx-auto text-left">
         <div className="flex flex-col justify-center divide-y divide-slate-200 py-10">
           <div className="w-full max-w-3xl mx-auto">

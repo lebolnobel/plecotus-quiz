@@ -23,7 +23,7 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
           onClick={onReset}
         >
           <GoMoveToStart role="presentation" size="24" className="mr-2" />
-          <FormattedMessage id="action.reset" />
+          <FormattedMessage id="action.resetShort" />
           <Overlay onAction={onReset} keyCode={K_R}>
             <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
               <FormattedMessage id="shortcuts.R" />

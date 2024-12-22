@@ -5,13 +5,14 @@ import ScorePage from './ScorePage';
 import Loading from '../components/Loading';
 import { generateRandomQuestions } from '../../utils/helpers';
 import { useQuizContext } from '../../hooks/useQuizContext';
+import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 import { writeData } from '../../db/database';
 import { hashString } from '../../db/fingerprint';
 import type { QuizQuestionType } from '../../utils/quiz';
-import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 
 const Quiz = (): React.ReactNode => {
   const [currentQuiz, setCurrentQuiz] = React.useState<QuizQuestionType[]>([]);
+
   const { totalQuestions, selectToAnswerMode } = useQuizContext();
   const { isDebug } = usePlecotusContext();
 

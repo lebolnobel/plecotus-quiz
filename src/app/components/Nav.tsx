@@ -107,6 +107,21 @@ const Nav = (): React.ReactNode => {
             </li>
             <li className="relative">
               <NavLink
+                to="../learn"
+                className={({ isActive }) => className(isActive)}
+                title={intl.formatMessage({ id: 'menu.learn' })}
+              >
+                <FormattedMessage id="menu.learn" />
+
+                <Overlay>
+                  <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
+                    <FormattedMessage id="shortcuts.1" />
+                  </div>
+                </Overlay>
+              </NavLink>
+            </li>
+            {/* <li className="relative">
+              <NavLink
                 to="../resources"
                 className={({ isActive }) => className(isActive)}
                 title={intl.formatMessage({ id: 'menu.resources' })}
@@ -119,7 +134,7 @@ const Nav = (): React.ReactNode => {
                   </div>
                 </Overlay>
               </NavLink>
-            </li>
+            </li> */}
             <li className="relative">
               <NavLink
                 to="../about"

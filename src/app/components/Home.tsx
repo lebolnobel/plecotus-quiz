@@ -52,7 +52,7 @@ const Home = (): React.ReactNode => {
               <NavLink
                 className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
                 title={intl.formatMessage({ id: 'action.launch' })}
-                to={'/quiz'}
+                to="/quiz"
               >
                 <FormattedMessage id="action.launch" />
                 <Overlay>

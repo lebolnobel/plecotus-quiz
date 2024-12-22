@@ -42,7 +42,7 @@ const About = (): React.ReactNode => {
               <NavLink
                 className="px-6 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
                 title={intl.formatMessage({ id: 'action.launch' })}
-                to={'/quiz'}
+                to="/quiz"
               >
                 <FormattedMessage id="action.launch" />
 
@@ -126,11 +126,11 @@ const About = (): React.ReactNode => {
                 values={{
                   resources: (
                     <NavLink
-                      to="../resources"
-                      title={intl.formatMessage({ id: 'action.resources' })}
+                      to="../learn"
+                      title={intl.formatMessage({ id: 'action.learn' })}
                       className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
                     >
-                      <FormattedMessage id="about.resources" />
+                      <FormattedMessage id="about.learn" />
                     </NavLink>
                   ),
                 }}
@@ -170,9 +170,9 @@ const About = (): React.ReactNode => {
                   .join(', ')}
               </p>
 
-              {/* <p className="py-2">
+              <p className="py-2">
                 <FormattedMessage id="about.thanksParagraph3" />
-              </p> */}
+              </p>
 
               <div className="flex flex-col sm:flex-row space-y-8 sm:space-y-0 mt-8">
                 <figure className="text-center mx-auto px-8 w-48" role="none">
