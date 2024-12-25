@@ -21,6 +21,8 @@ type OptionsType = {
 };
 
 const Shortcuts = (): React.ReactNode => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
+
   const { isMac, showShortcuts, toggleShortcutsMode } = usePlecotusContext();
 
   const options: Array<OptionsType> = React.useMemo(
@@ -101,6 +103,12 @@ const Shortcuts = (): React.ReactNode => {
   );
 
   React.useEffect(() => {
+    const handleBackdropClick = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event?.target as Node)) {
+        !!toggleShortcutsMode && toggleShortcutsMode();
+      }
+    };
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === K_question) {
         event.preventDefault();
@@ -116,26 +124,24 @@ const Shortcuts = (): React.ReactNode => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
+    showShortcuts &&
+      document.addEventListener('mousedown', handleBackdropClick);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleBackdropClick);
     };
   }, [showShortcuts, toggleShortcutsMode]);
-
-  const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.stopPropagation();
-    !!toggleShortcutsMode && toggleShortcutsMode();
-  };
 
   if (!showShortcuts) return null;
 
   return (
-    <div
-      className="fixed inset-0 bg-gray-900 bg-opacity-50 z-4"
-      onClick={handleBackdropClick}
-    >
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-4">
       <div className="fixed inset-0 flex items-center justify-center z-5 mx-4">
-        <div className="items-center justify-center shadow-lg max-w-xl w-full">
+        <div
+          ref={ref}
+          className="items-center justify-center shadow-lg max-w-xl w-full"
+        >
           <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
             <button
               type="button"

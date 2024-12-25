@@ -23,6 +23,8 @@ type OptionsType = {
 };
 
 const QuizSettings = (): React.ReactNode => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
+
   const [index, setIndex] = React.useState(0);
 
   const { showSettings, toggleSettingsMode } = usePlecotusContext();
@@ -135,6 +137,12 @@ const QuizSettings = (): React.ReactNode => {
   );
 
   React.useEffect(() => {
+    const handleBackdropClick = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event?.target as Node)) {
+        toggleSettingsMode && toggleSettingsMode();
+      }
+    };
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (showSettings) {
         if (event.key === 'Escape') {
@@ -159,9 +167,11 @@ const QuizSettings = (): React.ReactNode => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
+    showSettings && document.addEventListener('mousedown', handleBackdropClick);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleBackdropClick);
     };
   }, [options, index, showSettings, toggleSettingsMode]);
 
@@ -169,21 +179,15 @@ const QuizSettings = (): React.ReactNode => {
     return () => setIndex(0);
   }, [showSettings]);
 
-  const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.stopPropagation();
-    !!toggleSettingsMode && toggleSettingsMode();
-  };
-
   if (!showSettings) return null;
 
   return (
-    <div
-      className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
-      role="search"
-      onClick={handleBackdropClick}
-    >
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40">
       <div className="fixed inset-0 flex items-center justify-center z-50 mx-6">
-        <div className="items-center justify-center shadow-lg max-w-xl w-full">
+        <div
+          ref={ref}
+          className="items-center justify-center shadow-lg max-w-xl w-full"
+        >
           <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
             <button
               type="button"

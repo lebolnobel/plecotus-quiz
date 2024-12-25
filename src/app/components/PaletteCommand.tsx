@@ -29,12 +29,13 @@ type OptionsType = {
 };
 
 const PaletteCommand = (): React.ReactNode => {
+  const ref = React.useRef<HTMLDivElement | null>(null);
+
   const [isOpen, setIsOpen] = React.useState(false);
   const [query, setQuery] = React.useState('');
   const [index, setIndex] = React.useState(0);
 
   const intl = useIntl();
-
   const navigate = useNavigate();
 
   const { isMac, toggleDebugMode, toggleShortcutsMode, toggleSettingsMode } =
@@ -124,6 +125,12 @@ const PaletteCommand = (): React.ReactNode => {
       : result.map((r: FuseResult<OptionsType>) => r?.item);
 
   React.useEffect(() => {
+    const handleBackdropClick = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event?.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (
         (event.ctrlKey || event.metaKey) &&
@@ -156,9 +163,11 @@ const PaletteCommand = (): React.ReactNode => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
+    isOpen && document.addEventListener('mousedown', handleBackdropClick);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleBackdropClick);
     };
   }, [index, commands, isOpen]);
 
@@ -166,22 +175,16 @@ const PaletteCommand = (): React.ReactNode => {
     return () => setIndex(0);
   }, [isOpen]);
 
-  const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.stopPropagation();
-    setIsOpen(false);
-  };
-
   if (!isOpen) return null;
 
   return (
-    <div
-      className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
-      role="search"
-      onClick={handleBackdropClick}
-    >
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40">
       <div className="fixed inset-0 flex items-center justify-center z-50 mx-6">
         <div className="items-center justify-center shadow-lg max-w-lg w-full">
-          <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
+          <div
+            ref={ref}
+            className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5"
+          >
             <div className="relative bg-gray-50">
               <GoSearch
                 role="presentation"

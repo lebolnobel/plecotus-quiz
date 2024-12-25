@@ -11,9 +11,17 @@ type ZoomImageType = {
 const ZoomImage = (props: ZoomImageType): React.ReactNode => {
   const { url, isOpen, onClose } = props;
 
+  const ref = React.useRef<HTMLDivElement | null>(null);
+
   const intl = useIntl();
 
   React.useEffect(() => {
+    const handleBackdropClick = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event?.target as Node)) {
+        onClose();
+      }
+    };
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (isOpen && event.key === 'Escape') {
         event.preventDefault();
@@ -22,29 +30,23 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
     };
 
     window.addEventListener('keydown', handleKeyDown);
+    isOpen && document.addEventListener('mousedown', handleBackdropClick);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleBackdropClick);
     };
   }, [isOpen, onClose]);
-
-  const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.stopPropagation();
-    onClose();
-  };
 
   if (!isOpen) return null;
 
   return (
-    <div
-      className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40"
-      onClick={handleBackdropClick}
-    >
-      <div
-        id="progress-modal"
-        className="fixed inset-0 flex items-center justify-center z-50"
-      >
-        <div className="relative mx-2 my-2 md:mx-12 md:py-0 max-h-[90svh] w-full max-w-screen-lg overflow-auto">
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40">
+      <div className="fixed inset-0 flex items-center justify-center z-50">
+        <div
+          ref={ref}
+          className="relative mx-2 my-2 md:mx-12 md:py-0 max-h-[90svh] w-full max-w-screen-lg overflow-auto"
+        >
           <div className="relative bg-white rounded-lg shadow">
             <button
               type="button"
