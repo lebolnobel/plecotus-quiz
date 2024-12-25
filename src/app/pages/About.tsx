@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Overlay from '../accessibility/Overlay';
+import Overlay from '../components/accessibility/Overlay';
 import { GoArrowRight } from 'react-icons/go';
 import { NavLink } from 'react-router-dom';
 import { authors } from '../../utils/images';
@@ -36,6 +36,9 @@ const About = (): React.ReactNode => {
                 title={intl.formatMessage({ id: 'img.quizApp' })}
                 loading="lazy"
               />
+              <figcaption className="sr-only">
+                <FormattedMessage id="img.quizApp" />
+              </figcaption>
             </figure>
 
             <div className="mt-6 font-medium">

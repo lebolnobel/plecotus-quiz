@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Plecotus from './app/PlecotusApp';
-import ErrorPage from './app/components/ErrorPage';
-import Home from './app/components/Home';
-import Quiz from './app/quiz/MainQuiz';
-import Learn from './app/components/Learn';
-import Species from './app/components/Species';
-import Resources from './app/components/Resources';
-import About from './app/components/About';
+import ErrorPage from './app/pages/ErrorPage';
+import Home from './app/pages/Home';
+import Quiz from './app/pages/MainQuiz';
+import Learn from './app/pages/Learn';
+import Species from './app/pages/Species';
+import Resources from './app/pages/Resources';
+import About from './app/pages/About';
 import PlecotusProvider from './context/PlecotusAppContext';
 import QuizAppContext from './context/QuizAppContext';
 

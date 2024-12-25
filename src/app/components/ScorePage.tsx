@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GoMoveToStart, GoTrophy } from 'react-icons/go';
-import Overlay from '../accessibility/Overlay';
+import Overlay from './accessibility/Overlay';
 import { useQuizContext } from '../../hooks/useQuizContext';
 import { K_R } from '../../utils/constants';
 import { FormattedMessage } from 'react-intl';
@@ -29,7 +29,7 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
         <div className={`rounded-lg h-32  bg-gray-100 mb-10`}>
           <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left">
             <div className="my-auto text-2xl">
-              <GoTrophy role="presentation" size="56px" />
+              <GoTrophy role="presentation" size="56" />
             </div>
             <div>
               <>

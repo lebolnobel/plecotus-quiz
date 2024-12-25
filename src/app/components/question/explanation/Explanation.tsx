@@ -42,7 +42,7 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                 <GoArrowRight
                   className="absolute bg-transparent -end-4 inset-y-0 h-full opacity-10 z-0 cursor-pointer"
                   role="presentation"
-                  size="128px"
+                  size="128"
                   title={intl.formatMessage({ id: 'action.nextFull' })}
                   onClick={onNext}
                 />
@@ -50,7 +50,7 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                 <GoMoveToStart
                   className="absolute bg-transparent -start-2.5 inset-y-0 h-full opacity-10 z-0 cursor-pointer"
                   role="presentation"
-                  size="128px"
+                  size="128"
                   title={intl.formatMessage({ id: 'action.reset' })}
                   onClick={onReset}
                 />
@@ -58,9 +58,9 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                 <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left z-1">
                   <div className="my-auto text-2xl">
                     {isCorrect ? (
-                      <GoCheckCircle role="presentation" size="56px" />
+                      <GoCheckCircle role="presentation" size="56" />
                     ) : (
-                      <GoCircleSlash role="presentation" size="56px" />
+                      <GoCircleSlash role="presentation" size="56" />
                     )}
                   </div>
                   <div>
@@ -116,7 +116,7 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
             <div className="bg-gray-50 w-full sm:w-[80%] rounded-lg mt-10 sm:-mt-28 z-10 px-6 sm:pt-8 font-normal">
               <div className="flex flex-row gap-5 justify-center items-center">
                 <div className="my-auto text-2xl">
-                  <GoRepo role="presentation" size="56px" />
+                  <GoRepo role="presentation" size="56" />
                 </div>
                 <div>
                   <div className="text-lg sm:text-xl italic">
@@ -138,7 +138,7 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                       <dd className="flex items-center">
                         <GoDotFill
                           role="presentation"
-                          size="8px"
+                          size="8"
                           className="mx-2"
                         />
                         {abbr}

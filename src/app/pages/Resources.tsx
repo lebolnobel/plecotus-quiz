@@ -58,6 +58,9 @@ const Resources = (): React.ReactNode => {
                     title={intl.formatMessage({ id: 'action.memo' })}
                     loading="lazy"
                   />
+                  <figcaption className="sr-only">
+                    <FormattedMessage id="action.meme" />
+                  </figcaption>
                 </figure>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import SpeciesCard from '../quiz/components/explanation/SpeciesCard';
+import SpeciesCard from '../components/question/explanation/SpeciesCard';
 import ErrorPage from './ErrorPage';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useParams } from 'react-router';

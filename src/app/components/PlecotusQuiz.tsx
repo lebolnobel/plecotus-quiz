@@ -1,10 +1,10 @@
 import * as React from 'react';
-import QuizNavigation from './components/question/Navigation';
-import QuizAnswerList from './components/choice/QuizChoiceList';
-import Question from './components/Question';
-import Explanation from './components/explanation/Explanation';
-import CurrentScore from './components/question/CurrentScore';
-import ProgressBar from './components/question/ProgressBar';
+import QuizNavigation from './question/question/Navigation';
+import QuizAnswerList from './question/choice/QuizChoiceList';
+import Question from './question/Question';
+import Explanation from './question/explanation/Explanation';
+import CurrentScore from './question/question/CurrentScore';
+import ProgressBar from './question/question/ProgressBar';
 import { useQuizContext } from '../../hooks/useQuizContext';
 import { FormattedMessage } from 'react-intl';
 import type { QuizQuestionType } from '../../utils/quiz';

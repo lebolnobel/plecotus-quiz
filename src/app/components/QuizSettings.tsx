@@ -191,7 +191,7 @@ const QuizSettings = (): React.ReactNode => {
               aria-label="close"
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
             >
-              <GoX role="presentation" size="24px" />
+              <GoX role="presentation" size="24" />
               <span className="sr-only">
                 <FormattedMessage id="action.closePopup" />
               </span>
@@ -199,7 +199,7 @@ const QuizSettings = (): React.ReactNode => {
             <div className="p-4">
               <div className="flex flex-row items-center text-left">
                 <div className="text-2xl pr-4">
-                  <GoGear role="presentation" size="24px" />
+                  <GoGear role="presentation" size="24" />
                 </div>
                 <div>
                   <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase">

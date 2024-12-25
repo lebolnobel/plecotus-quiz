@@ -47,7 +47,7 @@ const QuizChoiceItem = (props: QuizAnswerType): React.ReactNode => {
                 {species.displayName}
                 <GoDotFill
                   role="presentation"
-                  size="4px"
+                  size="4"
                   className="mx-2 mt-2"
                 />
                 {id}

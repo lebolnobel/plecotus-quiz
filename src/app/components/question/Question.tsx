@@ -1,6 +1,7 @@
 import React from 'react';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { authors } from '../../../utils/images';
 import {
   GoLocation,
@@ -13,11 +14,10 @@ import {
   GoMoveToStart,
 } from 'react-icons/go';
 import ZoomImage from './question/ZoomImage';
-import Overlay from '../../accessibility/Overlay';
+import Overlay from '../accessibility/Overlay';
 import { usePlecotusContext } from '../../../hooks/usePlecotusContext';
 import { BUG, K_F, K_N, K_R } from '../../../utils/constants';
 import type { QuizQuestionType } from '../../../utils/quiz';
-import { FormattedMessage, useIntl } from 'react-intl';
 
 type QuestionType = {
   currentQuestion: QuizQuestionType;
@@ -63,6 +63,9 @@ const Question = (props: QuestionType): React.ReactNode => {
             onClick={toggleEnlarged}
           />
         </div>
+        <figcaption className="sr-only">
+          <FormattedMessage id="image.playDetail" />
+        </figcaption>
       </figure>
 
       <ZoomImage
@@ -77,7 +80,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             <FormattedMessage id="image.author" />
           </dt>
           <dd className="flex items-center text-natagora">
-            <GoPerson role="presentation" size="18px" className="mr-2" />
+            <GoPerson role="presentation" size="18" className="mr-2" />
             <span>
               {!author ? (
                 <FormattedMessage id="image.unknownAuthor" />
@@ -93,11 +96,11 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center">
             <GoDotFill
               role="presentation"
-              size="6px"
+              size="6"
               className="mx-3 text-gray-400"
             />
 
-            <GoLocation role="presentation" size="18px" className="mr-2" />
+            <GoLocation role="presentation" size="18" className="mr-2" />
             {currentImage?.place || (
               <FormattedMessage id="image.unknownLocation" />
             )}
@@ -119,7 +122,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             >
               <GoStop
                 role="presentation"
-                size="18px"
+                size="18"
                 className="cursor-pointer"
                 title={intl.formatMessage({ id: 'action.raiseError' })}
               />
@@ -140,7 +143,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             >
               <GoGear
                 role="presentation"
-                size="18px"
+                size="18"
                 className="cursor-pointer"
                 title={intl.formatMessage({ id: 'action.settings' })}
               />
@@ -166,7 +169,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             >
               <GoScreenFull
                 role="presentation"
-                size="18px"
+                size="18"
                 className="cursor-pointer"
                 title={intl.formatMessage({ id: 'action.fullScreen' })}
               />
@@ -194,7 +197,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             >
               <GoMoveToStart
                 role="presentation"
-                size="18px"
+                size="18"
                 className="cursor-pointer"
                 title={intl.formatMessage({ id: 'action.reset' })}
               />
@@ -220,7 +223,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             >
               <GoArrowRight
                 role="presentation"
-                size="18px"
+                size="18"
                 className="cursor-pointer"
                 title={intl.formatMessage({ id: 'action.next' })}
               />

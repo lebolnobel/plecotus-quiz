@@ -53,7 +53,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
               ref={(input) => input && input.focus()}
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
             >
-              <GoX role="presentation" size="24px" />
+              <GoX role="presentation" size="24" />
               <span className="sr-only">
                 <FormattedMessage id="action.closePopup" />
               </span>
@@ -61,7 +61,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
             <div className="p-4">
               <div className="flex flex-row items-center text-left">
                 <div className="text-2xl pr-4">
-                  <GoImage role="presentation" size="64px" />
+                  <GoImage role="presentation" size="64" />
                 </div>
                 <div>
                   <h3 className="flex-auto text-2xl font-medium text-slate-900 uppercase">

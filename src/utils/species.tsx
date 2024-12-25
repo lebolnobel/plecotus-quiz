@@ -1,5 +1,5 @@
 import * as React from 'react';
-import SpeciesCard from '../app/quiz/components/explanation/SpeciesCard';
+import SpeciesCard from '../app/components/question/explanation/SpeciesCard';
 import { FormattedMessage } from 'react-intl';
 
 export const SP = Object.freeze({

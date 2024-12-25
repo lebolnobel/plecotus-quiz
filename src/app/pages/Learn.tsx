@@ -112,6 +112,9 @@ const Learn = (): React.ReactNode => {
                     title={intl.formatMessage({ id: 'action.memo' })}
                     loading="lazy"
                   />
+                  <figcaption className="sr-only">
+                    <FormattedMessage id="action.memo" />
+                  </figcaption>
                 </figure>
               </div>
             </div>

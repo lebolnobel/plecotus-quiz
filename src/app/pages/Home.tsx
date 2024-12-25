@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Overlay from '../accessibility/Overlay';
+import Overlay from '../components/accessibility/Overlay';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage, useIntl } from 'react-intl';
 
@@ -21,6 +21,9 @@ const Home = (): React.ReactNode => {
             className="absolute inset-0 w-full object-cover"
             loading="lazy"
           />
+          <figcaption className="sr-only">
+            <FormattedMessage id="natagora.plecotus" />
+          </figcaption>
         </figure>
         <div className="flex-auto px-6">
           <div className="flex flex-wrap">

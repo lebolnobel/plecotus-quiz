@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import PlecotusQuiz from './PlecotusQuiz';
-import ScorePage from './ScorePage';
+import PlecotusQuiz from '../components/PlecotusQuiz';
+import ScorePage from '../components/ScorePage';
 import Loading from '../components/Loading';
 import { generateRandomQuestions } from '../../utils/helpers';
 import { useQuizContext } from '../../hooks/useQuizContext';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
-import { writeData } from '../../db/database';
-import { hashString } from '../../db/fingerprint';
+import { writeData } from '../../services/database';
+import { hashString } from '../../utils/fingerprint';
 import type { QuizQuestionType } from '../../utils/quiz';
 
 const Quiz = (): React.ReactNode => {

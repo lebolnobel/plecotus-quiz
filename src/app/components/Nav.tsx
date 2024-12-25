@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Overlay from '../accessibility/Overlay';
+import Overlay from './accessibility/Overlay';
 import { NavLink, useLocation } from 'react-router-dom';
 import { GoHome } from 'react-icons/go';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
