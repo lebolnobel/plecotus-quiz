@@ -27,7 +27,7 @@ const generateSitemap = async () => {
     { url: '/learn', priority: 0.7 },
     { url: '/about', priority: 0.8 },
     ...SP.map((sp) => ({
-      url: `/species/${sp.id}`,
+      url: `/species/${sp}`,
       priority: 0.7,
     })),
   ];
