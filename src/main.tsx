@@ -29,11 +29,11 @@ const router = createBrowserRouter(
           element: <Home />,
         },
         {
-          path: 'quiz',
+          path: '/quiz',
           element: <Quiz />,
         },
         {
-          path: 'learn',
+          path: '/learn',
           element: <Learn />,
         },
         {
@@ -41,11 +41,11 @@ const router = createBrowserRouter(
           element: <Species />,
         },
         {
-          path: 'resources',
+          path: '/resources',
           element: <Resources />,
         },
         {
-          path: 'about',
+          path: '/about',
           element: <About />,
         },
       ],

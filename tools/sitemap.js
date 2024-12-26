@@ -2,12 +2,34 @@
 import { createWriteStream } from 'fs';
 import { SitemapStream, streamToPromise } from 'sitemap';
 
+export const SP = [
+  'Barbar',
+  'MB',
+  'Md',
+  'MD',
+  'ME',
+  'MM',
+  'Mn',
+  'Mmba',
+  'Pleaur',
+  'Pleaus',
+  'Pipsp',
+  'Eptser',
+  'Rh',
+  'Rf',
+];
+
 const generateSitemap = async () => {
   const links = [
     { url: '/', priority: 1.0 },
     { url: '/quiz', priority: 1.0 },
-    { url: '/about', priority: 0.8 },
     { url: '/resources', priority: 0.7 },
+    { url: '/learn', priority: 0.7 },
+    { url: '/about', priority: 0.8 },
+    ...SP.map((sp) => ({
+      url: `/species/${sp.id}`,
+      priority: 0.7,
+    })),
   ];
 
   const sitemapStream = new SitemapStream({
