@@ -16,7 +16,7 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
   const { totalQuestions } = useQuizContext();
 
   return (
-    <div className="mx-auto block" role="main">
+    <section className="mx-auto block">
       <h2 className="text-slate-500 uppercase sm:block">
         <FormattedMessage id="quiz.title" />
       </h2>
@@ -75,7 +75,7 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

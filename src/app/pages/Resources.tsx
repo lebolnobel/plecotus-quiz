@@ -11,7 +11,7 @@ const Resources = (): React.ReactNode => {
   };
 
   return (
-    <div className="mx-auto block" role="main">
+    <section className="mx-auto block">
       <h2 className="text-slate-500 uppercase">
         <FormattedMessage id="resources.title" />
       </h2>
@@ -67,7 +67,7 @@ const Resources = (): React.ReactNode => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

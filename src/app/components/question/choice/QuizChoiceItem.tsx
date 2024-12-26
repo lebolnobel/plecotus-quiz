@@ -21,20 +21,27 @@ const QuizChoiceItem = (props: QuizAnswerType): React.ReactNode => {
     onSelectAnswer(id);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Enter') {
+      onSelectAnswer(id);
+    }
+  };
+
   return (
-    <div>
-      <label
-        className={`p-3 px-5 block cursor-pointer rounded-md border border-slate-300 border-opacity-20 border-primary border-opacity-[0.5] mb-3 ${
-          value === id && 'bg-natagora bg-slate-100'
-        } hover:bg-accent hover:shadow hover:bg-primary hover:text-accent hover:bg-slate-100`}
-      >
+    <div
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      className={`mb-3 focus:outline-none focus:ring-2 focus:ring-natagora/40 cursor-pointer rounded-md border border-slate-300 border-opacity-20 border-primary border-opacity-[0.5] hover:bg-accent hover:shadow hover:bg-primary hover:text-accent hover:bg-slate-100 ${value === id && 'bg-natagora bg-slate-100'} `}
+    >
+      <label className="block p-3 px-5">
         <input
           type="radio"
           name="answer"
           checked={value === id}
           onChange={onChange}
-          className="accent-primary -mt-1 align-middle"
+          className="accent-primary -mt-1 align-middle focus:outline-none focus:ring-2 focus:ring-natagora/40"
           value={id}
+          tabIndex={-1}
         />
         <span className="ps-3 font-normal text-base">
           {display === ABBR ? (
@@ -45,11 +52,7 @@ const QuizChoiceItem = (props: QuizAnswerType): React.ReactNode => {
               <br />
               <span className="inline-flex text-slate-400 text-sm">
                 {species.displayName}
-                <GoDotFill
-                  role="presentation"
-                  size="4"
-                  className="mx-2 mt-2"
-                />
+                <GoDotFill role="presentation" size="4" className="mx-2 mt-2" />
                 {id}
               </span>
             </>

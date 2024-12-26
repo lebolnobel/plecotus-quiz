@@ -13,8 +13,16 @@ const Learn = (): React.ReactNode => {
     window.open(MEMO);
   };
 
+  const handleKeyDown = (sp: string) => {
+    return (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (event.key === 'Enter') {
+        navigate(`/species/${sp}`);
+      }
+    };
+  };
+
   return (
-    <div className="mx-auto block" role="main">
+    <section className="mx-auto block">
       <h2 className="text-slate-500 uppercase">
         <FormattedMessage id="learn.title" />
       </h2>
@@ -34,9 +42,11 @@ const Learn = (): React.ReactNode => {
           <div className="w-full mt-4 mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 space-y-4 sm:space-y-0">
             {Object.keys(species).map((sp, index) => (
               <div
-                className="max-w-full border border-gray-200 rounded-lg hover:shadow hover:bg-slate-100 cursor-pointer"
-                onClick={() => navigate(`../species/${sp}`)}
                 key={index}
+                tabIndex={0}
+                onClick={() => navigate(`/species/${sp}`)}
+                onKeyDown={handleKeyDown(sp)}
+                className="max-w-full border border-gray-200 rounded-lg hover:shadow hover:bg-slate-100 cursor-pointer focus:outline-none focus:ring-2 focus:ring-natagora/40"
               >
                 <div className="relative h-48 md:h-36 rounded-t-lg group overflow-hidden">
                   <img
@@ -54,7 +64,7 @@ const Learn = (): React.ReactNode => {
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <div className="flex items-center justify-between text-gray-200">
                         <div>
-                          <h5 className="text-lg italic">{species[sp].name}</h5>
+                          <h3 className="text-lg italic">{species[sp].name}</h3>
                         </div>
                       </div>
                     </div>
@@ -121,7 +131,7 @@ const Learn = (): React.ReactNode => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

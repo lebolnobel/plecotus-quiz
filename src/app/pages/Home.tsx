@@ -7,7 +7,7 @@ const Home = (): React.ReactNode => {
   const intl = useIntl();
 
   return (
-    <div className="mx-auto block" role="main">
+    <section className="mx-auto block">
       <h2 className="text-slate-500 uppercase">
         <FormattedMessage id="app" />
       </h2>
@@ -81,7 +81,7 @@ const Home = (): React.ReactNode => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

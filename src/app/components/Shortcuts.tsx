@@ -137,17 +137,19 @@ const Shortcuts = (): React.ReactNode => {
 
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-4">
-      <div className="fixed inset-0 flex items-center justify-center z-5 mx-4">
+      <div className="fixed inset-0 flex items-center justify-center z-50 mx-4">
         <div
           ref={ref}
+          role="dialog"
           className="items-center justify-center shadow-lg max-w-xl w-full"
         >
           <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
             <button
               type="button"
-              role="close"
+              role="button"
               aria-label="close"
               ref={(input) => input && input.focus()}
+              onClick={toggleShortcutsMode}
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
             >
               <GoX role="presentation" size="24" className="inline-flex" />

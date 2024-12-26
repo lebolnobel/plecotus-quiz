@@ -9,7 +9,7 @@ const About = (): React.ReactNode => {
   const intl = useIntl();
 
   return (
-    <div className="mx-auto block" role="main">
+    <section className="mx-auto block">
       <h2 className="text-slate-500 uppercase">
         <FormattedMessage id="about.title" />
       </h2>
@@ -223,7 +223,7 @@ const About = (): React.ReactNode => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

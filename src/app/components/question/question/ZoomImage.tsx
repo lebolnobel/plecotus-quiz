@@ -45,6 +45,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
       <div className="fixed inset-0 flex items-center justify-center z-50">
         <div
           ref={ref}
+          role="dialog"
           className="relative mx-2 my-2 md:mx-12 md:py-0 max-h-[90svh] w-full max-w-screen-lg overflow-auto"
         >
           <div className="relative bg-white rounded-lg shadow">
@@ -53,6 +54,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
               role="button"
               aria-label="close"
               ref={(input) => input && input.focus()}
+              onClick={onClose}
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
             >
               <GoX role="presentation" size="24" />

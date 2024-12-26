@@ -21,10 +21,11 @@ const Nav = (): React.ReactNode => {
   }, [location]);
 
   const className: (isActive?: boolean) => string = (isActive = false) =>
-    `block py-2 px-3 rounded text-natagora ${isActive ? 'text-white bg-natagora' : 'md:hover:bg-gray-100 md:hover:text-natagora'}  focus:outline-none focus:ring-2 focus:ring-natagora/40`;
+    `block py-2 px-3 rounded text-natagora focus:outline-none focus:ring-2 focus:ring-natagora/40 
+    ${isActive ? 'text-white bg-natagora' : 'md:hover:bg-gray-100 md:hover:text-natagora'}`;
 
   return (
-    <nav className="bg-gray-50 border-gray-200" role="banner">
+    <nav className="bg-gray-50 border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           to="../"
@@ -36,7 +37,7 @@ const Nav = (): React.ReactNode => {
             alt={intl.formatMessage({ id: 'appName' })}
             width="32"
             height="32"
-            role="none"
+            role="presentation"
           />
           <h1 className="self-center text-2xl font-medium whitespace-nowrap uppercase">
             <FormattedMessage id="appTitle" />
@@ -45,7 +46,8 @@ const Nav = (): React.ReactNode => {
 
         <button
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-natagora/40"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none 
+          focus:ring-2 focus:ring-natagora/40"
           aria-controls="navbar-default"
           aria-expanded="false"
           aria-label="navigation"

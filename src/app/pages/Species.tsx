@@ -24,7 +24,7 @@ const Species = (): React.ReactNode => {
   const sp = species[currentSpecies];
 
   return (
-    <div className="mx-auto block" role="main">
+    <section className="mx-auto block">
       <h2 className="text-slate-500 uppercase">
         <FormattedMessage id="learn.title" />
       </h2>
@@ -43,7 +43,7 @@ const Species = (): React.ReactNode => {
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <div className="flex items-center justify-between text-gray-200">
                     <div>
-                      <h5 className="text-xl font-semibold">{sp.name}</h5>
+                      <h3 className="text-xl font-semibold">{sp.name}</h3>
                       <div className="flex text-md italic flex flex-wrap">
                         <span>{sp.name}</span>
                       </div>
@@ -142,7 +142,7 @@ const Species = (): React.ReactNode => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
