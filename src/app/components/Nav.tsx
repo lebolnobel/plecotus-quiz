@@ -37,7 +37,7 @@ const Nav = (): React.ReactNode => {
             alt={intl.formatMessage({ id: 'appName' })}
             width="32"
             height="32"
-            role="presentation"
+            role="none"
           />
           <h1 className="self-center text-2xl font-medium whitespace-nowrap uppercase">
             <FormattedMessage id="appTitle" />

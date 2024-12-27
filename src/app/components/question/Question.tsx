@@ -29,10 +29,16 @@ type QuestionType = {
 const Question = (props: QuestionType): React.ReactNode => {
   const { currentQuestion, isAnwser, onNext, onReset } = props;
 
+  const ref = React.useRef<HTMLDivElement | null>(null);
+
   const [enlarged, setEnlarged] = React.useState<boolean>(false);
 
   const intl = useIntl();
   const { toggleSettingsMode } = usePlecotusContext();
+
+  React.useEffect(() => {
+    ref?.current?.focus();
+  }, [currentQuestion]);
 
   const toggleEnlarged = () => {
     setEnlarged((prev) => !prev);
@@ -49,7 +55,12 @@ const Question = (props: QuestionType): React.ReactNode => {
 
   return (
     <>
-      <figure className="overflow-hidden block" role="img">
+      <figure
+        ref={ref}
+        tabIndex={-1}
+        className="overflow-hidden block outline-none"
+        role="img"
+      >
         <div className="text-center transition-all ease-in duration-150 rounded-lg cursor-pointer hover:scale-125 min-h-32">
           <LazyLoadImage
             key={currentImage.url}
