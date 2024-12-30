@@ -158,7 +158,7 @@ const QuizSettings = (): React.ReactNode => {
           setIndex((prevIndex) =>
             prevIndex < options.length - 1 ? prevIndex + 1 : 0,
           );
-        } else if (event.key === 'Enter') {
+        } else if (event.key === 'Enter' || event.key === 'Space') {
           event.preventDefault();
           options[index].onClick();
           toggleSettingsMode && toggleSettingsMode();
