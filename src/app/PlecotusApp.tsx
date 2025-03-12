@@ -28,7 +28,7 @@ const Plecotus = (): React.ReactNode => {
 
       <Nav />
 
-      <main className="font-anek flex flex-col items-center">
+      <main className="text-base font-anek flex flex-col items-center">
         <div className="md:py-6 w-full md:w-3/4 lg:w-3/5 xl:2/4 max-w-screen-md">
           <div
             id="content"

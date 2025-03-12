@@ -31,7 +31,7 @@ export const images: Array<ImageType> = [
   {
     speciesId: SP.Barbar,
     title: 'Barbastelle',
-    url: 'https://plecotus.natagora.be/fileadmin/_processed_/b/9/csm_BarbastellaBarbastellus_JeanLouisGathoye__10__162fa6628a.jpg',
+    url: './assets/img/species/csm_BarbastellaBarbastellus_JeanLouisGathoye__10__162fa6628a.jpg',
     authorId: 3,
     place: undefined,
   },

@@ -25,7 +25,7 @@ const Nav = (): React.ReactNode => {
     ${isActive ? 'text-white bg-natagora' : 'md:hover:bg-gray-100 md:hover:text-natagora'}`;
 
   return (
-    <nav className="bg-gray-50 border-gray-200">
+    <nav className="text-base bg-gray-50 border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           to="../"

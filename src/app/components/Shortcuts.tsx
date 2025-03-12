@@ -136,7 +136,7 @@ const Shortcuts = (): React.ReactNode => {
   if (!showShortcuts) return null;
 
   return (
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-4">
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40 text-base">
       <div className="fixed inset-0 flex items-center justify-center z-50 mx-4">
         <div
           ref={ref}

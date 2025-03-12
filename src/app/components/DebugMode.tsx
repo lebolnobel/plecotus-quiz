@@ -34,7 +34,7 @@ const DebugMode = (): React.ReactNode => {
   if (navigator.userAgent.indexOf('like Mac') != -1) OSName = 'iOS';
 
   return (
-    <div className="rounded-lg bg-gray-700 text-white fixed bottom-0 left-0 m-5 opacity-50 z-50">
+    <div className="rounded-lg bg-gray-700 text-white fixed bottom-0 left-0 m-5 opacity-50 z-50 text-base">
       <div className="flex flex-row w-full gap-5 items-center py-5 pl-8">
         <button
           type="button"

@@ -182,7 +182,7 @@ const QuizSettings = (): React.ReactNode => {
   if (!showSettings) return null;
 
   return (
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40">
+    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 z-40 text-base">
       <div className="fixed inset-0 flex items-center justify-center z-50 mx-6">
         <div
           ref={ref}

@@ -44,7 +44,7 @@ const Species = (): React.ReactNode => {
                   <div className="flex items-center justify-between text-gray-200">
                     <div>
                       <h3 className="text-xl font-semibold">{sp.name}</h3>
-                      <div className="flex text-md italic flex flex-wrap">
+                      <div className="flex italic flex flex-wrap">
                         <span>{sp.name}</span>
                       </div>
                     </div>
