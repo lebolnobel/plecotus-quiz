@@ -25,7 +25,7 @@ Vos retours sont les bienvenus, répondez au [formulaire](https://docs.google.co
 
 Natagora a pour but de protéger la nature, plus particulièrement en Wallonie et à Bruxelles. Son objectif ? Enrayer la dégradation de la biodiversité et reconstituer un bon état général de la nature, en équilibre avec les activités humaines.
 
-Plus d'infos sur [Natagora](https://natagora.be) et sur [Plecotus](https://plecotus.natagora.be/).
+Plus d'infos sur [Natagora](https://www.natagora.be) et sur [Plecotus](https://plecotus.natagora.be/).
 
 ## Getting Started
 
