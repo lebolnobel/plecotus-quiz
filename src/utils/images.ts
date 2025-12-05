@@ -238,13 +238,13 @@ export const images: Array<ImageType> = [
     authorId: 2,
     place: 'Rochefort',
   },
-  {
-    speciesId: SP.ME,
-    title: 'Murins à oreilles échancrées',
-    url: './assets/img/species/DSC07416c.jpg',
-    authorId: 2,
-    place: 'Rochefort',
-  },
+  // {
+  //   speciesId: SP.ME,
+  //   title: 'Murins à oreilles échancrées',
+  //   url: './assets/img/species/DSC07416c.jpg', // Colonie estivale
+  //   authorId: 2,
+  //   place: 'Rochefort',
+  // },
   {
     speciesId: SP.Rh,
     title: 'Petit Rhino',
