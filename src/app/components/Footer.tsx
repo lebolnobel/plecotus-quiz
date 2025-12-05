@@ -30,7 +30,7 @@ const Footer = (): React.ReactNode => {
             ),
             natagora: (
               <a
-                href="https://natagora.be/"
+                href="https://www.natagora.be/"
                 title={intl.formatMessage({ id: 'natagora.natagora' })}
                 className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
               >
