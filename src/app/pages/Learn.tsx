@@ -9,10 +9,6 @@ const Learn = (): React.ReactNode => {
   const intl = useIntl();
   const navigate = useNavigate();
 
-  const downloadMemo = () => {
-    window.open(MEMO);
-  };
-
   const handleKeyDown = (sp: string) => {
     return (event: React.KeyboardEvent<HTMLDivElement>) => {
       if (event.key === 'Enter' || event.key === 'Space') {
@@ -95,20 +91,24 @@ const Learn = (): React.ReactNode => {
 
                   <div className="space-x-4 mt-6 text-base font-medium">
                     <div className="flex-auto flex space-x-4">
-                      <button
-                        type="button"
-                        role="button"
-                        onClick={downloadMemo}
+                      <a
+                        href={MEMO}
                         aria-label="download"
                         className="px-6 py-2 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora/40"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={intl.formatMessage({ id: 'resources.memo' })}
                       >
                         <FormattedMessage id="resources.memo" />
+                        <span className="sr-only">
+                          (<FormattedMessage id="action.openNewTab" />)
+                        </span>
                         <GoArrowRight
                           role="presentation"
                           size="24"
                           className="ml-2 inline-flex"
                         />
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>

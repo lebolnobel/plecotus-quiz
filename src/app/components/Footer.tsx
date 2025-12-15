@@ -59,14 +59,14 @@ const Footer = (): React.ReactNode => {
       </p>
 
       <div className="hidden sm:inline-flex">
-        <kbd className="flex lowercase items-center justify-center px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
+        <kbd className="flex lowercase items-center justify-center px-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
           {isMac ? (
             <MdKeyboardCommandKey />
           ) : (
             <FormattedMessage id="shortcuts.CTRL" />
           )}
         </kbd>
-        <kbd className="flex items-center justify-center lowercase px-2 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
+        <kbd className="flex items-center justify-center lowercase px-1 mx-1 text-gray-600 border rounded bg-gray-600/5 border-gray-600/5">
           <FormattedMessage id="shortcuts.K" />
         </kbd>
         <FormattedMessage id="footer.commandPalette" />

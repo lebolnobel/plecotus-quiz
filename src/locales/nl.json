@@ -104,7 +104,8 @@
     "fullScreen": "Volledig scherm",
     "learn": "Leren",
     "resources": "Bekijk de bronnen",
-    "shortcuts": "Sneltoetsen"
+    "shortcuts": "Sneltoetsen",
+    "openNewTab": "Open in een nieuw tabblad"
   },
   "commands": {
     "info": "Wat zoekt je?",

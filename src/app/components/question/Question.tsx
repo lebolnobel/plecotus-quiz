@@ -123,13 +123,13 @@ const Question = (props: QuestionType): React.ReactNode => {
             <FormattedMessage id="action.raiseError" />
           </dt>
           <dd className="flex items-center">
-            <button
-              type="button"
-              role="button"
+            <a
               title={intl.formatMessage({ id: 'action.raiseError' })}
               aria-label="raiseError"
               className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
-              onClick={() => window.open(`${BUG}${currentImage.url}`, '_blank')}
+              href={`${BUG}${currentImage.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <GoStop
                 role="presentation"
@@ -137,7 +137,7 @@ const Question = (props: QuestionType): React.ReactNode => {
                 className="cursor-pointer"
                 title={intl.formatMessage({ id: 'action.raiseError' })}
               />
-            </button>
+            </a>
           </dd>
 
           <dt className="sr-only">

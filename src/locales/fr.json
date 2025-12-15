@@ -104,7 +104,8 @@
     "fullScreen": "Plein écran",
     "learn": "Apprendre",
     "resources": "Voir les ressources",
-    "shortcuts": "Raccourcis"
+    "shortcuts": "Raccourcis",
+    "openNewTab": "Ouvrir dans un nouvel onglet"
   },
   "commands": {
     "info": "Que cherchez-vous ?",
