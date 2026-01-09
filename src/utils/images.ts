@@ -770,6 +770,20 @@ export const images: Array<ImageType> = [
     authorId: 2,
     place: undefined,
   },
+  {
+    speciesId: SP.Md,
+    title: 'Md',
+    url: './assets/img/species/16bb9dee-b97b-4999-850e-cd24f97817ae.jpg',
+    authorId: 15,
+    place: 'Folx-les-Caves',
+  },
+  {
+    speciesId: SP.Md,
+    title: 'Md',
+    url: './assets/img/species/c1b59c51-05de-456e-b741-3ad9922949b6.jpg',
+    authorId: undefined,
+    place: 'Folx-les-Caves',
+  },
 ];
 
 type AuthorType = {
@@ -835,5 +849,9 @@ export const authors: { [key: number]: AuthorType } = {
   14: {
     name: 'Paquay',
     firstname: 'Marc',
+  },
+  15: {
+    name: 'Michelante',
+    firstname: 'David',
   },
 };
