@@ -8,7 +8,6 @@ import Home from './app/pages/Home';
 import Quiz from './app/pages/MainQuiz';
 import Learn from './app/pages/Learn';
 import Species from './app/pages/Species';
-import Resources from './app/pages/Resources';
 import About from './app/pages/About';
 import PlecotusProvider from './context/PlecotusAppContext';
 import QuizAppContext from './context/QuizAppContext';
@@ -39,10 +38,6 @@ const router = createBrowserRouter(
         {
           path: '/species/:species',
           element: <Species />,
-        },
-        {
-          path: '/resources',
-          element: <Resources />,
         },
         {
           path: '/about',
