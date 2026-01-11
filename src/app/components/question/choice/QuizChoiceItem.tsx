@@ -22,7 +22,7 @@ const QuizChoiceItem = (props: QuizAnswerType): React.ReactNode => {
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'Enter' || event.key === 'Space') {
+    if (event.key === 'Enter' || event.key === ' ') {
       onSelectAnswer(id);
     }
   };

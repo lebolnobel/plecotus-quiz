@@ -126,7 +126,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             <a
               title={intl.formatMessage({ id: 'action.raiseError' })}
               aria-label="raiseError"
-              className="buttonQuiz"
+              className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               href={`${BUG}${currentImage.url}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -148,7 +148,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               type="button"
               title={intl.formatMessage({ id: 'action.settings' })}
               aria-label="settings"
-              className="buttonQuiz"
+              className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={toggleSettingsMode}
             >
               <GoGear
@@ -173,7 +173,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               type="button"
               title={intl.formatMessage({ id: 'action.fullScreen' })}
               aria-label="fullscreen"
-              className="buttonQuiz"
+              className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={toggleEnlarged}
             >
               <GoScreenFull
@@ -200,7 +200,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               type="button"
               title={intl.formatMessage({ id: 'action.reset' })}
               aria-label="reset"
-              className="buttonQuiz"
+              className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={onReset}
             >
               <GoMoveToStart
@@ -225,7 +225,7 @@ const Question = (props: QuestionType): React.ReactNode => {
               type="button"
               title={intl.formatMessage({ id: 'action.next' })}
               aria-label="next"
-              className="buttonQuiz"
+              className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={onNext}
             >
               <GoArrowRight

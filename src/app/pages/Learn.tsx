@@ -11,7 +11,7 @@ const Learn = (): React.ReactNode => {
 
   const handleKeyDown = (sp: string) => {
     return (event: React.KeyboardEvent<HTMLDivElement>) => {
-      if (event.key === 'Enter' || event.key === 'Space') {
+      if (event.key === 'Enter' || event.key === ' ') {
         navigate(`/species/${sp}`);
       }
     };

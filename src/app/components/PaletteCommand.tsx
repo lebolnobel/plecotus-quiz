@@ -154,7 +154,7 @@ const PaletteCommand = (): React.ReactNode => {
           setIndex((prevIndex) =>
             prevIndex < commands.length - 1 ? prevIndex + 1 : 0,
           );
-        } else if (event.key === 'Enter' || event.key === 'Space') {
+        } else if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           commands[index].onClick();
           setIsOpen(false);

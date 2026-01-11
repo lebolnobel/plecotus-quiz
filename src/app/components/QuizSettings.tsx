@@ -24,6 +24,9 @@ type OptionsType = {
 
 const QuizSettings = (): React.ReactNode => {
   const ref = React.useRef<HTMLDivElement | null>(null);
+  const displayRef = React.useRef<HTMLInputElement>(null);
+  const answerRef = React.useRef<HTMLInputElement>(null);
+  const nbChoicesRef = React.useRef<HTMLInputElement>(null);
 
   const [index, setIndex] = React.useState(0);
 
@@ -31,11 +34,11 @@ const QuizSettings = (): React.ReactNode => {
   const {
     display,
     selectToAnswerMode,
+    nbChoices,
     toggleDisplay,
     toggleSelectToAnswer,
-    setQuestions,
-    nbChoices,
     toggleNbChoices,
+    setQuestions,
   } = useQuizContext();
 
   const options: Array<OptionsType> = React.useMemo(
@@ -47,15 +50,24 @@ const QuizSettings = (): React.ReactNode => {
         switch: (
           <label className="inline-flex items-center cursor-pointer">
             <input
+              ref={displayRef}
               type="checkbox"
-              value=""
               className="sr-only peer"
               checked={display === ABBR}
+              tabIndex={-1}
+              onChange={() => {
+                !!toggleDisplay && toggleDisplay();
+              }}
             />
-            <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-natagora/40 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-natagora"></div>
+            <div
+              onClick={() => displayRef.current?.click()}
+              className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-natagora/40 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-natagora"
+            ></div>
           </label>
         ),
-        onClick: () => !!toggleDisplay && toggleDisplay(),
+        onClick: () => {
+          displayRef.current?.click();
+        },
       },
       {
         name: 'advanced-answer',
@@ -64,15 +76,24 @@ const QuizSettings = (): React.ReactNode => {
         switch: (
           <label className="inline-flex items-center cursor-pointer">
             <input
+              ref={answerRef}
               type="checkbox"
-              value=""
               className="sr-only peer"
               checked={selectToAnswerMode}
+              tabIndex={-1}
+              onChange={() => {
+                !!toggleSelectToAnswer && toggleSelectToAnswer();
+              }}
             />
-            <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-natagora/40 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-natagora"></div>
+            <div
+              onClick={() => answerRef.current?.click()}
+              className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-natagora/40 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-natagora"
+            ></div>
           </label>
         ),
-        onClick: () => !!toggleSelectToAnswer && toggleSelectToAnswer(),
+        onClick: () => {
+          answerRef.current?.click();
+        },
       },
       {
         name: 'nb-questions',
@@ -81,15 +102,24 @@ const QuizSettings = (): React.ReactNode => {
         switch: (
           <label className="inline-flex items-center cursor-pointer">
             <input
+              ref={nbChoicesRef}
               type="checkbox"
-              value=""
               className="sr-only peer"
               checked={nbChoices === FOUR_CHOICES}
+              tabIndex={-1}
+              onChange={() => {
+                !!toggleNbChoices && toggleNbChoices();
+              }}
             />
-            <div className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-natagora/40 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-natagora"></div>
+            <div
+              onClick={() => nbChoicesRef.current?.click()}
+              className="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-natagora/40 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-natagora"
+            ></div>
           </label>
         ),
-        onClick: () => !!toggleNbChoices && toggleNbChoices(),
+        onClick: () => {
+          nbChoicesRef.current?.click();
+        },
       },
       {
         name: 'question-10',
@@ -100,7 +130,9 @@ const QuizSettings = (): React.ReactNode => {
           />
         ),
         icon: <GoNumber role="presentation" />,
-        onClick: () => !!setQuestions && setQuestions(10),
+        onClick: () => {
+          !!setQuestions && setQuestions(10);
+        },
       },
       {
         name: 'question-25',
@@ -111,7 +143,9 @@ const QuizSettings = (): React.ReactNode => {
           />
         ),
         icon: <GoNumber role="presentation" />,
-        onClick: () => !!setQuestions && setQuestions(25),
+        onClick: () => {
+          !!setQuestions && setQuestions(25);
+        },
       },
       {
         name: 'question-50',
@@ -122,7 +156,9 @@ const QuizSettings = (): React.ReactNode => {
           />
         ),
         icon: <GoNumber role="presentation" />,
-        onClick: () => !!setQuestions && setQuestions(50),
+        onClick: () => {
+          !!setQuestions && setQuestions(50);
+        },
       },
     ],
     [
@@ -158,10 +194,9 @@ const QuizSettings = (): React.ReactNode => {
           setIndex((prevIndex) =>
             prevIndex < options.length - 1 ? prevIndex + 1 : 0,
           );
-        } else if (event.key === 'Enter' || event.key === 'Space') {
+        } else if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           options[index].onClick();
-          toggleSettingsMode && toggleSettingsMode();
         }
       }
     };
@@ -227,7 +262,11 @@ const QuizSettings = (): React.ReactNode => {
                     id={`option-${optIndex}`}
                     key={`option-${option.name}`}
                     role="listitem"
-                    onClick={option.onClick}
+                    onClick={(e) => {
+                      if (!(e.target instanceof HTMLInputElement)) {
+                        option.onClick?.();
+                      }
+                    }}
                   >
                     <span className="pt-0.5">{option.icon}</span>
 
