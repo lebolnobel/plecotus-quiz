@@ -2,6 +2,8 @@
 import { createWriteStream } from 'fs';
 import { SitemapStream, streamToPromise } from 'sitemap';
 
+export const APP_URL = 'https://plecotus.netlify.app';
+
 export const SP = [
   'Barbar',
   'MB',
@@ -33,7 +35,7 @@ const generateSitemap = async () => {
   ];
 
   const sitemapStream = new SitemapStream({
-    hostname: 'https://plecotus.netlify.app',
+    hostname: APP_URL,
   });
 
   // Output the sitemap to a file
