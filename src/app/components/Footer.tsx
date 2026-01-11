@@ -10,10 +10,7 @@ const Footer = (): React.ReactNode => {
   const intl = useIntl();
 
   return (
-    <footer
-      className="pt-6 pb-6 text-center text-xs text-gray-600"
-      role="contentinfo"
-    >
+    <footer className="pt-6 pb-6 text-center text-xs text-gray-600">
       <p className="text-balance">
         <FormattedMessage
           id="footer.info"

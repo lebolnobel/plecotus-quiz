@@ -55,7 +55,7 @@ const Explanation = (props: ExplanationType): React.ReactNode => {
                   onClick={onReset}
                 />
 
-                <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left z-1">
+                <div className="flex flex-row gap-5 justify-center items-center px-5 w-full h-full text-left z-1">
                   <div className="my-auto text-2xl">
                     {isCorrect ? (
                       <GoCheckCircle role="presentation" size="56" />

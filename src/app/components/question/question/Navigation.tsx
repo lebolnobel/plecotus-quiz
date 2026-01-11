@@ -17,10 +17,9 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
       <div className="basis-1/2">
         <button
           type="button"
-          role="button"
           aria-label="reset"
           onClick={onReset}
-          className="inline-flex px-6 py-2 inline-flex font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora/40"
+          className="inline-flex px-6 py-2 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora/40"
         >
           <GoMoveToStart role="presentation" size="24" className="mr-2" />
           <FormattedMessage id="action.resetShort" />
@@ -37,7 +36,6 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
           className="py-2 px-6 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex 
           relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
           type="submit"
-          role="button"
           aria-label="reset"
           onClick={onNext}
         >

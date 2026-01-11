@@ -27,7 +27,7 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
         </h3>
 
         <div className={`rounded-lg h-32  bg-gray-100 mb-10`}>
-          <div className="flex flex-row w-full gap-5 justify-center items-center px-5 w-full h-full text-left">
+          <div className="flex flex-row gap-5 justify-center items-center px-5 w-full h-full text-left">
             <div className="my-auto text-2xl">
               <GoTrophy role="presentation" size="56" />
             </div>
@@ -60,7 +60,6 @@ const ScorePage = (props: ScorePageType): React.ReactNode => {
             <button
               className="py-2 px-6 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow relative inline-flex focus:outline-none focus:ring-2 focus:ring-natagora/40"
               type="button"
-              role="button"
               aria-label="reset"
               onClick={onReset}
             >

@@ -26,10 +26,7 @@ const About = (): React.ReactNode => {
           </div>
 
           <div className="text-center mx-auto w-3/4 mt-6 mb-12">
-            <figure
-              className="block flex text-center mx-auto w-full"
-              role="none"
-            >
+            <figure className="flex text-center mx-auto w-full" role="none">
               <img
                 src="./assets/img/resources/quiz-app.avif"
                 alt={intl.formatMessage({ id: 'img.quizApp' })}

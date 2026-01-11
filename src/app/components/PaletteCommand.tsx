@@ -198,7 +198,7 @@ const PaletteCommand = (): React.ReactNode => {
                 value={query}
                 onChange={(e) => setQuery(e.currentTarget.value)}
                 role="combobox"
-                aria-expanded="false"
+                aria-expanded={isOpen}
                 aria-controls="options"
                 autoFocus
               />

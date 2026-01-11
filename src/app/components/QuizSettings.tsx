@@ -192,9 +192,8 @@ const QuizSettings = (): React.ReactNode => {
           <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
             <button
               type="button"
-              role="button"
               aria-label="close"
-              ref={(input) => input && input.focus()}
+              autoFocus
               onClick={toggleSettingsMode}
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
             >

@@ -31,7 +31,7 @@ const QuizChoiceItem = (props: QuizAnswerType): React.ReactNode => {
     <div
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      className={`mb-3 focus:outline-none focus:ring-2 focus:ring-natagora/40 cursor-pointer rounded-md border border-slate-300 border-opacity-20 border-primary border-opacity-[0.5] hover:bg-accent hover:shadow hover:bg-primary hover:text-accent hover:bg-slate-100 ${value === id && 'bg-natagora bg-slate-100'} `}
+      className={`mb-3 focus:outline-none focus:ring-2 focus:ring-natagora/40 cursor-pointer rounded-md border border-slate-300 border-primary border-opacity-[0.5] hover:bg-accent hover:shadow hover:bg-primary hover:text-accent hover:bg-slate-100 ${value === id && 'bg-natagora'} `}
     >
       <label className="block p-3 px-5">
         <input

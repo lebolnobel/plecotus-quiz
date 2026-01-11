@@ -7,7 +7,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { LOCALE } from '../../locales';
 
 const Nav = (): React.ReactNode => {
-  const [open, setOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const intl = useIntl();
   const location = useLocation();
@@ -17,7 +17,7 @@ const Nav = (): React.ReactNode => {
     locale.toUpperCase() === key.toUpperCase();
 
   React.useEffect(() => {
-    setOpen(false);
+    setIsOpen(false);
   }, [location]);
 
   const className: (isActive?: boolean) => string = (isActive = false) =>
@@ -49,10 +49,9 @@ const Nav = (): React.ReactNode => {
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none 
           focus:ring-2 focus:ring-natagora/40"
           aria-controls="navbar-default"
-          aria-expanded="false"
+          aria-expanded={isOpen}
           aria-label="navigation"
-          role="button"
-          onClick={() => setOpen(!open)}
+          onClick={() => setIsOpen(!isOpen)}
         >
           <span className="sr-only">
             <FormattedMessage id="action.openMenu" />
@@ -75,8 +74,7 @@ const Nav = (): React.ReactNode => {
         </button>
         <div
           id="navbar-default"
-          className={`w-full md:block md:w-auto ${!open ? 'hidden' : ''}`}
-          role="navigation"
+          className={`w-full md:block md:w-auto ${!isOpen ? 'hidden' : ''}`}
         >
           <ul className="font-medium flex flex-col p-4 mt-4 md:flex-row md:space-x-4 lg:space-x-8 rtl:space-x-reverse md:p-0 md:mt-0 md:border-0">
             <li className="relative">
@@ -122,21 +120,6 @@ const Nav = (): React.ReactNode => {
                 </Overlay>
               </NavLink>
             </li>
-            {/* <li className="relative">
-              <NavLink
-                to="../resources"
-                className={({ isActive }) => className(isActive)}
-                title={intl.formatMessage({ id: 'menu.resources' })}
-              >
-                <FormattedMessage id="menu.resources" />
-
-                <Overlay>
-                  <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
-                    <FormattedMessage id="shortcuts.1" />
-                  </div>
-                </Overlay>
-              </NavLink>
-            </li> */}
             <li className="relative">
               <NavLink
                 to="../about"

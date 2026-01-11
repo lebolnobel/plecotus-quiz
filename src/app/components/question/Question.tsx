@@ -126,7 +126,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             <a
               title={intl.formatMessage({ id: 'action.raiseError' })}
               aria-label="raiseError"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
+              className="buttonQuiz"
               href={`${BUG}${currentImage.url}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -146,10 +146,9 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center relative">
             <button
               type="button"
-              role="button"
               title={intl.formatMessage({ id: 'action.settings' })}
               aria-label="settings"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
+              className="buttonQuiz"
               onClick={toggleSettingsMode}
             >
               <GoGear
@@ -172,10 +171,9 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center relative">
             <button
               type="button"
-              role="button"
               title={intl.formatMessage({ id: 'action.fullScreen' })}
               aria-label="fullscreen"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
+              className="buttonQuiz"
               onClick={toggleEnlarged}
             >
               <GoScreenFull
@@ -200,10 +198,9 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center relative">
             <button
               type="button"
-              role="button"
               title={intl.formatMessage({ id: 'action.reset' })}
               aria-label="reset"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
+              className="buttonQuiz"
               onClick={onReset}
             >
               <GoMoveToStart
@@ -226,10 +223,9 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center relative">
             <button
               type="button"
-              role="button"
               title={intl.formatMessage({ id: 'action.next' })}
               aria-label="next"
-              className="block flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
+              className="buttonQuiz"
               onClick={onNext}
             >
               <GoArrowRight

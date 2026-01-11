@@ -113,7 +113,7 @@ const Learn = (): React.ReactNode => {
                   </div>
                 </div>
                 <figure
-                  className="hidden sm:block sm:col-span-3 flex text-center mx-auto w-full"
+                  className="hidden sm:block sm:col-span-3 text-center mx-auto w-full"
                   role="none"
                 >
                   <img
