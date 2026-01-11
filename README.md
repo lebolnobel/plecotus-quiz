@@ -41,7 +41,7 @@ Things you need to use the project: `npm`
 npm install npm@latest -g
 ```
 
-Make sure you have Node.js version `18.x` (or later).
+Make sure you have Node.js version `22.x` (or later).
 
 ### Usage
 
