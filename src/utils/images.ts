@@ -780,7 +780,7 @@ export const images: Array<ImageType> = [
   {
     speciesId: SP.Md,
     title: 'Md',
-    url: './assets/img/species/c1b59c51-05de-456e-b741-3ad9922949b6.jpg',
+    url: './assets/img/species/c1b59c51-05de-456e-b741-3ad9922949b6.jpeg',
     authorId: undefined,
     place: 'Folx-les-Caves',
   },
