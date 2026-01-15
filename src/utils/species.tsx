@@ -41,8 +41,7 @@ export const species: { [key: string]: SpeciesType } = {
     name: 'Barbastella barbastellus',
     displayName: <FormattedMessage id="species.Barbar" />,
     short: <FormattedMessage id="species.description.Barbar.short" />,
-    image:
-      '/assets/img/species/sp/csm_BarbastellaBarbastellus_JeanLouisGathoye__10__162fa6628a.jpg',
+    image: '/assets/img/species/sp/f4f404a6-708e-454c-b653-af86301aaf9d.jpg',
     description: (
       <SpeciesCard
         fiche={

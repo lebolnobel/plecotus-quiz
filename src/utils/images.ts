@@ -31,7 +31,7 @@ export const images: Array<ImageType> = [
   {
     speciesId: SP.Barbar,
     title: 'Barbastelle',
-    url: './assets/img/species/csm_BarbastellaBarbastellus_JeanLouisGathoye__10__162fa6628a.jpg',
+    url: './assets/img/species/sp/f4f404a6-708e-454c-b653-af86301aaf9d.jpg',
     authorId: 3,
     place: undefined,
   },
