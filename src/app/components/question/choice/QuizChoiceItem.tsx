@@ -27,19 +27,25 @@ const QuizChoiceItem = (props: QuizAnswerType): React.ReactNode => {
     }
   };
 
+  const isSelected = value === id;
+
   return (
     <div
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      className={`mb-3 focus:outline-none focus:ring-2 focus:ring-natagora/40 cursor-pointer rounded-md border border-slate-300 border-primary border-opacity-[0.5] hover:bg-accent hover:shadow hover:bg-primary hover:text-accent hover:bg-slate-100 ${value === id && 'bg-natagora'} `}
+      className={`mb-3 focus:outline-none focus:ring-2 focus:ring-natagora/40 cursor-pointer rounded-md border border-slate-300 border-primary border-opacity-[0.5] transition-colors ${
+        isSelected
+          ? 'bg-natagora/10 ring-2 ring-natagora/40'
+          : 'hover:bg-accent hover:shadow hover:bg-primary hover:text-accent hover:bg-slate-100'
+      }`}
     >
       <label className="block p-3 px-5">
         <input
           type="radio"
           name="answer"
-          checked={value === id}
+          checked={isSelected}
           onChange={onChange}
-          className="accent-primary -mt-1 align-middle focus:outline-none focus:ring-2 focus:ring-natagora/40"
+          className="accent-primary -mt-1 align-middle focus:outline-none"
           value={id}
           tabIndex={-1}
         />

@@ -15,10 +15,13 @@ const QuizChoiceList = (props: QuizChoiceListType): React.ReactNode => {
 
   const { nbChoices } = useQuizContext();
 
-  const choices =
-    nbChoices === DEFAULT_CHOICES
-      ? Object.keys(species)
-      : getSubset(rightAnswer, SP);
+  const choices = React.useMemo(() => {
+    if (nbChoices === DEFAULT_CHOICES) {
+      return Object.keys(species);
+    }
+
+    return getSubset(rightAnswer, SP);
+  }, [nbChoices, rightAnswer]);
 
   return (
     <div className="my-8">
