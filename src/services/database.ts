@@ -31,15 +31,6 @@ export async function writeData(data: object) {
   try {
     const supabase = createClient(host, key);
 
-    const {
-      data: { user },
-      error: authError,
-    } = await supabase.auth.getUser();
-
-    if (authError || !user) {
-      return;
-    }
-
     const fingerprint = generateFingerprint();
     const { error } = await supabase
       .from('usage')
