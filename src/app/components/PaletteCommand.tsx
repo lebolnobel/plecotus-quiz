@@ -83,14 +83,20 @@ const PaletteCommand = (): React.ReactNode => {
         displayName: intl.formatMessage({ id: 'commands.feedback' }),
         icon: <GoMegaphone role="presentation" />,
         shortcut: [],
-        onClick: () => window.open(FEEDBACK, '_blank'),
+        onClick: () => {
+          const tab = window.open(FEEDBACK, '_blank', 'noopener,noreferrer');
+          if (tab) tab.opener = null;
+        },
       },
       {
         name: 'bug',
         displayName: intl.formatMessage({ id: 'commands.bug' }),
         icon: <GoBug role="presentation" />,
         shortcut: [],
-        onClick: () => window.open(`${GITHUB}/issues`, '_blank'),
+        onClick: () => {
+          const tab = window.open(`${GITHUB}/issues`, '_blank', 'noopener,noreferrer');
+          if (tab) tab.opener = null;
+        },
       },
       {
         name: 'debug',
@@ -104,7 +110,10 @@ const PaletteCommand = (): React.ReactNode => {
         displayName: intl.formatMessage({ id: 'commands.code' }),
         icon: <GoCommandPalette role="presentation" />,
         shortcut: [],
-        onClick: () => window.open(GITHUB, '_blank'),
+        onClick: () => {
+          const tab = window.open(GITHUB, '_blank', 'noopener,noreferrer');
+          if (tab) tab.opener = null;
+        },
       },
     ],
     [
