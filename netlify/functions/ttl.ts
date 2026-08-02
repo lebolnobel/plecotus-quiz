@@ -9,14 +9,11 @@ export default async (req: Request) => {
     });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const { next_run } = await req.json();
-
   const host = Netlify.env.get('HOST') || '';
   const key = Netlify.env.get('API_KEY') || '';
 
   if (!host || !key) {
-    console.log('Error, supabase is not initialized', next_run);
+    console.error('Error, Supabase is not initialized');
 
     return new Response('Server configuration error', {
       status: 500,
@@ -33,14 +30,14 @@ export default async (req: Request) => {
   const { error } = await supabase.from('ttl').insert({});
 
   if (error) {
-    console.error('Supabase error:', error);
+    console.error('Supabase error, TTL insert failed:', error);
 
     return new Response('Database error', {
       status: 500,
     });
   }
 
-  console.log('Received event! Next invocation at:', next_run);
+  console.log('Received event! Next invocation at:');
 
   return new Response(null, { status: 204 });
 };

@@ -4,8 +4,6 @@ import { generateFingerprint } from '../utils/fingerprint';
 const host = (import.meta.env.VITE_HOST as string) || '';
 const key = (import.meta.env.VITE_API_KEY as string) || '';
 
-const supabase = (!!host && createClient(host, key)) || undefined;
-
 const botUserAgents = [
   /Googlebot/,
   /Bingbot/,
@@ -19,25 +17,36 @@ const botUserAgents = [
   /ia_archiver/, // Archive.org
 ];
 
-export default supabase;
-
 export async function writeData(data: object) {
-  if (!supabase) return;
+  if (!host || !key) {
+    console.error('Error, Supabase is not initialized');
+    return;
+  }
 
-  const userAgent = navigator.userAgent || '';
-  if (isBot(userAgent)) {
+  if (isBot(navigator.userAgent || '')) {
     console.warn('Robot (crawler) detected, avoid stats usage.');
     return;
   }
 
   try {
+    const supabase = createClient(host, key);
+
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser();
+
+    if (authError || !user) {
+      return;
+    }
+
     const fingerprint = generateFingerprint();
     const { error } = await supabase
       .from('usage')
-      .insert({ fingerprint, ...data });
+      .insert({ ...data, fingerprint });
 
     if (error) {
-      console.error(error);
+      console.error('Unable to record usage data', error);
     }
   } catch (err) {
     if (err instanceof Error) console.error('Error:', err.message);
