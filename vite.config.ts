@@ -2,77 +2,62 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa';
 
-const manifestForPlugin: Partial<VitePWAOptions> = {
+const pwaOpt: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
-  includeAssets: ['**/*'],
-  manifest: {
-    name: 'Plecotus quiz',
-    short_name: 'Plecotus quiz',
-    description: 'Plecotus quiz : recensements hivernaux des Chauves-souris',
-    theme_color: '#ffffff',
-    background_color: '#ffffff',
-    display: 'standalone',
-    orientation: 'portrait',
-    scope: '/',
-    start_url: '/',
-    icons: [
+  injectRegister: 'auto',
+  includeAssets: [
+    'favicon.ico',
+    'robots.txt',
+    'apple-touch-icon.png',
+    'logo.png',
+    'maskable-logo.png',
+  ],
+  workbox: {
+    cleanupOutdatedCaches: true,
+    skipWaiting: true,
+    clientsClaim: true,
+    globPatterns: ['**/*.{js,css,html,png,jpg,svg,ico,json}'],
+    additionalManifestEntries: [
       {
-        src: '/logo.png',
-        sizes: '192x192',
-        type: 'image/png',
-        purpose: 'any',
+        url: 'https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500;600;700;800&display=swap',
+        revision: 'v1',
+      },
+    ],
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*$/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'google-fonts-stylesheets',
+          expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 30 },
+        },
       },
       {
-        src: '/apple-touch-icon.png',
-        sizes: '180x180',
-        type: 'image/png',
+        urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*$/i,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'google-fonts-webfonts',
+          expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 365 },
+          cacheableResponse: { statuses: [0, 200] },
+        },
       },
       {
-        src: '/maskable-logo.png',
-        sizes: '512x512',
-        type: 'image/png',
-        purpose: 'maskable',
+        urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/i,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'image-cache',
+          expiration: { maxEntries: 100, maxAgeSeconds: 60 * 60 * 24 * 30 },
+        },
       },
     ],
   },
   devOptions: {
-    enabled: true,
-  },
-  workbox: {
-    globPatterns: ['**/*'],
-    globIgnores: ['/logo.png', '/maskable-logo.png', '/apple-touch-icon.png'],
-    clientsClaim: true,
-    skipWaiting: true,
-    runtimeCaching: [
-      {
-        urlPattern: /^\/$/,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'pages',
-          expiration: {
-            maxEntries: 500,
-            maxAgeSeconds: 60 * 60 * 24 * 365,
-          },
-        },
-      },
-      {
-        urlPattern: /\.(?:js|css|png|jpg|jpeg|svg|avif|ico)$/,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'assets',
-          expiration: {
-            maxEntries: 500,
-            maxAgeSeconds: 60 * 60 * 24 * 365,
-          },
-        },
-      },
-    ],
+    enabled: false,
   },
 };
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), VitePWA(manifestForPlugin)],
+  plugins: [react(), VitePWA(pwaOpt)],
   server: {
     port: 5001,
   },

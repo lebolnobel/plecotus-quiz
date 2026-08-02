@@ -15,6 +15,7 @@ import QuizAppContext from './context/QuizAppContext';
 import { NORMAL, DEFAULT_TOTAL, DEFAULT_CHOICES } from './utils/constants';
 
 import './styles/styles.css';
+import './registerServiceWorker.ts';
 
 const router = createBrowserRouter(
   [
