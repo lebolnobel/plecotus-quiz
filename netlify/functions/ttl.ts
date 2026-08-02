@@ -9,10 +9,10 @@ export default async (req: Request) => {
     });
   }
 
-  const host = Netlify.env.get('SUPABASE_DATABASE_URL') || '';
-  const key = Netlify.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
+  const supabaseURL = Netlify.env.get('SUPABASE_DATABASE_URL') || '';
+  const serviceRoleKey = Netlify.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
 
-  if (!host || !key) {
+  if (!supabaseURL || !serviceRoleKey) {
     console.error('Error, Supabase is not initialized');
 
     return new Response('Server configuration error', {
@@ -20,7 +20,7 @@ export default async (req: Request) => {
     });
   }
 
-  const supabase = createClient(host, key, {
+  const supabase = createClient(supabaseURL, serviceRoleKey, {
     auth: {
       autoRefreshToken: false,
       persistSession: false,

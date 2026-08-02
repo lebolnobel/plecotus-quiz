@@ -1,8 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 import { generateFingerprint } from '../utils/fingerprint';
 
-const host = (import.meta.env.VITE_SUPABASE_DATABASE_URL as string) || '';
-const key = (import.meta.env.VITE_API_KEY as string) || '';
+const supabaseURL =
+  (import.meta.env.VITE_SUPABASE_DATABASE_URL as string) || '';
+const anonKey = (import.meta.env.VITE_SUPABASE_ANON_KEY as string) || '';
 
 const botUserAgents = [
   /Googlebot/,
@@ -18,7 +19,7 @@ const botUserAgents = [
 ];
 
 export async function writeData(data: object) {
-  if (!host || !key) {
+  if (!supabaseURL || !anonKey) {
     console.error('Error, Supabase is not initialized');
     return;
   }
@@ -29,7 +30,12 @@ export async function writeData(data: object) {
   }
 
   try {
-    const supabase = createClient(host, key);
+    const supabase = createClient(supabaseURL, anonKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    });
 
     const fingerprint = generateFingerprint();
     const { error } = await supabase
