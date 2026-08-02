@@ -37,7 +37,7 @@ export default async (req: Request) => {
     });
   }
 
-  console.log('Received event! Next invocation at:');
+  console.log('Received event!');
 
   return new Response(null, { status: 204 });
 };
