@@ -66,7 +66,7 @@ const Home = (): React.ReactNode => {
               </NavLink>
 
               <NavLink
-                className="px-6 py-2 inline-flex font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora/40"
+                className="px-6 py-2 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow inline-flex relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
                 title={intl.formatMessage({ id: 'action.learn' })}
                 to="../learn"
               >
