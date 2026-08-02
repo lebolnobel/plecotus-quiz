@@ -9,8 +9,8 @@ export default async (req: Request) => {
     });
   }
 
-  const host = Netlify.env.get('HOST') || '';
-  const key = Netlify.env.get('API_KEY') || '';
+  const host = Netlify.env.get('SUPABASE_DATABASE_URL') || '';
+  const key = Netlify.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
 
   if (!host || !key) {
     console.error('Error, Supabase is not initialized');

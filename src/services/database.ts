@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { generateFingerprint } from '../utils/fingerprint';
 
-const host = (import.meta.env.VITE_HOST as string) || '';
+const host = (import.meta.env.VITE_SUPABASE_DATABASE_URL as string) || '';
 const key = (import.meta.env.VITE_API_KEY as string) || '';
 
 const botUserAgents = [
