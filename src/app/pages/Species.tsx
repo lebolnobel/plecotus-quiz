@@ -11,9 +11,17 @@ const Species = (): React.ReactNode => {
   const { species: currentSpecies } = useParams();
   const intl = useIntl();
 
+  const prefersReducedMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   React.useEffect(() => {
-    window.scrollTo({ top: 0, left: 0 });
-  }, [currentSpecies]);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    });
+  }, [currentSpecies, prefersReducedMotion]);
 
   if (
     !currentSpecies ||
@@ -36,7 +44,11 @@ const Species = (): React.ReactNode => {
               <img
                 src={sp.image || './assets/img/resources/placeholder.jpg'}
                 alt={sp.name}
-                className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-125"
+                className={`w-full h-full object-cover ${
+                  prefersReducedMotion
+                    ? ''
+                    : 'transition-transform duration-200 group-hover:scale-125'
+                }`}
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent">

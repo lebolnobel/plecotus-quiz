@@ -2,10 +2,11 @@ import * as React from 'react';
 import { GoBug, GoFileCode, GoX } from 'react-icons/go';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 import { generateFingerprint } from '../../utils/fingerprint';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 const DebugMode = (): React.ReactNode => {
   const { isDebug, toggleDebugMode } = usePlecotusContext();
+  const intl = useIntl();
 
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -38,7 +39,7 @@ const DebugMode = (): React.ReactNode => {
       <div className="flex flex-row w-full gap-5 items-center py-5 pl-8">
         <button
           type="button"
-          aria-label="close"
+          aria-label={intl.formatMessage({ id: 'aria.close' })}
           className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-900 hover:text-gray-200 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-gray-400"
           autoFocus
           onClick={toggleDebugMode}

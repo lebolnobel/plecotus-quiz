@@ -55,12 +55,10 @@ const Question = (props: QuestionType): React.ReactNode => {
 
   return (
     <>
-      <figure
-        ref={ref}
-        tabIndex={-1}
-        className="overflow-hidden block outline-none"
-        role="img"
-      >
+      <span className="sr-only" ref={ref} tabIndex={-1}>
+        <FormattedMessage id="quiz.quizSubtitle" />
+      </span>
+      <figure className="overflow-hidden block outline-none">
         <div className="text-center transition-all ease-in duration-150 rounded-lg cursor-pointer hover:scale-125 min-h-32">
           <LazyLoadImage
             key={currentImage.url}
@@ -86,7 +84,7 @@ const Question = (props: QuestionType): React.ReactNode => {
       />
 
       <div className="text-base text-center block">
-        <dl className="mt-4 text-xs font-base flex justify-center items-center flex-wrap">
+        <dl className="mt-4 text-xs font-base flex justify-center items-center flex-wrap gap-2 sm:gap-3">
           <dt className="sr-only">
             <FormattedMessage id="image.author" />
           </dt>
@@ -117,7 +115,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             )}
           </dd>
 
-          <div className="w-full sm:w-10">&nbsp;</div>
+          <div className="w-full h-px sm:w-10">&nbsp;</div>
 
           <dt className="sr-only">
             <FormattedMessage id="action.raiseError" />
@@ -125,7 +123,7 @@ const Question = (props: QuestionType): React.ReactNode => {
           <dd className="flex items-center">
             <a
               title={intl.formatMessage({ id: 'action.raiseError' })}
-              aria-label="raiseError"
+              aria-label={intl.formatMessage({ id: 'aria.raiseError' })}
               className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               href={`${BUG}${currentImage.url}`}
               target="_blank"
@@ -147,7 +145,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             <button
               type="button"
               title={intl.formatMessage({ id: 'action.settings' })}
-              aria-label="settings"
+              aria-label={intl.formatMessage({ id: 'aria.settings' })}
               className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={toggleSettingsMode}
             >
@@ -172,7 +170,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             <button
               type="button"
               title={intl.formatMessage({ id: 'action.fullScreen' })}
-              aria-label="fullscreen"
+              aria-label={intl.formatMessage({ id: 'aria.fullScreen' })}
               className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={toggleEnlarged}
             >
@@ -199,8 +197,8 @@ const Question = (props: QuestionType): React.ReactNode => {
             <button
               type="button"
               title={intl.formatMessage({ id: 'action.reset' })}
-              aria-label="reset"
-              className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
+              aria-label={intl.formatMessage({ id: 'aria.reset' })}
+              className="relative flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={onReset}
             >
               <GoMoveToStart
@@ -224,7 +222,7 @@ const Question = (props: QuestionType): React.ReactNode => {
             <button
               type="button"
               title={intl.formatMessage({ id: 'action.next' })}
-              aria-label="next"
+              aria-label={intl.formatMessage({ id: 'action.next' })}
               className="flex bg-transparent hover:bg-gray-200 hover:text-gray-600 rounded-lg space-x-3 size-8 items-center justify-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
               onClick={onNext}
             >

@@ -94,7 +94,11 @@ const PaletteCommand = (): React.ReactNode => {
         icon: <GoBug role="presentation" />,
         shortcut: [],
         onClick: () => {
-          const tab = window.open(`${GITHUB}/issues`, '_blank', 'noopener,noreferrer');
+          const tab = window.open(
+            `${GITHUB}/issues`,
+            '_blank',
+            'noopener,noreferrer',
+          );
           if (tab) tab.opener = null;
         },
       },
@@ -222,7 +226,6 @@ const PaletteCommand = (): React.ReactNode => {
                   className="p-3 text-gray-500 duration-200 select-none group rounded-xl"
                   id="option-0"
                   key="option-0"
-                  role="listitem"
                 >
                   <FormattedMessage id="commands.noResult" />
                 </li>
@@ -233,7 +236,6 @@ const PaletteCommand = (): React.ReactNode => {
                       className={`p-3 text-gray-500 duration-200 select-none group rounded-xl hover:text-natagora hover:bg-gray-50 ${index === optIndex ? 'text-natagora bg-gray-50' : ''} cursor-pointer flex`}
                       id={`option-${optIndex}`}
                       key={`option-${option.name}`}
-                      role="listitem"
                       onClick={option.onClick}
                     >
                       <span className="pt-0.5">{option.icon}</span>

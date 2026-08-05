@@ -2,7 +2,7 @@ import * as React from 'react';
 import Overlay from '../../accessibility/Overlay';
 import { K_N, K_R } from '../../../../utils/constants';
 import { GoArrowRight, GoMoveToStart } from 'react-icons/go';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 type QuizNavigationType = {
   onReset: () => void;
@@ -12,16 +12,22 @@ type QuizNavigationType = {
 const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
   const { onReset, onNext } = props;
 
+  const intl = useIntl();
+
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row gap-2 sm:gap-4">
       <div className="basis-1/2">
         <button
           type="button"
-          aria-label="reset"
+          aria-label={intl.formatMessage({ id: 'aria.reset' })}
           onClick={onReset}
-          className="inline-flex px-6 py-2 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora/40"
+          className="relative inline-flex px-3 py-2 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora/40 sm:px-6"
         >
-          <GoMoveToStart role="presentation" size="24" className="mr-2" />
+          <GoMoveToStart
+            role="presentation"
+            size="24"
+            className="mr-2 hidden sm:block"
+          />
           <FormattedMessage id="action.resetShort" />
           <Overlay onAction={onReset} keyCode={K_R}>
             <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
@@ -33,14 +39,17 @@ const QuizNavigation = (props: QuizNavigationType): React.ReactNode => {
 
       <div className="text-right basis-1/2">
         <button
-          className="py-2 px-6 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow inline-flex 
-          relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
-          type="submit"
-          aria-label="reset"
+          className="inline-flex px-3 py-2 font-semibold rounded-md bg-natagora text-white hover:bg-natagora/90 hover:shadow relative focus:outline-none focus:ring-2 focus:ring-natagora/40 sm:px-6"
+          type="button"
+          aria-label={intl.formatMessage({ id: 'aria.next' })}
           onClick={onNext}
         >
           <FormattedMessage id="action.next" />
-          <GoArrowRight role="presentation" size="24" className="ml-2" />
+          <GoArrowRight
+            role="presentation"
+            size="24"
+            className="ml-2 hidden sm:block"
+          />
           <Overlay onAction={onNext} keyCode={K_N}>
             <div className="overlay absolute top-0 inset-x-2/4 bg-gray-200 w-8 text-center text-natagora py-1 px-2 -ml-4 mt-1 rounded">
               <FormattedMessage id="shortcuts.N" />

@@ -93,7 +93,7 @@ const Learn = (): React.ReactNode => {
                     <div className="flex-auto flex space-x-4">
                       <a
                         href={MEMO}
-                        aria-label="download"
+                        aria-label={intl.formatMessage({ id: 'aria.download' })}
                         className="px-6 py-2 font-semibold rounded-md border border-slate-200 hover:bg-slate-100 hover:shadow focus:outline-none focus:ring-2 focus:ring-natagora/40"
                         target="_blank"
                         rel="noopener noreferrer"

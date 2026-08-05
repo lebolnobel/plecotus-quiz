@@ -107,6 +107,16 @@
     "shortcuts": "Sneltoetsen",
     "openNewTab": "Open in een nieuw tabblad"
   },
+  "aria": {
+    "reset": "reset",
+    "next": "next",
+    "close": "close",
+    "raiseError": "raise error",
+    "settings": "settings",
+    "fullScreen": "full screen",
+    "openMenu": "open menu",
+    "download": "download"
+  },
   "commands": {
     "info": "Wat zoekt je?",
     "quiz": "Start de quiz!",

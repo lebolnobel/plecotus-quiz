@@ -107,6 +107,16 @@
     "shortcuts": "Raccourcis",
     "openNewTab": "Ouvrir dans un nouvel onglet"
   },
+  "aria": {
+    "reset": "Recommencer",
+    "next": "Question suivante",
+    "close": "Fermer",
+    "raiseError": "Signaler une erreur",
+    "settings": "Paramètres",
+    "fullScreen": "Plein écran",
+    "openMenu": "Ouvrir le menu",
+    "download": "Télécharger"
+  },
   "commands": {
     "info": "Que cherchez-vous ?",
     "quiz": "Lancer le quiz !",

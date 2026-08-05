@@ -51,7 +51,7 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
           <div className="relative bg-white rounded-lg shadow">
             <button
               type="button"
-              aria-label="close"
+              aria-label={intl.formatMessage({ id: 'aria.close' })}
               autoFocus
               onClick={onClose}
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
@@ -83,7 +83,6 @@ const ZoomImage = (props: ZoomImageType): React.ReactNode => {
                   alt={intl.formatMessage({ id: 'image.playDetail' })}
                   title={intl.formatMessage({ id: 'image.playDetail' })}
                   className={`mx-auto rounded-lg w-full h-auto object-contain transition-all`}
-                  role="img"
                 />
               </div>
             </div>

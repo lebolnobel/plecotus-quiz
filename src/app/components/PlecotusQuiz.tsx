@@ -25,12 +25,19 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
   const { selectToAnswerMode, totalQuestions } = useQuizContext();
 
   // Start with 0 to avoid displaying the progress bar if player doesn't start to play
-  const [width, setWidth] = React.useState<number>(0);
   const [isExplanation, setIsExplanation] = React.useState<boolean>(false);
 
+  const prefersReducedMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   React.useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }, [index, isExplanation]);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    });
+  }, [index, isExplanation, prefersReducedMotion]);
 
   const currentQuestion = quiz[index];
 
@@ -40,7 +47,6 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
       }
     : () => {
         setIsExplanation(false);
-        setWidth(((index + 2) / totalQuestions) * 100); // +2 = compute next index
         handleNext();
       };
 
@@ -94,7 +100,7 @@ const PlecotusQuiz = (props: PlecotusQuizType): React.ReactNode => {
       )}
 
       <QuizNavigation onNext={onNext} onReset={onReset} />
-      <ProgressBar width={width} />
+      <ProgressBar index={index} totalQuestions={totalQuestions} />
     </section>
   );
 };

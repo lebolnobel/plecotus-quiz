@@ -50,7 +50,7 @@ const Nav = (): React.ReactNode => {
           focus:ring-2 focus:ring-natagora/40"
           aria-controls="navbar-default"
           aria-expanded={isOpen}
-          aria-label="navigation"
+          aria-label={intl.formatMessage({ id: 'aria.openMenu' })}
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="sr-only">

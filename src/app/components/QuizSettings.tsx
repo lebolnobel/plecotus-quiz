@@ -12,7 +12,7 @@ import { IoReturnDownBack } from 'react-icons/io5';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 import { useQuizContext } from '../../hooks/useQuizContext';
 import { ABBR, FOUR_CHOICES } from '../../utils/constants';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 type OptionsType = {
   name: string;
@@ -27,6 +27,7 @@ const QuizSettings = (): React.ReactNode => {
   const displayRef = React.useRef<HTMLInputElement>(null);
   const answerRef = React.useRef<HTMLInputElement>(null);
   const nbChoicesRef = React.useRef<HTMLInputElement>(null);
+  const intl = useIntl();
 
   const [index, setIndex] = React.useState(0);
 
@@ -227,7 +228,7 @@ const QuizSettings = (): React.ReactNode => {
           <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
             <button
               type="button"
-              aria-label="close"
+              aria-label={intl.formatMessage({ id: 'aria.close' })}
               autoFocus
               onClick={toggleSettingsMode}
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
@@ -261,7 +262,6 @@ const QuizSettings = (): React.ReactNode => {
                     className={`p-3 text-gray-500 duration-200 select-none group rounded-xl hover:text-natagora hover:bg-gray-50 ${index === optIndex ? 'text-natagora bg-gray-50' : ''} cursor-pointer flex`}
                     id={`option-${optIndex}`}
                     key={`option-${option.name}`}
-                    role="listitem"
                     onClick={(e) => {
                       if (!(e.target instanceof HTMLInputElement)) {
                         option.onClick?.();

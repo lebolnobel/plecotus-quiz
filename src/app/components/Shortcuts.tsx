@@ -11,7 +11,7 @@ import {
 import { MdKeyboardOptionKey } from 'react-icons/md';
 import { usePlecotusContext } from '../../hooks/usePlecotusContext';
 import { K_question } from '../../utils/constants';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 type OptionsType = {
   name: string;
@@ -22,6 +22,7 @@ type OptionsType = {
 
 const Shortcuts = (): React.ReactNode => {
   const ref = React.useRef<HTMLDivElement | null>(null);
+  const intl = useIntl();
 
   const { isMac, showShortcuts, toggleShortcutsMode } = usePlecotusContext();
 
@@ -146,7 +147,7 @@ const Shortcuts = (): React.ReactNode => {
           <div className="max-w-xl mx-auto overflow-hidden transition-all transform bg-white divide-y divide-gray-100 shadow-2xl rounded-xl ring-1 ring-black ring-opacity-5">
             <button
               type="button"
-              aria-label="close"
+              aria-label={intl.formatMessage({ id: 'aria.close' })}
               autoFocus
               onClick={toggleShortcutsMode}
               className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center focus:outline-none focus:ring-2 focus:ring-natagora/40"
@@ -179,7 +180,6 @@ const Shortcuts = (): React.ReactNode => {
                   className="p-3 text-gray-500 duration-200 select-none group rounded-xl flex"
                   id={`option-${optIndex}`}
                   key={`option-${option.name}`}
-                  role="listitem"
                 >
                   <span className="pt-0.5">{option.icon}</span>
 
