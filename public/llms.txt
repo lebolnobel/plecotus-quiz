@@ -1,0 +1,15 @@
+# Plecotus quiz
+
+## À propos
+
+Cette application permet aux bénévoles de Plecotus (ou tout autre chiroptérologue) de revoir les critères d'identification des Chauves-souris, en hivers, en Belgique.
+
+## Recensements hivernaux des Chauves-souris
+
+Entrainez-vous à identifier les Chauves-souris dans toutes les conditions. À l'approche des recensements hivernaux des chauves-souris, revoyez les critères essentiels pour une identification efficace. Contribuez activement à leur préservation.
+
+
+## Structure du site
+
+- [Page d'accueil](https://plecotus.netlify.app/) : Explique le fonctionnement de l'application
+- [Quiz](https://plecotus.netlify.app/quiz/) : Lance le quiz pour revoir les critères d'identification.
