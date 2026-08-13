@@ -15,12 +15,19 @@ const Footer = (): React.ReactNode => {
         <FormattedMessage
           id="footer.info"
           values={{
-            hearth: <GoHeart role="presentation" className="inline-flex" />,
+            hearth: (
+              <GoHeart
+                role="presentation"
+                className="inline-flex"
+                key="hearth"
+              />
+            ),
             plecotus: (
               <a
                 href="https://plecotus.natagora.be/"
                 title={intl.formatMessage({ id: 'natagora.plecotus' })}
                 className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
+                key="plecotus"
               >
                 Plecotus
               </a>
@@ -30,6 +37,7 @@ const Footer = (): React.ReactNode => {
                 href="https://www.natagora.be/"
                 title={intl.formatMessage({ id: 'natagora.natagora' })}
                 className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
+                key="natagora"
               >
                 Natagora
               </a>
@@ -47,6 +55,7 @@ const Footer = (): React.ReactNode => {
                 href="https://github.com/lebolnobel/plecotus-quiz"
                 title={intl.formatMessage({ id: 'links.github' })}
                 className="underline text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
+                key="github"
               >
                 GitHub
               </a>

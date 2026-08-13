@@ -26,7 +26,10 @@ const About = (): React.ReactNode => {
           </div>
 
           <div className="text-center mx-auto w-3/4 mt-6 mb-12">
-            <figure className="flex text-center mx-auto w-full" role="none">
+            <figure
+              className="flex text-center mx-auto w-full"
+              role="presentation"
+            >
               <img
                 src="./assets/img/resources/quiz-app.avif"
                 alt={intl.formatMessage({ id: 'img.quizApp' })}
@@ -178,17 +181,21 @@ const About = (): React.ReactNode => {
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-8 sm:space-y-0 mt-8">
-                <figure className="text-center mx-auto px-8 w-48" role="none">
+                <figure
+                  className="text-center mx-auto px-8 w-48"
+                  role="presentation"
+                >
                   <a
                     href="https://plecotus.natagora.be"
                     title={intl.formatMessage({ id: 'natagora.plecotus' })}
-                    className="text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
+                    className="inline-flex items-center justify-center rounded-md p-2 text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-natagora/40 focus-visible:ring-offset-2"
                   >
                     <img
                       src="./assets/img/plecotus/logo.svg"
                       alt={intl.formatMessage({ id: 'natagora.plecotus' })}
                       title={intl.formatMessage({ id: 'natagora.plecotus' })}
                       loading="lazy"
+                      className="block mx-auto h-auto"
                     />
                     <figcaption className="mt-2 text-sm text-center text-gray-500">
                       <FormattedMessage id="natagora.plecotusLong" />
@@ -196,11 +203,14 @@ const About = (): React.ReactNode => {
                   </a>
                 </figure>
 
-                <figure className="text-center mx-auto px-8 w-48" role="none">
+                <figure
+                  className="text-center mx-auto px-8 w-48"
+                  role="presentation"
+                >
                   <a
                     href="https://www.natagora.be"
                     title={intl.formatMessage({ id: 'natagora.natagora' })}
-                    className="text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus:outline-none focus:ring-2 focus:ring-natagora/40"
+                    className="inline-flex items-center justify-center rounded-md p-2 text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-natagora/40 focus-visible:ring-offset-2"
                   >
                     <img
                       src="./assets/img/natagora/logo.png"
@@ -209,6 +219,7 @@ const About = (): React.ReactNode => {
                         id: 'natagora.natagoraLong',
                       })}
                       loading="lazy"
+                      className="block mx-auto h-auto"
                     />
                     <figcaption className="mt-2 text-sm text-center text-gray-500">
                       <FormattedMessage id="natagora.natagoraLong" />

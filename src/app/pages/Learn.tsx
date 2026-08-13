@@ -114,7 +114,7 @@ const Learn = (): React.ReactNode => {
                 </div>
                 <figure
                   className="hidden sm:block sm:col-span-3 text-center mx-auto w-full"
-                  role="none"
+                  role="presentation"
                 >
                   <img
                     src="./assets/img/resources/memo.png"

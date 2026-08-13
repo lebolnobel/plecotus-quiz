@@ -921,20 +921,12 @@ video {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.h-1 {
-  height: 0.25rem;
-}
-
-.h-2 {
-  height: 0.5rem;
-}
-
 .h-px {
   height: 1px;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .max-h-80 {
@@ -1033,10 +1025,6 @@ video {
   flex: none;
 }
 
-.flex-1 {
-  flex: 1 1 0%;
-}
-
 .basis-1\/2 {
   flex-basis: 50%;
 }
@@ -1120,16 +1108,16 @@ video {
   justify-items: stretch;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
@@ -2048,6 +2036,25 @@ body {
   --tw-ring-color: rgb(162 178 28 / 0.4);
 }
 
+.focus-visible\:outline-none:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-visible\:ring-2:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus-visible\:ring-natagora\/40:focus-visible {
+  --tw-ring-color: rgb(162 178 28 / 0.4);
+}
+
+.focus-visible\:ring-offset-2:focus-visible {
+  --tw-ring-offset-width: 2px;
+}
+
 .group:last-child .group-last\:before\:hidden::before {
   content: var(--tw-content);
   display: none;
@@ -2152,16 +2159,16 @@ body {
     gap: 0.5rem;
   }
 
-  .sm\:gap-8 {
-    gap: 2rem;
-  }
-
   .sm\:gap-3 {
     gap: 0.75rem;
   }
 
   .sm\:gap-4 {
     gap: 1rem;
+  }
+
+  .sm\:gap-8 {
+    gap: 2rem;
   }
 
   .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]) {

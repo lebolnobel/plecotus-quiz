@@ -13,7 +13,7 @@ const Home = (): React.ReactNode => {
       </h2>
 
       <div className="flex pt-10">
-        <figure className="flex-none md:w-36 relative" role="none">
+        <figure className="flex-none md:w-36 relative" role="presentation">
           <img
             src="/assets/img/plecotus/logo.svg"
             alt={intl.formatMessage({ id: 'natagora.plecotus' })}
