@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Metadata from './components/Metadata';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PaletteCommand from './components/PaletteCommand';
@@ -27,6 +28,8 @@ const Plecotus = (): React.ReactNode => {
       </a>
 
       <Nav />
+
+      <Metadata />
 
       <main className="text-base font-anek flex flex-col items-center">
         <div className="md:py-6 w-full md:w-3/4 lg:w-3/5 xl:2/4 max-w-screen-md">
