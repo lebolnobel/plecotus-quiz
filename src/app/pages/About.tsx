@@ -188,7 +188,7 @@ const About = (): React.ReactNode => {
                   <a
                     href="https://plecotus.natagora.be"
                     title={intl.formatMessage({ id: 'natagora.plecotus' })}
-                    className="inline-flex items-center justify-center rounded-md p-2 text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-natagora/40 focus-visible:ring-offset-2"
+                    className="inline-flex flex-col items-center justify-center rounded-md p-2 text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-natagora/40 focus-visible:ring-offset-2"
                   >
                     <img
                       src="./assets/img/plecotus/logo.svg"
@@ -210,7 +210,7 @@ const About = (): React.ReactNode => {
                   <a
                     href="https://www.natagora.be"
                     title={intl.formatMessage({ id: 'natagora.natagora' })}
-                    className="inline-flex items-center justify-center rounded-md p-2 text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-natagora/40 focus-visible:ring-offset-2"
+                    className="inline-flex flex-col items-center justify-center rounded-md p-2 text-natagora font-medium decoration-natagora/50 hover:decoration-2 hover:text-natagora/80 transition duration-400 ease-in-out hover:decoration-inherit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-natagora/40 focus-visible:ring-offset-2"
                   >
                     <img
                       src="./assets/img/natagora/logo.png"

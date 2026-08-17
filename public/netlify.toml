@@ -1,4 +1,28 @@
 [[redirects]]
+  from = "/quiz"
+  to = "/index.html"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/species/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/learn"
+  to = "/index.html"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/about"
+  to = "/index.html"
+  status = 200
+  force = false
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
@@ -8,16 +32,16 @@
   for = "/*"
 
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; 
-    script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; 
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
-    font-src 'self' https://fonts.gstatic.com; 
-    img-src 'self' 
-    data: blob: 'self'; 
-    connect-src 'self' https://*.supabase.co https://fonts.googleapis.com; 
-    object-src 'none'; 
-    base-uri 'self'; 
-    frame-ancestors 'none'; 
+    Content-Security-Policy = "default-src 'self';
+    script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self'
+    data: blob: 'self';
+    connect-src 'self' https://*.supabase.co https://fonts.googleapis.com;
+    object-src 'none';
+    base-uri 'self';
+    frame-ancestors 'none';
     form-action 'self'"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"

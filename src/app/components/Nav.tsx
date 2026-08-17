@@ -29,7 +29,7 @@ const Nav = (): React.ReactNode => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           to="../"
-          className="flex items-center space-x-3 relative focus:outline-none focus:ring-2 focus:ring-natagora/40"
+          className="flex items-center space-x-3 relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-natagora/40"
         >
           <img
             src="/favicon.ico"
